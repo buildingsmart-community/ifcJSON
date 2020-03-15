@@ -25,47 +25,47 @@ nedelja, 24. marec 2019
 
 SCHEMA IFC4X2;
 
-TYPE IfcAbsorbedDoseMeasure = REAL;
-END_TYPE;
+--TYPE IfcAbsorbedDoseMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcAccelerationMeasure = REAL;
-END_TYPE;
+--TYPE IfcAccelerationMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcAmountOfSubstanceMeasure = REAL;
-END_TYPE;
+--TYPE IfcAmountOfSubstanceMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcAngularVelocityMeasure = REAL;
-END_TYPE;
+--TYPE IfcAngularVelocityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcArcIndex = LIST [3:3] OF IfcPositiveInteger;
-END_TYPE;
+--TYPE IfcArcIndex = LIST [3:3] OF IfcPositiveInteger;
+--END_TYPE;
 
-TYPE IfcAreaDensityMeasure = REAL;
-END_TYPE;
+--TYPE IfcAreaDensityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcAreaMeasure = REAL;
-END_TYPE;
+--TYPE IfcAreaMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcBinary = BINARY;
-END_TYPE;
+--TYPE IfcBinary = BINARY;
+--END_TYPE;
 
-TYPE IfcBoolean = BOOLEAN;
-END_TYPE;
+--TYPE IfcBoolean = BOOLEAN;
+--END_TYPE;
 
-TYPE IfcBoxAlignment = IfcLabel;
+--TYPE IfcBoxAlignment = IfcLabel;
  WHERE
 	WR1 : SELF IN ['top-left', 'top-middle', 'top-right', 'middle-left', 'center', 'middle-right', 'bottom-left', 'bottom-middle', 'bottom-right'];
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCardinalPointReference = INTEGER;
+--TYPE IfcCardinalPointReference = INTEGER;
  WHERE
 	GreaterThanZero : SELF > 0;
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcComplexNumber = ARRAY [1:2] OF REAL;
-END_TYPE;
+--TYPE IfcComplexNumber = ARRAY [1:2] OF REAL;
+--END_TYPE;
 
-TYPE IfcCompoundPlaneAngleMeasure = LIST [3:4] OF INTEGER;
+--TYPE IfcCompoundPlaneAngleMeasure = LIST [3:4] OF INTEGER;
  WHERE
 	MinutesInRange : ABS(SELF[2]) < 60;
 	SecondsInRange : ABS(SELF[3]) < 60;
@@ -73,398 +73,398 @@ TYPE IfcCompoundPlaneAngleMeasure = LIST [3:4] OF INTEGER;
 	ConsistentSign : ((SELF[1] >= 0) AND (SELF[2] >= 0) AND (SELF[3] >= 0) AND ((SIZEOF(SELF) = 3) OR (SELF[4] >= 0)))
 OR
 ((SELF[1] <= 0) AND (SELF[2] <= 0) AND (SELF[3] <= 0) AND ((SIZEOF(SELF) = 3) OR (SELF[4] <= 0)));
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcContextDependentMeasure = REAL;
-END_TYPE;
+--TYPE IfcContextDependentMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcCountMeasure = NUMBER;
-END_TYPE;
+--TYPE IfcCountMeasure = NUMBER;
+--END_TYPE;
 
-TYPE IfcCurvatureMeasure = REAL;
-END_TYPE;
+--TYPE IfcCurvatureMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcDate = STRING;
-END_TYPE;
+--TYPE IfcDate = STRING;
+--END_TYPE;
 
-TYPE IfcDateTime = STRING;
-END_TYPE;
+--TYPE IfcDateTime = STRING;
+--END_TYPE;
 
-TYPE IfcDayInMonthNumber = INTEGER;
+--TYPE IfcDayInMonthNumber = INTEGER;
  WHERE
 	ValidRange : {1 <= SELF <= 31};
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDayInWeekNumber = INTEGER;
+--TYPE IfcDayInWeekNumber = INTEGER;
  WHERE
 	ValidRange : {1 <= SELF <= 7};
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDescriptiveMeasure = STRING;
-END_TYPE;
+--TYPE IfcDescriptiveMeasure = STRING;
+--END_TYPE;
 
-TYPE IfcDimensionCount = INTEGER;
+--TYPE IfcDimensionCount = INTEGER;
  WHERE
 	WR1 : { 0 < SELF <= 3 };
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDoseEquivalentMeasure = REAL;
-END_TYPE;
+--TYPE IfcDoseEquivalentMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcDuration = STRING;
-END_TYPE;
+--TYPE IfcDuration = STRING;
+--END_TYPE;
 
-TYPE IfcDynamicViscosityMeasure = REAL;
-END_TYPE;
+--TYPE IfcDynamicViscosityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcElectricCapacitanceMeasure = REAL;
-END_TYPE;
+--TYPE IfcElectricCapacitanceMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcElectricChargeMeasure = REAL;
-END_TYPE;
+--TYPE IfcElectricChargeMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcElectricConductanceMeasure = REAL;
-END_TYPE;
+--TYPE IfcElectricConductanceMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcElectricCurrentMeasure = REAL;
-END_TYPE;
+--TYPE IfcElectricCurrentMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcElectricResistanceMeasure = REAL;
-END_TYPE;
+--TYPE IfcElectricResistanceMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcElectricVoltageMeasure = REAL;
-END_TYPE;
+--TYPE IfcElectricVoltageMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcEnergyMeasure = REAL;
-END_TYPE;
+--TYPE IfcEnergyMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcFontStyle = STRING;
+--TYPE IfcFontStyle = STRING;
  WHERE
 	WR1 : SELF IN ['normal','italic','oblique'];
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcFontVariant = STRING;
+--TYPE IfcFontVariant = STRING;
  WHERE
 	WR1 : SELF IN ['normal','small-caps'];
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcFontWeight = STRING;
+--TYPE IfcFontWeight = STRING;
  WHERE
 	WR1 : SELF IN ['normal','small-caps','100','200','300','400','500','600','700','800','900'];
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcForceMeasure = REAL;
-END_TYPE;
+--TYPE IfcForceMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcFrequencyMeasure = REAL;
-END_TYPE;
+--TYPE IfcFrequencyMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcGloballyUniqueId = STRING(22) FIXED;
-END_TYPE;
+--TYPE IfcGloballyUniqueId = STRING(22) FIXED;
+--END_TYPE;
 
-TYPE IfcHeatFluxDensityMeasure = REAL;
-END_TYPE;
+--TYPE IfcHeatFluxDensityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcHeatingValueMeasure = REAL;
+--TYPE IfcHeatingValueMeasure = REAL;
  WHERE
 	WR1 : SELF > 0.;
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcIdentifier = STRING(255);
-END_TYPE;
+--TYPE IfcIdentifier = STRING(255);
+--END_TYPE;
 
-TYPE IfcIlluminanceMeasure = REAL;
-END_TYPE;
+--TYPE IfcIlluminanceMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcInductanceMeasure = REAL;
-END_TYPE;
+--TYPE IfcInductanceMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcInteger = INTEGER;
-END_TYPE;
+--TYPE IfcInteger = INTEGER;
+--END_TYPE;
 
-TYPE IfcIntegerCountRateMeasure = INTEGER;
-END_TYPE;
+--TYPE IfcIntegerCountRateMeasure = INTEGER;
+--END_TYPE;
 
-TYPE IfcIonConcentrationMeasure = REAL;
-END_TYPE;
+--TYPE IfcIonConcentrationMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcIsothermalMoistureCapacityMeasure = REAL;
-END_TYPE;
+--TYPE IfcIsothermalMoistureCapacityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcKinematicViscosityMeasure = REAL;
-END_TYPE;
+--TYPE IfcKinematicViscosityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcLabel = STRING(255);
-END_TYPE;
+--TYPE IfcLabel = STRING(255);
+--END_TYPE;
 
-TYPE IfcLanguageId = IfcIdentifier;
-END_TYPE;
+--TYPE IfcLanguageId = IfcIdentifier;
+--END_TYPE;
 
-TYPE IfcLengthMeasure = REAL;
-END_TYPE;
+--TYPE IfcLengthMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcLineIndex = LIST [2:?] OF IfcPositiveInteger;
-END_TYPE;
+--TYPE IfcLineIndex = LIST [2:?] OF IfcPositiveInteger;
+--END_TYPE;
 
-TYPE IfcLinearForceMeasure = REAL;
-END_TYPE;
+--TYPE IfcLinearForceMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcLinearMomentMeasure = REAL;
-END_TYPE;
+--TYPE IfcLinearMomentMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcLinearStiffnessMeasure = REAL;
-END_TYPE;
+--TYPE IfcLinearStiffnessMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcLinearVelocityMeasure = REAL;
-END_TYPE;
+--TYPE IfcLinearVelocityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcLogical = LOGICAL;
-END_TYPE;
+--TYPE IfcLogical = LOGICAL;
+--END_TYPE;
 
-TYPE IfcLuminousFluxMeasure = REAL;
-END_TYPE;
+--TYPE IfcLuminousFluxMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcLuminousIntensityDistributionMeasure = REAL;
-END_TYPE;
+--TYPE IfcLuminousIntensityDistributionMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcLuminousIntensityMeasure = REAL;
-END_TYPE;
+--TYPE IfcLuminousIntensityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcMagneticFluxDensityMeasure = REAL;
-END_TYPE;
+--TYPE IfcMagneticFluxDensityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcMagneticFluxMeasure = REAL;
-END_TYPE;
+--TYPE IfcMagneticFluxMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcMassDensityMeasure = REAL;
-END_TYPE;
+--TYPE IfcMassDensityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcMassFlowRateMeasure = REAL;
-END_TYPE;
+--TYPE IfcMassFlowRateMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcMassMeasure = REAL;
-END_TYPE;
+--TYPE IfcMassMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcMassPerLengthMeasure = REAL;
-END_TYPE;
+--TYPE IfcMassPerLengthMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcModulusOfElasticityMeasure = REAL;
-END_TYPE;
+--TYPE IfcModulusOfElasticityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcModulusOfLinearSubgradeReactionMeasure = REAL;
-END_TYPE;
+--TYPE IfcModulusOfLinearSubgradeReactionMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcModulusOfRotationalSubgradeReactionMeasure = REAL;
-END_TYPE;
+--TYPE IfcModulusOfRotationalSubgradeReactionMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcModulusOfSubgradeReactionMeasure = REAL;
-END_TYPE;
+--TYPE IfcModulusOfSubgradeReactionMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcMoistureDiffusivityMeasure = REAL;
-END_TYPE;
+--TYPE IfcMoistureDiffusivityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcMolecularWeightMeasure = REAL;
-END_TYPE;
+--TYPE IfcMolecularWeightMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcMomentOfInertiaMeasure = REAL;
-END_TYPE;
+--TYPE IfcMomentOfInertiaMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcMonetaryMeasure = REAL;
-END_TYPE;
+--TYPE IfcMonetaryMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcMonthInYearNumber = INTEGER;
+--TYPE IfcMonthInYearNumber = INTEGER;
  WHERE
 	ValidRange : {1 <= SELF <= 12};
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcNonNegativeLengthMeasure = IfcLengthMeasure;
+--TYPE IfcNonNegativeLengthMeasure = IfcLengthMeasure;
  WHERE
 	NotNegative : SELF >= 0.;
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcNormalisedRatioMeasure = IfcRatioMeasure;
+--TYPE IfcNormalisedRatioMeasure = IfcRatioMeasure;
  WHERE
 	WR1 : {0.0 <= SELF <= 1.0};
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcNumericMeasure = NUMBER;
-END_TYPE;
+--TYPE IfcNumericMeasure = NUMBER;
+--END_TYPE;
 
-TYPE IfcPHMeasure = REAL;
+--TYPE IfcPHMeasure = REAL;
  WHERE
 	WR21 : {0.0 <= SELF <= 14.0};
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcParameterValue = REAL;
-END_TYPE;
+--TYPE IfcParameterValue = REAL;
+--END_TYPE;
 
-TYPE IfcPlanarForceMeasure = REAL;
-END_TYPE;
+--TYPE IfcPlanarForceMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcPlaneAngleMeasure = REAL;
-END_TYPE;
+--TYPE IfcPlaneAngleMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcPositiveInteger = IfcInteger;
+--TYPE IfcPositiveInteger = IfcInteger;
  WHERE
 	WR1 : SELF > 0;
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPositiveLengthMeasure = IfcLengthMeasure;
+--TYPE IfcPositiveLengthMeasure = IfcLengthMeasure;
  WHERE
 	WR1 : SELF > 0.;
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPositivePlaneAngleMeasure = IfcPlaneAngleMeasure;
+--TYPE IfcPositivePlaneAngleMeasure = IfcPlaneAngleMeasure;
  WHERE
 	WR1 : SELF > 0.;
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPositiveRatioMeasure = IfcRatioMeasure;
+--TYPE IfcPositiveRatioMeasure = IfcRatioMeasure;
  WHERE
 	WR1 : SELF > 0.;
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPowerMeasure = REAL;
-END_TYPE;
+--TYPE IfcPowerMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcPresentableText = STRING;
-END_TYPE;
+--TYPE IfcPresentableText = STRING;
+--END_TYPE;
 
-TYPE IfcPressureMeasure = REAL;
-END_TYPE;
+--TYPE IfcPressureMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcPropertySetDefinitionSet = SET [1:?] OF IfcPropertySetDefinition;
-END_TYPE;
+--TYPE IfcPropertySetDefinitionSet = SET [1:?] OF IfcPropertySetDefinition;
+--END_TYPE;
 
-TYPE IfcRadioActivityMeasure = REAL;
-END_TYPE;
+--TYPE IfcRadioActivityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcRatioMeasure = REAL;
-END_TYPE;
+--TYPE IfcRatioMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcReal = REAL;
-END_TYPE;
+--TYPE IfcReal = REAL;
+--END_TYPE;
 
-TYPE IfcRotationalFrequencyMeasure = REAL;
-END_TYPE;
+--TYPE IfcRotationalFrequencyMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcRotationalMassMeasure = REAL;
-END_TYPE;
+--TYPE IfcRotationalMassMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcRotationalStiffnessMeasure = REAL;
-END_TYPE;
+--TYPE IfcRotationalStiffnessMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcSectionModulusMeasure = REAL;
-END_TYPE;
+--TYPE IfcSectionModulusMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcSectionalAreaIntegralMeasure = REAL;
-END_TYPE;
+--TYPE IfcSectionalAreaIntegralMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcShearModulusMeasure = REAL;
-END_TYPE;
+--TYPE IfcShearModulusMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcSolidAngleMeasure = REAL;
-END_TYPE;
+--TYPE IfcSolidAngleMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcSoundPowerLevelMeasure = REAL;
-END_TYPE;
+--TYPE IfcSoundPowerLevelMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcSoundPowerMeasure = REAL;
-END_TYPE;
+--TYPE IfcSoundPowerMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcSoundPressureLevelMeasure = REAL;
-END_TYPE;
+--TYPE IfcSoundPressureLevelMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcSoundPressureMeasure = REAL;
-END_TYPE;
+--TYPE IfcSoundPressureMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcSpecificHeatCapacityMeasure = REAL;
-END_TYPE;
+--TYPE IfcSpecificHeatCapacityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcSpecularExponent = REAL;
-END_TYPE;
+--TYPE IfcSpecularExponent = REAL;
+--END_TYPE;
 
-TYPE IfcSpecularRoughness = REAL;
+--TYPE IfcSpecularRoughness = REAL;
  WHERE
 	WR1 : {0.0 <= SELF <= 1.0};
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTemperatureGradientMeasure = REAL;
-END_TYPE;
+--TYPE IfcTemperatureGradientMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcTemperatureRateOfChangeMeasure = REAL;
-END_TYPE;
+--TYPE IfcTemperatureRateOfChangeMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcText = STRING;
-END_TYPE;
+--TYPE IfcText = STRING;
+--END_TYPE;
 
-TYPE IfcTextAlignment = STRING;
+--TYPE IfcTextAlignment = STRING;
  WHERE
 	WR1 : SELF IN ['left', 'right', 'center', 'justify'];
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTextDecoration = STRING;
+--TYPE IfcTextDecoration = STRING;
  WHERE
 	WR1 : SELF IN ['none', 'underline', 'overline', 'line-through', 'blink'];
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTextFontName = STRING;
-END_TYPE;
+--TYPE IfcTextFontName = STRING;
+--END_TYPE;
 
-TYPE IfcTextTransformation = STRING;
+--TYPE IfcTextTransformation = STRING;
  WHERE
 	WR1 : SELF IN ['capitalize', 'uppercase', 'lowercase', 'none'];
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcThermalAdmittanceMeasure = REAL;
-END_TYPE;
+--TYPE IfcThermalAdmittanceMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcThermalConductivityMeasure = REAL;
-END_TYPE;
+--TYPE IfcThermalConductivityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcThermalExpansionCoefficientMeasure = REAL;
-END_TYPE;
+--TYPE IfcThermalExpansionCoefficientMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcThermalResistanceMeasure = REAL;
-END_TYPE;
+--TYPE IfcThermalResistanceMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcThermalTransmittanceMeasure = REAL;
-END_TYPE;
+--TYPE IfcThermalTransmittanceMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcThermodynamicTemperatureMeasure = REAL;
-END_TYPE;
+--TYPE IfcThermodynamicTemperatureMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcTime = STRING;
-END_TYPE;
+--TYPE IfcTime = STRING;
+--END_TYPE;
 
-TYPE IfcTimeMeasure = REAL;
-END_TYPE;
+--TYPE IfcTimeMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcTimeStamp = INTEGER;
-END_TYPE;
+--TYPE IfcTimeStamp = INTEGER;
+--END_TYPE;
 
-TYPE IfcTorqueMeasure = REAL;
-END_TYPE;
+--TYPE IfcTorqueMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcURIReference = STRING;
-END_TYPE;
+--TYPE IfcURIReference = STRING;
+--END_TYPE;
 
-TYPE IfcVaporPermeabilityMeasure = REAL;
-END_TYPE;
+--TYPE IfcVaporPermeabilityMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcVolumeMeasure = REAL;
-END_TYPE;
+--TYPE IfcVolumeMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcVolumetricFlowRateMeasure = REAL;
-END_TYPE;
+--TYPE IfcVolumetricFlowRateMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcWarpingConstantMeasure = REAL;
-END_TYPE;
+--TYPE IfcWarpingConstantMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcWarpingMomentMeasure = REAL;
-END_TYPE;
+--TYPE IfcWarpingMomentMeasure = REAL;
+--END_TYPE;
 
-TYPE IfcActionRequestTypeEnum = ENUMERATION OF
+--TYPE IfcActionRequestTypeEnum = ENUMERATION OF
 	(EMAIL
 	,FAX
 	,PHONE
@@ -472,9 +472,9 @@ TYPE IfcActionRequestTypeEnum = ENUMERATION OF
 	,VERBAL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcActionSourceTypeEnum = ENUMERATION OF
+--TYPE IfcActionSourceTypeEnum = ENUMERATION OF
 	(DEAD_LOAD_G
 	,COMPLETION_G1
 	,LIVE_LOAD_Q
@@ -502,17 +502,17 @@ TYPE IfcActionSourceTypeEnum = ENUMERATION OF
 	,BRAKES
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcActionTypeEnum = ENUMERATION OF
+--TYPE IfcActionTypeEnum = ENUMERATION OF
 	(PERMANENT_G
 	,VARIABLE_Q
 	,EXTRAORDINARY_A
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcActuatorTypeEnum = ENUMERATION OF
+--TYPE IfcActuatorTypeEnum = ENUMERATION OF
 	(ELECTRICACTUATOR
 	,HANDOPERATEDACTUATOR
 	,HYDRAULICACTUATOR
@@ -520,34 +520,34 @@ TYPE IfcActuatorTypeEnum = ENUMERATION OF
 	,THERMOSTATICACTUATOR
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcAddressTypeEnum = ENUMERATION OF
+--TYPE IfcAddressTypeEnum = ENUMERATION OF
 	(OFFICE
 	,SITE
 	,HOME
 	,DISTRIBUTIONPOINT
 	,USERDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcAirTerminalBoxTypeEnum = ENUMERATION OF
+--TYPE IfcAirTerminalBoxTypeEnum = ENUMERATION OF
 	(CONSTANTFLOW
 	,VARIABLEFLOWPRESSUREDEPENDANT
 	,VARIABLEFLOWPRESSUREINDEPENDANT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcAirTerminalTypeEnum = ENUMERATION OF
+--TYPE IfcAirTerminalTypeEnum = ENUMERATION OF
 	(DIFFUSER
 	,GRILLE
 	,LOUVRE
 	,REGISTER
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcAirToAirHeatRecoveryTypeEnum = ENUMERATION OF
+--TYPE IfcAirToAirHeatRecoveryTypeEnum = ENUMERATION OF
 	(FIXEDPLATECOUNTERFLOWEXCHANGER
 	,FIXEDPLATECROSSFLOWEXCHANGER
 	,FIXEDPLATEPARALLELFLOWEXCHANGER
@@ -559,9 +559,9 @@ TYPE IfcAirToAirHeatRecoveryTypeEnum = ENUMERATION OF
 	,THERMOSIPHONCOILTYPEHEATEXCHANGERS
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcAlarmTypeEnum = ENUMERATION OF
+--TYPE IfcAlarmTypeEnum = ENUMERATION OF
 	(BELL
 	,BREAKGLASSBUTTON
 	,LIGHT
@@ -570,44 +570,44 @@ TYPE IfcAlarmTypeEnum = ENUMERATION OF
 	,WHISTLE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcAlignmentTypeEnum = ENUMERATION OF
+--TYPE IfcAlignmentTypeEnum = ENUMERATION OF
 	(USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcAnalysisModelTypeEnum = ENUMERATION OF
+--TYPE IfcAnalysisModelTypeEnum = ENUMERATION OF
 	(IN_PLANE_LOADING_2D
 	,OUT_PLANE_LOADING_2D
 	,LOADING_3D
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcAnalysisTheoryTypeEnum = ENUMERATION OF
+--TYPE IfcAnalysisTheoryTypeEnum = ENUMERATION OF
 	(FIRST_ORDER_THEORY
 	,SECOND_ORDER_THEORY
 	,THIRD_ORDER_THEORY
 	,FULL_NONLINEAR_THEORY
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcArithmeticOperatorEnum = ENUMERATION OF
+--TYPE IfcArithmeticOperatorEnum = ENUMERATION OF
 	(ADD
 	,DIVIDE
 	,MULTIPLY
 	,SUBTRACT);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcAssemblyPlaceEnum = ENUMERATION OF
+--TYPE IfcAssemblyPlaceEnum = ENUMERATION OF
 	(SITE
 	,FACTORY
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcAudioVisualApplianceTypeEnum = ENUMERATION OF
+--TYPE IfcAudioVisualApplianceTypeEnum = ENUMERATION OF
 	(AMPLIFIER
 	,CAMERA
 	,DISPLAY
@@ -621,18 +621,18 @@ TYPE IfcAudioVisualApplianceTypeEnum = ENUMERATION OF
 	,TUNER
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBSplineCurveForm = ENUMERATION OF
+--TYPE IfcBSplineCurveForm = ENUMERATION OF
 	(POLYLINE_FORM
 	,CIRCULAR_ARC
 	,ELLIPTIC_ARC
 	,PARABOLIC_ARC
 	,HYPERBOLIC_ARC
 	,UNSPECIFIED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBSplineSurfaceForm = ENUMERATION OF
+--TYPE IfcBSplineSurfaceForm = ENUMERATION OF
 	(PLANE_SURF
 	,CYLINDRICAL_SURF
 	,CONICAL_SURF
@@ -644,9 +644,9 @@ TYPE IfcBSplineSurfaceForm = ENUMERATION OF
 	,QUADRIC_SURF
 	,SURF_OF_LINEAR_EXTRUSION
 	,UNSPECIFIED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBeamTypeEnum = ENUMERATION OF
+--TYPE IfcBeamTypeEnum = ENUMERATION OF
 	(BEAM
 	,JOIST
 	,HOLLOWCORE
@@ -661,17 +661,17 @@ TYPE IfcBeamTypeEnum = ENUMERATION OF
 	,EDGEBEAM
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBearingTypeDisplacementEnum = ENUMERATION OF
+--TYPE IfcBearingTypeDisplacementEnum = ENUMERATION OF
 	(FIXED_MOVEMENT
 	,GUIDED_LONGITUDINAL
 	,GUIDED_TRANSVERSAL
 	,FREE_MOVEMENT
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBearingTypeEnum = ENUMERATION OF
+--TYPE IfcBearingTypeEnum = ENUMERATION OF
 	(CYLINDRICAL
 	,SPHERICAL
 	,ELASTOMERIC
@@ -682,9 +682,9 @@ TYPE IfcBearingTypeEnum = ENUMERATION OF
 	,DISK
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBenchmarkEnum = ENUMERATION OF
+--TYPE IfcBenchmarkEnum = ENUMERATION OF
 	(GREATERTHAN
 	,GREATERTHANOREQUALTO
 	,LESSTHAN
@@ -695,22 +695,22 @@ TYPE IfcBenchmarkEnum = ENUMERATION OF
 	,NOTINCLUDES
 	,INCLUDEDIN
 	,NOTINCLUDEDIN);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBoilerTypeEnum = ENUMERATION OF
+--TYPE IfcBoilerTypeEnum = ENUMERATION OF
 	(WATER
 	,STEAM
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBooleanOperator = ENUMERATION OF
+--TYPE IfcBooleanOperator = ENUMERATION OF
 	(UNION
 	,INTERSECTION
 	,DIFFERENCE);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBridgePartTypeEnum = ENUMERATION OF
+--TYPE IfcBridgePartTypeEnum = ENUMERATION OF
 	(ABUTMENT
 	,DECK
 	,DECK_SEGMENT
@@ -723,9 +723,9 @@ TYPE IfcBridgePartTypeEnum = ENUMERATION OF
 	,SURFACESTRUCTURE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBridgeTypeEnum = ENUMERATION OF
+--TYPE IfcBridgeTypeEnum = ENUMERATION OF
 	(ARCHED
 	,CABLE_STAYED
 	,CANTILEVER
@@ -736,17 +736,17 @@ TYPE IfcBridgeTypeEnum = ENUMERATION OF
 	,TRUSS
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBuildingElementPartTypeEnum = ENUMERATION OF
+--TYPE IfcBuildingElementPartTypeEnum = ENUMERATION OF
 	(INSULATION
 	,PRECASTPANEL
 	,APRON
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBuildingElementProxyTypeEnum = ENUMERATION OF
+--TYPE IfcBuildingElementProxyTypeEnum = ENUMERATION OF
 	(COMPLEX
 	,ELEMENT
 	,PARTIAL
@@ -754,9 +754,9 @@ TYPE IfcBuildingElementProxyTypeEnum = ENUMERATION OF
 	,PROVISIONFORSPACE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBuildingSystemTypeEnum = ENUMERATION OF
+--TYPE IfcBuildingSystemTypeEnum = ENUMERATION OF
 	(FENESTRATION
 	,FOUNDATION
 	,LOADBEARING
@@ -767,32 +767,32 @@ TYPE IfcBuildingSystemTypeEnum = ENUMERATION OF
 	,PRESTRESSING
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBurnerTypeEnum = ENUMERATION OF
+--TYPE IfcBurnerTypeEnum = ENUMERATION OF
 	(USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCableCarrierFittingTypeEnum = ENUMERATION OF
+--TYPE IfcCableCarrierFittingTypeEnum = ENUMERATION OF
 	(BEND
 	,CROSS
 	,REDUCER
 	,TEE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCableCarrierSegmentTypeEnum = ENUMERATION OF
+--TYPE IfcCableCarrierSegmentTypeEnum = ENUMERATION OF
 	(CABLELADDERSEGMENT
 	,CABLETRAYSEGMENT
 	,CABLETRUNKINGSEGMENT
 	,CONDUITSEGMENT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCableFittingTypeEnum = ENUMERATION OF
+--TYPE IfcCableFittingTypeEnum = ENUMERATION OF
 	(CONNECTOR
 	,ENTRY
 	,EXIT
@@ -800,46 +800,46 @@ TYPE IfcCableFittingTypeEnum = ENUMERATION OF
 	,TRANSITION
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCableSegmentTypeEnum = ENUMERATION OF
+--TYPE IfcCableSegmentTypeEnum = ENUMERATION OF
 	(BUSBARSEGMENT
 	,CABLESEGMENT
 	,CONDUCTORSEGMENT
 	,CORESEGMENT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCaissonFoundationTypeEnum = ENUMERATION OF
+--TYPE IfcCaissonFoundationTypeEnum = ENUMERATION OF
 	(WELL
 	,CAISSON
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcChangeActionEnum = ENUMERATION OF
+--TYPE IfcChangeActionEnum = ENUMERATION OF
 	(NOCHANGE
 	,MODIFIED
 	,ADDED
 	,DELETED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcChillerTypeEnum = ENUMERATION OF
+--TYPE IfcChillerTypeEnum = ENUMERATION OF
 	(AIRCOOLED
 	,WATERCOOLED
 	,HEATRECOVERY
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcChimneyTypeEnum = ENUMERATION OF
+--TYPE IfcChimneyTypeEnum = ENUMERATION OF
 	(USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCoilTypeEnum = ENUMERATION OF
+--TYPE IfcCoilTypeEnum = ENUMERATION OF
 	(DXCOOLINGCOIL
 	,ELECTRICHEATINGCOIL
 	,GASHEATINGCOIL
@@ -849,9 +849,9 @@ TYPE IfcCoilTypeEnum = ENUMERATION OF
 	,WATERHEATINGCOIL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcColumnTypeEnum = ENUMERATION OF
+--TYPE IfcColumnTypeEnum = ENUMERATION OF
 	(COLUMN
 	,PILASTER
 	,PIERSTEM
@@ -859,9 +859,9 @@ TYPE IfcColumnTypeEnum = ENUMERATION OF
 	,STANDCOLUMN
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCommunicationsApplianceTypeEnum = ENUMERATION OF
+--TYPE IfcCommunicationsApplianceTypeEnum = ENUMERATION OF
 	(ANTENNA
 	,COMPUTER
 	,FAX
@@ -876,14 +876,14 @@ TYPE IfcCommunicationsApplianceTypeEnum = ENUMERATION OF
 	,SCANNER
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcComplexPropertyTemplateTypeEnum = ENUMERATION OF
+--TYPE IfcComplexPropertyTemplateTypeEnum = ENUMERATION OF
 	(P_COMPLEX
 	,Q_COMPLEX);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCompressorTypeEnum = ENUMERATION OF
+--TYPE IfcCompressorTypeEnum = ENUMERATION OF
 	(DYNAMIC
 	,RECIPROCATING
 	,ROTARY
@@ -901,9 +901,9 @@ TYPE IfcCompressorTypeEnum = ENUMERATION OF
 	,TWINSCREW
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCondenserTypeEnum = ENUMERATION OF
+--TYPE IfcCondenserTypeEnum = ENUMERATION OF
 	(AIRCOOLED
 	,EVAPORATIVECOOLED
 	,WATERCOOLED
@@ -913,24 +913,24 @@ TYPE IfcCondenserTypeEnum = ENUMERATION OF
 	,WATERCOOLEDTUBEINTUBE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcConnectionTypeEnum = ENUMERATION OF
+--TYPE IfcConnectionTypeEnum = ENUMERATION OF
 	(ATPATH
 	,ATSTART
 	,ATEND
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcConstraintEnum = ENUMERATION OF
+--TYPE IfcConstraintEnum = ENUMERATION OF
 	(HARD
 	,SOFT
 	,ADVISORY
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcConstructionEquipmentResourceTypeEnum = ENUMERATION OF
+--TYPE IfcConstructionEquipmentResourceTypeEnum = ENUMERATION OF
 	(DEMOLISHING
 	,EARTHMOVING
 	,ERECTING
@@ -941,9 +941,9 @@ TYPE IfcConstructionEquipmentResourceTypeEnum = ENUMERATION OF
 	,TRANSPORTING
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcConstructionMaterialResourceTypeEnum = ENUMERATION OF
+--TYPE IfcConstructionMaterialResourceTypeEnum = ENUMERATION OF
 	(AGGREGATES
 	,CONCRETE
 	,DRYWALL
@@ -955,16 +955,16 @@ TYPE IfcConstructionMaterialResourceTypeEnum = ENUMERATION OF
 	,WOOD
 	,NOTDEFINED
 	,USERDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcConstructionProductResourceTypeEnum = ENUMERATION OF
+--TYPE IfcConstructionProductResourceTypeEnum = ENUMERATION OF
 	(ASSEMBLY
 	,FORMWORK
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcControllerTypeEnum = ENUMERATION OF
+--TYPE IfcControllerTypeEnum = ENUMERATION OF
 	(FLOATING
 	,PROGRAMMABLE
 	,PROPORTIONAL
@@ -972,29 +972,29 @@ TYPE IfcControllerTypeEnum = ENUMERATION OF
 	,TWOPOSITION
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCooledBeamTypeEnum = ENUMERATION OF
+--TYPE IfcCooledBeamTypeEnum = ENUMERATION OF
 	(ACTIVE
 	,PASSIVE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCoolingTowerTypeEnum = ENUMERATION OF
+--TYPE IfcCoolingTowerTypeEnum = ENUMERATION OF
 	(NATURALDRAFT
 	,MECHANICALINDUCEDDRAFT
 	,MECHANICALFORCEDDRAFT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCostItemTypeEnum = ENUMERATION OF
+--TYPE IfcCostItemTypeEnum = ENUMERATION OF
 	(USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCostScheduleTypeEnum = ENUMERATION OF
+--TYPE IfcCostScheduleTypeEnum = ENUMERATION OF
 	(BUDGET
 	,COSTPLAN
 	,ESTIMATE
@@ -1004,9 +1004,9 @@ TYPE IfcCostScheduleTypeEnum = ENUMERATION OF
 	,SCHEDULEOFRATES
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCoveringTypeEnum = ENUMERATION OF
+--TYPE IfcCoveringTypeEnum = ENUMERATION OF
 	(CEILING
 	,FLOORING
 	,CLADDING
@@ -1020,28 +1020,28 @@ TYPE IfcCoveringTypeEnum = ENUMERATION OF
 	,COPING
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCrewResourceTypeEnum = ENUMERATION OF
+--TYPE IfcCrewResourceTypeEnum = ENUMERATION OF
 	(OFFICE
 	,SITE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCurtainWallTypeEnum = ENUMERATION OF
+--TYPE IfcCurtainWallTypeEnum = ENUMERATION OF
 	(USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCurveInterpolationEnum = ENUMERATION OF
+--TYPE IfcCurveInterpolationEnum = ENUMERATION OF
 	(LINEAR
 	,LOG_LINEAR
 	,LOG_LOG
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDamperTypeEnum = ENUMERATION OF
+--TYPE IfcDamperTypeEnum = ENUMERATION OF
 	(BACKDRAFTDAMPER
 	,BALANCINGDAMPER
 	,BLASTDAMPER
@@ -1055,17 +1055,17 @@ TYPE IfcDamperTypeEnum = ENUMERATION OF
 	,SMOKEDAMPER
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDataOriginEnum = ENUMERATION OF
+--TYPE IfcDataOriginEnum = ENUMERATION OF
 	(MEASURED
 	,PREDICTED
 	,SIMULATED
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDerivedUnitEnum = ENUMERATION OF
+--TYPE IfcDerivedUnitEnum = ENUMERATION OF
 	(ANGULARVELOCITYUNIT
 	,AREADENSITYUNIT
 	,COMPOUNDPLANEANGLEUNIT
@@ -1119,23 +1119,23 @@ TYPE IfcDerivedUnitEnum = ENUMERATION OF
 	,WARPINGCONSTANTUNIT
 	,WARPINGMOMENTUNIT
 	,USERDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDirectionSenseEnum = ENUMERATION OF
+--TYPE IfcDirectionSenseEnum = ENUMERATION OF
 	(POSITIVE
 	,NEGATIVE);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDiscreteAccessoryTypeEnum = ENUMERATION OF
+--TYPE IfcDiscreteAccessoryTypeEnum = ENUMERATION OF
 	(ANCHORPLATE
 	,BRACKET
 	,SHOE
 	,EXPANSION_JOINT_DEVICE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDistributionChamberElementTypeEnum = ENUMERATION OF
+--TYPE IfcDistributionChamberElementTypeEnum = ENUMERATION OF
 	(FORMEDDUCT
 	,INSPECTIONCHAMBER
 	,INSPECTIONPIT
@@ -1146,18 +1146,18 @@ TYPE IfcDistributionChamberElementTypeEnum = ENUMERATION OF
 	,VALVECHAMBER
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDistributionPortTypeEnum = ENUMERATION OF
+--TYPE IfcDistributionPortTypeEnum = ENUMERATION OF
 	(CABLE
 	,CABLECARRIER
 	,DUCT
 	,PIPE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDistributionSystemEnum = ENUMERATION OF
+--TYPE IfcDistributionSystemEnum = ENUMERATION OF
 	(AIRCONDITIONING
 	,AUDIOVISUAL
 	,CHEMICAL
@@ -1202,26 +1202,26 @@ TYPE IfcDistributionSystemEnum = ENUMERATION OF
 	,WATERSUPPLY
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDocumentConfidentialityEnum = ENUMERATION OF
+--TYPE IfcDocumentConfidentialityEnum = ENUMERATION OF
 	(PUBLIC
 	,RESTRICTED
 	,CONFIDENTIAL
 	,PERSONAL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDocumentStatusEnum = ENUMERATION OF
+--TYPE IfcDocumentStatusEnum = ENUMERATION OF
 	(DRAFT
 	,FINALDRAFT
 	,FINAL
 	,REVISION
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDoorPanelOperationEnum = ENUMERATION OF
+--TYPE IfcDoorPanelOperationEnum = ENUMERATION OF
 	(SWINGING
 	,DOUBLE_ACTING
 	,SLIDING
@@ -1231,16 +1231,16 @@ TYPE IfcDoorPanelOperationEnum = ENUMERATION OF
 	,FIXEDPANEL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDoorPanelPositionEnum = ENUMERATION OF
+--TYPE IfcDoorPanelPositionEnum = ENUMERATION OF
 	(LEFT
 	,MIDDLE
 	,RIGHT
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDoorStyleConstructionEnum = ENUMERATION OF
+--TYPE IfcDoorStyleConstructionEnum = ENUMERATION OF
 	(ALUMINIUM
 	,HIGH_GRADE_STEEL
 	,STEEL
@@ -1250,9 +1250,9 @@ TYPE IfcDoorStyleConstructionEnum = ENUMERATION OF
 	,PLASTIC
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDoorStyleOperationEnum = ENUMERATION OF
+--TYPE IfcDoorStyleOperationEnum = ENUMERATION OF
 	(SINGLE_SWING_LEFT
 	,SINGLE_SWING_RIGHT
 	,DOUBLE_DOOR_SINGLE_SWING
@@ -1271,17 +1271,17 @@ TYPE IfcDoorStyleOperationEnum = ENUMERATION OF
 	,ROLLINGUP
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDoorTypeEnum = ENUMERATION OF
+--TYPE IfcDoorTypeEnum = ENUMERATION OF
 	(DOOR
 	,GATE
 	,TRAPDOOR
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDoorTypeOperationEnum = ENUMERATION OF
+--TYPE IfcDoorTypeOperationEnum = ENUMERATION OF
 	(SINGLE_SWING_LEFT
 	,SINGLE_SWING_RIGHT
 	,DOUBLE_DOOR_SINGLE_SWING
@@ -1302,9 +1302,9 @@ TYPE IfcDoorTypeOperationEnum = ENUMERATION OF
 	,SWING_FIXED_RIGHT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDuctFittingTypeEnum = ENUMERATION OF
+--TYPE IfcDuctFittingTypeEnum = ENUMERATION OF
 	(BEND
 	,CONNECTOR
 	,ENTRY
@@ -1314,24 +1314,24 @@ TYPE IfcDuctFittingTypeEnum = ENUMERATION OF
 	,TRANSITION
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDuctSegmentTypeEnum = ENUMERATION OF
+--TYPE IfcDuctSegmentTypeEnum = ENUMERATION OF
 	(RIGIDSEGMENT
 	,FLEXIBLESEGMENT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDuctSilencerTypeEnum = ENUMERATION OF
+--TYPE IfcDuctSilencerTypeEnum = ENUMERATION OF
 	(FLATOVAL
 	,RECTANGULAR
 	,ROUND
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcElectricApplianceTypeEnum = ENUMERATION OF
+--TYPE IfcElectricApplianceTypeEnum = ENUMERATION OF
 	(DISHWASHER
 	,ELECTRICCOOKER
 	,FREESTANDINGELECTRICHEATER
@@ -1350,18 +1350,18 @@ TYPE IfcElectricApplianceTypeEnum = ENUMERATION OF
 	,WASHINGMACHINE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcElectricDistributionBoardTypeEnum = ENUMERATION OF
+--TYPE IfcElectricDistributionBoardTypeEnum = ENUMERATION OF
 	(CONSUMERUNIT
 	,DISTRIBUTIONBOARD
 	,MOTORCONTROLCENTRE
 	,SWITCHBOARD
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcElectricFlowStorageDeviceTypeEnum = ENUMERATION OF
+--TYPE IfcElectricFlowStorageDeviceTypeEnum = ENUMERATION OF
 	(BATTERY
 	,CAPACITORBANK
 	,HARMONICFILTER
@@ -1369,17 +1369,17 @@ TYPE IfcElectricFlowStorageDeviceTypeEnum = ENUMERATION OF
 	,UPS
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcElectricGeneratorTypeEnum = ENUMERATION OF
+--TYPE IfcElectricGeneratorTypeEnum = ENUMERATION OF
 	(CHP
 	,ENGINEGENERATOR
 	,STANDALONE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcElectricMotorTypeEnum = ENUMERATION OF
+--TYPE IfcElectricMotorTypeEnum = ENUMERATION OF
 	(DC
 	,INDUCTION
 	,POLYPHASE
@@ -1387,17 +1387,17 @@ TYPE IfcElectricMotorTypeEnum = ENUMERATION OF
 	,SYNCHRONOUS
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcElectricTimeControlTypeEnum = ENUMERATION OF
+--TYPE IfcElectricTimeControlTypeEnum = ENUMERATION OF
 	(TIMECLOCK
 	,TIMEDELAY
 	,RELAY
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcElementAssemblyTypeEnum = ENUMERATION OF
+--TYPE IfcElementAssemblyTypeEnum = ENUMERATION OF
 	(ACCESSORY_ASSEMBLY
 	,ARCH
 	,BEAM_GRID
@@ -1414,22 +1414,22 @@ TYPE IfcElementAssemblyTypeEnum = ENUMERATION OF
 	,DECK
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcElementCompositionEnum = ENUMERATION OF
+--TYPE IfcElementCompositionEnum = ENUMERATION OF
 	(COMPLEX
 	,ELEMENT
 	,PARTIAL);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcEngineTypeEnum = ENUMERATION OF
+--TYPE IfcEngineTypeEnum = ENUMERATION OF
 	(EXTERNALCOMBUSTION
 	,INTERNALCOMBUSTION
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcEvaporativeCoolerTypeEnum = ENUMERATION OF
+--TYPE IfcEvaporativeCoolerTypeEnum = ENUMERATION OF
 	(DIRECTEVAPORATIVERANDOMMEDIAAIRCOOLER
 	,DIRECTEVAPORATIVERIGIDMEDIAAIRCOOLER
 	,DIRECTEVAPORATIVESLINGERSPACKAGEDAIRCOOLER
@@ -1441,9 +1441,9 @@ TYPE IfcEvaporativeCoolerTypeEnum = ENUMERATION OF
 	,INDIRECTDIRECTCOMBINATION
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcEvaporatorTypeEnum = ENUMERATION OF
+--TYPE IfcEvaporatorTypeEnum = ENUMERATION OF
 	(DIRECTEXPANSION
 	,DIRECTEXPANSIONSHELLANDTUBE
 	,DIRECTEXPANSIONTUBEINTUBE
@@ -1452,35 +1452,35 @@ TYPE IfcEvaporatorTypeEnum = ENUMERATION OF
 	,SHELLANDCOIL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcEventTriggerTypeEnum = ENUMERATION OF
+--TYPE IfcEventTriggerTypeEnum = ENUMERATION OF
 	(EVENTRULE
 	,EVENTMESSAGE
 	,EVENTTIME
 	,EVENTCOMPLEX
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcEventTypeEnum = ENUMERATION OF
+--TYPE IfcEventTypeEnum = ENUMERATION OF
 	(STARTEVENT
 	,ENDEVENT
 	,INTERMEDIATEEVENT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcExternalSpatialElementTypeEnum = ENUMERATION OF
+--TYPE IfcExternalSpatialElementTypeEnum = ENUMERATION OF
 	(EXTERNAL
 	,EXTERNAL_EARTH
 	,EXTERNAL_WATER
 	,EXTERNAL_FIRE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcFanTypeEnum = ENUMERATION OF
+--TYPE IfcFanTypeEnum = ENUMERATION OF
 	(CENTRIFUGALFORWARDCURVED
 	,CENTRIFUGALRADIAL
 	,CENTRIFUGALBACKWARDINCLINEDCURVED
@@ -1490,17 +1490,17 @@ TYPE IfcFanTypeEnum = ENUMERATION OF
 	,PROPELLORAXIAL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcFastenerTypeEnum = ENUMERATION OF
+--TYPE IfcFastenerTypeEnum = ENUMERATION OF
 	(GLUE
 	,MORTAR
 	,WELD
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcFilterTypeEnum = ENUMERATION OF
+--TYPE IfcFilterTypeEnum = ENUMERATION OF
 	(AIRPARTICLEFILTER
 	,COMPRESSEDAIRFILTER
 	,ODORFILTER
@@ -1509,9 +1509,9 @@ TYPE IfcFilterTypeEnum = ENUMERATION OF
 	,WATERFILTER
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcFireSuppressionTerminalTypeEnum = ENUMERATION OF
+--TYPE IfcFireSuppressionTerminalTypeEnum = ENUMERATION OF
 	(BREECHINGINLET
 	,FIREHYDRANT
 	,HOSEREEL
@@ -1519,16 +1519,16 @@ TYPE IfcFireSuppressionTerminalTypeEnum = ENUMERATION OF
 	,SPRINKLERDEFLECTOR
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcFlowDirectionEnum = ENUMERATION OF
+--TYPE IfcFlowDirectionEnum = ENUMERATION OF
 	(SOURCE
 	,SINK
 	,SOURCEANDSINK
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcFlowInstrumentTypeEnum = ENUMERATION OF
+--TYPE IfcFlowInstrumentTypeEnum = ENUMERATION OF
 	(PRESSUREGAUGE
 	,THERMOMETER
 	,AMMETER
@@ -1539,18 +1539,18 @@ TYPE IfcFlowInstrumentTypeEnum = ENUMERATION OF
 	,VOLTMETER_RMS
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcFlowMeterTypeEnum = ENUMERATION OF
+--TYPE IfcFlowMeterTypeEnum = ENUMERATION OF
 	(ENERGYMETER
 	,GASMETER
 	,OILMETER
 	,WATERMETER
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcFootingTypeEnum = ENUMERATION OF
+--TYPE IfcFootingTypeEnum = ENUMERATION OF
 	(CAISSON_FOUNDATION
 	,FOOTING_BEAM
 	,PAD_FOOTING
@@ -1558,9 +1558,9 @@ TYPE IfcFootingTypeEnum = ENUMERATION OF
 	,STRIP_FOOTING
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcFurnitureTypeEnum = ENUMERATION OF
+--TYPE IfcFurnitureTypeEnum = ENUMERATION OF
 	(CHAIR
 	,TABLE
 	,DESK
@@ -1570,16 +1570,16 @@ TYPE IfcFurnitureTypeEnum = ENUMERATION OF
 	,SOFA
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcGeographicElementTypeEnum = ENUMERATION OF
+--TYPE IfcGeographicElementTypeEnum = ENUMERATION OF
 	(TERRAIN
 	,SOIL_BORING_POINT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcGeometricProjectionEnum = ENUMERATION OF
+--TYPE IfcGeometricProjectionEnum = ENUMERATION OF
 	(GRAPH_VIEW
 	,SKETCH_VIEW
 	,MODEL_VIEW
@@ -1589,30 +1589,30 @@ TYPE IfcGeometricProjectionEnum = ENUMERATION OF
 	,ELEVATION_VIEW
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcGlobalOrLocalEnum = ENUMERATION OF
+--TYPE IfcGlobalOrLocalEnum = ENUMERATION OF
 	(GLOBAL_COORDS
 	,LOCAL_COORDS);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcGridTypeEnum = ENUMERATION OF
+--TYPE IfcGridTypeEnum = ENUMERATION OF
 	(RECTANGULAR
 	,RADIAL
 	,TRIANGULAR
 	,IRREGULAR
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcHeatExchangerTypeEnum = ENUMERATION OF
+--TYPE IfcHeatExchangerTypeEnum = ENUMERATION OF
 	(PLATE
 	,SHELLANDTUBE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcHumidifierTypeEnum = ENUMERATION OF
+--TYPE IfcHumidifierTypeEnum = ENUMERATION OF
 	(STEAMINJECTION
 	,ADIABATICAIRWASHER
 	,ADIABATICPAN
@@ -1628,49 +1628,49 @@ TYPE IfcHumidifierTypeEnum = ENUMERATION OF
 	,ASSISTEDSTEAM
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcInterceptorTypeEnum = ENUMERATION OF
+--TYPE IfcInterceptorTypeEnum = ENUMERATION OF
 	(CYCLONIC
 	,GREASE
 	,OIL
 	,PETROL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcInternalOrExternalEnum = ENUMERATION OF
+--TYPE IfcInternalOrExternalEnum = ENUMERATION OF
 	(INTERNAL
 	,EXTERNAL
 	,EXTERNAL_EARTH
 	,EXTERNAL_WATER
 	,EXTERNAL_FIRE
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcInventoryTypeEnum = ENUMERATION OF
+--TYPE IfcInventoryTypeEnum = ENUMERATION OF
 	(ASSETINVENTORY
 	,SPACEINVENTORY
 	,FURNITUREINVENTORY
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcJunctionBoxTypeEnum = ENUMERATION OF
+--TYPE IfcJunctionBoxTypeEnum = ENUMERATION OF
 	(DATA
 	,POWER
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcKnotType = ENUMERATION OF
+--TYPE IfcKnotType = ENUMERATION OF
 	(UNIFORM_KNOTS
 	,QUASI_UNIFORM_KNOTS
 	,PIECEWISE_BEZIER_KNOTS
 	,UNSPECIFIED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcLaborResourceTypeEnum = ENUMERATION OF
+--TYPE IfcLaborResourceTypeEnum = ENUMERATION OF
 	(ADMINISTRATION
 	,CARPENTRY
 	,CLEANING
@@ -1692,9 +1692,9 @@ TYPE IfcLaborResourceTypeEnum = ENUMERATION OF
 	,SURVEYING
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcLampTypeEnum = ENUMERATION OF
+--TYPE IfcLampTypeEnum = ENUMERATION OF
 	(COMPACTFLUORESCENT
 	,FLUORESCENT
 	,HALOGEN
@@ -1706,22 +1706,22 @@ TYPE IfcLampTypeEnum = ENUMERATION OF
 	,TUNGSTENFILAMENT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcLayerSetDirectionEnum = ENUMERATION OF
+--TYPE IfcLayerSetDirectionEnum = ENUMERATION OF
 	(AXIS1
 	,AXIS2
 	,AXIS3);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcLightDistributionCurveEnum = ENUMERATION OF
+--TYPE IfcLightDistributionCurveEnum = ENUMERATION OF
 	(TYPE_A
 	,TYPE_B
 	,TYPE_C
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcLightEmissionSourceEnum = ENUMERATION OF
+--TYPE IfcLightEmissionSourceEnum = ENUMERATION OF
 	(COMPACTFLUORESCENT
 	,FLUORESCENT
 	,HIGHPRESSUREMERCURY
@@ -1733,33 +1733,33 @@ TYPE IfcLightEmissionSourceEnum = ENUMERATION OF
 	,METALHALIDE
 	,TUNGSTENFILAMENT
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcLightFixtureTypeEnum = ENUMERATION OF
+--TYPE IfcLightFixtureTypeEnum = ENUMERATION OF
 	(POINTSOURCE
 	,DIRECTIONSOURCE
 	,SECURITYLIGHTING
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcLoadGroupTypeEnum = ENUMERATION OF
+--TYPE IfcLoadGroupTypeEnum = ENUMERATION OF
 	(LOAD_GROUP
 	,LOAD_CASE
 	,LOAD_COMBINATION
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcLogicalOperatorEnum = ENUMERATION OF
+--TYPE IfcLogicalOperatorEnum = ENUMERATION OF
 	(LOGICALAND
 	,LOGICALOR
 	,LOGICALXOR
 	,LOGICALNOTAND
 	,LOGICALNOTOR);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcMechanicalFastenerTypeEnum = ENUMERATION OF
+--TYPE IfcMechanicalFastenerTypeEnum = ENUMERATION OF
 	(ANCHORBOLT
 	,BOLT
 	,DOWEL
@@ -1773,9 +1773,9 @@ TYPE IfcMechanicalFastenerTypeEnum = ENUMERATION OF
 	,COUPLER
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcMedicalDeviceTypeEnum = ENUMERATION OF
+--TYPE IfcMedicalDeviceTypeEnum = ENUMERATION OF
 	(AIRSTATION
 	,FEEDAIRUNIT
 	,OXYGENGENERATOR
@@ -1783,9 +1783,9 @@ TYPE IfcMedicalDeviceTypeEnum = ENUMERATION OF
 	,VACUUMSTATION
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcMemberTypeEnum = ENUMERATION OF
+--TYPE IfcMemberTypeEnum = ENUMERATION OF
 	(BRACE
 	,CHORD
 	,COLLAR
@@ -1805,21 +1805,21 @@ TYPE IfcMemberTypeEnum = ENUMERATION OF
 	,STAY_CABLE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcMotorConnectionTypeEnum = ENUMERATION OF
+--TYPE IfcMotorConnectionTypeEnum = ENUMERATION OF
 	(BELTDRIVE
 	,COUPLING
 	,DIRECTDRIVE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcNullStyle = ENUMERATION OF
+--TYPE IfcNullStyle = ENUMERATION OF
 	(NULL);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcObjectTypeEnum = ENUMERATION OF
+--TYPE IfcObjectTypeEnum = ENUMERATION OF
 	(PRODUCT
 	,PROCESS
 	,CONTROL
@@ -1828,9 +1828,9 @@ TYPE IfcObjectTypeEnum = ENUMERATION OF
 	,GROUP
 	,PROJECT
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcObjectiveEnum = ENUMERATION OF
+--TYPE IfcObjectiveEnum = ENUMERATION OF
 	(CODECOMPLIANCE
 	,CODEWAIVER
 	,DESIGNINTENT
@@ -1844,9 +1844,9 @@ TYPE IfcObjectiveEnum = ENUMERATION OF
 	,TRIGGERCONDITION
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcOccupantTypeEnum = ENUMERATION OF
+--TYPE IfcOccupantTypeEnum = ENUMERATION OF
 	(ASSIGNEE
 	,ASSIGNOR
 	,LESSEE
@@ -1856,16 +1856,16 @@ TYPE IfcOccupantTypeEnum = ENUMERATION OF
 	,TENANT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcOpeningElementTypeEnum = ENUMERATION OF
+--TYPE IfcOpeningElementTypeEnum = ENUMERATION OF
 	(OPENING
 	,RECESS
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcOutletTypeEnum = ENUMERATION OF
+--TYPE IfcOutletTypeEnum = ENUMERATION OF
 	(AUDIOVISUALOUTLET
 	,COMMUNICATIONSOUTLET
 	,POWEROUTLET
@@ -1873,45 +1873,45 @@ TYPE IfcOutletTypeEnum = ENUMERATION OF
 	,TELEPHONEOUTLET
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPerformanceHistoryTypeEnum = ENUMERATION OF
+--TYPE IfcPerformanceHistoryTypeEnum = ENUMERATION OF
 	(USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPermeableCoveringOperationEnum = ENUMERATION OF
+--TYPE IfcPermeableCoveringOperationEnum = ENUMERATION OF
 	(GRILL
 	,LOUVER
 	,SCREEN
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPermitTypeEnum = ENUMERATION OF
+--TYPE IfcPermitTypeEnum = ENUMERATION OF
 	(ACCESS
 	,BUILDING
 	,WORK
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPhysicalOrVirtualEnum = ENUMERATION OF
+--TYPE IfcPhysicalOrVirtualEnum = ENUMERATION OF
 	(PHYSICAL
 	,VIRTUAL
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPileConstructionEnum = ENUMERATION OF
+--TYPE IfcPileConstructionEnum = ENUMERATION OF
 	(CAST_IN_PLACE
 	,COMPOSITE
 	,PRECAST_CONCRETE
 	,PREFAB_STEEL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPileTypeEnum = ENUMERATION OF
+--TYPE IfcPileTypeEnum = ENUMERATION OF
 	(BORED
 	,DRIVEN
 	,JETGROUTING
@@ -1920,9 +1920,9 @@ TYPE IfcPileTypeEnum = ENUMERATION OF
 	,SUPPORT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPipeFittingTypeEnum = ENUMERATION OF
+--TYPE IfcPipeFittingTypeEnum = ENUMERATION OF
 	(BEND
 	,CONNECTOR
 	,ENTRY
@@ -1932,9 +1932,9 @@ TYPE IfcPipeFittingTypeEnum = ENUMERATION OF
 	,TRANSITION
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPipeSegmentTypeEnum = ENUMERATION OF
+--TYPE IfcPipeSegmentTypeEnum = ENUMERATION OF
 	(CULVERT
 	,FLEXIBLESEGMENT
 	,RIGIDSEGMENT
@@ -1942,9 +1942,9 @@ TYPE IfcPipeSegmentTypeEnum = ENUMERATION OF
 	,SPOOL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPlateTypeEnum = ENUMERATION OF
+--TYPE IfcPlateTypeEnum = ENUMERATION OF
 	(CURTAIN_PANEL
 	,SHEET
 	,FLANGE_PLATE
@@ -1956,15 +1956,15 @@ TYPE IfcPlateTypeEnum = ENUMERATION OF
 	,BASE_PLATE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPreferredSurfaceCurveRepresentation = ENUMERATION OF
+--TYPE IfcPreferredSurfaceCurveRepresentation = ENUMERATION OF
 	(CURVE3D
 	,PCURVE_S1
 	,PCURVE_S2);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcProcedureTypeEnum = ENUMERATION OF
+--TYPE IfcProcedureTypeEnum = ENUMERATION OF
 	(ADVICE_CAUTION
 	,ADVICE_NOTE
 	,ADVICE_WARNING
@@ -1974,14 +1974,14 @@ TYPE IfcProcedureTypeEnum = ENUMERATION OF
 	,STARTUP
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcProfileTypeEnum = ENUMERATION OF
+--TYPE IfcProfileTypeEnum = ENUMERATION OF
 	(CURVE
 	,AREA);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcProjectOrderTypeEnum = ENUMERATION OF
+--TYPE IfcProjectOrderTypeEnum = ENUMERATION OF
 	(CHANGEORDER
 	,MAINTENANCEWORKORDER
 	,MOVEORDER
@@ -1989,21 +1989,21 @@ TYPE IfcProjectOrderTypeEnum = ENUMERATION OF
 	,WORKORDER
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcProjectedOrTrueLengthEnum = ENUMERATION OF
+--TYPE IfcProjectedOrTrueLengthEnum = ENUMERATION OF
 	(PROJECTED_LENGTH
 	,TRUE_LENGTH);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcProjectionElementTypeEnum = ENUMERATION OF
+--TYPE IfcProjectionElementTypeEnum = ENUMERATION OF
 	(BLISTER
 	,DEVIATOR
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPropertySetTemplateTypeEnum = ENUMERATION OF
+--TYPE IfcPropertySetTemplateTypeEnum = ENUMERATION OF
 	(PSET_TYPEDRIVENONLY
 	,PSET_TYPEDRIVENOVERRIDE
 	,PSET_OCCURRENCEDRIVEN
@@ -2012,18 +2012,18 @@ TYPE IfcPropertySetTemplateTypeEnum = ENUMERATION OF
 	,QTO_TYPEDRIVENOVERRIDE
 	,QTO_OCCURRENCEDRIVEN
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcProtectiveDeviceTrippingUnitTypeEnum = ENUMERATION OF
+--TYPE IfcProtectiveDeviceTrippingUnitTypeEnum = ENUMERATION OF
 	(ELECTRONIC
 	,ELECTROMAGNETIC
 	,RESIDUALCURRENT
 	,THERMAL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcProtectiveDeviceTypeEnum = ENUMERATION OF
+--TYPE IfcProtectiveDeviceTypeEnum = ENUMERATION OF
 	(CIRCUITBREAKER
 	,EARTHLEAKAGECIRCUITBREAKER
 	,EARTHINGSWITCH
@@ -2033,9 +2033,9 @@ TYPE IfcProtectiveDeviceTypeEnum = ENUMERATION OF
 	,VARISTOR
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPumpTypeEnum = ENUMERATION OF
+--TYPE IfcPumpTypeEnum = ENUMERATION OF
 	(CIRCULATOR
 	,ENDSUCTION
 	,SPLITCASE
@@ -2045,24 +2045,24 @@ TYPE IfcPumpTypeEnum = ENUMERATION OF
 	,VERTICALTURBINE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcRailingTypeEnum = ENUMERATION OF
+--TYPE IfcRailingTypeEnum = ENUMERATION OF
 	(HANDRAIL
 	,GUARDRAIL
 	,BALUSTRADE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcRampFlightTypeEnum = ENUMERATION OF
+--TYPE IfcRampFlightTypeEnum = ENUMERATION OF
 	(STRAIGHT
 	,SPIRAL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcRampTypeEnum = ENUMERATION OF
+--TYPE IfcRampTypeEnum = ENUMERATION OF
 	(STRAIGHT_RUN_RAMP
 	,TWO_STRAIGHT_RUN_RAMP
 	,QUARTER_TURN_RAMP
@@ -2071,9 +2071,9 @@ TYPE IfcRampTypeEnum = ENUMERATION OF
 	,SPIRAL_RAMP
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcRecurrenceTypeEnum = ENUMERATION OF
+--TYPE IfcRecurrenceTypeEnum = ENUMERATION OF
 	(DAILY
 	,WEEKLY
 	,MONTHLY_BY_DAY_OF_MONTH
@@ -2082,17 +2082,17 @@ TYPE IfcRecurrenceTypeEnum = ENUMERATION OF
 	,BY_WEEKDAY_COUNT
 	,YEARLY_BY_DAY_OF_MONTH
 	,YEARLY_BY_POSITION);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcReferentTypeEnum = ENUMERATION OF
+--TYPE IfcReferentTypeEnum = ENUMERATION OF
 	(KILOPOINT
 	,MILEPOINT
 	,STATION
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcReflectanceMethodEnum = ENUMERATION OF
+--TYPE IfcReflectanceMethodEnum = ENUMERATION OF
 	(BLINN
 	,FLAT
 	,GLASS
@@ -2103,9 +2103,9 @@ TYPE IfcReflectanceMethodEnum = ENUMERATION OF
 	,PLASTIC
 	,STRAUSS
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcReinforcingBarRoleEnum = ENUMERATION OF
+--TYPE IfcReinforcingBarRoleEnum = ENUMERATION OF
 	(MAIN
 	,SHEAR
 	,LIGATURE
@@ -2116,14 +2116,14 @@ TYPE IfcReinforcingBarRoleEnum = ENUMERATION OF
 	,ANCHORING
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcReinforcingBarSurfaceEnum = ENUMERATION OF
+--TYPE IfcReinforcingBarSurfaceEnum = ENUMERATION OF
 	(PLAIN
 	,TEXTURED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcReinforcingBarTypeEnum = ENUMERATION OF
+--TYPE IfcReinforcingBarTypeEnum = ENUMERATION OF
 	(ANCHORING
 	,EDGE
 	,LIGATURE
@@ -2135,14 +2135,14 @@ TYPE IfcReinforcingBarTypeEnum = ENUMERATION OF
 	,SPACEBAR
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcReinforcingMeshTypeEnum = ENUMERATION OF
+--TYPE IfcReinforcingMeshTypeEnum = ENUMERATION OF
 	(USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcRoleEnum = ENUMERATION OF
+--TYPE IfcRoleEnum = ENUMERATION OF
 	(SUPPLIER
 	,MANUFACTURER
 	,CONTRACTOR
@@ -2166,9 +2166,9 @@ TYPE IfcRoleEnum = ENUMERATION OF
 	,FIELDCONSTRUCTIONMANAGER
 	,RESELLER
 	,USERDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcRoofTypeEnum = ENUMERATION OF
+--TYPE IfcRoofTypeEnum = ENUMERATION OF
 	(FLAT_ROOF
 	,SHED_ROOF
 	,GABLE_ROOF
@@ -2184,9 +2184,9 @@ TYPE IfcRoofTypeEnum = ENUMERATION OF
 	,FREEFORM
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSIPrefix = ENUMERATION OF
+--TYPE IfcSIPrefix = ENUMERATION OF
 	(EXA
 	,PETA
 	,TERA
@@ -2203,9 +2203,9 @@ TYPE IfcSIPrefix = ENUMERATION OF
 	,PICO
 	,FEMTO
 	,ATTO);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSIUnitName = ENUMERATION OF
+--TYPE IfcSIUnitName = ENUMERATION OF
 	(AMPERE
 	,BECQUEREL
 	,CANDELA
@@ -2236,9 +2236,9 @@ TYPE IfcSIUnitName = ENUMERATION OF
 	,VOLT
 	,WATT
 	,WEBER);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSanitaryTerminalTypeEnum = ENUMERATION OF
+--TYPE IfcSanitaryTerminalTypeEnum = ENUMERATION OF
 	(BATH
 	,BIDET
 	,CISTERN
@@ -2251,14 +2251,14 @@ TYPE IfcSanitaryTerminalTypeEnum = ENUMERATION OF
 	,WCSEAT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSectionTypeEnum = ENUMERATION OF
+--TYPE IfcSectionTypeEnum = ENUMERATION OF
 	(UNIFORM
 	,TAPERED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSensorTypeEnum = ENUMERATION OF
+--TYPE IfcSensorTypeEnum = ENUMERATION OF
 	(COSENSOR
 	,CO2SENSOR
 	,CONDUCTANCESENSOR
@@ -2285,26 +2285,26 @@ TYPE IfcSensorTypeEnum = ENUMERATION OF
 	,WINDSENSOR
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSequenceEnum = ENUMERATION OF
+--TYPE IfcSequenceEnum = ENUMERATION OF
 	(START_START
 	,START_FINISH
 	,FINISH_START
 	,FINISH_FINISH
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcShadingDeviceTypeEnum = ENUMERATION OF
+--TYPE IfcShadingDeviceTypeEnum = ENUMERATION OF
 	(JALOUSIE
 	,SHUTTER
 	,AWNING
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSimplePropertyTemplateTypeEnum = ENUMERATION OF
+--TYPE IfcSimplePropertyTemplateTypeEnum = ENUMERATION OF
 	(P_SINGLEVALUE
 	,P_ENUMERATEDVALUE
 	,P_BOUNDEDVALUE
@@ -2317,9 +2317,9 @@ TYPE IfcSimplePropertyTemplateTypeEnum = ENUMERATION OF
 	,Q_COUNT
 	,Q_WEIGHT
 	,Q_TIME);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSlabTypeEnum = ENUMERATION OF
+--TYPE IfcSlabTypeEnum = ENUMERATION OF
 	(FLOOR
 	,ROOF
 	,LANDING
@@ -2330,23 +2330,23 @@ TYPE IfcSlabTypeEnum = ENUMERATION OF
 	,SIDEWALK
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSolarDeviceTypeEnum = ENUMERATION OF
+--TYPE IfcSolarDeviceTypeEnum = ENUMERATION OF
 	(SOLARCOLLECTOR
 	,SOLARPANEL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSpaceHeaterTypeEnum = ENUMERATION OF
+--TYPE IfcSpaceHeaterTypeEnum = ENUMERATION OF
 	(CONVECTOR
 	,RADIATOR
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSpaceTypeEnum = ENUMERATION OF
+--TYPE IfcSpaceTypeEnum = ENUMERATION OF
 	(SPACE
 	,PARKING
 	,GFA
@@ -2354,9 +2354,9 @@ TYPE IfcSpaceTypeEnum = ENUMERATION OF
 	,EXTERNAL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSpatialZoneTypeEnum = ENUMERATION OF
+--TYPE IfcSpatialZoneTypeEnum = ENUMERATION OF
 	(CONSTRUCTION
 	,FIRESAFETY
 	,LIGHTING
@@ -2367,17 +2367,17 @@ TYPE IfcSpatialZoneTypeEnum = ENUMERATION OF
 	,VENTILATION
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcStackTerminalTypeEnum = ENUMERATION OF
+--TYPE IfcStackTerminalTypeEnum = ENUMERATION OF
 	(BIRDCAGE
 	,COWL
 	,RAINWATERHOPPER
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcStairFlightTypeEnum = ENUMERATION OF
+--TYPE IfcStairFlightTypeEnum = ENUMERATION OF
 	(STRAIGHT
 	,WINDER
 	,SPIRAL
@@ -2385,9 +2385,9 @@ TYPE IfcStairFlightTypeEnum = ENUMERATION OF
 	,FREEFORM
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcStairTypeEnum = ENUMERATION OF
+--TYPE IfcStairTypeEnum = ENUMERATION OF
 	(STRAIGHT_RUN_STAIR
 	,TWO_STRAIGHT_RUN_STAIR
 	,QUARTER_WINDING_STAIR
@@ -2404,17 +2404,17 @@ TYPE IfcStairTypeEnum = ENUMERATION OF
 	,TWO_CURVED_RUN_STAIR
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcStateEnum = ENUMERATION OF
+--TYPE IfcStateEnum = ENUMERATION OF
 	(READWRITE
 	,READONLY
 	,LOCKED
 	,READWRITELOCKED
 	,READONLYLOCKED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcStructuralCurveActivityTypeEnum = ENUMERATION OF
+--TYPE IfcStructuralCurveActivityTypeEnum = ENUMERATION OF
 	(CONST
 	,LINEAR
 	,POLYGONAL
@@ -2424,9 +2424,9 @@ TYPE IfcStructuralCurveActivityTypeEnum = ENUMERATION OF
 	,DISCRETE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcStructuralCurveMemberTypeEnum = ENUMERATION OF
+--TYPE IfcStructuralCurveMemberTypeEnum = ENUMERATION OF
 	(RIGID_JOINED_MEMBER
 	,PIN_JOINED_MEMBER
 	,CABLE
@@ -2434,48 +2434,48 @@ TYPE IfcStructuralCurveMemberTypeEnum = ENUMERATION OF
 	,COMPRESSION_MEMBER
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcStructuralSurfaceActivityTypeEnum = ENUMERATION OF
+--TYPE IfcStructuralSurfaceActivityTypeEnum = ENUMERATION OF
 	(CONST
 	,BILINEAR
 	,DISCRETE
 	,ISOCONTOUR
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcStructuralSurfaceMemberTypeEnum = ENUMERATION OF
+--TYPE IfcStructuralSurfaceMemberTypeEnum = ENUMERATION OF
 	(BENDING_ELEMENT
 	,MEMBRANE_ELEMENT
 	,SHELL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSubContractResourceTypeEnum = ENUMERATION OF
+--TYPE IfcSubContractResourceTypeEnum = ENUMERATION OF
 	(PURCHASE
 	,WORK
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSurfaceFeatureTypeEnum = ENUMERATION OF
+--TYPE IfcSurfaceFeatureTypeEnum = ENUMERATION OF
 	(MARK
 	,TAG
 	,TREATMENT
 	,DEFECT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSurfaceSide = ENUMERATION OF
+--TYPE IfcSurfaceSide = ENUMERATION OF
 	(POSITIVE
 	,NEGATIVE
 	,BOTH);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSwitchingDeviceTypeEnum = ENUMERATION OF
+--TYPE IfcSwitchingDeviceTypeEnum = ENUMERATION OF
 	(CONTACTOR
 	,DIMMERSWITCH
 	,EMERGENCYSTOP
@@ -2487,16 +2487,16 @@ TYPE IfcSwitchingDeviceTypeEnum = ENUMERATION OF
 	,TOGGLESWITCH
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSystemFurnitureElementTypeEnum = ENUMERATION OF
+--TYPE IfcSystemFurnitureElementTypeEnum = ENUMERATION OF
 	(PANEL
 	,WORKSURFACE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTankTypeEnum = ENUMERATION OF
+--TYPE IfcTankTypeEnum = ENUMERATION OF
 	(BASIN
 	,BREAKPRESSURE
 	,EXPANSION
@@ -2506,15 +2506,15 @@ TYPE IfcTankTypeEnum = ENUMERATION OF
 	,VESSEL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTaskDurationEnum = ENUMERATION OF
+--TYPE IfcTaskDurationEnum = ENUMERATION OF
 	(ELAPSEDTIME
 	,WORKTIME
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTaskTypeEnum = ENUMERATION OF
+--TYPE IfcTaskTypeEnum = ENUMERATION OF
 	(ATTENDANCE
 	,CONSTRUCTION
 	,DEMOLITION
@@ -2529,17 +2529,17 @@ TYPE IfcTaskTypeEnum = ENUMERATION OF
 	,RENOVATION
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTendonAnchorTypeEnum = ENUMERATION OF
+--TYPE IfcTendonAnchorTypeEnum = ENUMERATION OF
 	(COUPLER
 	,FIXED_END
 	,TENSIONING_END
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTendonConduitTypeEnum = ENUMERATION OF
+--TYPE IfcTendonConduitTypeEnum = ENUMERATION OF
 	(DUCT
 	,COUPLER
 	,GROUTING_DUCT
@@ -2547,25 +2547,25 @@ TYPE IfcTendonConduitTypeEnum = ENUMERATION OF
 	,DIABOLO
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTendonTypeEnum = ENUMERATION OF
+--TYPE IfcTendonTypeEnum = ENUMERATION OF
 	(BAR
 	,COATED
 	,STRAND
 	,WIRE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTextPath = ENUMERATION OF
+--TYPE IfcTextPath = ENUMERATION OF
 	(LEFT
 	,RIGHT
 	,UP
 	,DOWN);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTimeSeriesDataTypeEnum = ENUMERATION OF
+--TYPE IfcTimeSeriesDataTypeEnum = ENUMERATION OF
 	(CONTINUOUS
 	,DISCRETE
 	,DISCRETEBINARY
@@ -2573,9 +2573,9 @@ TYPE IfcTimeSeriesDataTypeEnum = ENUMERATION OF
 	,PIECEWISECONSTANT
 	,PIECEWISECONTINUOUS
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTransformerTypeEnum = ENUMERATION OF
+--TYPE IfcTransformerTypeEnum = ENUMERATION OF
 	(CURRENT
 	,FREQUENCY
 	,INVERTER
@@ -2583,25 +2583,25 @@ TYPE IfcTransformerTypeEnum = ENUMERATION OF
 	,VOLTAGE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTransitionCode = ENUMERATION OF
+--TYPE IfcTransitionCode = ENUMERATION OF
 	(DISCONTINUOUS
 	,CONTINUOUS
 	,CONTSAMEGRADIENT
 	,CONTSAMEGRADIENTSAMECURVATURE);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTransitionCurveType = ENUMERATION OF
+--TYPE IfcTransitionCurveType = ENUMERATION OF
 	(BIQUADRATICPARABOLA
 	,BLOSSCURVE
 	,CLOTHOIDCURVE
 	,COSINECURVE
 	,CUBICPARABOLA
 	,SINECURVE);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTransportElementTypeEnum = ENUMERATION OF
+--TYPE IfcTransportElementTypeEnum = ENUMERATION OF
 	(ELEVATOR
 	,ESCALATOR
 	,MOVINGWALKWAY
@@ -2609,21 +2609,21 @@ TYPE IfcTransportElementTypeEnum = ENUMERATION OF
 	,LIFTINGGEAR
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTrimmingPreference = ENUMERATION OF
+--TYPE IfcTrimmingPreference = ENUMERATION OF
 	(CARTESIAN
 	,PARAMETER
 	,UNSPECIFIED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTubeBundleTypeEnum = ENUMERATION OF
+--TYPE IfcTubeBundleTypeEnum = ENUMERATION OF
 	(FINNED
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcUnitEnum = ENUMERATION OF
+--TYPE IfcUnitEnum = ENUMERATION OF
 	(ABSORBEDDOSEUNIT
 	,AMOUNTOFSUBSTANCEUNIT
 	,AREAUNIT
@@ -2654,9 +2654,9 @@ TYPE IfcUnitEnum = ENUMERATION OF
 	,TIMEUNIT
 	,VOLUMEUNIT
 	,USERDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcUnitaryControlElementTypeEnum = ENUMERATION OF
+--TYPE IfcUnitaryControlElementTypeEnum = ENUMERATION OF
 	(ALARMPANEL
 	,CONTROLPANEL
 	,GASDETECTIONPANEL
@@ -2667,9 +2667,9 @@ TYPE IfcUnitaryControlElementTypeEnum = ENUMERATION OF
 	,WEATHERSTATION
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcUnitaryEquipmentTypeEnum = ENUMERATION OF
+--TYPE IfcUnitaryEquipmentTypeEnum = ENUMERATION OF
 	(AIRHANDLER
 	,AIRCONDITIONINGUNIT
 	,DEHUMIDIFIER
@@ -2677,9 +2677,9 @@ TYPE IfcUnitaryEquipmentTypeEnum = ENUMERATION OF
 	,ROOFTOPUNIT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcValveTypeEnum = ENUMERATION OF
+--TYPE IfcValveTypeEnum = ENUMERATION OF
 	(AIRRELEASE
 	,ANTIVACUUM
 	,CHANGEOVER
@@ -2703,9 +2703,9 @@ TYPE IfcValveTypeEnum = ENUMERATION OF
 	,STOPCOCK
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcVibrationDamperTypeEnum = ENUMERATION OF
+--TYPE IfcVibrationDamperTypeEnum = ENUMERATION OF
 	(BENDING_YIELD
 	,SHEAR_YIELD
 	,AXIAL_YIELD
@@ -2714,17 +2714,17 @@ TYPE IfcVibrationDamperTypeEnum = ENUMERATION OF
 	,RUBBER
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcVibrationIsolatorTypeEnum = ENUMERATION OF
+--TYPE IfcVibrationIsolatorTypeEnum = ENUMERATION OF
 	(COMPRESSION
 	,SPRING
 	,BASE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcVoidingFeatureTypeEnum = ENUMERATION OF
+--TYPE IfcVoidingFeatureTypeEnum = ENUMERATION OF
 	(CUTOUT
 	,NOTCH
 	,HOLE
@@ -2733,9 +2733,9 @@ TYPE IfcVoidingFeatureTypeEnum = ENUMERATION OF
 	,EDGE
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcWallTypeEnum = ENUMERATION OF
+--TYPE IfcWallTypeEnum = ENUMERATION OF
 	(MOVABLE
 	,PARAPET
 	,PARTITIONING
@@ -2748,9 +2748,9 @@ TYPE IfcWallTypeEnum = ENUMERATION OF
 	,RETAININGWALL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcWasteTerminalTypeEnum = ENUMERATION OF
+--TYPE IfcWasteTerminalTypeEnum = ENUMERATION OF
 	(FLOORTRAP
 	,FLOORWASTE
 	,GULLYSUMP
@@ -2760,9 +2760,9 @@ TYPE IfcWasteTerminalTypeEnum = ENUMERATION OF
 	,WASTETRAP
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcWindowPanelOperationEnum = ENUMERATION OF
+--TYPE IfcWindowPanelOperationEnum = ENUMERATION OF
 	(SIDEHUNGRIGHTHAND
 	,SIDEHUNGLEFTHAND
 	,TILTANDTURNRIGHTHAND
@@ -2777,18 +2777,18 @@ TYPE IfcWindowPanelOperationEnum = ENUMERATION OF
 	,FIXEDCASEMENT
 	,OTHEROPERATION
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcWindowPanelPositionEnum = ENUMERATION OF
+--TYPE IfcWindowPanelPositionEnum = ENUMERATION OF
 	(LEFT
 	,MIDDLE
 	,RIGHT
 	,BOTTOM
 	,TOP
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcWindowStyleConstructionEnum = ENUMERATION OF
+--TYPE IfcWindowStyleConstructionEnum = ENUMERATION OF
 	(ALUMINIUM
 	,HIGH_GRADE_STEEL
 	,STEEL
@@ -2797,9 +2797,9 @@ TYPE IfcWindowStyleConstructionEnum = ENUMERATION OF
 	,PLASTIC
 	,OTHER_CONSTRUCTION
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcWindowStyleOperationEnum = ENUMERATION OF
+--TYPE IfcWindowStyleOperationEnum = ENUMERATION OF
 	(SINGLE_PANEL
 	,DOUBLE_PANEL_VERTICAL
 	,DOUBLE_PANEL_HORIZONTAL
@@ -2811,17 +2811,17 @@ TYPE IfcWindowStyleOperationEnum = ENUMERATION OF
 	,TRIPLE_PANEL_HORIZONTAL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcWindowTypeEnum = ENUMERATION OF
+--TYPE IfcWindowTypeEnum = ENUMERATION OF
 	(WINDOW
 	,SKYLIGHT
 	,LIGHTDOME
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcWindowTypePartitioningEnum = ENUMERATION OF
+--TYPE IfcWindowTypePartitioningEnum = ENUMERATION OF
 	(SINGLE_PANEL
 	,DOUBLE_PANEL_VERTICAL
 	,DOUBLE_PANEL_HORIZONTAL
@@ -2833,119 +2833,119 @@ TYPE IfcWindowTypePartitioningEnum = ENUMERATION OF
 	,TRIPLE_PANEL_HORIZONTAL
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcWorkCalendarTypeEnum = ENUMERATION OF
+--TYPE IfcWorkCalendarTypeEnum = ENUMERATION OF
 	(FIRSTSHIFT
 	,SECONDSHIFT
 	,THIRDSHIFT
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcWorkPlanTypeEnum = ENUMERATION OF
+--TYPE IfcWorkPlanTypeEnum = ENUMERATION OF
 	(ACTUAL
 	,BASELINE
 	,PLANNED
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcWorkScheduleTypeEnum = ENUMERATION OF
+--TYPE IfcWorkScheduleTypeEnum = ENUMERATION OF
 	(ACTUAL
 	,BASELINE
 	,PLANNED
 	,USERDEFINED
 	,NOTDEFINED);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcActorSelect = SELECT
+--TYPE IfcActorSelect = SELECT
 	(IfcOrganization
 	,IfcPerson
 	,IfcPersonAndOrganization);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcAppliedValueSelect = SELECT
+--TYPE IfcAppliedValueSelect = SELECT
 	(IfcMeasureWithUnit
 	,IfcReference
 	,IfcValue);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcAxis2Placement = SELECT
+--TYPE IfcAxis2Placement = SELECT
 	(IfcAxis2Placement2D
 	,IfcAxis2Placement3D);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBendingParameterSelect = SELECT
+--TYPE IfcBendingParameterSelect = SELECT
 	(IfcLengthMeasure
 	,IfcPlaneAngleMeasure);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcBooleanOperand = SELECT
+--TYPE IfcBooleanOperand = SELECT
 	(IfcBooleanResult
 	,IfcCsgPrimitive3D
 	,IfcHalfSpaceSolid
 	,IfcSolidModel
 	,IfcTessellatedFaceSet);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcClassificationReferenceSelect = SELECT
+--TYPE IfcClassificationReferenceSelect = SELECT
 	(IfcClassification
 	,IfcClassificationReference);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcClassificationSelect = SELECT
+--TYPE IfcClassificationSelect = SELECT
 	(IfcClassification
 	,IfcClassificationReference);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcColour = SELECT
+--TYPE IfcColour = SELECT
 	(IfcColourSpecification
 	,IfcPreDefinedColour);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcColourOrFactor = SELECT
+--TYPE IfcColourOrFactor = SELECT
 	(IfcColourRgb
 	,IfcNormalisedRatioMeasure);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCoordinateReferenceSystemSelect = SELECT
+--TYPE IfcCoordinateReferenceSystemSelect = SELECT
 	(IfcCoordinateReferenceSystem
 	,IfcGeometricRepresentationContext);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCsgSelect = SELECT
+--TYPE IfcCsgSelect = SELECT
 	(IfcBooleanResult
 	,IfcCsgPrimitive3D);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCurveFontOrScaledCurveFontSelect = SELECT
+--TYPE IfcCurveFontOrScaledCurveFontSelect = SELECT
 	(IfcCurveStyleFontAndScaling
 	,IfcCurveStyleFontSelect);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCurveOnSurface = SELECT
+--TYPE IfcCurveOnSurface = SELECT
 	(IfcCompositeCurveOnSurface
 	,IfcPcurve
 	,IfcSurfaceCurve);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCurveOrEdgeCurve = SELECT
+--TYPE IfcCurveOrEdgeCurve = SELECT
 	(IfcBoundedCurve
 	,IfcEdgeCurve);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcCurveStyleFontSelect = SELECT
+--TYPE IfcCurveStyleFontSelect = SELECT
 	(IfcCurveStyleFont
 	,IfcPreDefinedCurveFont);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDefinitionSelect = SELECT
+--TYPE IfcDefinitionSelect = SELECT
 	(IfcObjectDefinition
 	,IfcPropertyDefinition);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDerivedMeasureValue = SELECT
+--TYPE IfcDerivedMeasureValue = SELECT
 	(IfcAbsorbedDoseMeasure
 	,IfcAccelerationMeasure
 	,IfcAngularVelocityMeasure
@@ -3017,58 +3017,58 @@ TYPE IfcDerivedMeasureValue = SELECT
 	,IfcVolumetricFlowRateMeasure
 	,IfcWarpingConstantMeasure
 	,IfcWarpingMomentMeasure);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcDocumentSelect = SELECT
+--TYPE IfcDocumentSelect = SELECT
 	(IfcDocumentInformation
 	,IfcDocumentReference);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcFillStyleSelect = SELECT
+--TYPE IfcFillStyleSelect = SELECT
 	(IfcColour
 	,IfcExternallyDefinedHatchStyle
 	,IfcFillAreaStyleHatching
 	,IfcFillAreaStyleTiles);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcGeometricSetSelect = SELECT
+--TYPE IfcGeometricSetSelect = SELECT
 	(IfcCurve
 	,IfcPoint
 	,IfcSurface);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcGridPlacementDirectionSelect = SELECT
+--TYPE IfcGridPlacementDirectionSelect = SELECT
 	(IfcDirection
 	,IfcVirtualGridIntersection);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcHatchLineDistanceSelect = SELECT
+--TYPE IfcHatchLineDistanceSelect = SELECT
 	(IfcPositiveLengthMeasure
 	,IfcVector);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcLayeredItem = SELECT
+--TYPE IfcLayeredItem = SELECT
 	(IfcRepresentation
 	,IfcRepresentationItem);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcLibrarySelect = SELECT
+--TYPE IfcLibrarySelect = SELECT
 	(IfcLibraryInformation
 	,IfcLibraryReference);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcLightDistributionDataSourceSelect = SELECT
+--TYPE IfcLightDistributionDataSourceSelect = SELECT
 	(IfcExternalReference
 	,IfcLightIntensityDistribution);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcMaterialSelect = SELECT
+--TYPE IfcMaterialSelect = SELECT
 	(IfcMaterialDefinition
 	,IfcMaterialList
 	,IfcMaterialUsageDefinition);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcMeasureValue = SELECT
+--TYPE IfcMeasureValue = SELECT
 	(IfcAmountOfSubstanceMeasure
 	,IfcAreaMeasure
 	,IfcComplexNumber
@@ -3092,33 +3092,33 @@ TYPE IfcMeasureValue = SELECT
 	,IfcThermodynamicTemperatureMeasure
 	,IfcTimeMeasure
 	,IfcVolumeMeasure);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcMetricValueSelect = SELECT
+--TYPE IfcMetricValueSelect = SELECT
 	(IfcAppliedValue
 	,IfcMeasureWithUnit
 	,IfcReference
 	,IfcTable
 	,IfcTimeSeries
 	,IfcValue);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcModulusOfRotationalSubgradeReactionSelect = SELECT
+--TYPE IfcModulusOfRotationalSubgradeReactionSelect = SELECT
 	(IfcBoolean
 	,IfcModulusOfRotationalSubgradeReactionMeasure);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcModulusOfSubgradeReactionSelect = SELECT
+--TYPE IfcModulusOfSubgradeReactionSelect = SELECT
 	(IfcBoolean
 	,IfcModulusOfSubgradeReactionMeasure);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcModulusOfTranslationalSubgradeReactionSelect = SELECT
+--TYPE IfcModulusOfTranslationalSubgradeReactionSelect = SELECT
 	(IfcBoolean
 	,IfcModulusOfLinearSubgradeReactionMeasure);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcObjectReferenceSelect = SELECT
+--TYPE IfcObjectReferenceSelect = SELECT
 	(IfcAddress
 	,IfcAppliedValue
 	,IfcExternalReference
@@ -3128,42 +3128,42 @@ TYPE IfcObjectReferenceSelect = SELECT
 	,IfcPersonAndOrganization
 	,IfcTable
 	,IfcTimeSeries);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPointOrVertexPoint = SELECT
+--TYPE IfcPointOrVertexPoint = SELECT
 	(IfcPoint
 	,IfcVertexPoint);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPresentationStyleSelect = SELECT
+--TYPE IfcPresentationStyleSelect = SELECT
 	(IfcCurveStyle
 	,IfcFillAreaStyle
 	,IfcNullStyle
 	,IfcSurfaceStyle
 	,IfcTextStyle);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcProcessSelect = SELECT
+--TYPE IfcProcessSelect = SELECT
 	(IfcProcess
 	,IfcTypeProcess);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcProductRepresentationSelect = SELECT
+--TYPE IfcProductRepresentationSelect = SELECT
 	(IfcProductDefinitionShape
 	,IfcRepresentationMap);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcProductSelect = SELECT
+--TYPE IfcProductSelect = SELECT
 	(IfcProduct
 	,IfcTypeProduct);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcPropertySetDefinitionSelect = SELECT
+--TYPE IfcPropertySetDefinitionSelect = SELECT
 	(IfcPropertySetDefinition
 	,IfcPropertySetDefinitionSet);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcResourceObjectSelect = SELECT
+--TYPE IfcResourceObjectSelect = SELECT
 	(IfcActorRole
 	,IfcAppliedValue
 	,IfcApproval
@@ -3181,29 +3181,29 @@ TYPE IfcResourceObjectSelect = SELECT
 	,IfcPropertyAbstraction
 	,IfcShapeAspect
 	,IfcTimeSeries);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcResourceSelect = SELECT
+--TYPE IfcResourceSelect = SELECT
 	(IfcResource
 	,IfcTypeResource);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcRotationalStiffnessSelect = SELECT
+--TYPE IfcRotationalStiffnessSelect = SELECT
 	(IfcBoolean
 	,IfcRotationalStiffnessMeasure);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSegmentIndexSelect = SELECT
+--TYPE IfcSegmentIndexSelect = SELECT
 	(IfcArcIndex
 	,IfcLineIndex);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcShell = SELECT
+--TYPE IfcShell = SELECT
 	(IfcClosedShell
 	,IfcOpenShell);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSimpleValue = SELECT
+--TYPE IfcSimpleValue = SELECT
 	(IfcBinary
 	,IfcBoolean
 	,IfcDate
@@ -3218,97 +3218,97 @@ TYPE IfcSimpleValue = SELECT
 	,IfcText
 	,IfcTime
 	,IfcTimeStamp);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSizeSelect = SELECT
+--TYPE IfcSizeSelect = SELECT
 	(IfcDescriptiveMeasure
 	,IfcLengthMeasure
 	,IfcNormalisedRatioMeasure
 	,IfcPositiveLengthMeasure
 	,IfcPositiveRatioMeasure
 	,IfcRatioMeasure);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSolidOrShell = SELECT
+--TYPE IfcSolidOrShell = SELECT
 	(IfcClosedShell
 	,IfcSolidModel);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSpaceBoundarySelect = SELECT
+--TYPE IfcSpaceBoundarySelect = SELECT
 	(IfcExternalSpatialElement
 	,IfcSpace);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSpecularHighlightSelect = SELECT
+--TYPE IfcSpecularHighlightSelect = SELECT
 	(IfcSpecularExponent
 	,IfcSpecularRoughness);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcStructuralActivityAssignmentSelect = SELECT
+--TYPE IfcStructuralActivityAssignmentSelect = SELECT
 	(IfcElement
 	,IfcStructuralItem);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcStyleAssignmentSelect = SELECT
+--TYPE IfcStyleAssignmentSelect = SELECT
 	(IfcPresentationStyle
 	,IfcPresentationStyleAssignment);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSurfaceOrFaceSurface = SELECT
+--TYPE IfcSurfaceOrFaceSurface = SELECT
 	(IfcFaceBasedSurfaceModel
 	,IfcFaceSurface
 	,IfcSurface);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcSurfaceStyleElementSelect = SELECT
+--TYPE IfcSurfaceStyleElementSelect = SELECT
 	(IfcExternallyDefinedSurfaceStyle
 	,IfcSurfaceStyleLighting
 	,IfcSurfaceStyleRefraction
 	,IfcSurfaceStyleShading
 	,IfcSurfaceStyleWithTextures);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTextFontSelect = SELECT
+--TYPE IfcTextFontSelect = SELECT
 	(IfcExternallyDefinedTextFont
 	,IfcPreDefinedTextFont);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTimeOrRatioSelect = SELECT
+--TYPE IfcTimeOrRatioSelect = SELECT
 	(IfcDuration
 	,IfcRatioMeasure);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTranslationalStiffnessSelect = SELECT
+--TYPE IfcTranslationalStiffnessSelect = SELECT
 	(IfcBoolean
 	,IfcLinearStiffnessMeasure);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcTrimmingSelect = SELECT
+--TYPE IfcTrimmingSelect = SELECT
 	(IfcCartesianPoint
 	,IfcParameterValue);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcUnit = SELECT
+--TYPE IfcUnit = SELECT
 	(IfcDerivedUnit
 	,IfcMonetaryUnit
 	,IfcNamedUnit);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcValue = SELECT
+--TYPE IfcValue = SELECT
 	(IfcDerivedMeasureValue
 	,IfcMeasureValue
 	,IfcSimpleValue);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcVectorOrDirection = SELECT
+--TYPE IfcVectorOrDirection = SELECT
 	(IfcDirection
 	,IfcVector);
-END_TYPE;
+--END_TYPE;
 
-TYPE IfcWarpingStiffnessSelect = SELECT
+--TYPE IfcWarpingStiffnessSelect = SELECT
 	(IfcBoolean
 	,IfcWarpingMomentMeasure);
-END_TYPE;
+--END_TYPE;
 
 --ENTITY IfcActionRequest
 -- SUBTYPE OF (IfcControl);
@@ -3592,8 +3592,8 @@ TYPEOF(SELF\IfcFaceSurface.FaceSurface)) = 1;
 --	ApplicationFullName : IfcLabel;
 --	ApplicationIdentifier : IfcIdentifier;
  UNIQUE
---	UR1 : ApplicationIdentifier;
---	UR2 : ApplicationFullName, Version;
+	UR1 : ApplicationIdentifier;
+	UR2 : ApplicationFullName, Version;
 --END_ENTITY;
 
 --ENTITY IfcAppliedValue
@@ -8204,7 +8204,7 @@ OR  (SIZEOF(QUERY(temp <* EnumerationValues |
 --	EnumerationValues : LIST [1:?] OF IfcValue;
 --	Unit : OPTIONAL IfcUnit;
  UNIQUE
---	UR1 : Name;
+	UR1 : Name;
  WHERE
 	WR01 : SIZEOF(QUERY(temp <* SELF.EnumerationValues | 
   NOT(TYPEOF(SELF.EnumerationValues[1]) = TYPEOF(temp))
@@ -9289,7 +9289,7 @@ OR
 --	Name : OPTIONAL IfcLabel;
 --	Description : OPTIONAL IfcText;
  UNIQUE
---	UR1 : GlobalId;
+	UR1 : GlobalId;
 --END_ENTITY;
 
 --ENTITY IfcRoundedRectangleProfileDef

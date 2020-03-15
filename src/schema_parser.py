@@ -45,6 +45,7 @@ objectName = ""
 objectProperties = {}
 required = []
 inverse = False
+unique = False
 where = False
 derive = False
 ifcTypeSection = False
@@ -145,30 +146,34 @@ for line in expressSchema:
     elif line == ' INVERSE\n':
         expressSchemaResult.write(line)
         inverse = True
+    elif line == ' UNIQUE\n':
+        expressSchemaResult.write(line)
+        unique = True
     elif line == ' WHERE\n':
         expressSchemaResult.write(line)
         where = True
 
     # extract properties if in ENTITY section
     elif line.startswith('\t'):
-        if inverse == False and ifcTypeSection == False and ifcfunction == False and where == False:
+        if inverse == False and ifcTypeSection == False and ifcfunction == False and where == False and unique == False:
             expressSchemaResult.write('--' + line)
             objectProperty = re.split(r'\t| : |;', line)
             propertyKey = objectProperty[1]
             propertyValue = objectProperty[2]
             if propertyValue.startswith('OPTIONAL'):
                 propertyValue = propertyValue.replace('OPTIONAL ', '')
+            else:
                 required.append(propertyKey)
                 
-            propertyChild = {}
-
             # extract property levels
             if ' OF ' in propertyValue:
+                propertyChild = {}
                 layers = propertyValue.split(' OF ')
                 for layer in layers:
 
                     # extract LISTS and SETS
                     if layer.startswith('LIST') or layer.startswith('SET'):
+                        print(line)
                         propertyChild["type"] = "array"
                         layer = layer.replace('LIST ', '')
                         layer = layer.replace('SET ', '')
@@ -182,7 +187,9 @@ for line in expressSchema:
                             propertyChild['items'] = { '$ref': '#/entities/' + layer }
                         else:
                             print(layer)
-            objectProperties[propertyKey] = {'$ref': '#/entities/' + propertyValue}#{"type" : "string"}
+                objectProperties[propertyKey] = propertyChild
+            else:
+                objectProperties[propertyKey] = {'$ref': '#/entities/' + propertyValue}
         else:
             expressSchemaResult.write(line)
     elif line == 'END_ENTITY;\n':
@@ -203,6 +210,7 @@ for line in expressSchema:
 
         # Reset object properties
         inverse = False
+        unique = False
         where = False
         derive = False
         ifcTypeSection = False
@@ -217,6 +225,7 @@ for line in expressSchema:
 
         # Reset object properties
         inverse = False
+        unique = False
         where = False
         derive = False
         ifcTypeSection = False
