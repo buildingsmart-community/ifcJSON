@@ -1,3 +1,16 @@
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 import json
 import re
 
@@ -9,52 +22,114 @@ jsonSchema = {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "ifcJSON4 Schema",
     "description": "This is the schema for representing IFC4 data in JSON",
-    "definitions": {
-        "description": {"_comment": "This section includes IFC datatypes."},
-        "ifcUnit": {
-            "type": "object",
-            "oneOf":[
-                { "$ref": "#/properties/ifcDerivedUnit" },
-                { "$ref": "#/properties/ifcNamedUnit" },
-                { "$ref": "#/properties/ifcMonetaryUnit" }]
-        },
-        "ifcAxis2Placement":{
-            "type": "object",		
-            "oneOf":[
-                { "$ref": "#/properties/ifcAxis2Placement2D" },
-                { "$ref": "#/properties/ifcAxis2Placement3D" } 
-            ]
-        }
+    "protoTypes": {
+        "description": {"_comment": "This section includes IFC prototype objects without Class attribute to mimic object inheritance."}
+    },
+    "entities": {
+        "description": {"_comment": "This section includes IFC datatypes."}
     },
     "type": "object",
     "properties": {
-        "description": {"_comment": "This section includes IFC entities"}
+        "description": {"_comment": "This section includes IFC entities"},
+        "data":{
+            "type": "array",
+            "items": {
+                "anyOf": []
+            },
+        }
     }
 }
-entity = {}
-entityName = ""
-properties = {}
+ifcObject = {}
+protoType = {}
+objectName = ""
+objectProperties = {}
 required = []
 inverse = False
 where = False
 derive = False
-ifctype = False
+ifcTypeSection = False
 ifcfunction = False
 
 for line in expressSchema:
-
+    
     # start of ENTITY section
     if line.startswith('ENTITY'):
         expressSchemaResult.write('--' + line)
-        entityName = line.split(" ")[1].rstrip().replace(';', '')
-        entity['$id'] = '#' + entityName
-        entity['type'] = 'object'
-        # entity['class'] = entityName
+        objectName = line.split(" ")[1].rstrip().replace(';', '')
+        if objectName == "=":
+            print(line)
+        ifcObject['$id'] = '#' + objectName
+        ifcObject['type'] = 'object'
+        ifcObject['properties'] = {}
+        ifcObject['allOf'] = [{ '$ref': '#/protoTypes/' + objectName }]
+
+        # add prototype without class
+        protoType = {
+            "$id": "#" + objectName,
+            "type": "object",
+            "properties": {}
+        }
     
     # start of TYPE section
-    elif line.startswith('TYPE'):
-        expressSchemaResult.write(line)
-        ifctype = True
+    elif line.startswith('TYPE '):
+        expressSchemaResult.write('--' + line)
+        lineParts = line.split(" ")
+        objectName = lineParts[1]
+        if objectName == "=":
+            print(line)
+        ifcObject['$id'] = '#' + objectName
+        if len(lineParts) > 3:
+            superType = lineParts[3].rstrip().replace(';', '')
+            # print(superType)
+            if superType == "REAL":
+                ifcObject['type'] = 'number'
+            elif superType == "INTEGER":
+                ifcObject['type'] = 'integer'
+            elif superType == "BINARY":
+                ifcObject['type'] = 'string'
+            elif superType == "BOOLEAN":
+                ifcObject['type'] = 'boolean'
+
+            # LIST, LIST [(]1:?])
+            elif superType == "LIST":
+                ifcObject['type'] = 'array'
+                if len(lineParts)>4:
+                    if lineParts[4].startswith("[") and lineParts[4].endswith("]"):
+                        domain = re.split(r'\[|\]|\:', lineParts[4])
+                        if domain[1] != "?":
+                            ifcObject['minLength'] = int(domain[1])
+                        if domain[2] != "?":
+                            ifcObject['maxLength'] = int(domain[2])
+
+            # SET, SET [(]1:?])
+            elif superType == "SET":
+                ifcObject['type'] = 'array'
+                ifcObject['uniqueItems'] = True
+                if len(lineParts)>4:
+                    if lineParts[4].startswith("[") and lineParts[4].endswith("]"):
+                        domain = re.split(r'\[|\]|\:', lineParts[4])
+                        if domain[1] != "?":
+                            ifcObject['minLength'] = int(domain[1])
+                        if domain[2] != "?":
+                            ifcObject['maxLength'] = int(domain[2])
+            elif superType == "STRING":
+                ifcObject['type'] = 'string'
+
+            # STRING, STRING(255), STRING(22) FIXED
+            elif superType.startswith("STRING"):
+                ifcObject['type'] = 'string'
+                # re.sub('(<)[^>]+)', '', s)
+                stringLength = re.split(r'\(|\)', superType)[1]
+                if stringLength:
+                    ifcObject['maxLength'] = int(stringLength)
+                    if line.endswith("FIXED;\n"):
+                        ifcObject['minLength'] = int(stringLength)
+            # elif superType == "LOGICAL":
+            # elif superType == "ENUMERATION":
+            # elif superType == "SELECT":
+        else:
+            ifcObject['type'] = 'string'
+        ifcTypeSection = True
 
     # start of FUNCTION section
     elif line.startswith('FUNCTION'):
@@ -65,8 +140,8 @@ for line in expressSchema:
     elif line.startswith(' SUBTYPE OF '):
         expressSchemaResult.write('--' + line)
         # https://github.com/json-schema-org/json-schema-spec/issues/348
-        subtypeName = re.split(r'\(|\)', line)[1]
-        entity['allOf'] = [{ '$ref': '#/properties/' + subtypeName }]
+        parentObjectName = re.split(r'\(|\)', line)[1]
+        protoType['allOf'] = [{ '$ref': '#/protoTypes/' + parentObjectName }]
     elif line == ' INVERSE\n':
         expressSchemaResult.write(line)
         inverse = True
@@ -76,11 +151,11 @@ for line in expressSchema:
 
     # extract properties if in ENTITY section
     elif line.startswith('\t'):
-        if inverse == False and ifctype == False and ifcfunction == False and where == False:
+        if inverse == False and ifcTypeSection == False and ifcfunction == False and where == False:
             expressSchemaResult.write('--' + line)
-            property = re.split(r'\t| : |;', line)
-            propertyKey = property[1]
-            propertyValue = property[2]
+            objectProperty = re.split(r'\t| : |;', line)
+            propertyKey = objectProperty[1]
+            propertyValue = objectProperty[2]
             if propertyValue.startswith('OPTIONAL'):
                 propertyValue = propertyValue.replace('OPTIONAL ', '')
                 required.append(propertyKey)
@@ -104,34 +179,51 @@ for line in expressSchema:
                             propertyChild['maxItems'] = int(item[1])
                     else:
                         if layer.startswith('Ifc'):
-                            propertyChild['items'] = { '$ref': '#/properties/' + layer }
+                            propertyChild['items'] = { '$ref': '#/entities/' + layer }
                         else:
                             print(layer)
-            properties[propertyKey] = {"type" : "string"}
+            objectProperties[propertyKey] = {'$ref': '#/entities/' + propertyValue}#{"type" : "string"}
         else:
             expressSchemaResult.write(line)
     elif line == 'END_ENTITY;\n':
         expressSchemaResult.write('--' + line)
-        if properties:
-            entity['properties'] = properties
+
+        if objectProperties:
+            protoType['properties'] = objectProperties
+            objectProperties
+        ifcObject['properties']['Class'] = {"const": objectName}
+
+        # Add required attributes rule
         if required:
-            entity['required'] = required
-        jsonSchema['properties'][entityName] = entity
+            ifcObject['required'] = required
+        
+        jsonSchema['entities'][objectName] = ifcObject
+        jsonSchema['protoTypes'][objectName] = protoType
+        jsonSchema['properties']['data']['items']['anyOf'].append({"$ref": "#/entities/" + objectName})
+
+        # Reset object properties
         inverse = False
         where = False
         derive = False
-        ifctype = False
+        ifcTypeSection = False
         ifcfunction = False
         required = []
-        properties = {}
-        entity = {}
+        objectProperties = {}
+        ifcObject = {}
+        protoType = {}
     elif line == 'END_TYPE;\n':
-        expressSchemaResult.write(line)
+        expressSchemaResult.write('--' + line)
+        jsonSchema['entities'][objectName] = ifcObject
+
+        # Reset object properties
         inverse = False
         where = False
         derive = False
-        ifctype = False
+        ifcTypeSection = False
         ifcfunction = False
+        objectProperties = {}
+        ifcObject = {}
+        protoType = {}
     else:        
         expressSchemaResult.write(line)
 
