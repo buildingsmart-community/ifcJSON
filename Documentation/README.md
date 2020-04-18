@@ -117,8 +117,8 @@ An object is identified by its GlobalID, which is a UUID according to https://to
 Furthermore, a line number is included, taken from the STEP file if available, and generated otherwise. This line number is used for internal referencing within the IFCJSON file.
 
 ~~~
-"Class": "Project",
-"GlobalId": "7e8368b59c66436aa047bebfe824ad81",
+"Class": "IfcProject",
+"GlobalId": "028c968f-687d-484e-9c0a-5048a923b8c4",
 "Name": "0YvctVUKr0kugbFTf53O9L",
 "Id": "_00365"
 ~~~
@@ -243,7 +243,7 @@ ifcJSON schema defines a structure for what ifcJSON data is required and therefo
 Example ifcJSON data:
 ~~~
 {
-  "class": "Wall",
+  "class": "IfcWall",
   "globalId": "028c968f-687d-484e-9c0a-5048a923b8c4",
   "name": "my wall",
   "description": "Description of the wall",
