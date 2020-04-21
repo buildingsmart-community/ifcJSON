@@ -1,5 +1,5 @@
-# IFC.JSON
-This repository contains the specification for IFC.JSON - version in sync with IFC EXPRESS Schema.
+# IFC.JSON-4
+This repository contains the specification for IFC.JSON-4 - version in sync with IFC EXPRESS Schema.
 
 ## What
 JSON is used throughout the world for exchanging and using data. Building data needs to be available in JSON. Therefore, IFC needs to be available in JSON format. 
@@ -19,7 +19,7 @@ This means that the following criteria are NOT followed:
 - Clear referencing structure
 - Direct usability
 
-A more disruptive IFC.JSON version (2.0) is investigated in https://github.com/IFCJSON-Team/IFC.JSON2.0.
+A more disruptive IFC.JSON version (2.0) is investigated in https://github.com/IFCJSON-Team/IFC.JSON-5Alpha.
 
 ## Getting started
 The repository is organised in three sections:
