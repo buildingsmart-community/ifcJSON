@@ -8,7 +8,6 @@ This is the overall specification for IFC.JSON.
   * [2. ifcJSON Document Specification](#2-ifcjson-document-specification)
     + [2.1 Required objects, keys, or entities](#21-required-objects--keys--or-entities)
     + [2.2 Empty values, 'userdefined' values, and 'notdefined' values](#22-empty-values---userdefined--values--and--notdefined--values)
-    + [2.3 IFC prefix](#23-ifc-prefix)
     + [2.4 Header](#24-header)
     + [2.5 Identifiers](#25-identifiers)
     + [2.6 Tree Structure](#26-tree-structure)
@@ -87,21 +86,6 @@ This is encouraged:
 "GlobalId": "7e8368b59c66436aa047bebfe824ad81",
 "Name": "0YvctVUKr0kugbFTf53O9L",
 "Type": "NOTDEFINED"
-~~~
-
-### 2.3 IFC prefix
-The IFC prefix is kept, in order to maintain backwards compatibility.
-
-This is valid:
-
-~~~
-IfcWall    
-~~~
-
-This is not valid:
-
-~~~
-Wall
 ~~~
 
 ### 2.4 Header
