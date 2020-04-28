@@ -12,7 +12,7 @@ This is the overall specification for IFC.JSON.
     + [2.5 Identifiers](#25-identifiers)
     + [2.6 Tree Structure](#26-tree-structure)
     + [2.7 camelCase, CamelCaps, or snake_case](#27-camelcase--camelcaps--or-snake-case)
-    + [2.8 PredefinedTypes and ObjectTypes and Classes](#28-predefinedtypes-and-objecttypes-and-classes)
+    + [2.8 PredefinedTypes and ObjectTypes and Types](#28-predefinedtypes-and-objecttypes-and-types)
     + [2.9 Geometry](#29-geometry)
     + [2.10 Attributes, Properties and Property Sets](#210-attributes--properties-and-property-sets)
   * [3. ifcJSON Schema](#3-ifcjson-schema)
@@ -69,8 +69,8 @@ You are free to include empty values, yet you are encouraged to leave them out o
 This is valid:
 
 ~~~
-"Class": "Project",
-"GlobalId": "7e8368b59c66436aa047bebfe824ad81",
+"Type": "IfcProject",
+"GlobalId": "028c968f-687d-484e-9c0a-5048a923b8c4",
 "Name": "0YvctVUKr0kugbFTf53O9L",
 "Description": "",
 "ObjectType": null,
@@ -82,8 +82,8 @@ This is valid:
 This is encouraged:
 
 ~~~
-"Class": "Project",
-"GlobalId": "7e8368b59c66436aa047bebfe824ad81",
+"Type": "IfcProject",
+"GlobalId": "028c968f-687d-484e-9c0a-5048a923b8c4",
 "Name": "0YvctVUKr0kugbFTf53O9L",
 "Type": "NOTDEFINED"
 ~~~
@@ -92,7 +92,7 @@ This is encouraged:
 A header is included in the IFCJSON file and is a direct translation of the header section in a SPF file.
 
 ### 2.5 Identifiers
-An object is identified by its GlobalID, which is a UUID according to https://tools.ietf.org/html/rfc4122. The GlobalId property is to be added only to those elements that are descendent of the IfcRoot Class, as is the case in the IFC EXPRESS schema. Literals and geometric items and list hence do not need a GlobalId.
+An object is identified by its GlobalID, which is a UUID according to https://tools.ietf.org/html/rfc4122. The GlobalId property is to be added only to those elements that are descendent of the IfcRoot Type, as is the case in the IFC EXPRESS schema. Literals and geometric items and list hence do not need a GlobalId.
 
 ~~~
 "GlobalId": "028c968f-687d-484e-9c0a-5048a923b8c4"
@@ -101,7 +101,7 @@ An object is identified by its GlobalID, which is a UUID according to https://to
 Furthermore, a line number is included, taken from the STEP file if available, and generated otherwise. This line number is used for internal referencing within the IFCJSON file.
 
 ~~~
-"Class": "IfcProject",
+"Type": "IfcProject",
 "GlobalId": "028c968f-687d-484e-9c0a-5048a923b8c4",
 "Name": "0YvctVUKr0kugbFTf53O9L",
 "Id": "_00365"
@@ -121,14 +121,14 @@ Example:
 ~~~
 [
   {
-    "Class": "IfcProject",
+    "Type": "IfcProject",
     "GlobalId": "cb78a8c2-fb1e-4e12-8f29-6c0d7c39ca0b",
     "Name": "Default Project",
     "Description": "Description of Default Project",
     "Id": "_00365"
   },
   {
-    "Class": "IfcSite",
+    "Type": "IfcSite",
     "GlobalId": "f07e69ce-3709-4ef5-a029-e27de7e95991",
     "Name": "'TU/e campus'",
     "Description": "'The High Tech campus of the Eindhoven University of Technology'",
@@ -137,7 +137,7 @@ Example:
     "Id": "_00366"
   },
   {
-    "Class": "IfcBuilding",
+    "Type": "IfcBuilding",
     "GlobalId": "f3b41796-63ea-4a63-b0aa-f1d7978a6e47",
     "Name": "Vertigo Building",
     "Description": "TU/e Department of the Built Environment",
@@ -147,29 +147,29 @@ Example:
     "Id": "_00367"
   },
   {
-    "Class": "IfcRelAggregates",
+    "Type": "IfcRelAggregates",
     "Id": "_00368",
     "RelatingObject": {
-      "Class": "IfcProject",
+      "Type": "IfcProject",
       "ref": "_00365"
     },
     "RelatedObjects": [
       {
-        "Class": "IfcSite",
+        "Type": "IfcSite",
         "ref": "_00366"
       }
     ]
   },
   {
-    "Class": "IfcRelAggregates",
+    "Type": "IfcRelAggregates",
     "Id": "_00369",
     "RelatingObject": {
-      "Class": "IfcSite",
+      "Type": "IfcSite",
       "ref": "_00366"
     },
     "RelatedObjects": [
       {
-        "Class": "IfcBuilding",
+        "Type": "IfcBuilding",
         "ref": "_00367"
       }
     ]
@@ -191,13 +191,13 @@ This is not valid:
 "global_id": "028c968f-687d-484e-9c0a-5048a923b8c4"
 ~~~
 
-### 2.8 PredefinedTypes and ObjectTypes and Classes
-There are multiple ways to define the object type of an object in the IFC EXPRESS schema. In IFC.JSON, the same structure is followed and you can include type information in the `Class`, `PredefinedType` and `ObjectType` attributes. As indicated in the IFC.JSON schema, the `Class` and `ObjectType` attributes refer to a string. The `Class` attribute is hereby reserved for the IFC class name. The `PredefinedType` attribute is only available for a number of objects, and the allowed values for this attributes are listed in the IFC.JSON schema (identical to EXPRESS schema).
+### 2.8 PredefinedTypes and ObjectTypes and Types
+There are multiple ways to define the object type of an object in the IFC EXPRESS schema. In IFC.JSON, the same structure is followed and you can include type information in the `Type`, `PredefinedType` and `ObjectType` attributes. As indicated in the IFC.JSON schema, the `Type` and `ObjectType` attributes refer to a string. The `Type` attribute is hereby reserved for the IFC type name. The `PredefinedType` attribute is only available for a number of objects, and the allowed values for this attributes are listed in the IFC.JSON schema (identical to EXPRESS schema).
 
 This is valid:
 ~~~
 {
-  "Class": "IfcDoor",
+  "Type": "IfcDoor",
   "GlobalId": "f3b96025-a1f3-42a8-b047-b6cc5b1880ff",
   "Name": "A common door",
   "Description": "Description of a standard door",
@@ -227,7 +227,7 @@ ifcJSON schema defines a structure for what ifcJSON data is required and therefo
 Example ifcJSON data:
 ~~~
 {
-  "class": "IfcWall",
+  "type": "IfcWall",
   "globalId": "028c968f-687d-484e-9c0a-5048a923b8c4",
   "name": "my wall",
   "description": "Description of the wall",
@@ -250,7 +250,7 @@ Corresponding ifcJSON Schema snippet (validated with above snippet using https:/
   "description": "IFC.JSON for Wall",
   "type": "object",
   "properties": {
-  "class": "ifcWall",
+  "type": "ifcWall",
   "globalId": {
     "type": "string",
     "maxLength": 22
@@ -314,7 +314,7 @@ Corresponding ifcJSON Schema snippet (validated with above snippet using https:/
           "NOTDEFINED"]},
      ]
   },
-  "required": ["class", "globalId", "ownerHistory", "name", "description", "objectType", "objectPlacement", "representation", "tag", "predefinedType"]
+  "required": ["type", "globalId", "ownerHistory", "name", "description", "objectType", "objectPlacement", "representation", "tag", "predefinedType"]
 }
 ~~~
 
