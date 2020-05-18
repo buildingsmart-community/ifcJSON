@@ -1,103 +1,50 @@
-import ifcopenshell
-import json
+# IFCJSON_python - ifc2json.py
+# Copyright (C) 2020 Jan Brouwer <jan@brewsky.nl>
 
-ifc_file = ifcopenshell.open('./samples/7m900_tue_hello_wall_with_door.ifc')
-schema = ifcopenshell.ifcopenshell_wrapper.schema_by_name(ifc_file.schema)
-id_objects = {}
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 
-def entityToDict(entity):
-    ref = {
-        "Type": entity.is_a()
-    }
-    attr_dict = entity.__dict__
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 
-    # check for globalid
-    if "GlobalId" in attr_dict:
-        ref["ref"] = attr_dict["GlobalId"]
-        if not attr_dict["GlobalId"] in id_objects:
-            d = {
-                "Type": entity.is_a()
-            }
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-            for i in range(0,len(entity)):
-                attr = entity.attribute_name(i)
-                if attr in attr_dict:
-                    if not attr == "OwnerHistory":
-                        jsonValue = getEntityValue(attr_dict[attr])
-                        if jsonValue:
-                            d[attr] = jsonValue
-                        if attr_dict[attr] == None:
-                            continue
-                        elif isinstance(attr_dict[attr], ifcopenshell.entity_instance):
-                            d[attr] = entityToDict(attr_dict[attr])
-                        elif isinstance(attr_dict[attr], tuple):
-                            subEnts = []
-                            for subEntity in attr_dict[attr]:
-                                if isinstance(subEntity, ifcopenshell.entity_instance):
-                                    subEntJson = entityToDict(subEntity)
-                                    if subEntJson:
-                                        subEnts.append(subEntJson)
-                                else:
-                                    subEnts.append(subEntity)
-                            if len(subEnts) > 0:
-                                d[attr] = subEnts
-                        else:
-                            d[attr] = attr_dict[attr]
-            id_objects[attr_dict["GlobalId"]] = d
-        return ref
+# Convert IFC SPF file to IFC.JSON-5Alpha
+# https://github.com/IFCJSON-Team
+
+import os
+import argparse
+import ifcjson.ifc2json4 as ifc2json4
+import ifcjson.ifc2json5a as ifc2json5a
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Convert IFC SPF file to IFC.JSON')
+    parser.add_argument('-i', type=str, help='input ifc file path')
+    parser.add_argument('-o', type=str, help='output json file path')
+    parser.add_argument('-v', type=str, help='IFC.JSON version, options: "4"(default), "5a"')
+    args = parser.parse_args()
+    if args.i:
+        ifcFilePath = args.i
     else:
-        d = {
-            "Type": entity.is_a()
-        }
-
-        for i in range(0,len(entity)):
-            attr = entity.attribute_name(i)
-            if attr in attr_dict:
-                if not attr == "OwnerHistory":
-                    jsonValue = getEntityValue(attr_dict[attr])
-                    if jsonValue:
-                        d[attr] = jsonValue
-                    if attr_dict[attr] == None:
-                        continue
-                    elif isinstance(attr_dict[attr], ifcopenshell.entity_instance):
-                        d[attr] = entityToDict(attr_dict[attr])
-                    elif isinstance(attr_dict[attr], tuple):
-                        subEnts = []
-                        for subEntity in attr_dict[attr]:
-                            if isinstance(subEntity, ifcopenshell.entity_instance):
-                                # subEnts.append(None)
-                                subEntJson = entityToDict(subEntity)
-                                if subEntJson:
-                                    subEnts.append(subEntJson)
-                            else:
-                                subEnts.append(subEntity)
-                        if len(subEnts) > 0:
-                            d[attr] = subEnts
-                    else:
-                        d[attr] = attr_dict[attr]
-        return d
-
-def getEntityValue(value):
-    if value == None:
-        jsonValue = None
-    elif isinstance(value, ifcopenshell.entity_instance):
-        jsonValue = entityToDict(value)
-    elif isinstance(value, tuple):
-        jsonValue = None
-        subEnts = []
-        for subEntity in value:
-            subEnts.append(getEntityValue(subEntity))
-        jsonValue = subEnts
+        ifcFilePath = './samples/7m900_tue_hello_wall_with_door.ifc'
+    if os.path.isfile(ifcFilePath):
+        if args.o:
+            jsonFilePath = args.o
+        else:
+            jsonFilePath = os.path.splitext(ifcFilePath)[0] + '.json'
+        if args.v:
+            if args.v == "4":
+                ifc2json4.spf2Json(ifcFilePath, jsonFilePath)
+            elif args.v == "5a":
+                ifc2json5a.spf2Json(ifcFilePath, jsonFilePath)
+            else:
+                print('Version ' + args.v + ' is not supported')
+        else:
+            ifc2json4.spf2Json(ifcFilePath, jsonFilePath)
     else:
-        jsonValue = value
-    return jsonValue
-
-
-jsonObjects= []
-entityIter = iter(ifc_file)
-for entity in entityIter:
-    entityToDict(entity)
-for key in id_objects:
-    jsonObjects.append(id_objects[key])
-with open('7m900_tue_hello_wall_with_door.json', 'w') as outfile:
-    json.dump(jsonObjects, outfile, indent=4)
+        print(args.i + ' is not a valid file')
