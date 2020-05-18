@@ -1,0 +1,190 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION (('ViewDefinition [CoordinationView, 
+  QuantityTakeOffAddOnView]'), '2;1');
+FILE_NAME ('7m900_tue_hello_wall_with_door.ifc', '2015-12-01T21:53:56', 
+  ('Architect'), ('Building Designer Office'), 
+  'Your favorite text editor', 
+  'your text editor version x.x', 'The authorising person');
+FILE_SCHEMA (('IFC2X3'));
+ENDSEC;
+
+
+DATA;
+
+/* define the project and the creator meta data */
+#1 = IFCPROJECT('0YvctVUKr0kugbFTf53O9L', #2, 'Default Project', 
+     'Description of Default Project', $, $, $, (#20), #7);
+#2 = IFCOWNERHISTORY(#3, #6, $, .ADDED., $, $, $, 1217620436);
+#3 = IFCPERSONANDORGANIZATION(#4, #5, $);
+#4 = IFCPERSON('ID001', 'Beetz', 'Jakob', $, $, $, $, $);
+#5 = IFCORGANIZATION($, 'TU/e', 'Eindhoven University of Technology', $, $);
+#6 = IFCAPPLICATION(#5, 'version 0.10', 'My text editor', 'TA 1001');
+
+/*determine the units used in the project (e.g. length unit in metre) */
+#7 = IFCUNITASSIGNMENT((#8, #9, #10, #11, #15, #16, #17, #18, #19));
+#8 = IFCSIUNIT(*, .LENGTHUNIT., $, .METRE.);
+#9 = IFCSIUNIT(*, .AREAUNIT., $, .SQUARE_METRE.);
+#10 = IFCSIUNIT(*, .VOLUMEUNIT., $, .CUBIC_METRE.);
+#11 = IFCCONVERSIONBASEDUNIT(#12, .PLANEANGLEUNIT., 'DEGREE', #13);
+#12 = IFCDIMENSIONALEXPONENTS(0, 0, 0, 0, 0, 0, 0);
+#13 = IFCMEASUREWITHUNIT(IFCPLANEANGLEMEASURE(1.745E-2), #14);
+#14 = IFCSIUNIT(*, .PLANEANGLEUNIT., $, .RADIAN.);
+#15 = IFCSIUNIT(*, .SOLIDANGLEUNIT., $, .STERADIAN.);
+#16 = IFCSIUNIT(*, .MASSUNIT., $, .GRAM.);
+#17 = IFCSIUNIT(*, .TIMEUNIT., $, .SECOND.);
+#18 = IFCSIUNIT(*, .THERMODYNAMICTEMPERATUREUNIT., $, .DEGREE_CELSIUS.);
+#19 = IFCSIUNIT(*, .LUMINOUSINTENSITYUNIT., $, .LUMEN.);
+#20 = IFCGEOMETRICREPRESENTATIONCONTEXT($, 'Model', 3, 1.000E-5, #21, $);
+#21 = IFCAXIS2PLACEMENT3D(#22, $, $);
+#22 = IFCCARTESIANPOINT((0., 0., 0.));
+
+/* the site of the model */
+#23 = IFCSITE('3rNg_N55v4CRBpQVbZJoHB', #2, 'TU/e campus', 
+      'The High Tech campus of the Eindhoven University of Technology', $, #24, $, $, .ELEMENT., 
+      (24, 28, 0), (54, 25, 0), $, $, $);
+
+ /* The origin of the model */
+#24 = IFCLOCALPLACEMENT($, #25);
+#25 = IFCAXIS2PLACEMENT3D(#26, #27, #28);
+#26 = IFCCARTESIANPOINT((0., 0., 0.));
+#27 = IFCDIRECTION((0., 0., 1.));
+#28 = IFCDIRECTION((1., 0., 0.));
+
+
+/*  Description of the main building */
+#29 = IFCBUILDING('0yf_M5JZv9QQXly4dq_zvI', #2, 'Vertigo Building', 
+      'TU/e Department of the Built Environment', $, #30, $, $, .ELEMENT., $, $, $);
+#30 = IFCLOCALPLACEMENT(#24, #31);
+#31 = IFCAXIS2PLACEMENT3D(#32, #33, #34);
+#32 = IFCCARTESIANPOINT((0., 0., 0.));
+#33 = IFCDIRECTION((0., 0., 1.));
+#34 = IFCDIRECTION((1., 0., 0.));
+
+
+/* a storey within the building */
+#35 = IFCBUILDINGSTOREY('0C87kaqBXF$xpGmTZ7zxN$', #2, 'Default Building Storey', 
+      'Description of Default Building Storey', $, #36, $, $, .ELEMENT., 0.);
+#36 = IFCLOCALPLACEMENT(#30, #37);
+#37 = IFCAXIS2PLACEMENT3D(#38, #39, #40);
+#38 = IFCCARTESIANPOINT((0., 0., 0.));
+#39 = IFCDIRECTION((0., 0., 1.));
+#40 = IFCDIRECTION((1., 0., 0.));
+
+
+/* relate the site - building - story by objectified relationsships */
+#41 = IFCRELAGGREGATES('2168U9nPH5xB3UpDx_uK11', #2, 'BuildingContainer', 
+      'BuildingContainer for BuildigStories', #29, (#35));
+#42 = IFCRELAGGREGATES('3JuhmQJDj9xPnAnWoNb94X', #2, 'SiteContainer', 
+      'SiteContainer For Buildings', #23, (#29));
+#43 = IFCRELAGGREGATES('1Nl_BIjGLBke9u_6U3IWlW', #2, 'ProjectContainer', 
+      'ProjectContainer for Sites', #1, (#23));
+#44 = IFCRELCONTAINEDINSPATIALSTRUCTURE('2O_dMuDnr1Ahv28oR6ZVpr', #2, 
+      'Default Building', 'Contents of Building Storey', (#45, #124), #35);
+
+
+
+/* define a wall and its geometric representations */
+#45 = IFCWALLSTANDARDCASE('3vB2YO$MX4xv5uCqZZG05x', #2, 'Wall xyz', 
+      'Description of Wall', $, #46, #51, $);
+#46 = IFCLOCALPLACEMENT(#36, #47);
+#47 = IFCAXIS2PLACEMENT3D(#48, #49, #50);
+#48 = IFCCARTESIANPOINT((0., 0., 0.));
+#49 = IFCDIRECTION((0., 0., 1.));
+#50 = IFCDIRECTION((1., 0., 0.));
+#51 = IFCPRODUCTDEFINITIONSHAPE($, $, (#79, #83));
+#79 = IFCSHAPEREPRESENTATION(#20, 'Axis', 'Curve2D', (#80));
+#80 = IFCPOLYLINE((#81, #82));
+#81 = IFCCARTESIANPOINT((0., 1.500E-1));
+#82 = IFCCARTESIANPOINT((5., 1.500E-1));
+#83 = IFCSHAPEREPRESENTATION(#20, 'Body', 'SweptSolid', (#84));
+#84 = IFCEXTRUDEDAREASOLID(#85, #92, #96, 2.300);
+#85 = IFCARBITRARYCLOSEDPROFILEDEF(.AREA., $, #86);
+#86 = IFCPOLYLINE((#87, #88, #89, #90, #91));
+#87 = IFCCARTESIANPOINT((0., 0.));
+#88 = IFCCARTESIANPOINT((0., 0.30));
+#89 = IFCCARTESIANPOINT((5., 0.30));
+#90 = IFCCARTESIANPOINT((5., 0.));
+#91 = IFCCARTESIANPOINT((0., 0.));
+#92 = IFCAXIS2PLACEMENT3D(#93, #94, #95);
+#93 = IFCCARTESIANPOINT((0., 0., 0.));
+#94 = IFCDIRECTION((0., 0., 1.));
+#95 = IFCDIRECTION((1., 0., 0.));
+#96 = IFCDIRECTION((0., 0., 1.));
+
+/* create a material for the wall */
+#74 = IFCRELASSOCIATESMATERIAL('2zeggBjk9A5wcc3k9CYqdL', #2, $, $, (#45), #75);
+#75 = IFCMATERIALLAYERSETUSAGE(#76, .AXIS2., .POSITIVE., -1.500E-1);
+#76 = IFCMATERIALLAYERSET((#77), $);
+#77 = IFCMATERIALLAYER(#78, 3.000E-1, $);
+#78 = IFCMATERIAL('simple brick material');
+
+
+/* define some alphanumeric properties for the wall */
+#52 = IFCPROPERTYSET('18RtPv6efDwuUOMduCZ7rH', #2, 'Pset_WallCommon', $, 
+      (#53, #54, #55, #56, #57, #58, #59, #60, #61, #62));
+#53 = IFCPROPERTYSINGLEVALUE('Reference', 'Reference', IFCTEXT(''), $);
+#54 = IFCPROPERTYSINGLEVALUE('AcousticRating', 'AcousticRating', IFCTEXT(''), $);
+#55 = IFCPROPERTYSINGLEVALUE('FireRating', 'FireRating', IFCTEXT(''), $);
+#56 = IFCPROPERTYSINGLEVALUE('Combustible', 'Combustible', IFCBOOLEAN(.F.), $);
+#57 = IFCPROPERTYSINGLEVALUE('SurfaceSpreadOfFlame', 'SurfaceSpreadOfFlame', IFCTEXT(''), $);
+#58 = IFCPROPERTYSINGLEVALUE('ThermalTransmittance', 'ThermalTransmittance', IFCREAL(2.400E-1), $);
+#59 = IFCPROPERTYSINGLEVALUE('IsExternal', 'IsExternal', IFCBOOLEAN(.T.), $);
+#60 = IFCPROPERTYSINGLEVALUE('ExtendToStructure', 'ExtendToStructure', IFCBOOLEAN(.F.), $);
+#61 = IFCPROPERTYSINGLEVALUE('LoadBearing', 'LoadBearing', IFCBOOLEAN(.F.), $);
+#62 = IFCPROPERTYSINGLEVALUE('Compartmentation', 'Compartmentation', IFCBOOLEAN(.F.), $);
+#63 = IFCRELDEFINESBYPROPERTIES('3IxFuNHRvBDfMT6_FiWPEz', #2, $, $, (#45), #52);
+
+/* cut an opening into the wall to host the door*/
+#97 = IFCOPENINGELEMENT('2LcE70iQb51PEZynawyvuT', #2, 'Opening Element xyz', 
+      'Description of Opening', $, #98, #103, $);
+#98 = IFCLOCALPLACEMENT(#46, #99);
+#99 = IFCAXIS2PLACEMENT3D(#100, #101, #102);
+#100 = IFCCARTESIANPOINT((0.5, 0., 0.0));
+#101 = IFCDIRECTION((0., 0., 1.));
+#102 = IFCDIRECTION((1., 0., 0.));
+#103 = IFCPRODUCTDEFINITIONSHAPE($, $, (#110));
+#109 = IFCRELVOIDSELEMENT('3lR5koIT51Kwudkm5eIoTu', #2, $, $, #45, #97);
+#110 = IFCSHAPEREPRESENTATION(#20, 'Body', 'SweptSolid', (#111));
+#111 = IFCEXTRUDEDAREASOLID(#112, #119, #123, 2.100);
+#112 = IFCARBITRARYCLOSEDPROFILEDEF(.AREA., $, #113);
+#113 = IFCPOLYLINE((#114, #115, #116, #117, #118));
+#114 = IFCCARTESIANPOINT((0.0, 0.0));
+#115 = IFCCARTESIANPOINT((0.0, 0.3));
+#116 = IFCCARTESIANPOINT((0.75, 0.3));
+#117 = IFCCARTESIANPOINT((0.75, 0.));
+#118 = IFCCARTESIANPOINT((0., 0.));
+#119 = IFCAXIS2PLACEMENT3D(#120, #121, #122);
+#120 = IFCCARTESIANPOINT((0., 0., 0.));
+#121 = IFCDIRECTION((0., 0., 1.));
+#122 = IFCDIRECTION((1., 0., 0.));
+#123 = IFCDIRECTION((0., 0., 1.));
+
+
+/* create the door leaf */
+#124 = IFCDOOR('0LV8Pid0X3IA3jJLVDPidY', #2, 'A common door', 
+       'Description of a standard door', $, #125, #130, $, 1.400, 0.7);
+#125 = IFCLOCALPLACEMENT(#98, #126);
+#126 = IFCAXIS2PLACEMENT3D(#127, #128, #129);
+#127 = IFCCARTESIANPOINT((0., 1.000E-1, 0.));
+#128 = IFCDIRECTION((0., 0., 1.));
+#129 = IFCDIRECTION((1., 0., 0.));
+#130 = IFCPRODUCTDEFINITIONSHAPE($, $, (#150));
+#131 = IFCRELFILLSELEMENT('1CDlLMVMv1qw1giUXpQgxI', #2, $, $, #97, #124);
+#150 = IFCSHAPEREPRESENTATION(#20, 'Body', 'SweptSolid', (#151));
+#151 = IFCEXTRUDEDAREASOLID(#152, #159, #163, 2.100);
+#152 = IFCARBITRARYCLOSEDPROFILEDEF(.AREA., $, #153);
+#153 = IFCPOLYLINE((#154, #155, #156, #157, #158));
+#154 = IFCCARTESIANPOINT((0., 0.));
+#155 = IFCCARTESIANPOINT((0., 0.1));
+#156 = IFCCARTESIANPOINT((0.750, 0.1));
+#157 = IFCCARTESIANPOINT((0.75, 0.));
+#158 = IFCCARTESIANPOINT((0., 0.));
+#159 = IFCAXIS2PLACEMENT3D(#160, #161, #162);
+#160 = IFCCARTESIANPOINT((0., 0., 0.));
+#161 = IFCDIRECTION((0., 0., 1.));
+#162 = IFCDIRECTION((1., 0., 0.));
+#163 = IFCDIRECTION((0., 0., 1.));
+
+ENDSEC;
+END-ISO-10303-21;

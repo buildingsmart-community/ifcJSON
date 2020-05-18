@@ -1,13 +1,13 @@
 [
     {
         "type": "IfcOpeningElement",
-        "globalId": "2LcE70iQb51PEZynawyvuT",
+        "globalId": "9598e1c0-b1a9-4505-93a3-f3193af39e1d",
         "name": "Opening Element xyz",
         "description": "Description of Opening"
     },
     {
         "type": "IfcDoor",
-        "globalId": "0LV8Pid0X3IA3jJLVDPidY",
+        "globalId": "157c866c-9c08-4348-a0ed-4d57cd66c9e2",
         "name": "A common door",
         "description": "Description of a standard door",
         "overallHeight": 1.4,
@@ -15,40 +15,31 @@
     },
     {
         "type": "IfcRelFillsElement",
-        "globalId": "1CDlLMVMv1qw1giUXpQgxI",
+        "globalId": "4c36f556-7d6e-41d3-a06a-b1e8736aaed2",
         "relatingOpeningElement": {
             "type": "IfcOpeningElement",
-            "ref": "2LcE70iQb51PEZynawyvuT"
+            "ref": "9598e1c0-b1a9-4505-93a3-f3193af39e1d"
         },
         "relatedBuildingElement": {
             "type": "IfcDoor",
-            "ref": "0LV8Pid0X3IA3jJLVDPidY"
+            "ref": "157c866c-9c08-4348-a0ed-4d57cd66c9e2"
         }
     },
     {
-        "class": "ShapeRepresentation",
-        "globalId": "6125401e-7a0b-4953-bb89-71d5f0f0dbb2",
-        "representationIdentifier": "Body",
-        "representationType": "OBJ",
-        "items": [
-            "s 1\n\nv 0 0 0\n\nv 0 0 2.3\n\nv 0 0.3 2.3\n\nv 0 0.3 0\n\nv 5 0 0\n\nv 1.25 0 0\n\nv 1.25 0 2.1\n\nv 0.5 0 2.1\n\nv 0.5 0 0\n\nv 0 0 0\n\nv 0 0 2.3\n\nv 5 0 2.3\n\nv 0 0.3 0\n\nv 0.5 0.3 0\n\nv 0.5 0.3 2.1\n\nv 1.25 0.3 2.1\n\nv 1.25 0.3 0\n\nv 5 0.3 0\n\nv 5 0.3 2.3\n\nv 0 0.3 2.3\n\nv 0.5 0 0\n\nv 0 0 0\n\nv 0.5 0.3 0\n\nv 0 0.3 0\n\nv 0 0 2.3\n\nv 0 0.3 2.3\n\nv 5 0.3 2.3\n\nv 5 0 2.3\n\nv 5 0 0\n\nv 1.25 0 0\n\nv 5 0.3 0\n\nv 1.25 0.3 0\n\nv 1.25 0.3 0\n\nv 1.25 0.3 2.1\n\nv 1.25 0 2.1\n\nv 1.25 0 0\n\nv 0.5 0 2.1\n\nv 0.5 0.3 2.1\n\nv 1.25 0.3 2.1\n\nv 1.25 0 2.1\n\nv 0.5 0 0\n\nv 0.5 0 2.1\n\nv 0.5 0.3 2.1\n\nv 0.5 0.3 0\n\nv 5 0.3 0\n\nv 5 0.3 2.3\n\nv 5 0 2.3\n\nv 5 0 0\n\nvn -1 0 0\n\nvn -1 0 0\n\nvn -1 0 0\n\nvn -1 0 0\n\nvn 0 -1 0\n\nvn 0 -1 0\n\nvn 0 -1 0\n\nvn 0 -1 0\n\nvn 0 -1 0\n\nvn 0 -1 0\n\nvn 0 -1 0\n\nvn 0 -1 0\n\nvn 0 1 0\n\nvn 0 1 0\n\nvn 0 1 0\n\nvn 0 1 0\n\nvn 0 1 0\n\nvn 0 1 0\n\nvn 0 1 0\n\nvn 0 1 0\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 0 0 1\n\nvn 0 0 1\n\nvn 0 0 1\n\nvn 0 0 1\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn -1 -0 -0\n\nvn -1 -0 -0\n\nvn -1 -0 -0\n\nvn -1 -0 -0\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 1 0 0\n\nvn 1 0 0\n\nvn 1 0 0\n\nvn 1 0 0\n\nvn 1 0 0\n\nvn 1 0 0\n\nvn 1 0 0\n\nvn 1 0 0\n\nusemtl surface-style-78-simple-brick-material\n\nf 4//4 1//1 2//2\n\nf 4//4 2//2 3//3\n\nf 7//7 5//5 12//12\n\nf 11//11 8//8 7//7\n\nf 11//11 7//7 12//12\n\nf 6//6 5//5 7//7\n\nf 10//10 9//9 8//8\n\nf 10//10 8//8 11//11\n\nf 16//16 15//15 20//20\n\nf 13//13 20//20 15//15\n\nf 14//14 13//13 15//15\n\nf 19//19 16//16 20//20\n\nf 18//18 17//17 16//16\n\nf 18//18 16//16 19//19\n\nf 24//24 21//21 22//22\n\nf 24//24 23//23 21//21\n\nf 28//28 27//27 26//26\n\nf 25//25 28//28 26//26\n\nf 32//32 29//29 30//30\n\nf 32//32 31//31 29//29\n\nf 34//34 33//33 36//36\n\nf 35//35 34//34 36//36\n\nf 38//38 39//39 40//40\n\nf 38//38 40//40 37//37\n\nf 42//42 41//41 44//44\n\nf 43//43 42//42 44//44\n\nf 48//48 45//45 46//46\n\nf 48//48 46//46 47//47\n"
-        ]
-    },
-    {
         "type": "IfcWallStandardCase",
-        "globalId": "3vB2YO$MX4xv5uCqZZG05x",
+        "globalId": "f92c2898-fd68-44ef-9178-3348e340017b",
         "name": "Wall xyz",
         "description": "Description of Wall",
         "representations": [
             {
                 "class": "ShapeRepresentation",
-                "ref": "6125401e-7a0b-4953-bb89-71d5f0f0dbb2"
+                "ref": "d8f6b6af-4cf0-4f9d-882b-3f699600699e"
             }
         ]
     },
     {
         "type": "IfcPropertySet",
-        "globalId": "18RtPv6efDwuUOMduCZ7rH",
+        "globalId": "486f7679-1a8a-4deb-8798-5a7e0c8c7d51",
         "name": "Pset_WallCommon",
         "hasProperties": [
             {
@@ -145,25 +136,25 @@
     },
     {
         "type": "IfcRelDefinesByProperties",
-        "globalId": "3IxFuNHRvBDfMT6_FiWPEz",
+        "globalId": "d2ecfe17-45be-4b36-959d-1be3ec8193bd",
         "relatedObjects": [
             {
                 "type": "IfcWallStandardCase",
-                "ref": "3vB2YO$MX4xv5uCqZZG05x"
+                "ref": "f92c2898-fd68-44ef-9178-3348e340017b"
             }
         ],
         "relatingPropertyDefinition": {
             "type": "IfcPropertySet",
-            "ref": "18RtPv6efDwuUOMduCZ7rH"
+            "ref": "486f7679-1a8a-4deb-8798-5a7e0c8c7d51"
         }
     },
     {
         "type": "IfcRelAssociatesMaterial",
-        "globalId": "2zeggBjk9A5wcc3k9CYqdL",
+        "globalId": "bda2aa8b-b6e2-4a17-a9a6-0ee24c8b49d5",
         "relatedObjects": [
             {
                 "type": "IfcWallStandardCase",
-                "ref": "3vB2YO$MX4xv5uCqZZG05x"
+                "ref": "f92c2898-fd68-44ef-9178-3348e340017b"
             }
         ],
         "relatingMaterial": {
@@ -188,7 +179,7 @@
     },
     {
         "type": "IfcBuildingStorey",
-        "globalId": "0C87kaqBXF$xpGmTZ7zxN$",
+        "globalId": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff",
         "name": "Default Building Storey",
         "description": "Description of Default Building Storey",
         "compositionType": "ELEMENT",
@@ -196,27 +187,27 @@
     },
     {
         "type": "IfcRelContainedInSpatialStructure",
-        "globalId": "2O_dMuDnr1Ahv28oR6ZVpr",
+        "globalId": "98fa75b8-371d-412a-be42-2326c68dfcf5",
         "name": "Default Building",
         "description": "Contents of Building Storey",
         "relatedElements": [
             {
                 "type": "IfcWallStandardCase",
-                "ref": "3vB2YO$MX4xv5uCqZZG05x"
+                "ref": "f92c2898-fd68-44ef-9178-3348e340017b"
             },
             {
                 "type": "IfcDoor",
-                "ref": "0LV8Pid0X3IA3jJLVDPidY"
+                "ref": "157c866c-9c08-4348-a0ed-4d57cd66c9e2"
             }
         ],
         "relatingStructure": {
             "type": "IfcBuildingStorey",
-            "ref": "0C87kaqBXF$xpGmTZ7zxN$"
+            "ref": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff"
         }
     },
     {
         "type": "IfcProject",
-        "globalId": "0YvctVUKr0kugbFTf53O9L",
+        "globalId": "22e66ddf-794d-40bb-8aa5-3dda450d8255",
         "name": "Default Project",
         "description": "Description of Default Project",
         "representationContexts": [
@@ -313,7 +304,7 @@
     },
     {
         "type": "IfcSite",
-        "globalId": "3rNg_N55v4CRBpQVbZJoHB",
+        "globalId": "f55eaf97-145e-4431-b2f3-69f9634f244b",
         "name": "TU/e campus",
         "description": "The High Tech campus of the Eindhoven University of Technology",
         "compositionType": "ELEMENT",
@@ -330,69 +321,78 @@
     },
     {
         "type": "IfcRelAggregates",
-        "globalId": "1Nl_BIjGLBke9u_6U3IWlW",
+        "globalId": "57bfe2d2-b505-4bba-8278-f867834a0be0",
         "name": "ProjectContainer",
         "description": "ProjectContainer for Sites",
         "relatingObject": {
             "type": "IfcProject",
-            "ref": "0YvctVUKr0kugbFTf53O9L"
+            "ref": "22e66ddf-794d-40bb-8aa5-3dda450d8255"
         },
         "relatedObjects": [
             {
                 "type": "IfcSite",
-                "ref": "3rNg_N55v4CRBpQVbZJoHB"
+                "ref": "f55eaf97-145e-4431-b2f3-69f9634f244b"
             }
         ]
     },
     {
         "type": "IfcBuilding",
-        "globalId": "0yf_M5JZv9QQXly4dq_zvI",
+        "globalId": "3ca7e585-4e3e-4969-a86f-f049f4fbde52",
         "name": "Vertigo Building",
         "description": "TU/e Department of the Built Environment",
         "compositionType": "ELEMENT"
     },
     {
         "type": "IfcRelAggregates",
-        "globalId": "3JuhmQJDj9xPnAnWoNb94X",
+        "globalId": "d3e2bc1a-4cdb-49ed-9c4a-c60c97949121",
         "name": "SiteContainer",
         "description": "SiteContainer For Buildings",
         "relatingObject": {
             "type": "IfcSite",
-            "ref": "3rNg_N55v4CRBpQVbZJoHB"
+            "ref": "f55eaf97-145e-4431-b2f3-69f9634f244b"
         },
         "relatedObjects": [
             {
                 "type": "IfcBuilding",
-                "ref": "0yf_M5JZv9QQXly4dq_zvI"
+                "ref": "3ca7e585-4e3e-4969-a86f-f049f4fbde52"
             }
         ]
     },
     {
         "type": "IfcRelAggregates",
-        "globalId": "2168U9nPH5xB3UpDx_uK11",
+        "globalId": "81188789-c594-45ec-b0de-ccdefee14041",
         "name": "BuildingContainer",
         "description": "BuildingContainer for BuildigStories",
         "relatingObject": {
             "type": "IfcBuilding",
-            "ref": "0yf_M5JZv9QQXly4dq_zvI"
+            "ref": "3ca7e585-4e3e-4969-a86f-f049f4fbde52"
         },
         "relatedObjects": [
             {
                 "type": "IfcBuildingStorey",
-                "ref": "0C87kaqBXF$xpGmTZ7zxN$"
+                "ref": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff"
             }
         ]
     },
     {
         "type": "IfcRelVoidsElement",
-        "globalId": "3lR5koIT51Kwudkm5eIoTu",
+        "globalId": "ef6c5bb2-49d1-4153-ae27-bb01684b2778",
         "relatingBuildingElement": {
             "type": "IfcWallStandardCase",
-            "ref": "3vB2YO$MX4xv5uCqZZG05x"
+            "ref": "f92c2898-fd68-44ef-9178-3348e340017b"
         },
         "relatedOpeningElement": {
             "type": "IfcOpeningElement",
-            "ref": "2LcE70iQb51PEZynawyvuT"
+            "ref": "9598e1c0-b1a9-4505-93a3-f3193af39e1d"
         }
+    },
+    {
+        "class": "ShapeRepresentation",
+        "globalId": "d8f6b6af-4cf0-4f9d-882b-3f699600699e",
+        "representationIdentifier": "Body",
+        "representationType": "OBJ",
+        "items": [
+            "s 1\n\nv 0 0 0\n\nv 0 0 2.3\n\nv 0 0.3 2.3\n\nv 0 0.3 0\n\nv 5 0 0\n\nv 1.25 0 0\n\nv 1.25 0 2.1\n\nv 0.5 0 2.1\n\nv 0.5 0 0\n\nv 0 0 0\n\nv 0 0 2.3\n\nv 5 0 2.3\n\nv 0 0.3 0\n\nv 0.5 0.3 0\n\nv 0.5 0.3 2.1\n\nv 1.25 0.3 2.1\n\nv 1.25 0.3 0\n\nv 5 0.3 0\n\nv 5 0.3 2.3\n\nv 0 0.3 2.3\n\nv 0.5 0 0\n\nv 0 0 0\n\nv 0.5 0.3 0\n\nv 0 0.3 0\n\nv 0 0 2.3\n\nv 0 0.3 2.3\n\nv 5 0.3 2.3\n\nv 5 0 2.3\n\nv 5 0 0\n\nv 1.25 0 0\n\nv 5 0.3 0\n\nv 1.25 0.3 0\n\nv 1.25 0.3 0\n\nv 1.25 0.3 2.1\n\nv 1.25 0 2.1\n\nv 1.25 0 0\n\nv 0.5 0 2.1\n\nv 0.5 0.3 2.1\n\nv 1.25 0.3 2.1\n\nv 1.25 0 2.1\n\nv 0.5 0 0\n\nv 0.5 0 2.1\n\nv 0.5 0.3 2.1\n\nv 0.5 0.3 0\n\nv 5 0.3 0\n\nv 5 0.3 2.3\n\nv 5 0 2.3\n\nv 5 0 0\n\nvn -1 0 0\n\nvn -1 0 0\n\nvn -1 0 0\n\nvn -1 0 0\n\nvn 0 -1 0\n\nvn 0 -1 0\n\nvn 0 -1 0\n\nvn 0 -1 0\n\nvn 0 -1 0\n\nvn 0 -1 0\n\nvn 0 -1 0\n\nvn 0 -1 0\n\nvn 0 1 0\n\nvn 0 1 0\n\nvn 0 1 0\n\nvn 0 1 0\n\nvn 0 1 0\n\nvn 0 1 0\n\nvn 0 1 0\n\nvn 0 1 0\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 0 0 1\n\nvn 0 0 1\n\nvn 0 0 1\n\nvn 0 0 1\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn -1 -0 -0\n\nvn -1 -0 -0\n\nvn -1 -0 -0\n\nvn -1 -0 -0\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 0 0 -1\n\nvn 1 0 0\n\nvn 1 0 0\n\nvn 1 0 0\n\nvn 1 0 0\n\nvn 1 0 0\n\nvn 1 0 0\n\nvn 1 0 0\n\nvn 1 0 0\n\nusemtl surface-style-78-simple-brick-material\n\nf 4//4 1//1 2//2\n\nf 4//4 2//2 3//3\n\nf 7//7 5//5 12//12\n\nf 11//11 8//8 7//7\n\nf 11//11 7//7 12//12\n\nf 6//6 5//5 7//7\n\nf 10//10 9//9 8//8\n\nf 10//10 8//8 11//11\n\nf 16//16 15//15 20//20\n\nf 13//13 20//20 15//15\n\nf 14//14 13//13 15//15\n\nf 19//19 16//16 20//20\n\nf 18//18 17//17 16//16\n\nf 18//18 16//16 19//19\n\nf 24//24 21//21 22//22\n\nf 24//24 23//23 21//21\n\nf 28//28 27//27 26//26\n\nf 25//25 28//28 26//26\n\nf 32//32 29//29 30//30\n\nf 32//32 31//31 29//29\n\nf 34//34 33//33 36//36\n\nf 35//35 34//34 36//36\n\nf 38//38 39//39 40//40\n\nf 38//38 40//40 37//37\n\nf 42//42 41//41 44//44\n\nf 43//43 42//42 44//44\n\nf 48//48 45//45 46//46\n\nf 48//48 46//46 47//47\n"
+        ]
     }
 ]
