@@ -61,7 +61,7 @@ The following criteria are therefore NOT followed:
 In the below sections, a more detailed specification is given for ifcJSON. We don't provide a full schema here, but rather list a number of general principles.
 
 ### 2.1 Required objects, keys, or entities
-Several elements are required in the IFC Schema. These are recorded also in the IFC JSON Schema and must be followed. You can check whether an IFC schema is valid using any of the freely available validators.
+Several elements are required in the IFC EXPRESS Schema. These restrictions are largely released in the IFC4 JSON spec, thereby allowing easier and more specific data exchanges (transactional data exchange). The remaining restrictions are made available in the JSON schema for IFC. You can check whether a JSON file is valid against this JSON schema of IFC by using any of the freely available validators.
 
 ### 2.2 Empty values, 'userdefined' values, and 'notdefined' values
 You are free to include empty values, yet you are encouraged to leave them out of the data exchange. The `NOTDEFINED` and `USERDEFINED` Enum elements are maintained and available.
@@ -69,155 +69,218 @@ You are free to include empty values, yet you are encouraged to leave them out o
 This is valid:
 
 ~~~
-"Type": "IfcProject",
-"GlobalId": "028c968f-687d-484e-9c0a-5048a923b8c4",
-"Name": "0YvctVUKr0kugbFTf53O9L",
-"Description": "",
-"ObjectType": null,
-"LongName": null,
-"Phase": null,
-"Type": "NOTDEFINED"
+"type" : "IfcDoor",
+"globalId" : "157c866c-9c08-4348-a0ed-4d57cd66c9e2",
+"name" : "A common door",
+"description": "",
+"overallHeight" : null,
+"overallWidth" : null,
+"predefinedType": "NOTDEFINED"
 ~~~
 
 This is encouraged:
 
 ~~~
-"Type": "IfcProject",
-"GlobalId": "028c968f-687d-484e-9c0a-5048a923b8c4",
-"Name": "0YvctVUKr0kugbFTf53O9L",
-"Type": "NOTDEFINED"
+"type" : "IfcDoor",
+"globalId" : "157c866c-9c08-4348-a0ed-4d57cd66c9e2",
+"name" : "A common door",
+"description" : "Description of a standard door",
+"overallHeight" : 1.4,
+"overallWidth" : 0.7,
+"predefinedType" : "GATE"
 ~~~
 
 ### 2.4 Header
 A header is included in the IFCJSON file and is a direct translation of the header section in a SPF file.
 
 ### 2.5 Identifiers
-An object is identified by its GlobalID, which is a UUID according to https://tools.ietf.org/html/rfc4122. The GlobalId property is to be added only to those elements that are descendent of the IfcRoot Type, as is the case in the IFC EXPRESS schema. Literals and geometric items and list hence do not need a GlobalId.
+An object is identified by its globalID, which is a UUID according to https://tools.ietf.org/html/rfc4122. Whereas the globalId attribute is only available to those elements that are descendent of the IfcRoot entity in the EXPRESS schema, we encourage a broader use of this globalId, to enable referencing between objects in a JSON file when useful.
 
 ~~~
-"GlobalId": "028c968f-687d-484e-9c0a-5048a923b8c4"
+"globalId": "028c968f-687d-484e-9c0a-5048a923b8c4"
 ~~~
 
-Furthermore, a line number is included, taken from the STEP file if available, and generated otherwise. This line number is used for internal referencing within the IFCJSON file.
-
-~~~
-"Type": "IfcProject",
-"GlobalId": "028c968f-687d-484e-9c0a-5048a923b8c4",
-"Name": "0YvctVUKr0kugbFTf53O9L",
-"Id": "_00365"
-~~~
-
-Objects can be referenced in JSON by using the ref key-value pair. In the example below, a reference is made to the object with internal id `365`.	
+Objects can be referenced in JSON by using the globalId attribute. In the example below, a reference is made to the ownerHistory object, which has the globalId `6d7919fd-2c83-497b-b21c-d4209e5162bf`.	
  
 ~~~
-"ref": "_00365"
+"type" : "IfcRelContainedInSpatialStructure",
+"globalId" : "98fa75b8-371d-412a-be42-2326c68dfcf5",
+"ownerHistory" : "6d7919fd-2c83-497b-b21c-d4209e5162bf",
+"name" : "Default Building",
+"description" : "Contents of Building Storey"
 ~~~
 
 ### 2.6 Tree Structure
-Generally, the IFC.JSON structure is flexible. Objects may be nested inline, or referenced using "ref" tag and Id value. It is recommended to use a tree structure (forward downward relationships) as much as possible. All objects that are commonly available in the IFC-SPF file are to be maintained, and relationships are to be included in the same direction. As a result, the tree is relatively flat. Yet, it is recommended to follow the ID structure in the IFCJSON file to obtain the data that you need.
+Generally, the IFC.JSON structure is flexible. Objects may be nested inline, or referenced using references to the globalId. It is recommended to use a tree structure (forward downward relationships) as much as possible, in order to improve human readability. All objects in IFC are maintained, included the objectified relationships (many-to-many and one-to-many and ternary and n-ary).
 
 Example:
 
 ~~~
-[
-  {
-    "Type": "IfcProject",
-    "GlobalId": "cb78a8c2-fb1e-4e12-8f29-6c0d7c39ca0b",
-    "Name": "Default Project",
-    "Description": "Description of Default Project",
-    "Id": "_00365"
-  },
-  {
-    "Type": "IfcSite",
-    "GlobalId": "f07e69ce-3709-4ef5-a029-e27de7e95991",
-    "Name": "'TU/e campus'",
-    "Description": "'The High Tech campus of the Eindhoven University of Technology'",
-    "CompositionType": ".ELEMENT.",
-    "RefElevation": 0,
-    "Id": "_00366"
-  },
-  {
-    "Type": "IfcBuilding",
-    "GlobalId": "f3b41796-63ea-4a63-b0aa-f1d7978a6e47",
-    "Name": "Vertigo Building",
-    "Description": "TU/e Department of the Built Environment",
-    "CompositionType": ".ELEMENT.",
-    "ElevationOfRefHeight": 0,
-    "ElevationOfTerrain": 0,,
-    "Id": "_00367"
-  },
-  {
-    "Type": "IfcRelAggregates",
-    "Id": "_00368",
-    "RelatingObject": {
-      "Type": "IfcProject",
-      "ref": "_00365"
-    },
-    "RelatedObjects": [
-      {
-        "Type": "IfcSite",
-        "ref": "_00366"
+{
+  "type" : "IfcProject",
+  "globalId" : "22e66ddf-794d-40bb-8aa5-3dda450d8255",
+  "name" : "Default Project",
+  "description" : "Description of Default Project",
+  "isDecomposedBy" : {
+    "type" : "IfcRelAggregates",
+    "globalId" : "57bfe2d2-b505-4bba-8278-f867834a0be0",
+    "ownerHistory" : "6d7919fd-2c83-497b-b21c-d4209e5162bf",
+    "name" : "ProjectContainer",
+    "description" : "ProjectContainer for Sites",
+    "relatedObjects" : [ {
+      "type" : "IfcSite",
+      "globalId" : "f55eaf97-145e-4431-b2f3-69f9634f244b",
+      "ownerHistory" : "6d7919fd-2c83-497b-b21c-d4209e5162bf",
+      "name" : "TU/e campus",
+      "description" : "The High Tech campus of the Eindhoven University of Technology",
+      "isDecomposedBy" : {
+        "type" : "IfcRelAggregates",
+        "globalId" : "d3e2bc1a-4cdb-49ed-9c4a-c60c97949121",
+        "ownerHistory" : "6d7919fd-2c83-497b-b21c-d4209e5162bf",
+        "name" : "SiteContainer",
+        "description" : "SiteContainer For Buildings",
+        "relatedObjects" : [ {
+          "type" : "IfcBuilding",
+          "globalId" : "3ca7e585-4e3e-4969-a86f-f049f4fbde52",
+          "ownerHistory" : "6d7919fd-2c83-497b-b21c-d4209e5162bf",
+          "name" : "Vertigo Building",
+          "description" : "TU/e Department of the Built Environment"
+        } ]
       }
-    ]
-  },
-  {
-    "Type": "IfcRelAggregates",
-    "Id": "_00369",
-    "RelatingObject": {
-      "Type": "IfcSite",
-      "ref": "_00366"
-    },
-    "RelatedObjects": [
-      {
-        "Type": "IfcBuilding",
-        "ref": "_00367"
-      }
-    ]
+    } ]
   }
-]
+}
 ~~~
 
 ### 2.7 camelCase, CamelCaps, or snake_case
-Considering that there is no standard notation in JSON, we use the notation standards followed in IFC documentation, which is CamelCaps.
+The most commonly used notation in JSON is camelCase, mainly because of its alignment with a JavaScript and Python audience. Hence, the JSON version of IFC uses camelCase as much as possible.
 
 This is valid:
 ~~~
-"GlobalId": "028c968f-687d-484e-9c0a-5048a923b8c4"
+"globalId": "028c968f-687d-484e-9c0a-5048a923b8c4"
 ~~~
 
 This is not valid:
 ~~~
-"globalId": "028c968f-687d-484e-9c0a-5048a923b8c4"
+"GlobalId": "028c968f-687d-484e-9c0a-5048a923b8c4"
 "global_id": "028c968f-687d-484e-9c0a-5048a923b8c4"
 ~~~
 
 ### 2.8 PredefinedTypes and ObjectTypes and Types
-There are multiple ways to define the object type of an object in the IFC EXPRESS schema. In IFC.JSON, the same structure is followed and you can include type information in the `Type`, `PredefinedType` and `ObjectType` attributes. As indicated in the IFC.JSON schema, the `Type` and `ObjectType` attributes refer to a string. The `Type` attribute is hereby reserved for the IFC type name. The `PredefinedType` attribute is only available for a number of objects, and the allowed values for this attributes are listed in the IFC.JSON schema (identical to EXPRESS schema).
+There are multiple ways to define the object type of an object in the IFC EXPRESS schema. In IFC.JSON, the same structure is followed as in the original IFC schema and you can include type information in the `type`, `predefinedType` and `objectType` attributes. As indicated in the IFC.JSON schema, the `type` and `objectType` attributes refer to a string. The `type` attribute is hereby reserved for the IFC type name. The `predefinedType` attribute is only available for a number of objects, and the allowed values for this attributes are listed in the IFC.JSON schema (identical to EXPRESS schema). These predefinedType values do not need to be enclosed by dots (in other words: NOT `".GATE."`, but just `"GATE"`).
 
 This is valid:
 ~~~
-{
-  "Type": "IfcDoor",
-  "GlobalId": "f3b96025-a1f3-42a8-b047-b6cc5b1880ff",
-  "Name": "A common door",
-  "Description": "Description of a standard door",
-  "ObjectType" : "IfcDoor",
-  "PredefinedType" : ".DOORSUBTYPE."
-}
+"type" : "IfcDoor",
+"globalId" : "157c866c-9c08-4348-a0ed-4d57cd66c9e2",
+"name" : "A common door",
+"description" : "Description of a standard door",
+"overallHeight" : 1.4,
+"overallWidth" : 0.7,
+"predefinedType" : "GATE"
+~~~
+
+This is also valid and allows userdefined subtypes.
+
+~~~
+"type" : "IfcDoor",
+"globalId" : "157c866c-9c08-4348-a0ed-4d57cd66c9e2",
+"name" : "A less common door",
+"description" : "Description of a standard door",
+"objectType" : "ThickMassiveWoodenDoor",
+"overallHeight" : 1.4,
+"overallWidth" : 0.7,
+"predefinedType" : "USERDEFINED"
 ~~~
 
 ### 2.9 Geometry
-Geometry may be treated in multiple ways. Geometry is included similar to how it was included in the STEP file, thus allowing the inclusion of representation data and units and geometric contexts. Furthermore, it is allowed to include geometry in other formats. 
+Geometry is included similar to how it was included in the STEP file, thus allowing the inclusion of representation data and units and geometric contexts.
 
-- Geometry formats: in principle, any geometry description can be used and handled, including OBJ, GTLF, point cloud, STEP, and a potentially scalable set of future geometry types and formats.
-- Referencing geometry:
-	- Nested inline, embedded in the JSON tree - recommended when including STEP geometry (CSG geometry).
-	- Nested inline, with a simple string - recommended for any BREP geometry (triangulated mesh geometry).
-	- Referenced elsewhere in the JSON data using a GlobalID
-	- Referenced externally by URI
+Example:
+
+~~~
+"representation" : {
+  "type" : "IfcProductDefinitionShape",
+  "representations" : [ {
+    "type" : "IfcShapeRepresentation",
+    "contextOfItems" : "e4c36548-94c3-4939-930f-94899539746b",
+    "representationIdentifier" : "Body",
+    "representationType" : "SweptSolid",
+    "items" : [ {
+      "type" : "IfcExtrudedAreaSolid",
+      "sweptArea" : {
+        "type" : "IfcArbitraryClosedProfileDef",
+        "profileType" : "AREA",
+        "outerCurve" : {
+          "type" : "IfcPolyline",
+          "points" : [ 
+            {
+              "type" : "IfcCartesianPoint",
+              "coordinates" : [ 0.0, 0.0 ]
+            }, {
+              "type" : "IfcCartesianPoint",
+              "coordinates" : [ 0.0, 0.1 ]
+            }, {
+              "type" : "IfcCartesianPoint",
+              "coordinates" : [ 0.75, 0.1 ]
+            }, {
+              "type" : "IfcCartesianPoint",
+              "coordinates" : [ 0.75, 0.0 ]
+            }, {
+              "type" : "IfcCartesianPoint",
+              "coordinates" : [ 0.0, 0.0 ]
+            } ]
+        }
+      },
+      "position" : { ... },
+      "extrudedDirection" : {
+        "type" : "IfcDirection",
+        "directionRatios" : [ 0.0, 0.0, 1.0 ]
+      },
+      "depth" : 2.1
+    } ]
+  } ]
+}
+~~~
 
 ### 2.10 Attributes, Properties and Property Sets
-In IFC.JSON, attributes, properties and property sets are included identical to how they are included in the IFC EXPRESS schema. The ifcJSON schema indicates how this can be done (`IfcRelDefinesByProperties`).
+In IFC.JSON, attributes, properties and property sets are included identical to how they are included in the IFC EXPRESS schema.
+
+Example:
+
+~~~
+"type" : "IfcWall",
+"globalId" : "f92c2898-fd68-44ef-9178-3348e340017b",
+"isDefinedBy" : [ {
+  "type" : "IfcRelDefinesByProperties",
+  "globalId" : "d2ecfe17-45be-4b36-959d-1be3ec8193bd",
+  "ownerHistory" : "6d7919fd-2c83-497b-b21c-d4209e5162bf",
+  "relatingPropertyDefinition" : {
+    "globalId" : "486f7679-1a8a-4deb-8798-5a7e0c8c7d51",
+    "ownerHistory" : "6d7919fd-2c83-497b-b21c-d4209e5162bf",
+    "name" : "Pset_WallCommon",
+    "hasProperties" : [ 
+      {
+        "type" : "IfcPropertySingleValue",
+        "name" : "IsExternal",
+        "description" : "IsExternal",
+        "nominalValue" : {
+          "type" : "IfcBoolean",
+          "booleanValue" : true
+        }
+      }, {
+        "type" : "IfcPropertySingleValue",
+        "name" : "Reference",
+        "description" : "Reference",
+        "nominalValue" : {
+          "type" : "IfcText",
+          "stringValue" : "insert URL"
+        }
+      }
+    ]
+  }
+}]
+~~~
 
 ## 3. ifcJSON Schema
 Like the XSD schema specification and OWL ontology for IFC, also the IFC.JSON schema can be automatically converted from the EXPRESS (ISO 10303 part 1) representation of the IFC schema. Roundtripping conversion from IFC-SPF files to JSON is also possible. Both schema and data conversion are not (yet) available. Yet, an ifcJSON schema is available in this repository and allows to validate which IFC.JSON is valid.
@@ -231,17 +294,16 @@ Example ifcJSON data:
   "globalId": "028c968f-687d-484e-9c0a-5048a923b8c4",
   "name": "my wall",
   "description": "Description of the wall",
-  "objectPlacement": { },
+  "objectPlacement": null,
   "objectType": "null",
-  "representation": { },
+  "representation": null,
   "tag": "267108",
-  "id": "_00365",
-  "ownerHistory": "null",
-  "predefinedType": "null"
+  "ownerHistory": null,
+  "predefinedType": "SOLIDWALL"
 }
 ~~~
 
-Corresponding ifcJSON Schema snippet (validated with above snippet using https://www.jsonschemavalidator.net/):
+Corresponding ifcJSON Schema snippet:
 ~~~
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -254,9 +316,6 @@ Corresponding ifcJSON Schema snippet (validated with above snippet using https:/
   "globalId": {
     "type": "string",
     "maxLength": 22
-  },
-  "id": {
-    "type": "string"
   },
   "ownerHistory": {"oneOf":[
     {"type": "null"},
@@ -313,8 +372,7 @@ Corresponding ifcJSON Schema snippet (validated with above snippet using https:/
           "USERDEFINED",
           "NOTDEFINED"]},
      ]
-  },
-  "required": ["type", "globalId", "ownerHistory", "name", "description", "objectType", "objectPlacement", "representation", "tag", "predefinedType"]
+  }
 }
 ~~~
 
