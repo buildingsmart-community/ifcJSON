@@ -2,11 +2,11 @@ ISO-10303-21;
 HEADER;
 FILE_DESCRIPTION (('ViewDefinition [CoordinationView, 
   QuantityTakeOffAddOnView]'), '2;1');
-FILE_NAME ('7m900_tue_hello_wall_with_door.ifc', '2015-12-01T21:53:56', 
+FILE_NAME ('7m900_tue_hello_wall_with_door.ifc', '2020-04-13T13:53:56', 
   ('Architect'), ('Building Designer Office'), 
   'Your favorite text editor', 
   'your text editor version x.x', 'The authorising person');
-FILE_SCHEMA (('IFC2X3'));
+FILE_SCHEMA (('IFC4'));
 ENDSEC;
 
 
@@ -17,7 +17,7 @@ DATA;
      'Description of Default Project', $, $, $, (#20), #7);
 #2 = IFCOWNERHISTORY(#3, #6, $, .ADDED., $, $, $, 1217620436);
 #3 = IFCPERSONANDORGANIZATION(#4, #5, $);
-#4 = IFCPERSON('ID001', 'Beetz', 'Jakob', $, $, $, $, $);
+#4 = IFCPERSON('ID001', 'Pauwels', 'Pieter', $, $, $, $, $);
 #5 = IFCORGANIZATION($, 'TU/e', 'Eindhoven University of Technology', $, $);
 #6 = IFCAPPLICATION(#5, 'version 0.10', 'My text editor', 'TA 1001');
 
@@ -85,8 +85,8 @@ DATA;
 
 
 /* define a wall and its geometric representations */
-#45 = IFCWALLSTANDARDCASE('3vB2YO$MX4xv5uCqZZG05x', #2, 'Wall xyz', 
-      'Description of Wall', $, #46, #51, $);
+#45 = IFCWALL('3vB2YO$MX4xv5uCqZZG05x', #2, 'Wall xyz', 
+      'Description of Wall', $, #46, #51, $, .SOLIDWALL.);
 #46 = IFCLOCALPLACEMENT(#36, #47);
 #47 = IFCAXIS2PLACEMENT3D(#48, #49, #50);
 #48 = IFCCARTESIANPOINT((0., 0., 0.));
@@ -113,11 +113,8 @@ DATA;
 #96 = IFCDIRECTION((0., 0., 1.));
 
 /* create a material for the wall */
-#74 = IFCRELASSOCIATESMATERIAL('2zeggBjk9A5wcc3k9CYqdL', #2, $, $, (#45), #75);
-#75 = IFCMATERIALLAYERSETUSAGE(#76, .AXIS2., .POSITIVE., -1.500E-1);
-#76 = IFCMATERIALLAYERSET((#77), $);
-#77 = IFCMATERIALLAYER(#78, 3.000E-1, $);
-#78 = IFCMATERIAL('simple brick material');
+#74 = IFCRELASSOCIATESMATERIAL('2zeggBjk9A5wcc3k9CYqdL', #2, $, $, (#45), #78);
+#78 = IFCMATERIAL('290x90x140mm brick','Yellow brick with blue dots of regular size','Brick');
 
 
 /* define some alphanumeric properties for the wall */
@@ -125,7 +122,7 @@ DATA;
       (#53, #54, #55, #56, #57, #58, #59, #60, #61, #62));
 #53 = IFCPROPERTYSINGLEVALUE('Reference', 'Reference', IFCTEXT(''), $);
 #54 = IFCPROPERTYSINGLEVALUE('AcousticRating', 'AcousticRating', IFCTEXT(''), $);
-#55 = IFCPROPERTYSINGLEVALUE('FireRating', 'FireRating', IFCTEXT(''), $);
+#55 = IFCPROPERTYSINGLEVALUE('FireRating', 'FireRating', IFCTEXT('Class A'), $);
 #56 = IFCPROPERTYSINGLEVALUE('Combustible', 'Combustible', IFCBOOLEAN(.F.), $);
 #57 = IFCPROPERTYSINGLEVALUE('SurfaceSpreadOfFlame', 'SurfaceSpreadOfFlame', IFCTEXT(''), $);
 #58 = IFCPROPERTYSINGLEVALUE('ThermalTransmittance', 'ThermalTransmittance', IFCREAL(2.400E-1), $);
@@ -137,7 +134,7 @@ DATA;
 
 /* cut an opening into the wall to host the door*/
 #97 = IFCOPENINGELEMENT('2LcE70iQb51PEZynawyvuT', #2, 'Opening Element xyz', 
-      'Description of Opening', $, #98, #103, $);
+      'Description of Opening', $, #98, #103, $, .OPENING.);
 #98 = IFCLOCALPLACEMENT(#46, #99);
 #99 = IFCAXIS2PLACEMENT3D(#100, #101, #102);
 #100 = IFCCARTESIANPOINT((0.5, 0., 0.0));
@@ -163,7 +160,7 @@ DATA;
 
 /* create the door leaf */
 #124 = IFCDOOR('0LV8Pid0X3IA3jJLVDPidY', #2, 'A common door', 
-       'Description of a standard door', $, #125, #130, $, 1.400, 0.7);
+       'Description of a standard door', $, #125, #130, $, 1.400, 0.7, .DOOR., $, $);
 #125 = IFCLOCALPLACEMENT(#98, #126);
 #126 = IFCAXIS2PLACEMENT3D(#127, #128, #129);
 #127 = IFCCARTESIANPOINT((0., 1.000E-1, 0.));
