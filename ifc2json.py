@@ -17,10 +17,13 @@
 # Convert IFC SPF file to IFC.JSON-5Alpha
 # https://github.com/IFCJSON-Team
 
+from time import perf_counter
 import os
 import argparse
-import ifcjson.ifc2json4 as ifc2json4
-import ifcjson.ifc2json5a as ifc2json5a
+import json
+from ifcjson.ifc2json4 import IFC2JSON4
+from ifcjson.ifc2json5a import IFC2JSON5a
+t1_start = perf_counter()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Convert IFC SPF file to IFC.JSON')
@@ -37,14 +40,17 @@ if __name__ == '__main__':
             jsonFilePath = args.o
         else:
             jsonFilePath = os.path.splitext(ifcFilePath)[0] + '.json'
-        if args.v:
-            if args.v == "4":
-                ifc2json4.spf2Json(ifcFilePath, jsonFilePath)
-            elif args.v == "5a":
-                ifc2json5a.spf2Json(ifcFilePath, jsonFilePath)
-            else:
-                print('Version ' + args.v + ' is not supported')
+        if not args.v or args.v == "4":
+            jsonData = IFC2JSON4(ifcFilePath).spf2Json()
+            with open(jsonFilePath, 'w') as outfile:
+                json.dump(jsonData, outfile, indent=4)
+        elif args.v == "5a":
+            jsonData = IFC2JSON5a(ifcFilePath).spf2Json()
+            with open(jsonFilePath, 'w') as outfile:
+                json.dump(jsonData, outfile, indent=4)
         else:
-            ifc2json4.spf2Json(ifcFilePath, jsonFilePath)
+            print('Version ' + args.v + ' is not supported')
     else:
         print(args.i + ' is not a valid file')
+t1_stop = perf_counter()
+print("Conversion took ", t1_stop-t1_start, " seconds") 
