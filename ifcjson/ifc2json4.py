@@ -19,11 +19,13 @@
 
 import os
 import uuid
+import functools
 import ifcopenshell
 import ifcopenshell.guid as guid
 import ifcjson.common as common
 
 class IFC2JSON4:
+    maxCache=2048
     def __init__(self, ifcFilePath):
         self.ifcFilePath = ifcFilePath
         self.ifcModel = ifcopenshell.open(ifcFilePath)
@@ -46,6 +48,7 @@ class IFC2JSON4:
             jsonObjects.append(self.id_objects[key])
         return jsonObjects
 
+    @functools.lru_cache(maxsize=maxCache)
     def entityToDict(self, entity):
         attr_dict = entity.__dict__
         
@@ -147,6 +150,7 @@ class IFC2JSON4:
                             d[attrKey] = attr_dict[attr]
             return d
 
+    @functools.lru_cache(maxsize=maxCache)
     def getEntityValue(self, value):
         if value == None:
             jsonValue = None
