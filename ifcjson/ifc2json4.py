@@ -53,11 +53,11 @@ class IFC2JSON4:
             self.entityToDict(entity)
         for key in self.id_objects:
             jsonObjects.append(self.id_objects[key])
-        return jsonObjects
+        return {'file_schema': 'IFC.JSON4','data': jsonObjects}
 
     @functools.lru_cache(maxsize=maxCache)
     def entityToDict(self, entity):
-        attr_dict = entity.__dict__
+        entityAttributes = entity.__dict__
         
         ref = {
             "type": entity.is_a()
@@ -67,30 +67,30 @@ class IFC2JSON4:
         if entity.is_a() == 'IfcOwnerHistory':
             if not entity.id() in self.ownerHistories:
                 self.ownerHistories[entity.id()] = guid.new()
-            attr_dict["GlobalId"] = self.ownerHistories[entity.id()]
+            entityAttributes["GlobalId"] = self.ownerHistories[entity.id()]
 
         # Add missing GlobalId to IfcGeometricRepresentationContext
         if entity.is_a() == 'IfcGeometricRepresentationContext':
             if not entity.id() in self.representationContexts:
                 self.representationContexts[entity.id()] = guid.new()
-            attr_dict["GlobalId"] = self.representationContexts[entity.id()]
+            entityAttributes["GlobalId"] = self.representationContexts[entity.id()]
 
         # check for globalid
-        if "GlobalId" in attr_dict:
-            uuid = guid.split(guid.expand(attr_dict["GlobalId"]))[1:-1]
+        if "GlobalId" in entityAttributes:
+            uuid = guid.split(guid.expand(entityAttributes["GlobalId"]))[1:-1]
             ref["ref"] = uuid
-            if not attr_dict["GlobalId"] in self.id_objects:
+            if not entityAttributes["GlobalId"] in self.id_objects:
                 d = {
                     "type": entity.is_a()
                 }
 
                 # Add missing GlobalId to OwnerHistory
                 if entity.is_a() == 'IfcOwnerHistory':
-                    d["GlobalId"] = guid.split(guid.expand(self.ownerHistories[entity.id()]))[1:-1]
+                    d["globalId"] = guid.split(guid.expand(self.ownerHistories[entity.id()]))[1:-1]
 
                 # Add missing GlobalId to IfcGeometricRepresentationContext
                 if entity.is_a() == 'IfcGeometricRepresentationContext':
-                    d["GlobalId"] = guid.split(guid.expand(self.representationContexts[entity.id()]))[1:-1]
+                    d["globalId"] = guid.split(guid.expand(self.representationContexts[entity.id()]))[1:-1]
 
                 for i in range(0,len(entity)):
                     attr = entity.attribute_name(i)
@@ -98,20 +98,20 @@ class IFC2JSON4:
                     if attr == "GlobalId":
                         d[attrKey] = uuid
                     else:
-                        if attr in attr_dict:
-                            jsonValue = self.getEntityValue(attr_dict[attr])
+                        if attr in entityAttributes:
+                            jsonValue = self.getEntityValue(entityAttributes[attr])
                             if jsonValue:
                                 if ((entity.is_a() == 'IfcOwnerHistory') and (attr == "GlobalId")):
                                     pass
                                 else:
                                     d[attrKey] = jsonValue
-                            if attr_dict[attr] == None:
+                            if entityAttributes[attr] == None:
                                 continue
-                            elif isinstance(attr_dict[attr], ifcopenshell.entity_instance):
-                                d[attrKey] = self.entityToDict(attr_dict[attr])
-                            elif isinstance(attr_dict[attr], tuple):
+                            elif isinstance(entityAttributes[attr], ifcopenshell.entity_instance):
+                                d[attrKey] = self.entityToDict(entityAttributes[attr])
+                            elif isinstance(entityAttributes[attr], tuple):
                                 subEnts = []
-                                for subEntity in attr_dict[attr]:
+                                for subEntity in entityAttributes[attr]:
                                     if isinstance(subEntity, ifcopenshell.entity_instance):
                                         subEntJson = self.entityToDict(subEntity)
                                         if subEntJson:
@@ -121,8 +121,8 @@ class IFC2JSON4:
                                 if len(subEnts) > 0:
                                     d[attrKey] = subEnts
                             else:
-                                d[attrKey] = attr_dict[attr]
-                    self.id_objects[attr_dict["GlobalId"]] = d
+                                d[attrKey] = entityAttributes[attr]
+                    self.id_objects[entityAttributes["GlobalId"]] = d
             return ref
         else:
             d = {
@@ -132,18 +132,18 @@ class IFC2JSON4:
             for i in range(0,len(entity)):
                 attr = entity.attribute_name(i)
                 attrKey = common.toLowerCamelcase(attr)
-                if attr in attr_dict:
+                if attr in entityAttributes:
                     if not attr == "OwnerHistory":
-                        jsonValue = self.getEntityValue(attr_dict[attr])
+                        jsonValue = self.getEntityValue(entityAttributes[attr])
                         if jsonValue:
                             d[attrKey] = jsonValue
-                        if attr_dict[attr] == None:
+                        if entityAttributes[attr] == None:
                             continue
-                        elif isinstance(attr_dict[attr], ifcopenshell.entity_instance):
-                            d[attrKey] = self.entityToDict(attr_dict[attr])
-                        elif isinstance(attr_dict[attr], tuple):
+                        elif isinstance(entityAttributes[attr], ifcopenshell.entity_instance):
+                            d[attrKey] = self.entityToDict(entityAttributes[attr])
+                        elif isinstance(entityAttributes[attr], tuple):
                             subEnts = []
-                            for subEntity in attr_dict[attr]:
+                            for subEntity in entityAttributes[attr]:
                                 if isinstance(subEntity, ifcopenshell.entity_instance):
                                     # subEnts.append(None)
                                     subEntJson = self.entityToDict(subEntity)
@@ -154,7 +154,7 @@ class IFC2JSON4:
                             if len(subEnts) > 0:
                                 d[attrKey] = subEnts
                         else:
-                            d[attrKey] = attr_dict[attr]
+                            d[attrKey] = entityAttributes[attr]
             return d
 
     @functools.lru_cache(maxsize=maxCache)
