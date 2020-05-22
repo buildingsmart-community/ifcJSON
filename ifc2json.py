@@ -1,5 +1,5 @@
 # IFCJSON_python - ifc2json.py
-# Convert IFC SPF file to IFC.JSON-4
+# Convert IFC SPF file to IFC.JSON
 # https://github.com/IFCJSON-Team
 
 # MIT License
@@ -28,8 +28,7 @@ from time import perf_counter
 import os
 import argparse
 import json
-from ifcjson.ifc2json4 import IFC2JSON4
-from ifcjson.ifc2json5a import IFC2JSON5a
+import ifcjson
 t1_start = perf_counter()
 
 if __name__ == '__main__':
@@ -48,11 +47,11 @@ if __name__ == '__main__':
         else:
             jsonFilePath = os.path.splitext(ifcFilePath)[0] + '.json'
         if not args.v or args.v == "4":
-            jsonData = IFC2JSON4(ifcFilePath).spf2Json()
+            jsonData = ifcjson.IFC2JSON4(ifcFilePath).spf2Json()
             with open(jsonFilePath, 'w') as outfile:
                 json.dump(jsonData, outfile, indent=4)
         elif args.v == "5a":
-            jsonData = IFC2JSON5a(ifcFilePath).spf2Json()
+            jsonData = ifcjson.IFC2JSON5a(ifcFilePath).spf2Json()
             with open(jsonFilePath, 'w') as outfile:
                 json.dump(jsonData, outfile, indent=4)
         else:

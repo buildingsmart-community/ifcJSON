@@ -213,7 +213,7 @@ class IFC2JSON5a:
                         if attr in entityAttributes:
 
                             # Skip all IFC entities that are not part of IFC.JSON5a
-                            if type(entityAttributes[attr]) == ifcopenshell.entity_instance:
+                            if isinstance(entityAttributes[attr], ifcopenshell.entity_instance):
 
                                 # Skip IfcOwnerHistory
                                 if entityAttributes[attr].is_a() == 'IfcOwnerHistory':
