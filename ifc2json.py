@@ -49,11 +49,11 @@ if __name__ == '__main__':
         if not args.v or args.v == "4":
             jsonData = ifcjson.IFC2JSON4(ifcFilePath).spf2Json()
             with open(jsonFilePath, 'w') as outfile:
-                json.dump(jsonData, outfile, indent=4)
+                json.dump(jsonData, outfile, indent=2)
         elif args.v == "5a":
             jsonData = ifcjson.IFC2JSON5a(ifcFilePath).spf2Json()
             with open(jsonFilePath, 'w') as outfile:
-                json.dump(jsonData, outfile, indent=4)
+                json.dump(jsonData, outfile, indent=2)
         else:
             print('Version ' + args.v + ' is not supported')
     else:

@@ -73,6 +73,7 @@ class IFC2JSON5a:
         entityAttributes = entity.__dict__
         # inverseAttributes = explicitInverseAttributes.intersection(entity.wrapped_data.get_inverse_attribute_names())
         entityType = entity.is_a()
+        entityType = entityType[3:]
 
         ref = {
             'type': entityType
@@ -84,7 +85,6 @@ class IFC2JSON5a:
         if 'GlobalId' in entityAttributes:
             reference = True
         if entity.is_a == 'IfcRelAggregates':
-            # print('relaggregates!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
             reference = False
 
         d = {
@@ -230,12 +230,12 @@ class IFC2JSON5a:
                                         id = guid.split(guid.expand(guid.new()))[1:-1]
                                         d['representations'] = [
                                             {
-                                                "class": "ShapeRepresentation",
+                                                "type": "ShapeRepresentation",
                                                 "ref": id
                                             }
                                         ]
                                         self.representations[id] = {
-                                            "class": "ShapeRepresentation",
+                                            "type": "ShapeRepresentation",
                                             "globalId": id,
                                             "representationIdentifier": "Body",
                                             "representationType": "OBJ",
