@@ -9,7 +9,7 @@ Python converter from IFC SPF to JSON
 
 ## Usage
 ```
-python -i model.ifc -o model_-_ifcjson4.json -v 4
+python ifc2json.py -i model.ifc -o model_-_ifcjson4.json -v 4
 ```
 ```
 optional arguments:
