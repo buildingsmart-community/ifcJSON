@@ -1,0 +1,609 @@
+{
+    "file_schema": "IFC.JSON4",
+    "data": [
+        {
+            "type": "ifcDoor",
+            "globalId": "157c866c-9c08-4348-a0ed-4d57cd66c9e2",
+            "ownerHistory": {
+                "type": "ifcOwnerHistory",
+                "globalId": "1d3fcda0-64b1-4506-a023-8d4d9fa55d2c",
+                "owningUser": {
+                    "type": "ifcPersonAndOrganization",
+                    "thePerson": {
+                        "type": "ifcPerson",
+                        "id": "ID001",
+                        "familyName": "Beetz",
+                        "givenName": "Jakob"
+                    },
+                    "theOrganization": {
+                        "type": "ifcOrganization",
+                        "name": "TU/e",
+                        "description": "Eindhoven University of Technology"
+                    }
+                },
+                "owningApplication": {
+                    "type": "ifcApplication",
+                    "applicationDeveloper": {
+                        "type": "ifcOrganization",
+                        "name": "TU/e",
+                        "description": "Eindhoven University of Technology"
+                    },
+                    "version": "version 0.10",
+                    "applicationFullName": "My text editor",
+                    "applicationIdentifier": "TA 1001"
+                },
+                "changeAction": "ADDED",
+                "creationDate": 1217620436
+            },
+            "name": "A common door",
+            "description": "Description of a standard door",
+            "objectPlacement": {
+                "type": "ifcLocalPlacement",
+                "placementRelTo": {
+                    "type": "ifcLocalPlacement",
+                    "placementRelTo": {
+                        "type": "ifcLocalPlacement",
+                        "placementRelTo": {
+                            "type": "ifcLocalPlacement",
+                            "placementRelTo": {
+                                "type": "ifcLocalPlacement",
+                                "placementRelTo": {
+                                    "type": "ifcLocalPlacement",
+                                    "relativePlacement": {
+                                        "type": "ifcAxis2Placement3D",
+                                        "location": {
+                                            "type": "ifcCartesianPoint",
+                                            "coordinates": [
+                                                0.0,
+                                                0.0,
+                                                0.0
+                                            ]
+                                        },
+                                        "axis": {
+                                            "type": "ifcDirection",
+                                            "directionRatios": [
+                                                0.0,
+                                                0.0,
+                                                1.0
+                                            ]
+                                        },
+                                        "refDirection": {
+                                            "type": "ifcDirection",
+                                            "directionRatios": [
+                                                1.0,
+                                                0.0,
+                                                0.0
+                                            ]
+                                        }
+                                    }
+                                },
+                                "relativePlacement": {
+                                    "type": "ifcAxis2Placement3D",
+                                    "location": {
+                                        "type": "ifcCartesianPoint",
+                                        "coordinates": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "axis": {
+                                        "type": "ifcDirection",
+                                        "directionRatios": [
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ]
+                                    },
+                                    "refDirection": {
+                                        "type": "ifcDirection",
+                                        "directionRatios": [
+                                            1.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                }
+                            },
+                            "relativePlacement": {
+                                "type": "ifcAxis2Placement3D",
+                                "location": {
+                                    "type": "ifcCartesianPoint",
+                                    "coordinates": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ]
+                                },
+                                "axis": {
+                                    "type": "ifcDirection",
+                                    "directionRatios": [
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ]
+                                },
+                                "refDirection": {
+                                    "type": "ifcDirection",
+                                    "directionRatios": [
+                                        1.0,
+                                        0.0,
+                                        0.0
+                                    ]
+                                }
+                            }
+                        },
+                        "relativePlacement": {
+                            "type": "ifcAxis2Placement3D",
+                            "location": {
+                                "type": "ifcCartesianPoint",
+                                "coordinates": [
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            "axis": {
+                                "type": "ifcDirection",
+                                "directionRatios": [
+                                    0.0,
+                                    0.0,
+                                    1.0
+                                ]
+                            },
+                            "refDirection": {
+                                "type": "ifcDirection",
+                                "directionRatios": [
+                                    1.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            }
+                        }
+                    },
+                    "relativePlacement": {
+                        "type": "ifcAxis2Placement3D",
+                        "location": {
+                            "type": "ifcCartesianPoint",
+                            "coordinates": [
+                                0.5,
+                                0.0,
+                                0.0
+                            ]
+                        },
+                        "axis": {
+                            "type": "ifcDirection",
+                            "directionRatios": [
+                                0.0,
+                                0.0,
+                                1.0
+                            ]
+                        },
+                        "refDirection": {
+                            "type": "ifcDirection",
+                            "directionRatios": [
+                                1.0,
+                                0.0,
+                                0.0
+                            ]
+                        }
+                    }
+                },
+                "relativePlacement": {
+                    "type": "ifcAxis2Placement3D",
+                    "location": {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                            0.0,
+                            0.1,
+                            0.0
+                        ]
+                    },
+                    "axis": {
+                        "type": "ifcDirection",
+                        "directionRatios": [
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    },
+                    "refDirection": {
+                        "type": "ifcDirection",
+                        "directionRatios": [
+                            1.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                }
+            },
+            "representation": {
+                "type": "ifcProductDefinitionShape",
+                "representations": [
+                    {
+                        "type": "ifcShapeRepresentation",
+                        "contextOfItems": {
+                            "type": "ifcGeometricRepresentationContext",
+                            "ref": "671f5fbf-b2ab-4626-97f7-0998b7738ef5"
+                        },
+                        "representationIdentifier": "Body",
+                        "representationType": "SweptSolid",
+                        "items": [
+                            {
+                                "type": "ifcExtrudedAreaSolid",
+                                "sweptArea": {
+                                    "type": "ifcArbitraryClosedProfileDef",
+                                    "profileType": "AREA",
+                                    "outerCurve": {
+                                        "type": "ifcPolyline",
+                                        "points": [
+                                            {
+                                                "type": "ifcCartesianPoint",
+                                                "coordinates": [
+                                                    0.0,
+                                                    0.0
+                                                ]
+                                            },
+                                            {
+                                                "type": "ifcCartesianPoint",
+                                                "coordinates": [
+                                                    0.0,
+                                                    0.1
+                                                ]
+                                            },
+                                            {
+                                                "type": "ifcCartesianPoint",
+                                                "coordinates": [
+                                                    0.75,
+                                                    0.1
+                                                ]
+                                            },
+                                            {
+                                                "type": "ifcCartesianPoint",
+                                                "coordinates": [
+                                                    0.75,
+                                                    0.0
+                                                ]
+                                            },
+                                            {
+                                                "type": "ifcCartesianPoint",
+                                                "coordinates": [
+                                                    0.0,
+                                                    0.0
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                "position": {
+                                    "type": "ifcAxis2Placement3D",
+                                    "location": {
+                                        "type": "ifcCartesianPoint",
+                                        "coordinates": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "axis": {
+                                        "type": "ifcDirection",
+                                        "directionRatios": [
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ]
+                                    },
+                                    "refDirection": {
+                                        "type": "ifcDirection",
+                                        "directionRatios": [
+                                            1.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                "extrudedDirection": {
+                                    "type": "ifcDirection",
+                                    "directionRatios": [
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ]
+                                },
+                                "depth": 2.1
+                            }
+                        ]
+                    }
+                ]
+            },
+            "overallHeight": 1.4,
+            "overallWidth": 0.7
+        },
+        {
+            "type": "ifcWallStandardCase",
+            "globalId": "f92c2898-fd68-44ef-9178-3348e340017b",
+            "ownerHistory": {
+                "type": "ifcOwnerHistory",
+                "globalId": "1d3fcda0-64b1-4506-a023-8d4d9fa55d2c",
+                "owningUser": {
+                    "type": "ifcPersonAndOrganization",
+                    "thePerson": {
+                        "type": "ifcPerson",
+                        "id": "ID001",
+                        "familyName": "Beetz",
+                        "givenName": "Jakob"
+                    },
+                    "theOrganization": {
+                        "type": "ifcOrganization",
+                        "name": "TU/e",
+                        "description": "Eindhoven University of Technology"
+                    }
+                },
+                "owningApplication": {
+                    "type": "ifcApplication",
+                    "applicationDeveloper": {
+                        "type": "ifcOrganization",
+                        "name": "TU/e",
+                        "description": "Eindhoven University of Technology"
+                    },
+                    "version": "version 0.10",
+                    "applicationFullName": "My text editor",
+                    "applicationIdentifier": "TA 1001"
+                },
+                "changeAction": "ADDED",
+                "creationDate": 1217620436
+            },
+            "name": "Wall xyz",
+            "description": "Description of Wall",
+            "objectPlacement": {
+                "type": "ifcLocalPlacement",
+                "placementRelTo": {
+                    "type": "ifcLocalPlacement",
+                    "placementRelTo": {
+                        "type": "ifcLocalPlacement",
+                        "placementRelTo": {
+                            "type": "ifcLocalPlacement",
+                            "relativePlacement": {
+                                "type": "ifcAxis2Placement3D",
+                                "location": {
+                                    "type": "ifcCartesianPoint",
+                                    "coordinates": [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ]
+                                },
+                                "axis": {
+                                    "type": "ifcDirection",
+                                    "directionRatios": [
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ]
+                                },
+                                "refDirection": {
+                                    "type": "ifcDirection",
+                                    "directionRatios": [
+                                        1.0,
+                                        0.0,
+                                        0.0
+                                    ]
+                                }
+                            }
+                        },
+                        "relativePlacement": {
+                            "type": "ifcAxis2Placement3D",
+                            "location": {
+                                "type": "ifcCartesianPoint",
+                                "coordinates": [
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            },
+                            "axis": {
+                                "type": "ifcDirection",
+                                "directionRatios": [
+                                    0.0,
+                                    0.0,
+                                    1.0
+                                ]
+                            },
+                            "refDirection": {
+                                "type": "ifcDirection",
+                                "directionRatios": [
+                                    1.0,
+                                    0.0,
+                                    0.0
+                                ]
+                            }
+                        }
+                    },
+                    "relativePlacement": {
+                        "type": "ifcAxis2Placement3D",
+                        "location": {
+                            "type": "ifcCartesianPoint",
+                            "coordinates": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ]
+                        },
+                        "axis": {
+                            "type": "ifcDirection",
+                            "directionRatios": [
+                                0.0,
+                                0.0,
+                                1.0
+                            ]
+                        },
+                        "refDirection": {
+                            "type": "ifcDirection",
+                            "directionRatios": [
+                                1.0,
+                                0.0,
+                                0.0
+                            ]
+                        }
+                    }
+                },
+                "relativePlacement": {
+                    "type": "ifcAxis2Placement3D",
+                    "location": {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    },
+                    "axis": {
+                        "type": "ifcDirection",
+                        "directionRatios": [
+                            0.0,
+                            0.0,
+                            1.0
+                        ]
+                    },
+                    "refDirection": {
+                        "type": "ifcDirection",
+                        "directionRatios": [
+                            1.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                }
+            },
+            "representation": {
+                "type": "ifcProductDefinitionShape",
+                "representations": [
+                    {
+                        "type": "ifcShapeRepresentation",
+                        "contextOfItems": {
+                            "type": "ifcGeometricRepresentationContext",
+                            "ref": "8e63d364-19b9-4dac-9070-a8fb14e04c0e"
+                        },
+                        "representationIdentifier": "Axis",
+                        "representationType": "Curve2D",
+                        "items": [
+                            {
+                                "type": "ifcPolyline",
+                                "points": [
+                                    {
+                                        "type": "ifcCartesianPoint",
+                                        "coordinates": [
+                                            0.0,
+                                            0.15
+                                        ]
+                                    },
+                                    {
+                                        "type": "ifcCartesianPoint",
+                                        "coordinates": [
+                                            5.0,
+                                            0.15
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "ifcShapeRepresentation",
+                        "contextOfItems": {
+                            "type": "ifcGeometricRepresentationContext",
+                            "ref": "8e63d364-19b9-4dac-9070-a8fb14e04c0e"
+                        },
+                        "representationIdentifier": "Body",
+                        "representationType": "SweptSolid",
+                        "items": [
+                            {
+                                "type": "ifcExtrudedAreaSolid",
+                                "sweptArea": {
+                                    "type": "ifcArbitraryClosedProfileDef",
+                                    "profileType": "AREA",
+                                    "outerCurve": {
+                                        "type": "ifcPolyline",
+                                        "points": [
+                                            {
+                                                "type": "ifcCartesianPoint",
+                                                "coordinates": [
+                                                    0.0,
+                                                    0.0
+                                                ]
+                                            },
+                                            {
+                                                "type": "ifcCartesianPoint",
+                                                "coordinates": [
+                                                    0.0,
+                                                    0.3
+                                                ]
+                                            },
+                                            {
+                                                "type": "ifcCartesianPoint",
+                                                "coordinates": [
+                                                    5.0,
+                                                    0.3
+                                                ]
+                                            },
+                                            {
+                                                "type": "ifcCartesianPoint",
+                                                "coordinates": [
+                                                    5.0,
+                                                    0.0
+                                                ]
+                                            },
+                                            {
+                                                "type": "ifcCartesianPoint",
+                                                "coordinates": [
+                                                    0.0,
+                                                    0.0
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                "position": {
+                                    "type": "ifcAxis2Placement3D",
+                                    "location": {
+                                        "type": "ifcCartesianPoint",
+                                        "coordinates": [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    },
+                                    "axis": {
+                                        "type": "ifcDirection",
+                                        "directionRatios": [
+                                            0.0,
+                                            0.0,
+                                            1.0
+                                        ]
+                                    },
+                                    "refDirection": {
+                                        "type": "ifcDirection",
+                                        "directionRatios": [
+                                            1.0,
+                                            0.0,
+                                            0.0
+                                        ]
+                                    }
+                                },
+                                "extrudedDirection": {
+                                    "type": "ifcDirection",
+                                    "directionRatios": [
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ]
+                                },
+                                "depth": 2.3
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
