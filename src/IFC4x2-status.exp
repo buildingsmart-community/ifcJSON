@@ -3729,7 +3729,7 @@ TYPEOF(SELF\IfcFaceSurface.FaceSurface)) = 1;
 -- SUBTYPE OF (IfcPlacement);
 --	Axis : OPTIONAL IfcDirection;
  DERIVE
---	Z : IfcDirection := NVL (IfcNormalise(Axis), IfcRepresentationItem() || IfcGeometricRepresentationItem () || IfcDirection([0.0,0.0,1.0]));
+	Z : IfcDirection := NVL (IfcNormalise(Axis), IfcRepresentationItem() || IfcGeometricRepresentationItem () || IfcDirection([0.0,0.0,1.0]));
  WHERE
 	AxisIs3D : (NOT (EXISTS (Axis))) OR (Axis.Dim = 3);
 	LocationIs3D : SELF\IfcPlacement.Location.Dim = 3;
@@ -3739,7 +3739,7 @@ TYPEOF(SELF\IfcFaceSurface.FaceSurface)) = 1;
 -- SUBTYPE OF (IfcPlacement);
 --	RefDirection : OPTIONAL IfcDirection;
  DERIVE
---	P : LIST [2:2] OF IfcDirection := IfcBuild2Axes(RefDirection);
+	P : LIST [2:2] OF IfcDirection := IfcBuild2Axes(RefDirection);
  WHERE
 	RefDirIs2D : (NOT (EXISTS (RefDirection))) OR (RefDirection.Dim = 2);
 	LocationIs2D : SELF\IfcPlacement.Location.Dim = 2;
@@ -3750,7 +3750,7 @@ TYPEOF(SELF\IfcFaceSurface.FaceSurface)) = 1;
 --	Axis : OPTIONAL IfcDirection;
 --	RefDirection : OPTIONAL IfcDirection;
  DERIVE
---	P : LIST [3:3] OF IfcDirection := IfcBuildAxes(Axis, RefDirection);
+	P : LIST [3:3] OF IfcDirection := IfcBuildAxes(Axis, RefDirection);
  WHERE
 	LocationIs3D : SELF\IfcPlacement.Location.Dim = 3;
 	AxisIs3D : (NOT (EXISTS (Axis))) OR (Axis.Dim = 3);
@@ -3769,8 +3769,8 @@ TYPEOF(SELF\IfcFaceSurface.FaceSurface)) = 1;
 --	ClosedCurve : IfcLogical;
 --	SelfIntersect : IfcLogical;
  DERIVE
---	UpperIndexOnControlPoints : IfcInteger := (SIZEOF(ControlPointsList) - 1);
---	ControlPoints : ARRAY [0:UpperIndexOnControlPoints] OF IfcCartesianPoint := IfcListToArray(ControlPointsList,0,UpperIndexOnControlPoints);
+	UpperIndexOnControlPoints : IfcInteger := (SIZEOF(ControlPointsList) - 1);
+	ControlPoints : ARRAY [0:UpperIndexOnControlPoints] OF IfcCartesianPoint := IfcListToArray(ControlPointsList,0,UpperIndexOnControlPoints);
  WHERE
 	SameDim : SIZEOF(QUERY(Temp <* ControlPointsList |
   Temp.Dim <> ControlPointsList[1].Dim))
@@ -3785,7 +3785,7 @@ TYPEOF(SELF\IfcFaceSurface.FaceSurface)) = 1;
 --	Knots : LIST [2:?] OF IfcParameterValue;
 --	KnotSpec : IfcKnotType;
  DERIVE
---	UpperIndexOnKnots : IfcInteger := SIZEOF(Knots);
+	UpperIndexOnKnots : IfcInteger := SIZEOF(Knots);
  WHERE
 	ConsistentBSpline : IfcConstraintsParamBSpline(Degree, UpperIndexOnKnots,
 UpperIndexOnControlPoints, KnotMultiplicities, Knots);
@@ -3804,9 +3804,9 @@ UpperIndexOnControlPoints, KnotMultiplicities, Knots);
 --	VClosed : IfcLogical;
 --	SelfIntersect : IfcLogical;
  DERIVE
---	UUpper : IfcInteger := SIZEOF(ControlPointsList) - 1;
---	VUpper : IfcInteger := SIZEOF(ControlPointsList[1]) - 1;
---	ControlPoints : ARRAY [0:UUpper] OF ARRAY [0:VUpper] OF IfcCartesianPoint := IfcMakeArrayOfArray(ControlPointsList,
+	UUpper : IfcInteger := SIZEOF(ControlPointsList) - 1;
+	VUpper : IfcInteger := SIZEOF(ControlPointsList[1]) - 1;
+	ControlPoints : ARRAY [0:UUpper] OF ARRAY [0:VUpper] OF IfcCartesianPoint := IfcMakeArrayOfArray(ControlPointsList,
 0,UUpper,0,VUpper);
 --END_ENTITY;
 
@@ -3820,8 +3820,8 @@ UpperIndexOnControlPoints, KnotMultiplicities, Knots);
 --	VKnots : LIST [2:?] OF IfcParameterValue;
 --	KnotSpec : IfcKnotType;
  DERIVE
---	KnotVUpper : IfcInteger := SIZEOF(VKnots);
---	KnotUUpper : IfcInteger := SIZEOF(UKnots);
+	KnotVUpper : IfcInteger := SIZEOF(VKnots);
+	KnotUUpper : IfcInteger := SIZEOF(UKnots);
  WHERE
 	UDirectionConstraints : IfcConstraintsParamBSpline (
   SELF\IfcBSplineSurface.UDegree, KnotUUpper, 
@@ -3935,7 +3935,7 @@ UpperIndexOnControlPoints, KnotMultiplicities, Knots);
 --	FirstOperand : IfcBooleanOperand;
 --	SecondOperand : IfcBooleanOperand;
  DERIVE
---	Dim : IfcDimensionCount := FirstOperand.Dim;
+	Dim : IfcDimensionCount := FirstOperand.Dim;
  WHERE
 	SameDim : FirstOperand.Dim = SecondOperand.Dim;
 	FirstOperandClosed : NOT('IFC4X2.IFCTESSELLATEDFACESET' IN TYPEOF(FirstOperand)) OR (EXISTS(FirstOperand.Closed) AND FirstOperand.Closed);
@@ -4022,7 +4022,7 @@ UpperIndexOnControlPoints, KnotMultiplicities, Knots);
 --	YDim : IfcPositiveLengthMeasure;
 --	ZDim : IfcPositiveLengthMeasure;
  DERIVE
---	Dim : IfcDimensionCount := 3;
+	Dim : IfcDimensionCount := 3;
 --END_ENTITY;
 
 --ENTITY IfcBoxedHalfSpace
@@ -4289,7 +4289,7 @@ UpperIndexOnControlPoints, KnotMultiplicities, Knots);
 -- SUBTYPE OF (IfcPoint);
 --	Coordinates : LIST [1:3] OF IfcLengthMeasure;
  DERIVE
---	Dim : IfcDimensionCount := HIINDEX(Coordinates);
+	Dim : IfcDimensionCount := HIINDEX(Coordinates);
  WHERE
 	CP2Dor3D : HIINDEX(Coordinates) >= 2;
 --END_ENTITY;
@@ -4300,7 +4300,7 @@ UpperIndexOnControlPoints, KnotMultiplicities, Knots);
     ,IfcCartesianPointList3D))
 -- SUBTYPE OF (IfcGeometricRepresentationItem);
  DERIVE
---	Dim : IfcDimensionCount := IfcPointListDim(SELF);
+	Dim : IfcDimensionCount := IfcPointListDim(SELF);
 --END_ENTITY;
 
 --ENTITY IfcCartesianPointList2D
@@ -4325,8 +4325,8 @@ UpperIndexOnControlPoints, KnotMultiplicities, Knots);
 --	LocalOrigin : IfcCartesianPoint;
 --	Scale : OPTIONAL IfcReal;
  DERIVE
---	Scl : IfcReal := NVL(Scale, 1.0);
---	Dim : IfcDimensionCount := LocalOrigin.Dim;
+	Scl : IfcReal := NVL(Scale, 1.0);
+	Dim : IfcDimensionCount := LocalOrigin.Dim;
  WHERE
 	ScaleGreaterZero : Scl > 0.0;
 --END_ENTITY;
@@ -4336,7 +4336,7 @@ UpperIndexOnControlPoints, KnotMultiplicities, Knots);
     (IfcCartesianTransformationOperator2DnonUniform))
 -- SUBTYPE OF (IfcCartesianTransformationOperator);
  DERIVE
---	U : LIST [2:2] OF IfcDirection := IfcBaseAxis(2,SELF\IfcCartesianTransformationOperator.Axis1,
+	U : LIST [2:2] OF IfcDirection := IfcBaseAxis(2,SELF\IfcCartesianTransformationOperator.Axis1,
 SELF\IfcCartesianTransformationOperator.Axis2,?);
  WHERE
 	DimEqual2 : SELF\IfcCartesianTransformationOperator.Dim = 2;
@@ -4350,7 +4350,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,?);
 -- SUBTYPE OF (IfcCartesianTransformationOperator2D);
 --	Scale2 : OPTIONAL IfcReal;
  DERIVE
---	Scl2 : IfcReal := NVL(Scale2, SELF\IfcCartesianTransformationOperator.Scl);
+	Scl2 : IfcReal := NVL(Scale2, SELF\IfcCartesianTransformationOperator.Scl);
  WHERE
 	Scale2GreaterZero : Scl2 > 0.0;
 --END_ENTITY;
@@ -4361,7 +4361,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,?);
 -- SUBTYPE OF (IfcCartesianTransformationOperator);
 --	Axis3 : OPTIONAL IfcDirection;
  DERIVE
---	U : LIST [3:3] OF IfcDirection := IfcBaseAxis(3,SELF\IfcCartesianTransformationOperator.Axis1,
+	U : LIST [3:3] OF IfcDirection := IfcBaseAxis(3,SELF\IfcCartesianTransformationOperator.Axis1,
 SELF\IfcCartesianTransformationOperator.Axis2,Axis3);
  WHERE
 	DimIs3D : SELF\IfcCartesianTransformationOperator.Dim = 3;
@@ -4377,8 +4377,8 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3);
 --	Scale2 : OPTIONAL IfcReal;
 --	Scale3 : OPTIONAL IfcReal;
  DERIVE
---	Scl2 : IfcReal := NVL(Scale2, SELF\IfcCartesianTransformationOperator.Scl);
---	Scl3 : IfcReal := NVL(Scale3, SELF\IfcCartesianTransformationOperator.Scl);
+	Scl2 : IfcReal := NVL(Scale2, SELF\IfcCartesianTransformationOperator.Scl);
+	Scl3 : IfcReal := NVL(Scale3, SELF\IfcCartesianTransformationOperator.Scl);
  WHERE
 	Scale2GreaterZero : Scl2 > 0.0;
 	Scale3GreaterZero : Scl3 > 0.0;
@@ -4601,8 +4601,8 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3);
 --	Segments : LIST [1:?] OF IfcCompositeCurveSegment;
 --	SelfIntersect : IfcLogical;
  DERIVE
---	NSegments : IfcInteger := SIZEOF(Segments);
---	ClosedCurve : IfcLogical := Segments[NSegments].Transition <> Discontinuous;
+	NSegments : IfcInteger := SIZEOF(Segments);
+	ClosedCurve : IfcLogical := Segments[NSegments].Transition <> Discontinuous;
  WHERE
 	CurveContinuous : ((NOT ClosedCurve) AND (SIZEOF(QUERY(Temp <* Segments | Temp.Transition = Discontinuous)) = 1)) OR ((ClosedCurve) AND (SIZEOF(QUERY(Temp <* Segments | Temp.Transition = Discontinuous)) = 0));
 	SameDim : SIZEOF( QUERY( Temp <* Segments | Temp.Dim <> Segments[1].Dim)) = 0;
@@ -4613,7 +4613,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3);
     (IfcBoundaryCurve))
 -- SUBTYPE OF (IfcCompositeCurve);
  DERIVE
---	BasisSurface : SET [0:1] OF IfcSurface := IfcGetBasisSurface(SELF);
+	BasisSurface : SET [0:1] OF IfcSurface := IfcGetBasisSurface(SELF);
  WHERE
 	SameSurface : SIZEOF(BasisSurface) > 0;
 --END_ENTITY;
@@ -4626,7 +4626,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3);
 --	SameSense : IfcBoolean;
 --	ParentCurve : IfcCurve;
  DERIVE
---	Dim : IfcDimensionCount := ParentCurve.Dim;
+	Dim : IfcDimensionCount := ParentCurve.Dim;
  INVERSE
 	UsingCurves : SET [1:?] OF IfcCompositeCurve FOR Segments;
  WHERE
@@ -5030,7 +5030,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3);
 -- SUBTYPE OF (IfcGeometricRepresentationItem);
 --	Position : IfcAxis2Placement3D;
  DERIVE
---	Dim : IfcDimensionCount := 3;
+	Dim : IfcDimensionCount := 3;
 --END_ENTITY;
 
 --ENTITY IfcCsgSolid
@@ -5076,7 +5076,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3);
     ,IfcSurfaceCurve))
 -- SUBTYPE OF (IfcGeometricRepresentationItem);
  DERIVE
---	Dim : IfcDimensionCount := IfcCurveDim(SELF);
+	Dim : IfcDimensionCount := IfcCurveDim(SELF);
 --END_ENTITY;
 
 --ENTITY IfcCurveBoundedPlane
@@ -5196,7 +5196,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3);
 --	UnitType : IfcDerivedUnitEnum;
 --	UserDefinedType : OPTIONAL IfcLabel;
  DERIVE
---	Dimensions : IfcDimensionalExponents := IfcDeriveDimensionalExponents(Elements);
+	Dimensions : IfcDimensionalExponents := IfcDeriveDimensionalExponents(Elements);
  WHERE
 	WR1 : (SIZEOF (Elements) > 1) OR ((SIZEOF (Elements) = 1) AND (Elements[1].Exponent <> 1 ));
 	WR2 : (UnitType <> IfcDerivedUnitEnum.USERDEFINED) OR
@@ -5223,7 +5223,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3);
 -- SUBTYPE OF (IfcGeometricRepresentationItem);
 --	DirectionRatios : LIST [2:3] OF IfcReal;
  DERIVE
---	Dim : IfcDimensionCount := HIINDEX(DirectionRatios);
+	Dim : IfcDimensionCount := HIINDEX(DirectionRatios);
  WHERE
 	MagnitudeGreaterZero : SIZEOF(QUERY(Tmp <* DirectionRatios | Tmp <> 0.0)) > 0;
 --END_ENTITY;
@@ -5590,7 +5590,7 @@ AND
 -- SUBTYPE OF (IfcLoop);
 --	EdgeList : LIST [1:?] OF IfcOrientedEdge;
  DERIVE
---	Ne : IfcInteger := SIZEOF(EdgeList);
+	Ne : IfcInteger := SIZEOF(EdgeList);
  WHERE
 	IsClosed : (EdgeList[1].EdgeStart) :=: (EdgeList[Ne].EdgeEnd);
 	IsContinuous : IfcLoopHeadToTail(SELF);
@@ -6060,7 +6060,7 @@ AND
 -- SUBTYPE OF (IfcGeometricRepresentationItem);
 --	FbsmFaces : SET [1:?] OF IfcConnectedFaceSet;
  DERIVE
---	Dim : IfcDimensionCount := 3;
+	Dim : IfcDimensionCount := 3;
 --END_ENTITY;
 
 --ENTITY IfcFaceBound
@@ -6588,10 +6588,10 @@ AND
 --	TargetView : IfcGeometricProjectionEnum;
 --	UserDefinedTargetView : OPTIONAL IfcLabel;
  DERIVE
---	SELF\IfcGeometricRepresentationContext.WorldCoordinateSystem : IfcAxis2Placement := ParentContext.WorldCoordinateSystem;
---	SELF\IfcGeometricRepresentationContext.CoordinateSpaceDimension : IfcDimensionCount := ParentContext.CoordinateSpaceDimension;
---	SELF\IfcGeometricRepresentationContext.TrueNorth : IfcDirection := NVL(ParentContext.TrueNorth, IfcConvertDirectionInto2D(SELF\IfcGeometricRepresentationContext.WorldCoordinateSystem.P[2]));
---	SELF\IfcGeometricRepresentationContext.Precision : IfcReal := NVL(ParentContext.Precision,1.E-5);
+	SELF\IfcGeometricRepresentationContext.WorldCoordinateSystem : IfcAxis2Placement := ParentContext.WorldCoordinateSystem;
+	SELF\IfcGeometricRepresentationContext.CoordinateSpaceDimension : IfcDimensionCount := ParentContext.CoordinateSpaceDimension;
+	SELF\IfcGeometricRepresentationContext.TrueNorth : IfcDirection := NVL(ParentContext.TrueNorth, IfcConvertDirectionInto2D(SELF\IfcGeometricRepresentationContext.WorldCoordinateSystem.P[2]));
+	SELF\IfcGeometricRepresentationContext.Precision : IfcReal := NVL(ParentContext.Precision,1.E-5);
  WHERE
 	ParentNoSub : NOT('IFC4X2.IFCGEOMETRICREPRESENTATIONSUBCONTEXT' IN TYPEOF(ParentContext));
 	UserTargetProvided : (TargetView <> IfcGeometricProjectionEnum.USERDEFINED) OR 
@@ -6605,7 +6605,7 @@ AND
 -- SUBTYPE OF (IfcGeometricRepresentationItem);
 --	Elements : SET [1:?] OF IfcGeometricSetSelect;
  DERIVE
---	Dim : IfcDimensionCount := Elements[1].Dim;
+	Dim : IfcDimensionCount := Elements[1].Dim;
  WHERE
 	ConsistentDim : SIZEOF(QUERY(Temp <* Elements |
   Temp.Dim <> Elements[1].Dim))
@@ -6660,7 +6660,7 @@ AND
 --	BaseSurface : IfcSurface;
 --	AgreementFlag : IfcBoolean;
  DERIVE
---	Dim : IfcDimensionCount := 3;
+	Dim : IfcDimensionCount := 3;
 --END_ENTITY;
 
 --ENTITY IfcHeatExchanger
@@ -7136,7 +7136,7 @@ AND
 --	LayerSetName : OPTIONAL IfcLabel;
 --	Description : OPTIONAL IfcText;
  DERIVE
---	TotalThickness : IfcLengthMeasure := IfcMlsTotalThickness(SELF);
+	TotalThickness : IfcLengthMeasure := IfcMlsTotalThickness(SELF);
 --END_ENTITY;
 
 --ENTITY IfcMaterialLayerSetUsage
@@ -7310,7 +7310,7 @@ AND
 --ENTITY IfcMirroredProfileDef
 -- SUBTYPE OF (IfcDerivedProfileDef);
  DERIVE
---	SELF\IfcDerivedProfileDef.Operator : IfcCartesianTransformationOperator2D := 
+	SELF\IfcDerivedProfileDef.Operator : IfcCartesianTransformationOperator2D := 
 IfcRepresentationItem() || IfcGeometricRepresentationItem() ||
 IfcCartesianTransformationOperator(
     -- Axis1
@@ -7503,9 +7503,9 @@ OR EXISTS(SELF\IfcObject.ObjectType);
 --	EdgeElement : IfcEdge;
 --	Orientation : IfcBoolean;
  DERIVE
---	SELF\IfcEdge.EdgeStart : IfcVertex := IfcBooleanChoose 
+	SELF\IfcEdge.EdgeStart : IfcVertex := IfcBooleanChoose 
 (Orientation, EdgeElement.EdgeStart, EdgeElement.EdgeEnd);
---	SELF\IfcEdge.EdgeEnd : IfcVertex := IfcBooleanChoose 
+	SELF\IfcEdge.EdgeEnd : IfcVertex := IfcBooleanChoose 
 (Orientation, EdgeElement.EdgeEnd, EdgeElement.EdgeStart);
  WHERE
 	EdgeElementNotOriented : NOT('IFC4X2.IFCORIENTEDEDGE' IN TYPEOF(EdgeElement));
@@ -7742,7 +7742,7 @@ OR EXISTS(SELF\IfcObject.ObjectType);
 -- SUBTYPE OF (IfcGeometricRepresentationItem);
 --	Location : IfcCartesianPoint;
  DERIVE
---	Dim : IfcDimensionCount := Location.Dim;
+	Dim : IfcDimensionCount := Location.Dim;
 --END_ENTITY;
 
 --ENTITY IfcPlanarBox
@@ -7805,7 +7805,7 @@ OR EXISTS(SELF\IfcObject.ObjectType);
 --	BasisCurve : IfcCurve;
 --	PointParameter : IfcParameterValue;
  DERIVE
---	Dim : IfcDimensionCount := BasisCurve.Dim;
+	Dim : IfcDimensionCount := BasisCurve.Dim;
 --END_ENTITY;
 
 --ENTITY IfcPointOnSurface
@@ -7814,7 +7814,7 @@ OR EXISTS(SELF\IfcObject.ObjectType);
 --	PointParameterU : IfcParameterValue;
 --	PointParameterV : IfcParameterValue;
  DERIVE
---	Dim : IfcDimensionCount := BasisSurface.Dim;
+	Dim : IfcDimensionCount := BasisSurface.Dim;
 --END_ENTITY;
 
 --ENTITY IfcPolyLoop
@@ -8491,7 +8491,7 @@ OR (SIZEOF(DefiningValues) = SIZEOF(DefinedValues));
 -- SUBTYPE OF (IfcBSplineCurveWithKnots);
 --	WeightsData : LIST [2:?] OF IfcReal;
  DERIVE
---	Weights : ARRAY [0:UpperIndexOnControlPoints] OF IfcReal := IfcListToArray(WeightsData,0,SELF\IfcBSplineCurve.UpperIndexOnControlPoints);
+	Weights : ARRAY [0:UpperIndexOnControlPoints] OF IfcReal := IfcListToArray(WeightsData,0,SELF\IfcBSplineCurve.UpperIndexOnControlPoints);
  WHERE
 	SameNumOfWeightsAndPoints : SIZEOF(WeightsData) = SIZEOF(SELF\IfcBSplineCurve.ControlPointsList);
 	WeightsGreaterZero : IfcCurveWeightsPositive(SELF);
@@ -8501,7 +8501,7 @@ OR (SIZEOF(DefiningValues) = SIZEOF(DefinedValues));
 -- SUBTYPE OF (IfcBSplineSurfaceWithKnots);
 --	WeightsData : LIST [2:?] OF LIST [2:?] OF IfcReal;
  DERIVE
---	Weights : ARRAY [0:UUpper] OF ARRAY [0:VUpper] OF IfcReal := IfcMakeArrayOfArray(WeightsData,0,UUpper,0,VUpper);
+	Weights : ARRAY [0:UUpper] OF ARRAY [0:VUpper] OF IfcReal := IfcMakeArrayOfArray(WeightsData,0,UUpper,0,VUpper);
  WHERE
 	CorrespondingWeightsDataLists : (SIZEOF(WeightsData) = SIZEOF(SELF\IfcBSplineSurface.ControlPointsList))
 AND 
@@ -9234,7 +9234,7 @@ OR
 --	Axis : IfcAxis1Placement;
 --	Angle : IfcPlaneAngleMeasure;
  DERIVE
---	AxisLine : IfcLine := IfcRepresentationItem() || IfcGeometricRepresentationItem () || IfcCurve() || IfcLine(Axis.Location, 
+	AxisLine : IfcLine := IfcRepresentationItem() || IfcGeometricRepresentationItem () || IfcCurve() || IfcLine(Axis.Location, 
   IfcRepresentationItem() || IfcGeometricRepresentationItem () || IfcVector(Axis.Z,1.0));
  WHERE
 	AxisStartInXY : Axis.Location.Coordinates[3] = 0.0;
@@ -9305,7 +9305,7 @@ OR
 --	Prefix : OPTIONAL IfcSIPrefix;
 --	Name : IfcSIUnitName;
  DERIVE
---	SELF\IfcNamedUnit.Dimensions : IfcDimensionalExponents := IfcDimensionsForSiUnit (SELF.Name);
+	SELF\IfcNamedUnit.Dimensions : IfcDimensionalExponents := IfcDimensionsForSiUnit (SELF.Name);
 --END_ENTITY;
 
 --ENTITY IfcSanitaryTerminal
@@ -9390,7 +9390,7 @@ OR
 --	CrossSections : LIST [2:?] OF IfcProfileDef;
 --	CrossSectionPositions : LIST [2:?] OF IfcAxis2Placement3D;
  DERIVE
---	Dim : IfcDimensionCount := 3;
+	Dim : IfcDimensionCount := 3;
  WHERE
 	CorrespondingSectionPositions : SIZEOF(CrossSections) = SIZEOF(CrossSectionPositions);
 	ConsistentProfileTypes : SIZEOF(QUERY(temp <* CrossSections | CrossSections[1].ProfileType <> temp.ProfileType)) = 0;
@@ -9479,7 +9479,7 @@ IN TYPEOF(SELF\IfcRepresentation.ContextOfItems);
 -- SUBTYPE OF (IfcGeometricRepresentationItem);
 --	SbsmBoundary : SET [1:?] OF IfcShell;
  DERIVE
---	Dim : IfcDimensionCount := 3;
+	Dim : IfcDimensionCount := 3;
 --END_ENTITY;
 
 --ENTITY IfcSimpleProperty
@@ -9586,7 +9586,7 @@ IN TYPEOF(SELF\IfcRepresentation.ContextOfItems);
     ,IfcSweptDiskSolid))
 -- SUBTYPE OF (IfcGeometricRepresentationItem);
  DERIVE
---	Dim : IfcDimensionCount := 3;
+	Dim : IfcDimensionCount := 3;
 --END_ENTITY;
 
 --ENTITY IfcSpace
@@ -10133,7 +10133,7 @@ AND
     ,IfcSweptSurface))
 -- SUBTYPE OF (IfcGeometricRepresentationItem);
  DERIVE
---	Dim : IfcDimensionCount := 3;
+	Dim : IfcDimensionCount := 3;
 --END_ENTITY;
 
 --ENTITY IfcSurfaceCurve
@@ -10145,7 +10145,7 @@ AND
 --	AssociatedGeometry : LIST [1:2] OF IfcPcurve;
 --	MasterRepresentation : IfcPreferredSurfaceCurveRepresentation;
  DERIVE
---	BasisSurface : SET [1:2] OF IfcSurface := IfcGetBasisSurface(SELF);
+	BasisSurface : SET [1:2] OF IfcSurface := IfcGetBasisSurface(SELF);
  WHERE
 	CurveIs3D : Curve3D.Dim = 3;
 	CurveIsNotPcurve : NOT ('IFC4X2.IFCPCURVE' IN TYPEOF(Curve3D));
@@ -10174,7 +10174,7 @@ AND
 --	ExtrudedDirection : IfcDirection;
 --	Depth : IfcLengthMeasure;
  DERIVE
---	ExtrusionAxis : IfcVector := IfcRepresentationItem() || IfcGeometricRepresentationItem () || IfcVector (ExtrudedDirection, Depth);
+	ExtrusionAxis : IfcVector := IfcRepresentationItem() || IfcGeometricRepresentationItem () || IfcVector (ExtrudedDirection, Depth);
  WHERE
 	DepthGreaterZero : Depth > 0.;
 --END_ENTITY;
@@ -10183,7 +10183,7 @@ AND
 -- SUBTYPE OF (IfcSweptSurface);
 --	AxisPosition : IfcAxis1Placement;
  DERIVE
---	AxisLine : IfcLine := IfcRepresentationItem() || IfcGeometricRepresentationItem () || IfcCurve() || IfcLine(AxisPosition.Location, 
+	AxisLine : IfcLine := IfcRepresentationItem() || IfcGeometricRepresentationItem () || IfcCurve() || IfcLine(AxisPosition.Location, 
   IfcRepresentationItem() || IfcGeometricRepresentationItem () || IfcVector(AxisPosition.Z,1.0));
 --END_ENTITY;
 
@@ -10407,9 +10407,9 @@ AND
 --	Rows : OPTIONAL LIST [1:?] OF IfcTableRow;
 --	Columns : OPTIONAL LIST [1:?] OF IfcTableColumn;
  DERIVE
---	NumberOfCellsInRow : IfcInteger := HIINDEX(Rows[1].RowCells);
---	NumberOfHeadings : IfcInteger := SIZEOF(QUERY( Temp <* Rows | Temp.IsHeading));
---	NumberOfDataRows : IfcInteger := SIZEOF(QUERY( Temp <* Rows | NOT(Temp.IsHeading)));
+	NumberOfCellsInRow : IfcInteger := HIINDEX(Rows[1].RowCells);
+	NumberOfHeadings : IfcInteger := SIZEOF(QUERY( Temp <* Rows | Temp.IsHeading));
+	NumberOfDataRows : IfcInteger := SIZEOF(QUERY( Temp <* Rows | NOT(Temp.IsHeading)));
  WHERE
 	WR1 : SIZEOF(QUERY( Temp <* Rows | HIINDEX(Temp.RowCells) <> HIINDEX(Rows[1].RowCells))) = 0;
 	WR2 : { 0 <= NumberOfHeadings <= 1 };
@@ -10587,7 +10587,7 @@ EXISTS (MessagingIDs);
 -- SUBTYPE OF (IfcTessellatedItem);
 --	Coordinates : IfcCartesianPointList3D;
  DERIVE
---	Dim : IfcDimensionCount := 3;
+	Dim : IfcDimensionCount := 3;
  INVERSE
 	HasColours : SET [0:1] OF IfcIndexedColourMap FOR MappedTo;
 	HasTextures : SET [0:?] OF IfcIndexedTextureMap FOR MappedTo;
@@ -10804,7 +10804,7 @@ EXISTS (MessagingIDs);
 --	CoordIndex : LIST [1:?] OF LIST [3:3] OF IfcPositiveInteger;
 --	PnIndex : OPTIONAL LIST [1:?] OF IfcPositiveInteger;
  DERIVE
---	NumberOfTriangles : IfcInteger := SIZEOF(CoordIndex);
+	NumberOfTriangles : IfcInteger := SIZEOF(CoordIndex);
 --END_ENTITY;
 
 --ENTITY IfcTriangulatedIrregularNetwork
@@ -10985,7 +10985,7 @@ EXISTS (MessagingIDs);
 --	Orientation : IfcDirection;
 --	Magnitude : IfcLengthMeasure;
  DERIVE
---	Dim : IfcDimensionCount := Orientation.Dim;
+	Dim : IfcDimensionCount := Orientation.Dim;
  WHERE
 	MagGreaterOrEqualZero : Magnitude >= 0.0;
 --END_ENTITY;
