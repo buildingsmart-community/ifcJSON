@@ -57,23 +57,27 @@ class IFC2JSON4:
 
     @functools.lru_cache(maxsize=maxCache)
     def entityToDict(self, entity):
+
+        # Entitie names must be in camelCase
+        entityType = entity.is_a()
+        entityType = entityType[0].lower() + entityType[1:]
         entityAttributes = entity.__dict__
         
         ref = {
-            "type": entity.is_a()
+            "type": entityType
         }
 
         # Add missing GlobalId to OwnerHistory
-        if entity.is_a() == 'IfcOwnerHistory':
+        if entityType == 'ifcOwnerHistory':
             if not entity.id() in self.ownerHistories:
                 self.ownerHistories[entity.id()] = guid.new()
-            entityAttributes["GlobalId"] = self.ownerHistories[entity.id()]
+            entityAttributes["globalId"] = self.ownerHistories[entity.id()]
 
         # Add missing GlobalId to IfcGeometricRepresentationContext
-        if entity.is_a() == 'IfcGeometricRepresentationContext':
+        if entityType == 'ifcGeometricRepresentationContext':
             if not entity.id() in self.representationContexts:
                 self.representationContexts[entity.id()] = guid.new()
-            entityAttributes["GlobalId"] = self.representationContexts[entity.id()]
+            entityAttributes["globalId"] = self.representationContexts[entity.id()]
 
         # check for globalid
         if "GlobalId" in entityAttributes:
@@ -81,15 +85,15 @@ class IFC2JSON4:
             ref["ref"] = uuid
             if not entityAttributes["GlobalId"] in self.id_objects:
                 d = {
-                    "type": entity.is_a()
+                    "type": entityType
                 }
 
                 # Add missing GlobalId to OwnerHistory
-                if entity.is_a() == 'IfcOwnerHistory':
+                if entityType == 'ifcOwnerHistory':
                     d["globalId"] = guid.split(guid.expand(self.ownerHistories[entity.id()]))[1:-1]
 
                 # Add missing GlobalId to IfcGeometricRepresentationContext
-                if entity.is_a() == 'IfcGeometricRepresentationContext':
+                if entityType == 'ifcGeometricRepresentationContext':
                     d["globalId"] = guid.split(guid.expand(self.representationContexts[entity.id()]))[1:-1]
 
                 for i in range(0,len(entity)):
@@ -101,7 +105,7 @@ class IFC2JSON4:
                         if attr in entityAttributes:
                             jsonValue = self.getEntityValue(entityAttributes[attr])
                             if jsonValue:
-                                if ((entity.is_a() == 'IfcOwnerHistory') and (attr == "GlobalId")):
+                                if ((entityType == 'ifcOwnerHistory') and (attr == "GlobalId")):
                                     pass
                                 else:
                                     d[attrKey] = jsonValue
@@ -126,7 +130,7 @@ class IFC2JSON4:
             return ref
         else:
             d = {
-                "type": entity.is_a()
+                "type": entityType
             }
 
             for i in range(0,len(entity)):

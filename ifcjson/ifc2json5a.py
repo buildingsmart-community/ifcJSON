@@ -31,6 +31,7 @@ import subprocess
 import ifcopenshell
 import ifcopenshell.guid as guid
 import ifcjson.common as common
+import copy
 
 
 explicitInverseAttributes = {
@@ -74,6 +75,9 @@ class IFC2JSON5a:
         # inverseAttributes = explicitInverseAttributes.intersection(entity.wrapped_data.get_inverse_attribute_names())
         entityType = entity.is_a()
         entityType = entityType[3:]
+
+        # Entitie names must be in camelCase
+        entityType = entityType[0].lower() + entityType[1:]
 
         ref = {
             'type': entityType
@@ -230,12 +234,12 @@ class IFC2JSON5a:
                                         id = guid.split(guid.expand(guid.new()))[1:-1]
                                         d['representations'] = [
                                             {
-                                                "type": "ShapeRepresentation",
+                                                "type": "shapeRepresentation",
                                                 "ref": id
                                             }
                                         ]
                                         self.representations[id] = {
-                                            "type": "ShapeRepresentation",
+                                            "type": "shapeRepresentation",
                                             "globalId": id,
                                             "representationIdentifier": "Body",
                                             "representationType": "OBJ",
@@ -323,6 +327,7 @@ class IFC2JSON5a:
     # convert IFC SPF file into OBJ using IfcConvert and extract OBJ objects
     def getObjData(self, ifcFilePath):
         objFilePath = NamedTemporaryFile(suffix='.obj', delete=True).name
+        print(objFilePath)
 
         # Convert IFC to OBJ using IfcConvert (could also be done for glTF or Collada)
         subprocess.run([
@@ -336,12 +341,17 @@ class IFC2JSON5a:
             header = True
             groupId = ''
             groupData = []
+            vertexIterator = 0
+            vertexCount = 0
             f = open(objFilePath, 'r')
+            lc = 0
             for line in f:
+                lc +=1
 
                 # find group
                 if line[0] == 'g':
                     header = False
+                    vertexCount = copy.deepcopy(vertexIterator)
                     objData[groupId] = ''.join(groupData)
                     groupId = line.split()[1]
                     groupData = []
@@ -349,8 +359,21 @@ class IFC2JSON5a:
                     if header:
                         pass
                     else:
-                        if line[0] == 'v' or  line[0] == 'f':
+                        if line[0:2] == 'v ':
                             groupData.append(line)
+                            vertexIterator += 1
+                        elif line[0] == 'f':
+                            fl = []
+                            face = line[2:].rstrip().split(' ')
+                            for fp in face:
+                                p = fp.split('//')
+                                ps0 = int(p[0]) - vertexCount
+                                ps1 = int(p[1]) - vertexCount
+                                ps = str(ps0) + '//' + str(ps1)
+                                fl.append(ps)
+
+                            fs = 'f ' + ' '.join(fl) + '\n'
+                            groupData.append(fs)
             return objData
         else:
             print('Creating intermediate OBJ failed')

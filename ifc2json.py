@@ -57,6 +57,6 @@ if __name__ == '__main__':
         else:
             print('Version ' + args.v + ' is not supported')
     else:
-        print(args.i + ' is not a valid file')
+        print(str(args.i) + ' is not a valid file')
 t1_stop = perf_counter()
 print("Conversion took ", t1_stop-t1_start, " seconds") 
