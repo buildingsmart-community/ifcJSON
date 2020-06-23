@@ -1,0 +1,1876 @@
+{
+  "file_schema": "IFC.JSON4",
+  "originatingSystem": "IFC2JSON_python",
+  "data": [
+    {
+      "type": "ifcRelFillsElement",
+      "globalId": "4c36f556-7d6e-41d3-a06a-b1e8736aaed2",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "relatingOpeningElement": {
+        "type": "ifcOpeningElement",
+        "ref": "9598e1c0-b1a9-4505-93a3-f3193af39e1d"
+      },
+      "relatedBuildingElement": {
+        "type": "ifcDoor",
+        "ref": "157c866c-9c08-4348-a0ed-4d57cd66c9e2"
+      }
+    },
+    {
+      "type": "ifcOpeningElement",
+      "globalId": "9598e1c0-b1a9-4505-93a3-f3193af39e1d",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "name": "Opening Element xyz",
+      "description": "Description of Opening",
+      "objectPlacement": {
+        "type": "ifcLocalPlacement",
+        "placementRelTo": {
+          "type": "ifcLocalPlacement",
+          "placementRelTo": {
+            "type": "ifcLocalPlacement",
+            "placementRelTo": {
+              "type": "ifcLocalPlacement",
+              "placementRelTo": {
+                "type": "ifcLocalPlacement",
+                "relativePlacement": {
+                  "type": "ifcAxis2Placement3D",
+                  "location": {
+                    "type": "ifcCartesianPoint",
+                    "coordinates": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ]
+                  },
+                  "axis": {
+                    "type": "ifcDirection",
+                    "directionRatios": [
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  },
+                  "refDirection": {
+                    "type": "ifcDirection",
+                    "directionRatios": [
+                      1.0,
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              },
+              "relativePlacement": {
+                "type": "ifcAxis2Placement3D",
+                "location": {
+                  "type": "ifcCartesianPoint",
+                  "coordinates": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                "axis": {
+                  "type": "ifcDirection",
+                  "directionRatios": [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                },
+                "refDirection": {
+                  "type": "ifcDirection",
+                  "directionRatios": [
+                    1.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              }
+            },
+            "relativePlacement": {
+              "type": "ifcAxis2Placement3D",
+              "location": {
+                "type": "ifcCartesianPoint",
+                "coordinates": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "axis": {
+                "type": "ifcDirection",
+                "directionRatios": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              "refDirection": {
+                "type": "ifcDirection",
+                "directionRatios": [
+                  1.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          },
+          "relativePlacement": {
+            "type": "ifcAxis2Placement3D",
+            "location": {
+              "type": "ifcCartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "axis": {
+              "type": "ifcDirection",
+              "directionRatios": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "refDirection": {
+              "type": "ifcDirection",
+              "directionRatios": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "relativePlacement": {
+          "type": "ifcAxis2Placement3D",
+          "location": {
+            "type": "ifcCartesianPoint",
+            "coordinates": [
+              0.5,
+              0.0,
+              0.0
+            ]
+          },
+          "axis": {
+            "type": "ifcDirection",
+            "directionRatios": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "refDirection": {
+            "type": "ifcDirection",
+            "directionRatios": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "representation": {
+        "type": "ifcProductDefinitionShape",
+        "representations": [
+          {
+            "type": "ifcShapeRepresentation",
+            "contextOfItems": {
+              "type": "ifcGeometricRepresentationContext",
+              "contextType": "Model",
+              "coordinateSpaceDimension": 3,
+              "precision": 1e-05,
+              "worldCoordinateSystem": {
+                "type": "ifcAxis2Placement3D",
+                "location": {
+                  "type": "ifcCartesianPoint",
+                  "coordinates": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              }
+            },
+            "representationIdentifier": "Body",
+            "representationType": "SweptSolid",
+            "items": [
+              {
+                "type": "ifcExtrudedAreaSolid",
+                "sweptArea": {
+                  "type": "ifcArbitraryClosedProfileDef",
+                  "profileType": "AREA",
+                  "outerCurve": {
+                    "type": "ifcPolyline",
+                    "points": [
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          0.3
+                        ]
+                      },
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          0.75,
+                          0.3
+                        ]
+                      },
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          0.75,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          0.0
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "position": {
+                  "type": "ifcAxis2Placement3D",
+                  "location": {
+                    "type": "ifcCartesianPoint",
+                    "coordinates": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ]
+                  },
+                  "axis": {
+                    "type": "ifcDirection",
+                    "directionRatios": [
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  },
+                  "refDirection": {
+                    "type": "ifcDirection",
+                    "directionRatios": [
+                      1.0,
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "extrudedDirection": {
+                  "type": "ifcDirection",
+                  "directionRatios": [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                },
+                "depth": 2.1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "ifcDoor",
+      "globalId": "157c866c-9c08-4348-a0ed-4d57cd66c9e2",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "name": "A common door",
+      "description": "Description of a standard door",
+      "objectPlacement": {
+        "type": "ifcLocalPlacement",
+        "placementRelTo": {
+          "type": "ifcLocalPlacement",
+          "placementRelTo": {
+            "type": "ifcLocalPlacement",
+            "placementRelTo": {
+              "type": "ifcLocalPlacement",
+              "placementRelTo": {
+                "type": "ifcLocalPlacement",
+                "placementRelTo": {
+                  "type": "ifcLocalPlacement",
+                  "relativePlacement": {
+                    "type": "ifcAxis2Placement3D",
+                    "location": {
+                      "type": "ifcCartesianPoint",
+                      "coordinates": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ]
+                    },
+                    "axis": {
+                      "type": "ifcDirection",
+                      "directionRatios": [
+                        0.0,
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "refDirection": {
+                      "type": "ifcDirection",
+                      "directionRatios": [
+                        1.0,
+                        0.0,
+                        0.0
+                      ]
+                    }
+                  }
+                },
+                "relativePlacement": {
+                  "type": "ifcAxis2Placement3D",
+                  "location": {
+                    "type": "ifcCartesianPoint",
+                    "coordinates": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ]
+                  },
+                  "axis": {
+                    "type": "ifcDirection",
+                    "directionRatios": [
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  },
+                  "refDirection": {
+                    "type": "ifcDirection",
+                    "directionRatios": [
+                      1.0,
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              },
+              "relativePlacement": {
+                "type": "ifcAxis2Placement3D",
+                "location": {
+                  "type": "ifcCartesianPoint",
+                  "coordinates": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                "axis": {
+                  "type": "ifcDirection",
+                  "directionRatios": [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                },
+                "refDirection": {
+                  "type": "ifcDirection",
+                  "directionRatios": [
+                    1.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              }
+            },
+            "relativePlacement": {
+              "type": "ifcAxis2Placement3D",
+              "location": {
+                "type": "ifcCartesianPoint",
+                "coordinates": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "axis": {
+                "type": "ifcDirection",
+                "directionRatios": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              "refDirection": {
+                "type": "ifcDirection",
+                "directionRatios": [
+                  1.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          },
+          "relativePlacement": {
+            "type": "ifcAxis2Placement3D",
+            "location": {
+              "type": "ifcCartesianPoint",
+              "coordinates": [
+                0.5,
+                0.0,
+                0.0
+              ]
+            },
+            "axis": {
+              "type": "ifcDirection",
+              "directionRatios": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "refDirection": {
+              "type": "ifcDirection",
+              "directionRatios": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "relativePlacement": {
+          "type": "ifcAxis2Placement3D",
+          "location": {
+            "type": "ifcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.1,
+              0.0
+            ]
+          },
+          "axis": {
+            "type": "ifcDirection",
+            "directionRatios": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "refDirection": {
+            "type": "ifcDirection",
+            "directionRatios": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "representation": {
+        "type": "ifcProductDefinitionShape",
+        "representations": [
+          {
+            "type": "ifcShapeRepresentation",
+            "contextOfItems": {
+              "type": "ifcGeometricRepresentationContext",
+              "contextType": "Model",
+              "coordinateSpaceDimension": 3,
+              "precision": 1e-05,
+              "worldCoordinateSystem": {
+                "type": "ifcAxis2Placement3D",
+                "location": {
+                  "type": "ifcCartesianPoint",
+                  "coordinates": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              }
+            },
+            "representationIdentifier": "Body",
+            "representationType": "SweptSolid",
+            "items": [
+              {
+                "type": "ifcExtrudedAreaSolid",
+                "sweptArea": {
+                  "type": "ifcArbitraryClosedProfileDef",
+                  "profileType": "AREA",
+                  "outerCurve": {
+                    "type": "ifcPolyline",
+                    "points": [
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          0.1
+                        ]
+                      },
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          0.75,
+                          0.1
+                        ]
+                      },
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          0.75,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          0.0
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "position": {
+                  "type": "ifcAxis2Placement3D",
+                  "location": {
+                    "type": "ifcCartesianPoint",
+                    "coordinates": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ]
+                  },
+                  "axis": {
+                    "type": "ifcDirection",
+                    "directionRatios": [
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  },
+                  "refDirection": {
+                    "type": "ifcDirection",
+                    "directionRatios": [
+                      1.0,
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "extrudedDirection": {
+                  "type": "ifcDirection",
+                  "directionRatios": [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                },
+                "depth": 2.1
+              }
+            ]
+          }
+        ]
+      },
+      "overallHeight": 1.4,
+      "overallWidth": 0.7
+    },
+    {
+      "type": "ifcRelDefinesByProperties",
+      "globalId": "d2ecfe17-45be-4b36-959d-1be3ec8193bd",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "relatedObjects": [
+        {
+          "type": "ifcWallStandardCase",
+          "ref": "f92c2898-fd68-44ef-9178-3348e340017b"
+        }
+      ],
+      "relatingPropertyDefinition": {
+        "type": "ifcPropertySet",
+        "ref": "486f7679-1a8a-4deb-8798-5a7e0c8c7d51"
+      }
+    },
+    {
+      "type": "ifcWallStandardCase",
+      "globalId": "f92c2898-fd68-44ef-9178-3348e340017b",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "name": "Wall xyz",
+      "description": "Description of Wall",
+      "objectPlacement": {
+        "type": "ifcLocalPlacement",
+        "placementRelTo": {
+          "type": "ifcLocalPlacement",
+          "placementRelTo": {
+            "type": "ifcLocalPlacement",
+            "placementRelTo": {
+              "type": "ifcLocalPlacement",
+              "relativePlacement": {
+                "type": "ifcAxis2Placement3D",
+                "location": {
+                  "type": "ifcCartesianPoint",
+                  "coordinates": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                "axis": {
+                  "type": "ifcDirection",
+                  "directionRatios": [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                },
+                "refDirection": {
+                  "type": "ifcDirection",
+                  "directionRatios": [
+                    1.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              }
+            },
+            "relativePlacement": {
+              "type": "ifcAxis2Placement3D",
+              "location": {
+                "type": "ifcCartesianPoint",
+                "coordinates": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "axis": {
+                "type": "ifcDirection",
+                "directionRatios": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              "refDirection": {
+                "type": "ifcDirection",
+                "directionRatios": [
+                  1.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          },
+          "relativePlacement": {
+            "type": "ifcAxis2Placement3D",
+            "location": {
+              "type": "ifcCartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "axis": {
+              "type": "ifcDirection",
+              "directionRatios": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "refDirection": {
+              "type": "ifcDirection",
+              "directionRatios": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "relativePlacement": {
+          "type": "ifcAxis2Placement3D",
+          "location": {
+            "type": "ifcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "axis": {
+            "type": "ifcDirection",
+            "directionRatios": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "refDirection": {
+            "type": "ifcDirection",
+            "directionRatios": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "representation": {
+        "type": "ifcProductDefinitionShape",
+        "representations": [
+          {
+            "type": "ifcShapeRepresentation",
+            "contextOfItems": {
+              "type": "ifcGeometricRepresentationContext",
+              "contextType": "Model",
+              "coordinateSpaceDimension": 3,
+              "precision": 1e-05,
+              "worldCoordinateSystem": {
+                "type": "ifcAxis2Placement3D",
+                "location": {
+                  "type": "ifcCartesianPoint",
+                  "coordinates": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              }
+            },
+            "representationIdentifier": "Axis",
+            "representationType": "Curve2D",
+            "items": [
+              {
+                "type": "ifcPolyline",
+                "points": [
+                  {
+                    "type": "ifcCartesianPoint",
+                    "coordinates": [
+                      0.0,
+                      0.15
+                    ]
+                  },
+                  {
+                    "type": "ifcCartesianPoint",
+                    "coordinates": [
+                      5.0,
+                      0.15
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "ifcShapeRepresentation",
+            "contextOfItems": {
+              "type": "ifcGeometricRepresentationContext",
+              "contextType": "Model",
+              "coordinateSpaceDimension": 3,
+              "precision": 1e-05,
+              "worldCoordinateSystem": {
+                "type": "ifcAxis2Placement3D",
+                "location": {
+                  "type": "ifcCartesianPoint",
+                  "coordinates": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              }
+            },
+            "representationIdentifier": "Body",
+            "representationType": "SweptSolid",
+            "items": [
+              {
+                "type": "ifcExtrudedAreaSolid",
+                "sweptArea": {
+                  "type": "ifcArbitraryClosedProfileDef",
+                  "profileType": "AREA",
+                  "outerCurve": {
+                    "type": "ifcPolyline",
+                    "points": [
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          0.3
+                        ]
+                      },
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          5.0,
+                          0.3
+                        ]
+                      },
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          5.0,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "ifcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          0.0
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "position": {
+                  "type": "ifcAxis2Placement3D",
+                  "location": {
+                    "type": "ifcCartesianPoint",
+                    "coordinates": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ]
+                  },
+                  "axis": {
+                    "type": "ifcDirection",
+                    "directionRatios": [
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  },
+                  "refDirection": {
+                    "type": "ifcDirection",
+                    "directionRatios": [
+                      1.0,
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "extrudedDirection": {
+                  "type": "ifcDirection",
+                  "directionRatios": [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                },
+                "depth": 2.3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "ifcPropertySet",
+      "globalId": "486f7679-1a8a-4deb-8798-5a7e0c8c7d51",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "name": "Pset_WallCommon",
+      "hasProperties": [
+        {
+          "type": "ifcPropertySingleValue",
+          "name": "Reference",
+          "description": "Reference",
+          "nominalValue": {
+            "type": "ifcText",
+            "wrappedValue": ""
+          }
+        },
+        {
+          "type": "ifcPropertySingleValue",
+          "name": "AcousticRating",
+          "description": "AcousticRating",
+          "nominalValue": {
+            "type": "ifcText",
+            "wrappedValue": ""
+          }
+        },
+        {
+          "type": "ifcPropertySingleValue",
+          "name": "FireRating",
+          "description": "FireRating",
+          "nominalValue": {
+            "type": "ifcText",
+            "wrappedValue": ""
+          }
+        },
+        {
+          "type": "ifcPropertySingleValue",
+          "name": "Combustible",
+          "description": "Combustible",
+          "nominalValue": {
+            "type": "ifcBoolean",
+            "wrappedValue": false
+          }
+        },
+        {
+          "type": "ifcPropertySingleValue",
+          "name": "SurfaceSpreadOfFlame",
+          "description": "SurfaceSpreadOfFlame",
+          "nominalValue": {
+            "type": "ifcText",
+            "wrappedValue": ""
+          }
+        },
+        {
+          "type": "ifcPropertySingleValue",
+          "name": "ThermalTransmittance",
+          "description": "ThermalTransmittance",
+          "nominalValue": {
+            "type": "ifcReal",
+            "wrappedValue": 0.24
+          }
+        },
+        {
+          "type": "ifcPropertySingleValue",
+          "name": "IsExternal",
+          "description": "IsExternal",
+          "nominalValue": {
+            "type": "ifcBoolean",
+            "wrappedValue": true
+          }
+        },
+        {
+          "type": "ifcPropertySingleValue",
+          "name": "ExtendToStructure",
+          "description": "ExtendToStructure",
+          "nominalValue": {
+            "type": "ifcBoolean",
+            "wrappedValue": false
+          }
+        },
+        {
+          "type": "ifcPropertySingleValue",
+          "name": "LoadBearing",
+          "description": "LoadBearing",
+          "nominalValue": {
+            "type": "ifcBoolean",
+            "wrappedValue": false
+          }
+        },
+        {
+          "type": "ifcPropertySingleValue",
+          "name": "Compartmentation",
+          "description": "Compartmentation",
+          "nominalValue": {
+            "type": "ifcBoolean",
+            "wrappedValue": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "ifcRelAssociatesMaterial",
+      "globalId": "bda2aa8b-b6e2-4a17-a9a6-0ee24c8b49d5",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "relatedObjects": [
+        {
+          "type": "ifcWallStandardCase",
+          "ref": "f92c2898-fd68-44ef-9178-3348e340017b"
+        }
+      ],
+      "relatingMaterial": {
+        "type": "ifcMaterialLayerSetUsage",
+        "forLayerSet": {
+          "type": "ifcMaterialLayerSet",
+          "materialLayers": [
+            {
+              "type": "ifcMaterialLayer",
+              "material": {
+                "type": "ifcMaterial",
+                "name": "simple brick material"
+              },
+              "layerThickness": 0.3
+            }
+          ]
+        },
+        "layerSetDirection": "AXIS2",
+        "directionSense": "POSITIVE",
+        "offsetFromReferenceLine": -0.15
+      }
+    },
+    {
+      "type": "ifcRelContainedInSpatialStructure",
+      "globalId": "98fa75b8-371d-412a-be42-2326c68dfcf5",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "name": "Default Building",
+      "description": "Contents of Building Storey",
+      "relatedElements": [
+        {
+          "type": "ifcWallStandardCase",
+          "ref": "f92c2898-fd68-44ef-9178-3348e340017b"
+        },
+        {
+          "type": "ifcDoor",
+          "ref": "157c866c-9c08-4348-a0ed-4d57cd66c9e2"
+        }
+      ],
+      "relatingStructure": {
+        "type": "ifcBuildingStorey",
+        "ref": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff"
+      }
+    },
+    {
+      "type": "ifcBuildingStorey",
+      "globalId": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "name": "Default Building Storey",
+      "description": "Description of Default Building Storey",
+      "objectPlacement": {
+        "type": "ifcLocalPlacement",
+        "placementRelTo": {
+          "type": "ifcLocalPlacement",
+          "placementRelTo": {
+            "type": "ifcLocalPlacement",
+            "relativePlacement": {
+              "type": "ifcAxis2Placement3D",
+              "location": {
+                "type": "ifcCartesianPoint",
+                "coordinates": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "axis": {
+                "type": "ifcDirection",
+                "directionRatios": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              "refDirection": {
+                "type": "ifcDirection",
+                "directionRatios": [
+                  1.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          },
+          "relativePlacement": {
+            "type": "ifcAxis2Placement3D",
+            "location": {
+              "type": "ifcCartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "axis": {
+              "type": "ifcDirection",
+              "directionRatios": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "refDirection": {
+              "type": "ifcDirection",
+              "directionRatios": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "relativePlacement": {
+          "type": "ifcAxis2Placement3D",
+          "location": {
+            "type": "ifcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "axis": {
+            "type": "ifcDirection",
+            "directionRatios": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "refDirection": {
+            "type": "ifcDirection",
+            "directionRatios": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "compositionType": "ELEMENT",
+      "elevation": 0.0
+    },
+    {
+      "type": "ifcRelAggregates",
+      "globalId": "57bfe2d2-b505-4bba-8278-f867834a0be0",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "name": "ProjectContainer",
+      "description": "ProjectContainer for Sites",
+      "relatingObject": {
+        "type": "ifcProject",
+        "ref": "22e66ddf-794d-40bb-8aa5-3dda450d8255"
+      },
+      "relatedObjects": [
+        {
+          "type": "ifcSite",
+          "ref": "f55eaf97-145e-4431-b2f3-69f9634f244b"
+        }
+      ]
+    },
+    {
+      "type": "ifcProject",
+      "globalId": "22e66ddf-794d-40bb-8aa5-3dda450d8255",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "name": "Default Project",
+      "description": "Description of Default Project",
+      "representationContexts": [
+        {
+          "type": "ifcGeometricRepresentationContext",
+          "contextType": "Model",
+          "coordinateSpaceDimension": 3,
+          "precision": 1e-05,
+          "worldCoordinateSystem": {
+            "type": "ifcAxis2Placement3D",
+            "location": {
+              "type": "ifcCartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      ],
+      "unitsInContext": {
+        "type": "ifcUnitAssignment",
+        "units": [
+          {
+            "type": "ifcSIUnit",
+            "unitType": "LENGTHUNIT",
+            "name": "METRE"
+          },
+          {
+            "type": "ifcSIUnit",
+            "unitType": "AREAUNIT",
+            "name": "SQUARE_METRE"
+          },
+          {
+            "type": "ifcSIUnit",
+            "unitType": "VOLUMEUNIT",
+            "name": "CUBIC_METRE"
+          },
+          {
+            "type": "ifcConversionBasedUnit",
+            "dimensions": {
+              "type": "ifcDimensionalExponents",
+              "lengthExponent": 0,
+              "massExponent": 0,
+              "timeExponent": 0,
+              "electricCurrentExponent": 0,
+              "thermodynamicTemperatureExponent": 0,
+              "amountOfSubstanceExponent": 0,
+              "luminousIntensityExponent": 0
+            },
+            "unitType": "PLANEANGLEUNIT",
+            "name": "DEGREE",
+            "conversionFactor": {
+              "type": "ifcMeasureWithUnit",
+              "valueComponent": {
+                "type": "ifcPlaneAngleMeasure",
+                "wrappedValue": 0.01745
+              },
+              "unitComponent": {
+                "type": "ifcSIUnit",
+                "unitType": "PLANEANGLEUNIT",
+                "name": "RADIAN"
+              }
+            }
+          },
+          {
+            "type": "ifcSIUnit",
+            "unitType": "SOLIDANGLEUNIT",
+            "name": "STERADIAN"
+          },
+          {
+            "type": "ifcSIUnit",
+            "unitType": "MASSUNIT",
+            "name": "GRAM"
+          },
+          {
+            "type": "ifcSIUnit",
+            "unitType": "TIMEUNIT",
+            "name": "SECOND"
+          },
+          {
+            "type": "ifcSIUnit",
+            "unitType": "THERMODYNAMICTEMPERATUREUNIT",
+            "name": "DEGREE_CELSIUS"
+          },
+          {
+            "type": "ifcSIUnit",
+            "unitType": "LUMINOUSINTENSITYUNIT",
+            "name": "LUMEN"
+          }
+        ]
+      }
+    },
+    {
+      "type": "ifcSite",
+      "globalId": "f55eaf97-145e-4431-b2f3-69f9634f244b",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "name": "TU/e campus",
+      "description": "The High Tech campus of the Eindhoven University of Technology",
+      "objectPlacement": {
+        "type": "ifcLocalPlacement",
+        "relativePlacement": {
+          "type": "ifcAxis2Placement3D",
+          "location": {
+            "type": "ifcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "axis": {
+            "type": "ifcDirection",
+            "directionRatios": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "refDirection": {
+            "type": "ifcDirection",
+            "directionRatios": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "compositionType": "ELEMENT",
+      "refLatitude": [
+        24,
+        28,
+        0
+      ],
+      "refLongitude": [
+        54,
+        25,
+        0
+      ]
+    },
+    {
+      "type": "ifcRelAggregates",
+      "globalId": "d3e2bc1a-4cdb-49ed-9c4a-c60c97949121",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "name": "SiteContainer",
+      "description": "SiteContainer For Buildings",
+      "relatingObject": {
+        "type": "ifcSite",
+        "ref": "f55eaf97-145e-4431-b2f3-69f9634f244b"
+      },
+      "relatedObjects": [
+        {
+          "type": "ifcBuilding",
+          "ref": "3ca7e585-4e3e-4969-a86f-f049f4fbde52"
+        }
+      ]
+    },
+    {
+      "type": "ifcBuilding",
+      "globalId": "3ca7e585-4e3e-4969-a86f-f049f4fbde52",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "name": "Vertigo Building",
+      "description": "TU/e Department of the Built Environment",
+      "objectPlacement": {
+        "type": "ifcLocalPlacement",
+        "placementRelTo": {
+          "type": "ifcLocalPlacement",
+          "relativePlacement": {
+            "type": "ifcAxis2Placement3D",
+            "location": {
+              "type": "ifcCartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "axis": {
+              "type": "ifcDirection",
+              "directionRatios": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "refDirection": {
+              "type": "ifcDirection",
+              "directionRatios": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "relativePlacement": {
+          "type": "ifcAxis2Placement3D",
+          "location": {
+            "type": "ifcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "axis": {
+            "type": "ifcDirection",
+            "directionRatios": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "refDirection": {
+            "type": "ifcDirection",
+            "directionRatios": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "compositionType": "ELEMENT"
+    },
+    {
+      "type": "ifcRelAggregates",
+      "globalId": "81188789-c594-45ec-b0de-ccdefee14041",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "name": "BuildingContainer",
+      "description": "BuildingContainer for BuildigStories",
+      "relatingObject": {
+        "type": "ifcBuilding",
+        "ref": "3ca7e585-4e3e-4969-a86f-f049f4fbde52"
+      },
+      "relatedObjects": [
+        {
+          "type": "ifcBuildingStorey",
+          "ref": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff"
+        }
+      ]
+    },
+    {
+      "type": "ifcRelVoidsElement",
+      "globalId": "ef6c5bb2-49d1-4153-ae27-bb01684b2778",
+      "ownerHistory": {
+        "type": "ifcOwnerHistory",
+        "owningUser": {
+          "type": "ifcPersonAndOrganization",
+          "thePerson": {
+            "type": "ifcPerson",
+            "id": "ID001",
+            "familyName": "Beetz",
+            "givenName": "Jakob"
+          },
+          "theOrganization": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          }
+        },
+        "owningApplication": {
+          "type": "ifcApplication",
+          "applicationDeveloper": {
+            "type": "ifcOrganization",
+            "name": "TU/e",
+            "description": "Eindhoven University of Technology"
+          },
+          "version": "version 0.10",
+          "applicationFullName": "My text editor",
+          "applicationIdentifier": "TA 1001"
+        },
+        "changeAction": "ADDED",
+        "creationDate": 1217620436
+      },
+      "relatingBuildingElement": {
+        "type": "ifcWallStandardCase",
+        "ref": "f92c2898-fd68-44ef-9178-3348e340017b"
+      },
+      "relatedOpeningElement": {
+        "type": "ifcOpeningElement",
+        "ref": "9598e1c0-b1a9-4505-93a3-f3193af39e1d"
+      }
+    }
+  ]
+}
