@@ -1,193 +1,194 @@
 {
-    "file_schema": "IFC.JSON5a",
-    "data": [
+  "file_schema": "IFC.JSON5a",
+  "originatingSystem": "IFC2JSON_python",
+  "data": [
+    {
+      "type": "wallStandardCase",
+      "thermalTransmittance": 0.24,
+      "isExternal": true,
+      "globalId": "f92c2898-fd68-44ef-9178-3348e340017b",
+      "name": "Wall xyz",
+      "description": "Description of Wall",
+      "representations": [
         {
-            "type": "IfcWallStandardCase",
-            "thermalTransmittance": 0.24,
-            "isExternal": true,
-            "globalId": "f92c2898-fd68-44ef-9178-3348e340017b",
-            "name": "Wall xyz",
-            "description": "Description of Wall",
-            "representations": [
-                {
-                    "class": "ShapeRepresentation",
-                    "ref": "12e3251e-f5e1-4563-b117-cccaccd70406"
-                }
-            ]
-        },
-        {
-            "type": "IfcDoor",
-            "globalId": "157c866c-9c08-4348-a0ed-4d57cd66c9e2",
-            "name": "A common door",
-            "description": "Description of a standard door",
-            "overallHeight": 1.4,
-            "overallWidth": 0.7
-        },
-        {
-            "type": "IfcBuildingStorey",
-            "ContainsElements": [
-                {
-                    "type": "IfcWallStandardCase",
-                    "ref": "f92c2898-fd68-44ef-9178-3348e340017b"
-                },
-                {
-                    "type": "IfcDoor",
-                    "ref": "157c866c-9c08-4348-a0ed-4d57cd66c9e2"
-                }
-            ],
-            "globalId": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff",
-            "name": "Default Building Storey",
-            "description": "Description of Default Building Storey",
-            "compositionType": "ELEMENT",
-            "elevation": 0.0
-        },
-        {
-            "type": "IfcBuilding",
-            "IsDecomposedBy": [
-                {
-                    "type": "IfcBuildingStorey",
-                    "ref": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff"
-                }
-            ],
-            "globalId": "3ca7e585-4e3e-4969-a86f-f049f4fbde52",
-            "name": "Vertigo Building",
-            "description": "TU/e Department of the Built Environment",
-            "compositionType": "ELEMENT"
-        },
-        {
-            "type": "IfcSite",
-            "IsDecomposedBy": [
-                {
-                    "type": "IfcBuilding",
-                    "ref": "3ca7e585-4e3e-4969-a86f-f049f4fbde52"
-                }
-            ],
-            "globalId": "f55eaf97-145e-4431-b2f3-69f9634f244b",
-            "name": "TU/e campus",
-            "description": "The High Tech campus of the Eindhoven University of Technology",
-            "compositionType": "ELEMENT",
-            "refLatitude": [
-                24,
-                28,
-                0
-            ],
-            "refLongitude": [
-                54,
-                25,
-                0
-            ]
-        },
-        {
-            "type": "IfcProject",
-            "IsDecomposedBy": [
-                {
-                    "type": "IfcSite",
-                    "ref": "f55eaf97-145e-4431-b2f3-69f9634f244b"
-                }
-            ],
-            "globalId": "22e66ddf-794d-40bb-8aa5-3dda450d8255",
-            "name": "Default Project",
-            "description": "Description of Default Project",
-            "representationContexts": [
-                {
-                    "type": "IfcGeometricRepresentationContext",
-                    "contextType": "Model",
-                    "coordinateSpaceDimension": 3,
-                    "precision": 1e-05,
-                    "worldCoordinateSystem": {
-                        "type": "IfcAxis2Placement3D",
-                        "location": {
-                            "type": "IfcCartesianPoint",
-                            "coordinates": [
-                                0.0,
-                                0.0,
-                                0.0
-                            ]
-                        }
-                    }
-                }
-            ],
-            "unitsInContext": {
-                "type": "IfcUnitAssignment",
-                "units": [
-                    {
-                        "type": "IfcSIUnit",
-                        "unitType": "LENGTHUNIT",
-                        "name": "METRE"
-                    },
-                    {
-                        "type": "IfcSIUnit",
-                        "unitType": "AREAUNIT",
-                        "name": "SQUARE_METRE"
-                    },
-                    {
-                        "type": "IfcSIUnit",
-                        "unitType": "VOLUMEUNIT",
-                        "name": "CUBIC_METRE"
-                    },
-                    {
-                        "type": "IfcConversionBasedUnit",
-                        "dimensions": {
-                            "type": "IfcDimensionalExponents",
-                            "lengthExponent": 0,
-                            "massExponent": 0,
-                            "timeExponent": 0,
-                            "electricCurrentExponent": 0,
-                            "thermodynamicTemperatureExponent": 0,
-                            "amountOfSubstanceExponent": 0,
-                            "luminousIntensityExponent": 0
-                        },
-                        "unitType": "PLANEANGLEUNIT",
-                        "name": "DEGREE",
-                        "conversionFactor": {
-                            "type": "IfcMeasureWithUnit",
-                            "valueComponent": {
-                                "type": "IfcPlaneAngleMeasure",
-                                "wrappedValue": 0.01745
-                            },
-                            "unitComponent": {
-                                "type": "IfcSIUnit",
-                                "unitType": "PLANEANGLEUNIT",
-                                "name": "RADIAN"
-                            }
-                        }
-                    },
-                    {
-                        "type": "IfcSIUnit",
-                        "unitType": "SOLIDANGLEUNIT",
-                        "name": "STERADIAN"
-                    },
-                    {
-                        "type": "IfcSIUnit",
-                        "unitType": "MASSUNIT",
-                        "name": "GRAM"
-                    },
-                    {
-                        "type": "IfcSIUnit",
-                        "unitType": "TIMEUNIT",
-                        "name": "SECOND"
-                    },
-                    {
-                        "type": "IfcSIUnit",
-                        "unitType": "THERMODYNAMICTEMPERATUREUNIT",
-                        "name": "DEGREE_CELSIUS"
-                    },
-                    {
-                        "type": "IfcSIUnit",
-                        "unitType": "LUMINOUSINTENSITYUNIT",
-                        "name": "LUMEN"
-                    }
-                ]
-            }
-        },
-        {
-            "class": "ShapeRepresentation",
-            "globalId": "12e3251e-f5e1-4563-b117-cccaccd70406",
-            "representationIdentifier": "Body",
-            "representationType": "OBJ",
-            "items": [
-                "v 0 0 0\nv 0 0 2.3\nv 0 0.3 2.3\nv 0 0.3 0\nv 5 0 0\nv 1.25 0 0\nv 1.25 0 2.1\nv 0.5 0 2.1\nv 0.5 0 0\nv 0 0 0\nv 0 0 2.3\nv 5 0 2.3\nv 0 0.3 0\nv 0.5 0.3 0\nv 0.5 0.3 2.1\nv 1.25 0.3 2.1\nv 1.25 0.3 0\nv 5 0.3 0\nv 5 0.3 2.3\nv 0 0.3 2.3\nv 0.5 0 0\nv 0 0 0\nv 0.5 0.3 0\nv 0 0.3 0\nv 0 0 2.3\nv 0 0.3 2.3\nv 5 0.3 2.3\nv 5 0 2.3\nv 5 0 0\nv 1.25 0 0\nv 5 0.3 0\nv 1.25 0.3 0\nv 1.25 0.3 0\nv 1.25 0.3 2.1\nv 1.25 0 2.1\nv 1.25 0 0\nv 0.5 0 2.1\nv 0.5 0.3 2.1\nv 1.25 0.3 2.1\nv 1.25 0 2.1\nv 0.5 0 0\nv 0.5 0 2.1\nv 0.5 0.3 2.1\nv 0.5 0.3 0\nv 5 0.3 0\nv 5 0.3 2.3\nv 5 0 2.3\nv 5 0 0\nvn -1 0 0\nvn -1 0 0\nvn -1 0 0\nvn -1 0 0\nvn 0 -1 0\nvn 0 -1 0\nvn 0 -1 0\nvn 0 -1 0\nvn 0 -1 0\nvn 0 -1 0\nvn 0 -1 0\nvn 0 -1 0\nvn 0 1 0\nvn 0 1 0\nvn 0 1 0\nvn 0 1 0\nvn 0 1 0\nvn 0 1 0\nvn 0 1 0\nvn 0 1 0\nvn 0 0 -1\nvn 0 0 -1\nvn 0 0 -1\nvn 0 0 -1\nvn 0 0 1\nvn 0 0 1\nvn 0 0 1\nvn 0 0 1\nvn 0 0 -1\nvn 0 0 -1\nvn 0 0 -1\nvn 0 0 -1\nvn -1 -0 -0\nvn -1 -0 -0\nvn -1 -0 -0\nvn -1 -0 -0\nvn 0 0 -1\nvn 0 0 -1\nvn 0 0 -1\nvn 0 0 -1\nvn 1 0 0\nvn 1 0 0\nvn 1 0 0\nvn 1 0 0\nvn 1 0 0\nvn 1 0 0\nvn 1 0 0\nvn 1 0 0\nf 4//4 1//1 2//2\nf 4//4 2//2 3//3\nf 7//7 5//5 12//12\nf 11//11 8//8 7//7\nf 11//11 7//7 12//12\nf 6//6 5//5 7//7\nf 10//10 9//9 8//8\nf 10//10 8//8 11//11\nf 16//16 15//15 20//20\nf 13//13 20//20 15//15\nf 14//14 13//13 15//15\nf 19//19 16//16 20//20\nf 18//18 17//17 16//16\nf 18//18 16//16 19//19\nf 24//24 21//21 22//22\nf 24//24 23//23 21//21\nf 28//28 27//27 26//26\nf 25//25 28//28 26//26\nf 32//32 29//29 30//30\nf 32//32 31//31 29//29\nf 34//34 33//33 36//36\nf 35//35 34//34 36//36\nf 38//38 39//39 40//40\nf 38//38 40//40 37//37\nf 42//42 41//41 44//44\nf 43//43 42//42 44//44\nf 48//48 45//45 46//46\nf 48//48 46//46 47//47\n"
-            ]
+          "type": "shapeRepresentation",
+          "ref": "a39492c4-0b07-440c-9111-b640622b9510"
         }
-    ]
+      ]
+    },
+    {
+      "type": "door",
+      "globalId": "157c866c-9c08-4348-a0ed-4d57cd66c9e2",
+      "name": "A common door",
+      "description": "Description of a standard door",
+      "overallHeight": 1.4,
+      "overallWidth": 0.7
+    },
+    {
+      "type": "buildingStorey",
+      "ContainsElements": [
+        {
+          "type": "wallStandardCase",
+          "ref": "f92c2898-fd68-44ef-9178-3348e340017b"
+        },
+        {
+          "type": "door",
+          "ref": "157c866c-9c08-4348-a0ed-4d57cd66c9e2"
+        }
+      ],
+      "globalId": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff",
+      "name": "Default Building Storey",
+      "description": "Description of Default Building Storey",
+      "compositionType": "ELEMENT",
+      "elevation": 0.0
+    },
+    {
+      "type": "building",
+      "IsDecomposedBy": [
+        {
+          "type": "buildingStorey",
+          "ref": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff"
+        }
+      ],
+      "globalId": "3ca7e585-4e3e-4969-a86f-f049f4fbde52",
+      "name": "Vertigo Building",
+      "description": "TU/e Department of the Built Environment",
+      "compositionType": "ELEMENT"
+    },
+    {
+      "type": "site",
+      "IsDecomposedBy": [
+        {
+          "type": "building",
+          "ref": "3ca7e585-4e3e-4969-a86f-f049f4fbde52"
+        }
+      ],
+      "globalId": "f55eaf97-145e-4431-b2f3-69f9634f244b",
+      "name": "TU/e campus",
+      "description": "The High Tech campus of the Eindhoven University of Technology",
+      "compositionType": "ELEMENT",
+      "refLatitude": [
+        24,
+        28,
+        0
+      ],
+      "refLongitude": [
+        54,
+        25,
+        0
+      ]
+    },
+    {
+      "type": "project",
+      "IsDecomposedBy": [
+        {
+          "type": "site",
+          "ref": "f55eaf97-145e-4431-b2f3-69f9634f244b"
+        }
+      ],
+      "globalId": "22e66ddf-794d-40bb-8aa5-3dda450d8255",
+      "name": "Default Project",
+      "description": "Description of Default Project",
+      "representationContexts": [
+        {
+          "type": "geometricRepresentationContext",
+          "contextType": "Model",
+          "coordinateSpaceDimension": 3,
+          "precision": 1e-05,
+          "worldCoordinateSystem": {
+            "type": "axis2Placement3D",
+            "location": {
+              "type": "cartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      ],
+      "unitsInContext": {
+        "type": "unitAssignment",
+        "units": [
+          {
+            "type": "sIUnit",
+            "unitType": "LENGTHUNIT",
+            "name": "METRE"
+          },
+          {
+            "type": "sIUnit",
+            "unitType": "AREAUNIT",
+            "name": "SQUARE_METRE"
+          },
+          {
+            "type": "sIUnit",
+            "unitType": "VOLUMEUNIT",
+            "name": "CUBIC_METRE"
+          },
+          {
+            "type": "conversionBasedUnit",
+            "dimensions": {
+              "type": "dimensionalExponents",
+              "lengthExponent": 0,
+              "massExponent": 0,
+              "timeExponent": 0,
+              "electricCurrentExponent": 0,
+              "thermodynamicTemperatureExponent": 0,
+              "amountOfSubstanceExponent": 0,
+              "luminousIntensityExponent": 0
+            },
+            "unitType": "PLANEANGLEUNIT",
+            "name": "DEGREE",
+            "conversionFactor": {
+              "type": "measureWithUnit",
+              "valueComponent": {
+                "type": "planeAngleMeasure",
+                "wrappedValue": 0.01745
+              },
+              "unitComponent": {
+                "type": "sIUnit",
+                "unitType": "PLANEANGLEUNIT",
+                "name": "RADIAN"
+              }
+            }
+          },
+          {
+            "type": "sIUnit",
+            "unitType": "SOLIDANGLEUNIT",
+            "name": "STERADIAN"
+          },
+          {
+            "type": "sIUnit",
+            "unitType": "MASSUNIT",
+            "name": "GRAM"
+          },
+          {
+            "type": "sIUnit",
+            "unitType": "TIMEUNIT",
+            "name": "SECOND"
+          },
+          {
+            "type": "sIUnit",
+            "unitType": "THERMODYNAMICTEMPERATUREUNIT",
+            "name": "DEGREE_CELSIUS"
+          },
+          {
+            "type": "sIUnit",
+            "unitType": "LUMINOUSINTENSITYUNIT",
+            "name": "LUMEN"
+          }
+        ]
+      }
+    },
+    {
+      "type": "shapeRepresentation",
+      "globalId": "a39492c4-0b07-440c-9111-b640622b9510",
+      "representationIdentifier": "Body",
+      "representationType": "OBJ",
+      "items": [
+        "v 0 0 0\nv 0 0 2.3\nv 0 0.3 2.3\nv 0 0.3 0\nv 5 0 0\nv 1.25 0 0\nv 1.25 0 2.1\nv 0.5 0 2.1\nv 0.5 0 0\nv 0 0 0\nv 0 0 2.3\nv 5 0 2.3\nv 0 0.3 0\nv 0.5 0.3 0\nv 0.5 0.3 2.1\nv 1.25 0.3 2.1\nv 1.25 0.3 0\nv 5 0.3 0\nv 5 0.3 2.3\nv 0 0.3 2.3\nv 0.5 0 0\nv 0 0 0\nv 0.5 0.3 0\nv 0 0.3 0\nv 0 0 2.3\nv 0 0.3 2.3\nv 5 0.3 2.3\nv 5 0 2.3\nv 5 0 0\nv 1.25 0 0\nv 5 0.3 0\nv 1.25 0.3 0\nv 1.25 0.3 0\nv 1.25 0.3 2.1\nv 1.25 0 2.1\nv 1.25 0 0\nv 0.5 0 2.1\nv 0.5 0.3 2.1\nv 1.25 0.3 2.1\nv 1.25 0 2.1\nv 0.5 0 0\nv 0.5 0 2.1\nv 0.5 0.3 2.1\nv 0.5 0.3 0\nv 5 0.3 0\nv 5 0.3 2.3\nv 5 0 2.3\nv 5 0 0\nf 4//4 1//1 2//2\nf 4//4 2//2 3//3\nf 7//7 5//5 12//12\nf 11//11 8//8 7//7\nf 11//11 7//7 12//12\nf 6//6 5//5 7//7\nf 10//10 9//9 8//8\nf 10//10 8//8 11//11\nf 16//16 15//15 20//20\nf 13//13 20//20 15//15\nf 14//14 13//13 15//15\nf 19//19 16//16 20//20\nf 18//18 17//17 16//16\nf 18//18 16//16 19//19\nf 24//24 21//21 22//22\nf 24//24 23//23 21//21\nf 28//28 27//27 26//26\nf 25//25 28//28 26//26\nf 32//32 29//29 30//30\nf 32//32 31//31 29//29\nf 34//34 33//33 36//36\nf 35//35 34//34 36//36\nf 38//38 39//39 40//40\nf 38//38 40//40 37//37\nf 42//42 41//41 44//44\nf 43//43 42//42 44//44\nf 48//48 45//45 46//46\nf 48//48 46//46 47//47\n"
+      ]
+    }
+  ]
 }

@@ -42,6 +42,7 @@ explicitInverseAttributes = {
     'ContainsElements'
 }
 
+
 class IFC2JSON5a:
     def __init__(self, ifcFilePath):
         self.ifcFilePath = ifcFilePath
@@ -55,7 +56,7 @@ class IFC2JSON5a:
 
     def spf2Json(self):
         objData = self.getObjData(self.ifcFilePath)
-        jsonObjects= []
+        jsonObjects = []
         # entityIter = iter(self.ifcModel)
         # for entity in entityIter:
         #     # print(dir(entity))
@@ -68,23 +69,25 @@ class IFC2JSON5a:
             jsonObjects.append(self.id_objects[key])
         for key in self.representations:
             jsonObjects.append(self.representations[key])
-        return {'file_schema': 'IFC.JSON5a','data': jsonObjects}
+        return {
+            'file_schema': 'IFC.JSON5a',
+            'originatingSystem': 'IFC2JSON_python',
+            'data': jsonObjects
+            }
 
     def entityToDict(self, entity, objData, parent=None):
+
+        # Entity names must be in camelCase and stripped of Ifc prefix
+        entityType = common.toLowerCamelcase(entity.is_a()[3:])
+
         entityAttributes = entity.__dict__
         # inverseAttributes = explicitInverseAttributes.intersection(entity.wrapped_data.get_inverse_attribute_names())
-        entityType = entity.is_a()
-        entityType = entityType[3:]
-
-        # Entitie names must be in camelCase
-        entityType = entityType[0].lower() + entityType[1:]
-
+        
         ref = {
             'type': entityType
         }
 
-
-        # determine if object needs to be nested or referenced
+        # All objects with a GlobalId must be referenced, all others nested
         reference = False
         if 'GlobalId' in entityAttributes:
             reference = True
@@ -95,15 +98,13 @@ class IFC2JSON5a:
             'type': entityType
         }
 
-
         # for inverseAttribute in inverseAttributes:
         #     invAtt = {}
         #     attributeObject = getattr(entity, inverseAttribute)
         #     attr = inverseAttribute
         #     attrKey = common.toLowerCamelcase(attr)
         #     print(attributeObject)
-            
-        #     print("yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees")
+
         #     if isinstance(attributeObject, ifcopenshell.entity_instance):
         #         print("dsicnkjcnkdjvnskjcnkvjnfjkn")
         #         # if attributeObject.is_a == 'IfcRelAggregates':
@@ -132,7 +133,6 @@ class IFC2JSON5a:
         #         # print(inverseAttribute)
         #         d[inverseAttribute] = invAtt
 
-        
         # if hasattr(entity, 'IsDefinedBy'):
         #     decomposedBy = entity.IsDefinedBy
         #     invAtt = []
@@ -150,7 +150,6 @@ class IFC2JSON5a:
         #     if invAtt:
         #         d['IsDefinedBy'] = invAtt
 
-        
         if hasattr(entity, 'IsDefinedBy'):
             relations = entity.IsDefinedBy
             # p = {}
@@ -159,56 +158,57 @@ class IFC2JSON5a:
                     definition = rel.RelatingPropertyDefinition
                     if definition.is_a() == 'IfcPropertySet':
                         relatedObjects = definition.HasProperties
-                        for relatedObject in  relatedObjects:
+                        for relatedObject in relatedObjects:
                             value = relatedObject.NominalValue.wrappedValue
                             if value and value != '':
-                                d[common.toLowerCamelcase(relatedObject.Name)] = value
+                                d[common.toLowerCamelcase(
+                                    relatedObject.Name)] = value
                     elif definition.is_a() == 'IfcElementQuantity':
                         relatedObjects = definition.Quantities
-                        for relatedObject in  relatedObjects:
+                        for relatedObject in relatedObjects:
                             value = relatedObject.AreaValue
                             if value and value != '':
-                                d[common.toLowerCamelcase(relatedObject.Name)] = value
+                                d[common.toLowerCamelcase(
+                                    relatedObject.Name)] = value
                     else:
                         print('Skipped: ' + str(definition))
                 else:
                     print('Skipped: ' + str(rel))
             # if p:
             #     d['properties'] = p
-                
 
         if hasattr(entity, 'IsDecomposedBy'):
             decomposedBy = entity.IsDecomposedBy
             invAtt = []
             for rel in decomposedBy:
                 relatedObjects = rel.RelatedObjects
-                for relatedObject in  relatedObjects:
-                    relatedEntity = self.entityToDict(relatedObject, objData, parent=entity)
+                for relatedObject in relatedObjects:
+                    relatedEntity = self.entityToDict(
+                        relatedObject, objData, parent=entity)
                     if parent != relatedEntity:
                         invAtt.append(relatedEntity)
             if invAtt:
                 d['IsDecomposedBy'] = invAtt
 
-            
         if hasattr(entity, 'ContainsElements'):
             decomposedBy = entity.ContainsElements
             invAtt = []
             for rel in decomposedBy:
                 relatedObjects = rel.RelatedElements
-                for relatedObject in  relatedObjects:
-                    relatedEntity = self.entityToDict(relatedObject, objData, parent=entity)
+                for relatedObject in relatedObjects:
+                    relatedEntity = self.entityToDict(
+                        relatedObject, objData, parent=entity)
                     if parent != relatedEntity:
                         invAtt.append(relatedEntity)
             if invAtt:
                 d['ContainsElements'] = invAtt
-
 
         if reference:
             uuid = guid.split(guid.expand(entityAttributes["GlobalId"]))[1:-1]
             ref['ref'] = uuid
             if not entityAttributes['GlobalId'] in self.id_objects:
 
-                for i in range(0,len(entity)):
+                for i in range(0, len(entity)):
                     attr = entity.attribute_name(i)
                     attrKey = common.toLowerCamelcase(attr)
                     if attr == "GlobalId":
@@ -231,7 +231,8 @@ class IFC2JSON5a:
                             if attr == 'Representation':
                                 if objData:
                                     if entityAttributes['GlobalId'] in objData:
-                                        id = guid.split(guid.expand(guid.new()))[1:-1]
+                                        id = guid.split(
+                                            guid.expand(guid.new()))[1:-1]
                                         d['representations'] = [
                                             {
                                                 "type": "shapeRepresentation",
@@ -251,23 +252,25 @@ class IFC2JSON5a:
                                     else:
                                         continue
 
-
                             # Skip ObjectPlacement: all OBJ geometries are in world coordinates
                             if attr == 'ObjectPlacement':
                                 continue
 
-                            jsonValue = self.getEntityValue(entityAttributes[attr], objData)
+                            jsonValue = self.getEntityValue(
+                                entityAttributes[attr], objData)
                             if jsonValue:
                                 d[attrKey] = jsonValue
                             if entityAttributes[attr] == None:
                                 continue
                             elif isinstance(entityAttributes[attr], ifcopenshell.entity_instance):
-                                d[attrKey] = self.entityToDict(entityAttributes[attr], objData)
+                                d[attrKey] = self.entityToDict(
+                                    entityAttributes[attr], objData)
                             elif isinstance(entityAttributes[attr], tuple):
                                 subEnts = []
                                 for subEntity in entityAttributes[attr]:
                                     if isinstance(subEntity, ifcopenshell.entity_instance):
-                                        subEntJson = self.entityToDict(subEntity, objData)
+                                        subEntJson = self.entityToDict(
+                                            subEntity, objData)
                                         if subEntJson:
                                             subEnts.append(subEntJson)
                                     else:
@@ -280,23 +283,26 @@ class IFC2JSON5a:
             return ref
         else:
 
-            for i in range(0,len(entity)):
+            for i in range(0, len(entity)):
                 attr = entity.attribute_name(i)
                 attrKey = common.toLowerCamelcase(attr)
                 if attr in entityAttributes:
                     if not attr == 'OwnerHistory':
-                        jsonValue = self.getEntityValue(entityAttributes[attr], objData)
+                        jsonValue = self.getEntityValue(
+                            entityAttributes[attr], objData)
                         if jsonValue:
                             d[attrKey] = jsonValue
                         if entityAttributes[attr] == None:
                             continue
                         elif isinstance(entityAttributes[attr], ifcopenshell.entity_instance):
-                            d[attrKey] = self.entityToDict(entityAttributes[attr], objData)
+                            d[attrKey] = self.entityToDict(
+                                entityAttributes[attr], objData)
                         elif isinstance(entityAttributes[attr], tuple):
                             subEnts = []
                             for subEntity in entityAttributes[attr]:
                                 if isinstance(subEntity, ifcopenshell.entity_instance):
-                                    subEntJson = self.entityToDict(subEntity, objData)
+                                    subEntJson = self.entityToDict(
+                                        subEntity, objData)
                                     if subEntJson:
                                         subEnts.append(subEntJson)
                                 else:
@@ -306,7 +312,6 @@ class IFC2JSON5a:
                         else:
                             d[attrKey] = entityAttributes[attr]
 
-            
             return d
 
     def getEntityValue(self, value, objData):
@@ -327,7 +332,6 @@ class IFC2JSON5a:
     # convert IFC SPF file into OBJ using IfcConvert and extract OBJ objects
     def getObjData(self, ifcFilePath):
         objFilePath = NamedTemporaryFile(suffix='.obj', delete=True).name
-        print(objFilePath)
 
         # Convert IFC to OBJ using IfcConvert (could also be done for glTF or Collada)
         subprocess.run([
@@ -346,7 +350,7 @@ class IFC2JSON5a:
             f = open(objFilePath, 'r')
             lc = 0
             for line in f:
-                lc +=1
+                lc += 1
 
                 # find group
                 if line[0] == 'g':
