@@ -4,7 +4,7 @@
   "data": [
     {
       "type": "IfcGeometricRepresentationContext",
-      "globalId": "5a4b92f5-2835-4ba9-ab90-ac1a4a9b791c",
+      "globalId": "9365fefe-7719-4058-8316-88be389552bf",
       "contextType": "Model",
       "coordinateSpaceDimension": 3,
       "precision": 1e-05,
@@ -25,7 +25,7 @@
       "globalId": "4c36f556-7d6e-41d3-a06a-b1e8736aaed2",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "relatingOpeningElement": {
         "type": "ifcOpeningElement",
@@ -38,7 +38,7 @@
     },
     {
       "type": "IfcOwnerHistory",
-      "globalId": "c03161f1-2517-4576-9dc6-a12eec739057",
+      "globalId": "8bafe821-32c4-4101-af05-adeca896ffc8",
       "owningUser": {
         "type": "ifcPersonAndOrganization",
         "thePerson": {
@@ -69,10 +69,18 @@
     },
     {
       "type": "IfcOpeningElement",
+      "VoidsElements": {
+        "type": "ifcRelVoidsElement",
+        "ref": "ef6c5bb2-49d1-4153-ae27-bb01684b2778"
+      },
+      "HasFillings": {
+        "type": "ifcRelFillsElement",
+        "ref": "4c36f556-7d6e-41d3-a06a-b1e8736aaed2"
+      },
       "globalId": "9598e1c0-b1a9-4505-93a3-f3193af39e1d",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "name": "Opening Element xyz",
       "description": "Description of Opening",
@@ -233,7 +241,7 @@
             "type": "ifcShapeRepresentation",
             "contextOfItems": {
               "type": "ifcGeometricRepresentationContext",
-              "ref": "5a4b92f5-2835-4ba9-ab90-ac1a4a9b791c"
+              "ref": "9365fefe-7719-4058-8316-88be389552bf"
             },
             "representationIdentifier": "Body",
             "representationType": "SweptSolid",
@@ -328,10 +336,18 @@
     },
     {
       "type": "IfcDoor",
+      "FillsVoids": {
+        "type": "ifcRelFillsElement",
+        "ref": "4c36f556-7d6e-41d3-a06a-b1e8736aaed2"
+      },
+      "ContainedInStructure": {
+        "type": "ifcRelContainedInSpatialStructure",
+        "ref": "98fa75b8-371d-412a-be42-2326c68dfcf5"
+      },
       "globalId": "157c866c-9c08-4348-a0ed-4d57cd66c9e2",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "name": "A common door",
       "description": "Description of a standard door",
@@ -522,7 +538,7 @@
             "type": "ifcShapeRepresentation",
             "contextOfItems": {
               "type": "ifcGeometricRepresentationContext",
-              "ref": "5a4b92f5-2835-4ba9-ab90-ac1a4a9b791c"
+              "ref": "9365fefe-7719-4058-8316-88be389552bf"
             },
             "representationIdentifier": "Body",
             "representationType": "SweptSolid",
@@ -622,7 +638,7 @@
       "globalId": "d2ecfe17-45be-4b36-959d-1be3ec8193bd",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "relatedObjects": [
         {
@@ -637,10 +653,26 @@
     },
     {
       "type": "IfcWallStandardCase",
+      "HasAssociations": {
+        "type": "ifcRelAssociatesMaterial",
+        "ref": "bda2aa8b-b6e2-4a17-a9a6-0ee24c8b49d5"
+      },
+      "IsDefinedBy": {
+        "type": "ifcRelDefinesByProperties",
+        "ref": "d2ecfe17-45be-4b36-959d-1be3ec8193bd"
+      },
+      "HasOpenings": {
+        "type": "ifcRelVoidsElement",
+        "ref": "ef6c5bb2-49d1-4153-ae27-bb01684b2778"
+      },
+      "ContainedInStructure": {
+        "type": "ifcRelContainedInSpatialStructure",
+        "ref": "98fa75b8-371d-412a-be42-2326c68dfcf5"
+      },
       "globalId": "f92c2898-fd68-44ef-9178-3348e340017b",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "name": "Wall xyz",
       "description": "Description of Wall",
@@ -771,7 +803,7 @@
             "type": "ifcShapeRepresentation",
             "contextOfItems": {
               "type": "ifcGeometricRepresentationContext",
-              "ref": "5a4b92f5-2835-4ba9-ab90-ac1a4a9b791c"
+              "ref": "9365fefe-7719-4058-8316-88be389552bf"
             },
             "representationIdentifier": "Axis",
             "representationType": "Curve2D",
@@ -801,7 +833,7 @@
             "type": "ifcShapeRepresentation",
             "contextOfItems": {
               "type": "ifcGeometricRepresentationContext",
-              "ref": "5a4b92f5-2835-4ba9-ab90-ac1a4a9b791c"
+              "ref": "9365fefe-7719-4058-8316-88be389552bf"
             },
             "representationIdentifier": "Body",
             "representationType": "SweptSolid",
@@ -896,10 +928,14 @@
     },
     {
       "type": "IfcPropertySet",
+      "PropertyDefinitionOf": {
+        "type": "ifcRelDefinesByProperties",
+        "ref": "d2ecfe17-45be-4b36-959d-1be3ec8193bd"
+      },
       "globalId": "486f7679-1a8a-4deb-8798-5a7e0c8c7d51",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "name": "Pset_WallCommon",
       "hasProperties": [
@@ -1000,7 +1036,7 @@
       "globalId": "bda2aa8b-b6e2-4a17-a9a6-0ee24c8b49d5",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "relatedObjects": [
         {
@@ -1033,7 +1069,7 @@
       "globalId": "98fa75b8-371d-412a-be42-2326c68dfcf5",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "name": "Default Building",
       "description": "Contents of Building Storey",
@@ -1054,10 +1090,18 @@
     },
     {
       "type": "IfcBuildingStorey",
+      "Decomposes": {
+        "type": "ifcRelAggregates",
+        "ref": "81188789-c594-45ec-b0de-ccdefee14041"
+      },
+      "ContainsElements": {
+        "type": "ifcRelContainedInSpatialStructure",
+        "ref": "98fa75b8-371d-412a-be42-2326c68dfcf5"
+      },
       "globalId": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "name": "Default Building Storey",
       "description": "Description of Default Building Storey",
@@ -1159,7 +1203,7 @@
       "globalId": "57bfe2d2-b505-4bba-8278-f867834a0be0",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "name": "ProjectContainer",
       "description": "ProjectContainer for Sites",
@@ -1176,17 +1220,21 @@
     },
     {
       "type": "IfcProject",
+      "IsDecomposedBy": {
+        "type": "ifcRelAggregates",
+        "ref": "57bfe2d2-b505-4bba-8278-f867834a0be0"
+      },
       "globalId": "22e66ddf-794d-40bb-8aa5-3dda450d8255",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "name": "Default Project",
       "description": "Description of Default Project",
       "representationContexts": [
         {
           "type": "ifcGeometricRepresentationContext",
-          "ref": "5a4b92f5-2835-4ba9-ab90-ac1a4a9b791c"
+          "ref": "9365fefe-7719-4058-8316-88be389552bf"
         }
       ],
       "unitsInContext": {
@@ -1264,10 +1312,18 @@
     },
     {
       "type": "IfcSite",
+      "IsDecomposedBy": {
+        "type": "ifcRelAggregates",
+        "ref": "d3e2bc1a-4cdb-49ed-9c4a-c60c97949121"
+      },
+      "Decomposes": {
+        "type": "ifcRelAggregates",
+        "ref": "57bfe2d2-b505-4bba-8278-f867834a0be0"
+      },
       "globalId": "f55eaf97-145e-4431-b2f3-69f9634f244b",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "name": "TU/e campus",
       "description": "The High Tech campus of the Eindhoven University of Technology",
@@ -1318,7 +1374,7 @@
       "globalId": "d3e2bc1a-4cdb-49ed-9c4a-c60c97949121",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "name": "SiteContainer",
       "description": "SiteContainer For Buildings",
@@ -1335,10 +1391,18 @@
     },
     {
       "type": "IfcBuilding",
+      "IsDecomposedBy": {
+        "type": "ifcRelAggregates",
+        "ref": "81188789-c594-45ec-b0de-ccdefee14041"
+      },
+      "Decomposes": {
+        "type": "ifcRelAggregates",
+        "ref": "d3e2bc1a-4cdb-49ed-9c4a-c60c97949121"
+      },
       "globalId": "3ca7e585-4e3e-4969-a86f-f049f4fbde52",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "name": "Vertigo Building",
       "description": "TU/e Department of the Built Environment",
@@ -1409,7 +1473,7 @@
       "globalId": "81188789-c594-45ec-b0de-ccdefee14041",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "name": "BuildingContainer",
       "description": "BuildingContainer for BuildigStories",
@@ -1429,7 +1493,7 @@
       "globalId": "ef6c5bb2-49d1-4153-ae27-bb01684b2778",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
+        "ref": "8bafe821-32c4-4101-af05-adeca896ffc8"
       },
       "relatingBuildingElement": {
         "type": "ifcWallStandardCase",

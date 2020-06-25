@@ -31,8 +31,10 @@ import ifcopenshell
 import ifcopenshell.guid as guid
 import ifcjson.common as common
 
+
 class IFC2JSON4:
-    maxCache=2048
+    maxCache = 2048
+
     def __init__(self, ifcFilePath):
         self.ifcFilePath = ifcFilePath
         self.ifcModel = ifcopenshell.open(ifcFilePath)
@@ -47,7 +49,7 @@ class IFC2JSON4:
         self.representationContexts = {}
 
     def spf2Json(self):
-        jsonObjects= []
+        jsonObjects = []
         entityIter = iter(self.ifcModel)
         for entity in entityIter:
             self.entityToDict(entity)
@@ -57,7 +59,7 @@ class IFC2JSON4:
             'file_schema': 'IFC.JSON4',
             'originatingSystem': 'IFC2JSON_python',
             'data': jsonObjects
-            }
+        }
 
     @functools.lru_cache(maxsize=maxCache)
     def entityToDict(self, entity):
@@ -96,11 +98,36 @@ class IFC2JSON4:
 
                 # Add missing GlobalId to OwnerHistory
                 if entityType == 'ifcOwnerHistory':
-                    d["globalId"] = guid.split(guid.expand(self.ownerHistories[entity.id()]))[1:-1]
+                    d["globalId"] = guid.split(guid.expand(
+                        self.ownerHistories[entity.id()]))[1:-1]
 
                 # Add missing GlobalId to IfcGeometricRepresentationContext
                 if entityType == 'ifcGeometricRepresentationContext':
-                    d["globalId"] = guid.split(guid.expand(self.representationContexts[entity.id()]))[1:-1]
+                    d["globalId"] = guid.split(guid.expand(
+                        self.representationContexts[entity.id()]))[1:-1]
+
+                # Inverse attributes must be added if not OwnerHistory or GeometricRepresentationContext
+                if not entityType in ['ifcGeometricRepresentationContext', 'ifcOwnerHistory']:
+                    for attr in entity.wrapped_data.get_inverse_attribute_names():
+                        inverseAttribute = getattr(entity, attr)
+                        
+                        # print(attr)
+                        # d[attrKey] = {
+                        #     "type": attr.Name,
+                        #     "ref": "guid"
+                        # }
+                        # print(inverseAttribute)
+                        if isinstance(inverseAttribute, tuple):
+                            for attribute in inverseAttribute:
+                                attrKey = common.toLowerCamelcase(attribute.is_a())
+                                # print(dir(attribute))
+                                d[attr] = {
+                                    'type': attrKey
+                                }
+                                if 'GlobalId' in dir(attribute):
+                                    d[attr]['ref'] = guid.split(guid.expand(attribute.GlobalId))[1:-1]
+                                else:
+                                    print(entityType + ' has no GlobalId for referencing!')
 
                 for attr in entityAttributes:
                     attrKey = common.toLowerCamelcase(attr)
@@ -121,7 +148,8 @@ class IFC2JSON4:
                         if entityAttributes[attr] == None:
                             continue
                         elif isinstance(entityAttributes[attr], ifcopenshell.entity_instance):
-                            d[attrKey] = self.entityToDict(entityAttributes[attr])
+                            d[attrKey] = self.entityToDict(
+                                entityAttributes[attr])
                         elif isinstance(entityAttributes[attr], tuple):
                             subEnts = []
                             for subEntity in entityAttributes[attr]:
@@ -142,7 +170,7 @@ class IFC2JSON4:
                 "type": entityType
             }
 
-            for i in range(0,len(entity)):
+            for i in range(0, len(entity)):
                 attr = entity.attribute_name(i)
                 attrKey = common.toLowerCamelcase(attr)
                 if attr in entityAttributes:
@@ -153,7 +181,8 @@ class IFC2JSON4:
                         if entityAttributes[attr] == None:
                             continue
                         elif isinstance(entityAttributes[attr], ifcopenshell.entity_instance):
-                            d[attrKey] = self.entityToDict(entityAttributes[attr])
+                            d[attrKey] = self.entityToDict(
+                                entityAttributes[attr])
                         elif isinstance(entityAttributes[attr], tuple):
                             subEnts = []
                             for subEntity in entityAttributes[attr]:
