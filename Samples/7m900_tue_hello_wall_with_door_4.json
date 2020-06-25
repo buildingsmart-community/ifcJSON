@@ -3,37 +3,29 @@
   "originatingSystem": "IFC2JSON_python",
   "data": [
     {
-      "type": "ifcRelFillsElement",
+      "type": "IfcGeometricRepresentationContext",
+      "globalId": "5a4b92f5-2835-4ba9-ab90-ac1a4a9b791c",
+      "contextType": "Model",
+      "coordinateSpaceDimension": 3,
+      "precision": 1e-05,
+      "worldCoordinateSystem": {
+        "type": "ifcAxis2Placement3D",
+        "location": {
+          "type": "ifcCartesianPoint",
+          "coordinates": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "type": "IfcRelFillsElement",
       "globalId": "4c36f556-7d6e-41d3-a06a-b1e8736aaed2",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "relatingOpeningElement": {
         "type": "ifcOpeningElement",
@@ -45,37 +37,42 @@
       }
     },
     {
-      "type": "ifcOpeningElement",
+      "type": "IfcOwnerHistory",
+      "globalId": "c03161f1-2517-4576-9dc6-a12eec739057",
+      "owningUser": {
+        "type": "ifcPersonAndOrganization",
+        "thePerson": {
+          "type": "ifcPerson",
+          "id": "ID001",
+          "familyName": "Beetz",
+          "givenName": "Jakob"
+        },
+        "theOrganization": {
+          "type": "ifcOrganization",
+          "name": "TU/e",
+          "description": "Eindhoven University of Technology"
+        }
+      },
+      "owningApplication": {
+        "type": "ifcApplication",
+        "applicationDeveloper": {
+          "type": "ifcOrganization",
+          "name": "TU/e",
+          "description": "Eindhoven University of Technology"
+        },
+        "version": "version 0.10",
+        "applicationFullName": "My text editor",
+        "applicationIdentifier": "TA 1001"
+      },
+      "changeAction": "ADDED",
+      "creationDate": 1217620436
+    },
+    {
+      "type": "IfcOpeningElement",
       "globalId": "9598e1c0-b1a9-4505-93a3-f3193af39e1d",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "name": "Opening Element xyz",
       "description": "Description of Opening",
@@ -236,20 +233,7 @@
             "type": "ifcShapeRepresentation",
             "contextOfItems": {
               "type": "ifcGeometricRepresentationContext",
-              "contextType": "Model",
-              "coordinateSpaceDimension": 3,
-              "precision": 1e-05,
-              "worldCoordinateSystem": {
-                "type": "ifcAxis2Placement3D",
-                "location": {
-                  "type": "ifcCartesianPoint",
-                  "coordinates": [
-                    0.0,
-                    0.0,
-                    0.0
-                  ]
-                }
-              }
+              "ref": "5a4b92f5-2835-4ba9-ab90-ac1a4a9b791c"
             },
             "representationIdentifier": "Body",
             "representationType": "SweptSolid",
@@ -343,37 +327,11 @@
       }
     },
     {
-      "type": "ifcDoor",
+      "type": "IfcDoor",
       "globalId": "157c866c-9c08-4348-a0ed-4d57cd66c9e2",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "name": "A common door",
       "description": "Description of a standard door",
@@ -564,20 +522,7 @@
             "type": "ifcShapeRepresentation",
             "contextOfItems": {
               "type": "ifcGeometricRepresentationContext",
-              "contextType": "Model",
-              "coordinateSpaceDimension": 3,
-              "precision": 1e-05,
-              "worldCoordinateSystem": {
-                "type": "ifcAxis2Placement3D",
-                "location": {
-                  "type": "ifcCartesianPoint",
-                  "coordinates": [
-                    0.0,
-                    0.0,
-                    0.0
-                  ]
-                }
-              }
+              "ref": "5a4b92f5-2835-4ba9-ab90-ac1a4a9b791c"
             },
             "representationIdentifier": "Body",
             "representationType": "SweptSolid",
@@ -673,37 +618,11 @@
       "overallWidth": 0.7
     },
     {
-      "type": "ifcRelDefinesByProperties",
+      "type": "IfcRelDefinesByProperties",
       "globalId": "d2ecfe17-45be-4b36-959d-1be3ec8193bd",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "relatedObjects": [
         {
@@ -717,37 +636,11 @@
       }
     },
     {
-      "type": "ifcWallStandardCase",
+      "type": "IfcWallStandardCase",
       "globalId": "f92c2898-fd68-44ef-9178-3348e340017b",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "name": "Wall xyz",
       "description": "Description of Wall",
@@ -878,20 +771,7 @@
             "type": "ifcShapeRepresentation",
             "contextOfItems": {
               "type": "ifcGeometricRepresentationContext",
-              "contextType": "Model",
-              "coordinateSpaceDimension": 3,
-              "precision": 1e-05,
-              "worldCoordinateSystem": {
-                "type": "ifcAxis2Placement3D",
-                "location": {
-                  "type": "ifcCartesianPoint",
-                  "coordinates": [
-                    0.0,
-                    0.0,
-                    0.0
-                  ]
-                }
-              }
+              "ref": "5a4b92f5-2835-4ba9-ab90-ac1a4a9b791c"
             },
             "representationIdentifier": "Axis",
             "representationType": "Curve2D",
@@ -921,20 +801,7 @@
             "type": "ifcShapeRepresentation",
             "contextOfItems": {
               "type": "ifcGeometricRepresentationContext",
-              "contextType": "Model",
-              "coordinateSpaceDimension": 3,
-              "precision": 1e-05,
-              "worldCoordinateSystem": {
-                "type": "ifcAxis2Placement3D",
-                "location": {
-                  "type": "ifcCartesianPoint",
-                  "coordinates": [
-                    0.0,
-                    0.0,
-                    0.0
-                  ]
-                }
-              }
+              "ref": "5a4b92f5-2835-4ba9-ab90-ac1a4a9b791c"
             },
             "representationIdentifier": "Body",
             "representationType": "SweptSolid",
@@ -1028,37 +895,11 @@
       }
     },
     {
-      "type": "ifcPropertySet",
+      "type": "IfcPropertySet",
       "globalId": "486f7679-1a8a-4deb-8798-5a7e0c8c7d51",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "name": "Pset_WallCommon",
       "hasProperties": [
@@ -1155,37 +996,11 @@
       ]
     },
     {
-      "type": "ifcRelAssociatesMaterial",
+      "type": "IfcRelAssociatesMaterial",
       "globalId": "bda2aa8b-b6e2-4a17-a9a6-0ee24c8b49d5",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "relatedObjects": [
         {
@@ -1214,37 +1029,11 @@
       }
     },
     {
-      "type": "ifcRelContainedInSpatialStructure",
+      "type": "IfcRelContainedInSpatialStructure",
       "globalId": "98fa75b8-371d-412a-be42-2326c68dfcf5",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "name": "Default Building",
       "description": "Contents of Building Storey",
@@ -1264,37 +1053,11 @@
       }
     },
     {
-      "type": "ifcBuildingStorey",
+      "type": "IfcBuildingStorey",
       "globalId": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "name": "Default Building Storey",
       "description": "Description of Default Building Storey",
@@ -1392,37 +1155,11 @@
       "elevation": 0.0
     },
     {
-      "type": "ifcRelAggregates",
+      "type": "IfcRelAggregates",
       "globalId": "57bfe2d2-b505-4bba-8278-f867834a0be0",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "name": "ProjectContainer",
       "description": "ProjectContainer for Sites",
@@ -1438,57 +1175,18 @@
       ]
     },
     {
-      "type": "ifcProject",
+      "type": "IfcProject",
       "globalId": "22e66ddf-794d-40bb-8aa5-3dda450d8255",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "name": "Default Project",
       "description": "Description of Default Project",
       "representationContexts": [
         {
           "type": "ifcGeometricRepresentationContext",
-          "contextType": "Model",
-          "coordinateSpaceDimension": 3,
-          "precision": 1e-05,
-          "worldCoordinateSystem": {
-            "type": "ifcAxis2Placement3D",
-            "location": {
-              "type": "ifcCartesianPoint",
-              "coordinates": [
-                0.0,
-                0.0,
-                0.0
-              ]
-            }
-          }
+          "ref": "5a4b92f5-2835-4ba9-ab90-ac1a4a9b791c"
         }
       ],
       "unitsInContext": {
@@ -1565,37 +1263,11 @@
       }
     },
     {
-      "type": "ifcSite",
+      "type": "IfcSite",
       "globalId": "f55eaf97-145e-4431-b2f3-69f9634f244b",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "name": "TU/e campus",
       "description": "The High Tech campus of the Eindhoven University of Technology",
@@ -1642,37 +1314,11 @@
       ]
     },
     {
-      "type": "ifcRelAggregates",
+      "type": "IfcRelAggregates",
       "globalId": "d3e2bc1a-4cdb-49ed-9c4a-c60c97949121",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "name": "SiteContainer",
       "description": "SiteContainer For Buildings",
@@ -1688,37 +1334,11 @@
       ]
     },
     {
-      "type": "ifcBuilding",
+      "type": "IfcBuilding",
       "globalId": "3ca7e585-4e3e-4969-a86f-f049f4fbde52",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "name": "Vertigo Building",
       "description": "TU/e Department of the Built Environment",
@@ -1785,37 +1405,11 @@
       "compositionType": "ELEMENT"
     },
     {
-      "type": "ifcRelAggregates",
+      "type": "IfcRelAggregates",
       "globalId": "81188789-c594-45ec-b0de-ccdefee14041",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "name": "BuildingContainer",
       "description": "BuildingContainer for BuildigStories",
@@ -1831,37 +1425,11 @@
       ]
     },
     {
-      "type": "ifcRelVoidsElement",
+      "type": "IfcRelVoidsElement",
       "globalId": "ef6c5bb2-49d1-4153-ae27-bb01684b2778",
       "ownerHistory": {
         "type": "ifcOwnerHistory",
-        "owningUser": {
-          "type": "ifcPersonAndOrganization",
-          "thePerson": {
-            "type": "ifcPerson",
-            "id": "ID001",
-            "familyName": "Beetz",
-            "givenName": "Jakob"
-          },
-          "theOrganization": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          }
-        },
-        "owningApplication": {
-          "type": "ifcApplication",
-          "applicationDeveloper": {
-            "type": "ifcOrganization",
-            "name": "TU/e",
-            "description": "Eindhoven University of Technology"
-          },
-          "version": "version 0.10",
-          "applicationFullName": "My text editor",
-          "applicationIdentifier": "TA 1001"
-        },
-        "changeAction": "ADDED",
-        "creationDate": 1217620436
+        "ref": "c03161f1-2517-4576-9dc6-a12eec739057"
       },
       "relatingBuildingElement": {
         "type": "ifcWallStandardCase",
