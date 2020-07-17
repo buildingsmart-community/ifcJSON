@@ -29,9 +29,11 @@ import uuid
 from tempfile import NamedTemporaryFile
 import subprocess
 import ifcopenshell
+import ifcopenshell.geom
 import ifcopenshell.guid as guid
 import ifcjson.common as common
 import copy
+from datetime import datetime
 
 
 explicitInverseAttributes = {
@@ -70,15 +72,20 @@ class IFC2JSON5a:
         for key in self.representations:
             jsonObjects.append(self.representations[key])
         return {
-            'file_schema': 'IFC.JSON5a',
+            'fileSchema': 'IFC.JSON5a',
             'originatingSystem': 'IFC2JSON_python',
+            'timeStamp': datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
             'data': jsonObjects
             }
 
     def entityToDict(self, entity, objData, parent=None):
+        settings = ifcopenshell.geom.settings()
+        # print(ifcopenshell.geom.create_shape(settings, entity))
+        print(dir(ifcopenshell.geom))
+        print(dir(ifcopenshell.geom.serialise(settings, entity)))
 
-        # Entity names must be in camelCase and stripped of Ifc prefix
-        entityType = common.toLowerCamelcase(entity.is_a()[3:])
+        # Entity names must be stripped of Ifc prefix
+        entityType = entity.is_a()[3:]
 
         entityAttributes = entity.__dict__
         # inverseAttributes = explicitInverseAttributes.intersection(entity.wrapped_data.get_inverse_attribute_names())

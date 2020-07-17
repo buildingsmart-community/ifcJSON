@@ -30,187 +30,155 @@ import functools
 import ifcopenshell
 import ifcopenshell.guid as guid
 import ifcjson.common as common
+from datetime import datetime
+from ifcopenshell.entity_instance import entity_instance
 
 
 class IFC2JSON4:
     maxCache = 2048
 
-    def __init__(self, ifcFilePath):
-        self.ifcFilePath = ifcFilePath
-        self.ifcModel = ifcopenshell.open(ifcFilePath)
+    def __init__(self, ifcModel, compact=False):
+        """IFC SPF file to IFC.JSON-4 writer
 
-        # Dictionary referencing all objects with a GlobalId that are already created
-        self.id_objects = {}
+        parameters:
+        ifcModel: IFC filePath or ifcopenshell model instance
+        compact (boolean): if True then pretty print is turned off and references are created without informative "type" property
 
-        # Create dictionary of OwnerHistory objects
+        """
+        if isinstance(ifcModel, ifcopenshell.file):
+            self.ifcModel = ifcModel
+        else:
+            self.ifcModel = ifcopenshell.open(ifcModel)
+        self.compact = compact
+        self.rootObjects = {}
+        self.objectDefinitions = {}
         self.ownerHistories = {}
-
-        # Create dictionary of IfcGeometricRepresentationContext objects
         self.representationContexts = {}
 
     def spf2Json(self):
+        """
+        Create json dictionary structure for all attributes of the objects in the root list
+        also including inverse attributes (except for IfcGeometricRepresentationContext and IfcOwnerHistory types)
+        # (?) Check every IFC object to see if it is used multiple times
+
+        Returns:
+        dict: IFC.JSON-4 model structure
+
+        """
+
         jsonObjects = []
-        entityIter = iter(self.ifcModel)
-        for entity in entityIter:
-            self.entityToDict(entity)
-        for key in self.id_objects:
-            jsonObjects.append(self.id_objects[key])
+
+        for entity in self.ifcModel.by_type('IfcOwnerHistory'):
+            self.ownerHistories[entity.id()] = str(uuid.uuid4())
+
+        for entity in self.ifcModel.by_type('IfcGeometricRepresentationContext'):
+            self.representationContexts[entity.id()] = str(uuid.uuid4())
+
+        for entity in self.ifcModel.by_type('IfcObjectDefinition'):
+            self.objectDefinitions[entity.id()] = guid.split(
+                guid.expand(entity.GlobalId))[1:-1]
+
+        self.rootobjects = dict(self.ownerHistories)
+        self.rootobjects.update(self.representationContexts)
+        self.rootobjects.update(self.objectDefinitions)
+
+        for key in self.rootobjects:
+            entity = self.ifcModel.by_id(key)
+            entityAttributes = entity.__dict__
+            entityType = entityAttributes['type']
+            if not entityType in ['IfcGeometricRepresentationContext', 'IfcOwnerHistory']:
+                for attr in entity.wrapped_data.get_inverse_attribute_names():
+                    inverseAttribute = getattr(entity, attr)
+                    entityAttributes[attr] = self.getAttributeValue(
+                        inverseAttribute)
+
+            entityAttributes["GlobalId"] = self.rootobjects[entity.id()]
+            jsonObjects.append(self.createFullObject(entityAttributes))
+
         return {
-            'file_schema': 'IFC.JSON4',
+            'fileSchema': 'IFC.JSON4',
             'originatingSystem': 'IFC2JSON_python',
+            'timeStamp': datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
             'data': jsonObjects
         }
 
     @functools.lru_cache(maxsize=maxCache)
-    def entityToDict(self, entity):
+    def getAttributeValue(self, value):
+        """Recursive method that walks through all nested objects of an attribute
+        and returns a IFC.JSON-4 model structure
 
-        # Entity names must be in camelCase
-        entityType = common.toLowerCamelcase(entity.is_a())
+        Parameters:
+        value
 
-        entityAttributes = entity.__dict__
+        Returns:
+        attribute data converted to IFC.JSON-4 model structure
 
-        ref = {
-            "type": entityType
-        }
-
-        # Add missing GlobalId to OwnerHistory
-        if entityType == 'ifcOwnerHistory':
-            if not entity.id() in self.ownerHistories:
-                self.ownerHistories[entity.id()] = guid.new()
-            entityAttributes["GlobalId"] = self.ownerHistories[entity.id()]
-
-        # Add missing GlobalId to IfcGeometricRepresentationContext
-        if entityType == 'ifcGeometricRepresentationContext':
-            if not entity.id() in self.representationContexts:
-                self.representationContexts[entity.id()] = guid.new()
-            entityAttributes["GlobalId"] = self.representationContexts[entity.id()]
-
-        # All objects with a GlobalId must be referenced, all others nested
-        if "GlobalId" in entityAttributes:
-            uuid = guid.split(guid.expand(entityAttributes["GlobalId"]))[1:-1]
-            ref["ref"] = uuid
-
-            # Every object must be added to the root array only once
-            if not entityAttributes["GlobalId"] in self.id_objects:
-                d = {
-                    "type": entityType
-                }
-
-                # Add missing GlobalId to OwnerHistory
-                if entityType == 'ifcOwnerHistory':
-                    d["globalId"] = guid.split(guid.expand(
-                        self.ownerHistories[entity.id()]))[1:-1]
-
-                # Add missing GlobalId to IfcGeometricRepresentationContext
-                if entityType == 'ifcGeometricRepresentationContext':
-                    d["globalId"] = guid.split(guid.expand(
-                        self.representationContexts[entity.id()]))[1:-1]
-
-                # Inverse attributes must be added if not OwnerHistory or GeometricRepresentationContext
-                if not entityType in ['ifcGeometricRepresentationContext', 'ifcOwnerHistory']:
-                    for attr in entity.wrapped_data.get_inverse_attribute_names():
-                        inverseAttribute = getattr(entity, attr)
-                        
-                        # print(attr)
-                        # d[attrKey] = {
-                        #     "type": attr.Name,
-                        #     "ref": "guid"
-                        # }
-                        # print(inverseAttribute)
-                        if isinstance(inverseAttribute, tuple):
-                            for attribute in inverseAttribute:
-                                attrKey = common.toLowerCamelcase(attribute.is_a())
-                                # print(dir(attribute))
-                                d[attr] = {
-                                    'type': attrKey
-                                }
-                                if 'GlobalId' in dir(attribute):
-                                    d[attr]['ref'] = guid.split(guid.expand(attribute.GlobalId))[1:-1]
-                                else:
-                                    print(entityType + ' has no GlobalId for referencing!')
-
-                for attr in entityAttributes:
-                    attrKey = common.toLowerCamelcase(attr)
-                    if attr == "GlobalId":
-                        d[attrKey] = uuid
-                    else:
-
-                        # Line numbers are not part of IFC JSON
-                        if attr == 'id':
-                            continue
-
-                        jsonValue = self.getEntityValue(entityAttributes[attr])
-                        if jsonValue:
-                            if ((entityType == 'ifcOwnerHistory') and (attr == "GlobalId")):
-                                pass
-                            else:
-                                d[attrKey] = jsonValue
-                        if entityAttributes[attr] == None:
-                            continue
-                        elif isinstance(entityAttributes[attr], ifcopenshell.entity_instance):
-                            d[attrKey] = self.entityToDict(
-                                entityAttributes[attr])
-                        elif isinstance(entityAttributes[attr], tuple):
-                            subEnts = []
-                            for subEntity in entityAttributes[attr]:
-                                if isinstance(subEntity, ifcopenshell.entity_instance):
-                                    subEntJson = self.entityToDict(subEntity)
-                                    if subEntJson:
-                                        subEnts.append(subEntJson)
-                                else:
-                                    subEnts.append(subEntity)
-                            if len(subEnts) > 0:
-                                d[attrKey] = subEnts
-                        else:
-                            d[attrKey] = entityAttributes[attr]
-                    self.id_objects[entityAttributes["GlobalId"]] = d
-            return ref
-        else:
-            d = {
-                "type": entityType
-            }
-
-            for i in range(0, len(entity)):
-                attr = entity.attribute_name(i)
-                attrKey = common.toLowerCamelcase(attr)
-                if attr in entityAttributes:
-                    if not attr == "OwnerHistory":
-                        jsonValue = self.getEntityValue(entityAttributes[attr])
-                        if jsonValue:
-                            d[attrKey] = jsonValue
-                        if entityAttributes[attr] == None:
-                            continue
-                        elif isinstance(entityAttributes[attr], ifcopenshell.entity_instance):
-                            d[attrKey] = self.entityToDict(
-                                entityAttributes[attr])
-                        elif isinstance(entityAttributes[attr], tuple):
-                            subEnts = []
-                            for subEntity in entityAttributes[attr]:
-                                if isinstance(subEntity, ifcopenshell.entity_instance):
-                                    # subEnts.append(None)
-                                    subEntJson = self.entityToDict(subEntity)
-                                    if subEntJson:
-                                        subEnts.append(subEntJson)
-                                else:
-                                    subEnts.append(subEntity)
-                            if len(subEnts) > 0:
-                                d[attrKey] = subEnts
-                        else:
-                            d[attrKey] = entityAttributes[attr]
-            return d
-
-    @functools.lru_cache(maxsize=maxCache)
-    def getEntityValue(self, value):
-        if value == None:
+        """
+        if value == None or value == '':
             jsonValue = None
         elif isinstance(value, ifcopenshell.entity_instance):
-            jsonValue = self.entityToDict(value)
+            entity = value
+            entityAttributes = entity.__dict__
+
+            # All objects with a GlobalId must be referenced, all others nested
+            if entity.id() in self.rootobjects:
+                entityAttributes["GlobalId"] = self.rootobjects[entity.id()]
+                return self.createReferenceObject(entityAttributes, self.compact)
+            else:
+                if 'GlobalId' in entityAttributes:
+                    entityAttributes["GlobalId"] = guid.split(
+                        guid.expand(entity.GlobalId))[1:-1]
+            return self.createFullObject(entityAttributes)
         elif isinstance(value, tuple):
             jsonValue = None
             subEnts = []
             for subEntity in value:
-                subEnts.append(self.getEntityValue(subEntity))
+                subEnts.append(self.getAttributeValue(subEntity))
             jsonValue = subEnts
         else:
             jsonValue = value
         return jsonValue
+
+    @functools.lru_cache(maxsize=maxCache)
+    def createReferenceObject(self, entityAttributes, compact=False):
+        """Returns object reference
+
+        Parameters:
+        entityAttributes (dict): Dictionary of IFC object data
+        compact (boolean): verbose or non verbose IFC.JSON-4 output
+
+        Returns:
+        dict: object containing reference to another object
+
+        """
+        ref = {}
+        if not compact:
+            ref['type'] = entityAttributes['type']
+        ref['ref'] = entityAttributes['GlobalId']
+        return ref
+
+    @functools.lru_cache(maxsize=maxCache)
+    def createFullObject(self, entityAttributes):
+        """Returns complete IFC.JSON-4 object
+
+        Parameters:
+        entityAttributes (dict): Dictionary of IFC object data
+
+        Returns:
+        dict: containing complete IFC.JSON-4 object
+
+        """
+        entityType = entityAttributes['type']
+        fullObject = {}
+
+        for attr in entityAttributes:
+            attrKey = common.toLowerCamelcase(attr)
+
+            # Line numbers are not part of IFC JSON
+            if attr == 'id':
+                continue
+
+            jsonValue = self.getAttributeValue(entityAttributes[attr])
+            if jsonValue:
+                fullObject[attrKey] = jsonValue
+        return fullObject

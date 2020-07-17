@@ -27,3 +27,15 @@ def toLowerCamelcase(string):
     """Convert string from upper to lower camelCase"""
 
     return string[0].lower() + string[1:]
+
+
+def createReferenceObject(objectDict, compact=False):
+    """Returns value for referenced object"""
+    ref = {}
+    if not compact:
+        ref['type'] = objectDict['type']
+    ref['ref'] = objectDict['globalId']
+    return ref
+
+    # More compact alternative
+    # return objectDict['globalId']
