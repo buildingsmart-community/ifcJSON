@@ -26,7 +26,6 @@
 
 import os
 import uuid
-import functools
 import ifcopenshell
 import ifcopenshell.guid as guid
 import ifcjson.common as common
@@ -34,11 +33,9 @@ from datetime import datetime
 from ifcopenshell.entity_instance import entity_instance
 
 
-class IFC2JSON4:
-    maxCache = 2048
-
+class IFC2JSON4(common.IFC2JSON):
     def __init__(self, ifcModel, compact=False):
-        """IFC SPF file to IFC.JSON-4 writer
+        """IFC SPF to IFC.JSON-4 writer
 
         parameters:
         ifcModel: IFC filePath or ifcopenshell model instance
@@ -89,75 +86,23 @@ class IFC2JSON4:
             if not entityType in ['IfcGeometricRepresentationContext', 'IfcOwnerHistory']:
                 for attr in entity.wrapped_data.get_inverse_attribute_names():
                     inverseAttribute = getattr(entity, attr)
-                    entityAttributes[attr] = self.getAttributeValue(
-                        inverseAttribute)
+                    attrValue = self.getAttributeValue(inverseAttribute)
+                    if attrValue:
+                        entityAttributes[attr] = attrValue
+                    else:
+                        continue
 
             entityAttributes["GlobalId"] = self.rootobjects[entity.id()]
             jsonObjects.append(self.createFullObject(entityAttributes))
 
         return {
-            'fileSchema': 'IFC.JSON4',
+            'fileSchema': 'IFC.JSON-4',
             'originatingSystem': 'IFC2JSON_python',
             'timeStamp': datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
             'data': jsonObjects
         }
 
-    @functools.lru_cache(maxsize=maxCache)
-    def getAttributeValue(self, value):
-        """Recursive method that walks through all nested objects of an attribute
-        and returns a IFC.JSON-4 model structure
 
-        Parameters:
-        value
-
-        Returns:
-        attribute data converted to IFC.JSON-4 model structure
-
-        """
-        if value == None or value == '':
-            jsonValue = None
-        elif isinstance(value, ifcopenshell.entity_instance):
-            entity = value
-            entityAttributes = entity.__dict__
-
-            # All objects with a GlobalId must be referenced, all others nested
-            if entity.id() in self.rootobjects:
-                entityAttributes["GlobalId"] = self.rootobjects[entity.id()]
-                return self.createReferenceObject(entityAttributes, self.compact)
-            else:
-                if 'GlobalId' in entityAttributes:
-                    entityAttributes["GlobalId"] = guid.split(
-                        guid.expand(entity.GlobalId))[1:-1]
-            return self.createFullObject(entityAttributes)
-        elif isinstance(value, tuple):
-            jsonValue = None
-            subEnts = []
-            for subEntity in value:
-                subEnts.append(self.getAttributeValue(subEntity))
-            jsonValue = subEnts
-        else:
-            jsonValue = value
-        return jsonValue
-
-    @functools.lru_cache(maxsize=maxCache)
-    def createReferenceObject(self, entityAttributes, compact=False):
-        """Returns object reference
-
-        Parameters:
-        entityAttributes (dict): Dictionary of IFC object data
-        compact (boolean): verbose or non verbose IFC.JSON-4 output
-
-        Returns:
-        dict: object containing reference to another object
-
-        """
-        ref = {}
-        if not compact:
-            ref['type'] = entityAttributes['type']
-        ref['ref'] = entityAttributes['GlobalId']
-        return ref
-
-    @functools.lru_cache(maxsize=maxCache)
     def createFullObject(self, entityAttributes):
         """Returns complete IFC.JSON-4 object
 
@@ -168,15 +113,19 @@ class IFC2JSON4:
         dict: containing complete IFC.JSON-4 object
 
         """
-        entityType = entityAttributes['type']
         fullObject = {}
 
         for attr in entityAttributes:
-            attrKey = common.toLowerCamelcase(attr)
 
             # Line numbers are not part of IFC JSON
             if attr == 'id':
                 continue
+
+            attrKey = self.toLowerCamelcase(attr)
+
+            # Replace wrappedvalue key names to value
+            if attrKey == 'wrappedValue':
+                attrKey = 'value'
 
             jsonValue = self.getAttributeValue(entityAttributes[attr])
             if jsonValue:

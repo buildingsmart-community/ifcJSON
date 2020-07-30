@@ -63,7 +63,7 @@ if __name__ == '__main__':
             with open(jsonFilePath, 'w') as outfile:
                 json.dump(jsonData, outfile, indent=indent)
         elif args.v == "5a":
-            jsonData = ifcjson.IFC2JSON5a(ifcFilePath).spf2Json()
+            jsonData = ifcjson.IFC2JSON5a(ifcFilePath,compact).spf2Json()
             with open(jsonFilePath, 'w') as outfile:
                 json.dump(jsonData, outfile, indent=indent)
         else:

@@ -1,5 +1,5 @@
 # IFCJSON_python - ifc2json5a.py
-# Convert IFC SPF file to IFC.JSON-4
+# Convert IFC SPF file to IFC.JSON-5a
 # https://github.com/IFCJSON-Team
 
 # MIT License
@@ -26,366 +26,221 @@
 
 import os
 import uuid
-from tempfile import NamedTemporaryFile
-import subprocess
 import ifcopenshell
 import ifcopenshell.geom
 import ifcopenshell.guid as guid
 import ifcjson.common as common
-import copy
 from datetime import datetime
+from ifcopenshell.entity_instance import entity_instance
 
 
-explicitInverseAttributes = {
-    'IsDecomposedBy',
-    'HasAssociations',
-    'IsDefinedBy',
-    'HasOpenings',
-    'ContainsElements'
-}
+class IFC2JSON5a(common.IFC2JSON):
 
+    # Attributes that are not part of IFC.JSON5a
+    INVALIDATTRIBUTES = {
+        'OwnerHistory',
+        'RepresentationContexts',
+        'ContextOfItems',
+        'ObjectPlacement',
+        'RepresentationMaps'
+    }
 
-class IFC2JSON5a:
-    def __init__(self, ifcFilePath):
-        self.ifcFilePath = ifcFilePath
-        self.ifcModel = ifcopenshell.open(ifcFilePath)
+    # Attributes for which the intermediate relationship object is removed
+    SIMPLIFICATIONS = {
+        # IfcRelAggregates
+        'IsDecomposedBy':       'relatedObjects',
+        'Decomposes':           'relatingObject',
+        # IfcRelContainedInSpatialStructure
+        'ContainsElements':     'relatedElements',
+        'ContainedInStructure': 'relatingStructure',
+        # IfcRelDefinesByProperties
+        'IsDefinedBy':          'relatingPropertyDefinition',
+        # IfcRelAssociatesMaterial
+        'HasAssociations':      'relatingMaterial',
+        # IfcRelFillsElement
+        'HasFillings':          'relatedBuildingElement',
+        'FillsVoids':           'relatingOpeningElement',
+        # IfcRelVoidsElement
+        'HasOpenings':          'relatedOpeningElement',
+        'VoidsElements':        'relatingBuildingElement',
+        # IfcRelDefinesByType
+        'ObjectTypeOf':         'relatedObjects',
+        'IsTypedBy':            'relatingType',
+        # IfcRelConnectsPathElements (!) This skips all IfcRelConnectsPathElements properties
+        'ConnectedTo':          'relatedElement',
+        'ConnectedFrom':        'relatingElement',
+        # IfcRelSpaceBoundary (!) This skips all spaceboundary properties like for example geometry
+        'BoundedBy':            'relatedBuildingElement',
+        'ProvidesBoundaries':   'relatingSpace'
+    }
+
+    settings = ifcopenshell.geom.settings()
+    settings.USE_PYTHON_OPENCASCADE = True
+    settings.set(settings.USE_WORLD_COORDS, True)
+    settings.set(settings.EXCLUDE_SOLIDS_AND_SURFACES, False)
+
+    def __init__(self, ifcModel, compact=False):
+        """IFC SPF to IFC.JSON-5a writer
+
+        parameters:
+        ifcModel: IFC filePath or ifcopenshell model instance
+        compact (boolean): if True then pretty print is turned off and references are created without informative "type" property
+
+        """
+        if isinstance(ifcModel, ifcopenshell.file):
+            self.ifcModel = ifcModel
+        else:
+            self.ifcModel = ifcopenshell.open(ifcModel)
+        self.compact = compact
+        self.objectDefinitions = {}
 
         # Dictionary referencing all objects with a GlobalId that are already created
-        self.id_objects = {}
+        self.rootObjects = {}
 
         # Representations are kept seperate to be added to the end of the list
         self.representations = {}
 
     def spf2Json(self):
-        objData = self.getObjData(self.ifcFilePath)
+        """
+        Create json dictionary structure for all attributes of the objects in the root list
+        (?) also including inverse attributes
+        (?) Check every IFC object to see if it is used multiple times
+
+        Returns:
+        dict: IFC.JSON-5a model structure
+
+        """
+
         jsonObjects = []
-        # entityIter = iter(self.ifcModel)
-        # for entity in entityIter:
-        #     # print(dir(entity))
-        #     # print("test")
-        #     # print(getitem(entity))
-        #     self.entityToDict(entity, objData)
-        for entity in self.ifcModel.by_type('IfcProject'):
-            self.entityToDict(entity, objData)
-        for key in self.id_objects:
-            jsonObjects.append(self.id_objects[key])
-        for key in self.representations:
-            jsonObjects.append(self.representations[key])
+
+        for entity in self.ifcModel.by_type('IfcObjectDefinition'):
+            self.objectDefinitions[entity.id()] = guid.split(
+                guid.expand(entity.GlobalId))[1:-1]
+
+        self.rootobjects = dict(self.objectDefinitions)
+
+        for key in self.rootobjects:
+            entity = self.ifcModel.by_id(key)
+            entityAttributes = entity.__dict__
+            entityType = entityAttributes['type']
+            if not entityType in ['IfcGeometricRepresentationContext', 'IfcOwnerHistory']:
+                for attr in entity.wrapped_data.get_inverse_attribute_names():
+                    inverseAttribute = getattr(entity, attr)
+                    entityAttributes[attr] = self.getAttributeValue(
+                        inverseAttribute)
+            entityAttributes["GlobalId"] = self.rootobjects[entity.id()]
+
+            # Convert representations to OBJ
+            if 'Representation' in entityAttributes:
+                obj = self.toObj(entity)
+
+                if obj:
+                    id = guid.split(guid.expand(guid.new()))[1:-1]
+                    ref = {}
+                    if not self.compact:
+                        ref['type'] = "shapeRepresentation"
+                    ref['ref'] = id
+                    entityAttributes['representations'] = [ref]
+                    self.representations[id] = {
+                        "type": "shapeRepresentation",
+                        "globalId": id,
+                        "representationIdentifier": "Body",
+                        "representationType": "OBJ",
+                        "items": [
+                            obj
+                        ]
+                    }
+
+                # (!) delete original representation, even if OBJ generation fails
+                del entityAttributes['Representation']
+
+            jsonObjects.append(self.createFullObject(entityAttributes))
+
+        jsonObjects = jsonObjects + list(self.representations.values())
+
         return {
-            'fileSchema': 'IFC.JSON5a',
+            'fileSchema': 'IFC.JSON-5a',
             'originatingSystem': 'IFC2JSON_python',
             'timeStamp': datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
             'data': jsonObjects
-            }
-
-    def entityToDict(self, entity, objData, parent=None):
-        settings = ifcopenshell.geom.settings()
-        # print(ifcopenshell.geom.create_shape(settings, entity))
-        print(dir(ifcopenshell.geom))
-        print(dir(ifcopenshell.geom.serialise(settings, entity)))
-
-        # Entity names must be stripped of Ifc prefix
-        entityType = entity.is_a()[3:]
-
-        entityAttributes = entity.__dict__
-        # inverseAttributes = explicitInverseAttributes.intersection(entity.wrapped_data.get_inverse_attribute_names())
-        
-        ref = {
-            'type': entityType
         }
 
-        # All objects with a GlobalId must be referenced, all others nested
-        reference = False
-        if 'GlobalId' in entityAttributes:
-            reference = True
-        if entity.is_a == 'IfcRelAggregates':
-            reference = False
+    def createFullObject(self, entityAttributes):
+        """Returns complete IFC.JSON-5a object
 
-        d = {
-            'type': entityType
-        }
+        Parameters:
+        entityAttributes (dict): Dictionary of IFC object data
 
-        # for inverseAttribute in inverseAttributes:
-        #     invAtt = {}
-        #     attributeObject = getattr(entity, inverseAttribute)
-        #     attr = inverseAttribute
-        #     attrKey = common.toLowerCamelcase(attr)
-        #     print(attributeObject)
+        Returns:
+        dict: containing complete IFC.JSON-5a object
 
-        #     if isinstance(attributeObject, ifcopenshell.entity_instance):
-        #         print("dsicnkjcnkdjvnskjcnkvjnfjkn")
-        #         # if attributeObject.is_a == 'IfcRelAggregates':
-        #         # d[inverseAttribute] = attributeObject.RelatedObjects
-        #     # jsonValue = self.getEntityValue(attributeObject, objData)
-        # #     if jsonValue:
-        # #         invAtt[attrKey] = jsonValue
-        #     # if attributeObject == None:
-        #     #     continue
-        #     # elif isinstance(attributeObject, ifcopenshell.entity_instance):
-        #     #     invAtt[attrKey] = self.entityToDict(attributeObject, objData)
-        #     # elif isinstance(attributeObject, tuple):
-        #     #     subEnts = []
-        #     #     for subEntity in attributeObject:
-        #     #         if isinstance(subEntity, ifcopenshell.entity_instance):
-        #     #             subEntJson = self.entityToDict(subEntity, objData)
-        #     #             if subEntJson:
-        #     #                 subEnts.append(subEntJson)
-        #     #         else:
-        #     #             subEnts.append(subEntity)
-        #     #     if len(subEnts) > 0:
-        #     #         invAtt[attrKey] = subEnts
-        #     # else:
-        #     #     invAtt[attrKey] = attributeObject
-        #     if invAtt:
-        #         # print(inverseAttribute)
-        #         d[inverseAttribute] = invAtt
+        """
+        fullObject = {}
 
-        # if hasattr(entity, 'IsDefinedBy'):
-        #     decomposedBy = entity.IsDefinedBy
-        #     invAtt = []
-        #     for rel in decomposedBy:
-        #         print(rel)
-        #         relatedObjects = rel.RelatingPropertyDefinition.HasProperties
-        #         print(relatedObjects)
-        #         for relatedObject in  relatedObjects:
-        #             relatedEntity = self.entityToDict(relatedObject, objData, parent=entity)
-        #             if parent != relatedEntity:
-        #                 invAtt.append(relatedEntity)
-        #             # print(relatedObject)
-        #         # invAtt = invAtt + list(self.entityToDict(subEntity, objData))
-        #     print(invAtt)
-        #     if invAtt:
-        #         d['IsDefinedBy'] = invAtt
+        for attr in entityAttributes:
 
-        if hasattr(entity, 'IsDefinedBy'):
-            relations = entity.IsDefinedBy
-            # p = {}
-            for rel in relations:
-                if rel.is_a() == 'IfcRelDefinesByProperties':
-                    definition = rel.RelatingPropertyDefinition
-                    if definition.is_a() == 'IfcPropertySet':
-                        relatedObjects = definition.HasProperties
-                        for relatedObject in relatedObjects:
-                            value = relatedObject.NominalValue.wrappedValue
-                            if value and value != '':
-                                d[common.toLowerCamelcase(
-                                    relatedObject.Name)] = value
-                    elif definition.is_a() == 'IfcElementQuantity':
-                        relatedObjects = definition.Quantities
-                        for relatedObject in relatedObjects:
-                            value = relatedObject.AreaValue
-                            if value and value != '':
-                                d[common.toLowerCamelcase(
-                                    relatedObject.Name)] = value
-                    else:
-                        print('Skipped: ' + str(definition))
-                else:
-                    print('Skipped: ' + str(rel))
-            # if p:
-            #     d['properties'] = p
+            # Line numbers are not part of IFC JSON
+            if attr == 'id':
+                continue
 
-        if hasattr(entity, 'IsDecomposedBy'):
-            decomposedBy = entity.IsDecomposedBy
-            invAtt = []
-            for rel in decomposedBy:
-                relatedObjects = rel.RelatedObjects
-                for relatedObject in relatedObjects:
-                    relatedEntity = self.entityToDict(
-                        relatedObject, objData, parent=entity)
-                    if parent != relatedEntity:
-                        invAtt.append(relatedEntity)
-            if invAtt:
-                d['IsDecomposedBy'] = invAtt
+            # Skip all IFC entities that are not part of IFC.JSON5a
+            if attr in self.INVALIDATTRIBUTES:
+                continue
 
-        if hasattr(entity, 'ContainsElements'):
-            decomposedBy = entity.ContainsElements
-            invAtt = []
-            for rel in decomposedBy:
-                relatedObjects = rel.RelatedElements
-                for relatedObject in relatedObjects:
-                    relatedEntity = self.entityToDict(
-                        relatedObject, objData, parent=entity)
-                    if parent != relatedEntity:
-                        invAtt.append(relatedEntity)
-            if invAtt:
-                d['ContainsElements'] = invAtt
+            # Flatten object hierarchy through removing intermediate relationship objects
+            if attr in self.SIMPLIFICATIONS:
+                for relObject in entityAttributes[attr]:
+                    if self.SIMPLIFICATIONS[attr] in relObject:
+                        entityAttributes[attr] = relObject[self.SIMPLIFICATIONS[attr]]
 
-        if reference:
-            uuid = guid.split(guid.expand(entityAttributes["GlobalId"]))[1:-1]
-            ref['ref'] = uuid
-            if not entityAttributes['GlobalId'] in self.id_objects:
+            # Further simplify properties through removing intermediate PropertySets
+            if attr == 'IsDefinedBy':
+                if 'hasProperties' in entityAttributes[attr]:
+                    for property in entityAttributes[attr]['hasProperties']:
+                        try:
+                            fullObject[property['name']
+                                       ] = property['nominalValue']['wrappedValue']
+                        except:
+                            pass
+                continue
 
-                for i in range(0, len(entity)):
-                    attr = entity.attribute_name(i)
-                    attrKey = common.toLowerCamelcase(attr)
-                    if attr == "GlobalId":
-                        d[attrKey] = uuid
-                    else:
-                        if attr in entityAttributes:
+            attrKey = self.toLowerCamelcase(attr)
 
-                            # Skip all IFC entities that are not part of IFC.JSON5a
-                            if isinstance(entityAttributes[attr], ifcopenshell.entity_instance):
+            # Replace wrappedvalue key names to value
+            if attrKey == 'wrappedValue':
+                attrKey = 'value'
 
-                                # Skip IfcOwnerHistory
-                                if entityAttributes[attr].is_a() == 'IfcOwnerHistory':
-                                    continue
+            jsonValue = self.getAttributeValue(entityAttributes[attr])
+            if jsonValue:
 
-                                # Skip IfcGeometricRepresentationContext
-                                if entityAttributes[attr].is_a() == 'IfcGeometricRepresentationContext':
-                                    continue
+                # Entity names must be stripped of Ifc prefix
+                if attr == 'type':
+                    jsonValue = jsonValue[3:]
 
-                            # Use representation from OBJ list if present
-                            if attr == 'Representation':
-                                if objData:
-                                    if entityAttributes['GlobalId'] in objData:
-                                        id = guid.split(
-                                            guid.expand(guid.new()))[1:-1]
-                                        d['representations'] = [
-                                            {
-                                                "type": "shapeRepresentation",
-                                                "ref": id
-                                            }
-                                        ]
-                                        self.representations[id] = {
-                                            "type": "shapeRepresentation",
-                                            "globalId": id,
-                                            "representationIdentifier": "Body",
-                                            "representationType": "OBJ",
-                                            "items": [
-                                                objData[entityAttributes['GlobalId']]
-                                            ]
-                                        }
-                                        continue
-                                    else:
-                                        continue
+                fullObject[attrKey] = jsonValue
+        return fullObject
 
-                            # Skip ObjectPlacement: all OBJ geometries are in world coordinates
-                            if attr == 'ObjectPlacement':
-                                continue
+    def toObj(self, product):
+        """Convert IfcProduct to OBJ mesh
 
-                            jsonValue = self.getEntityValue(
-                                entityAttributes[attr], objData)
-                            if jsonValue:
-                                d[attrKey] = jsonValue
-                            if entityAttributes[attr] == None:
-                                continue
-                            elif isinstance(entityAttributes[attr], ifcopenshell.entity_instance):
-                                d[attrKey] = self.entityToDict(
-                                    entityAttributes[attr], objData)
-                            elif isinstance(entityAttributes[attr], tuple):
-                                subEnts = []
-                                for subEntity in entityAttributes[attr]:
-                                    if isinstance(subEntity, ifcopenshell.entity_instance):
-                                        subEntJson = self.entityToDict(
-                                            subEntity, objData)
-                                        if subEntJson:
-                                            subEnts.append(subEntJson)
-                                    else:
-                                        subEnts.append(subEntity)
-                                if len(subEnts) > 0:
-                                    d[attrKey] = subEnts
-                            else:
-                                d[attrKey] = entityAttributes[attr]
-                self.id_objects[entityAttributes['GlobalId']] = d
-            return ref
-        else:
+        parameters:
+        product: ifcopenshell ifcProduct instance
 
-            for i in range(0, len(entity)):
-                attr = entity.attribute_name(i)
-                attrKey = common.toLowerCamelcase(attr)
-                if attr in entityAttributes:
-                    if not attr == 'OwnerHistory':
-                        jsonValue = self.getEntityValue(
-                            entityAttributes[attr], objData)
-                        if jsonValue:
-                            d[attrKey] = jsonValue
-                        if entityAttributes[attr] == None:
-                            continue
-                        elif isinstance(entityAttributes[attr], ifcopenshell.entity_instance):
-                            d[attrKey] = self.entityToDict(
-                                entityAttributes[attr], objData)
-                        elif isinstance(entityAttributes[attr], tuple):
-                            subEnts = []
-                            for subEntity in entityAttributes[attr]:
-                                if isinstance(subEntity, ifcopenshell.entity_instance):
-                                    subEntJson = self.entityToDict(
-                                        subEntity, objData)
-                                    if subEntJson:
-                                        subEnts.append(subEntJson)
-                                else:
-                                    subEnts.append(subEntity)
-                            if len(subEnts) > 0:
-                                d[attrKey] = subEnts
-                        else:
-                            d[attrKey] = entityAttributes[attr]
+        Returns:
+        string: OBJ string
+        """
 
-            return d
+        if product.Representation:
+            shape = ifcopenshell.geom.create_shape(self.settings, product)
 
-    def getEntityValue(self, value, objData):
-        if value == None:
-            jsonValue = None
-        elif isinstance(value, ifcopenshell.entity_instance):
-            jsonValue = self.entityToDict(value, objData)
-        elif isinstance(value, tuple):
-            jsonValue = None
-            subEnts = []
-            for subEntity in value:
-                subEnts.append(self.getEntityValue(subEntity, objData))
-            jsonValue = subEnts
-        else:
-            jsonValue = value
-        return jsonValue
+            verts = shape.geometry.verts
+            vertsList = [' '.join(map(str, verts[x:x+3]))
+                         for x in range(0, len(verts), 3)]
+            vertString = 'v ' + '\nv '.join(vertsList) + '\n'
 
-    # convert IFC SPF file into OBJ using IfcConvert and extract OBJ objects
-    def getObjData(self, ifcFilePath):
-        objFilePath = NamedTemporaryFile(suffix='.obj', delete=True).name
+            faces = shape.geometry.faces
+            facesList = [' '.join(map(str, faces[x:x+3]))
+                         for x in range(0, len(faces), 3)]
+            faceString = 'f ' + '\nf '.join(map(str, facesList)) + '\n'
 
-        # Convert IFC to OBJ using IfcConvert (could also be done for glTF or Collada)
-        subprocess.run([
-            './ifcopenshell/IfcConvert',
-            ifcFilePath,
-            objFilePath,
-            '--use-element-guids'
-        ])
-        if os.path.isfile(objFilePath):
-            objData = {}
-            header = True
-            groupId = ''
-            groupData = []
-            vertexIterator = 0
-            vertexCount = 0
-            f = open(objFilePath, 'r')
-            lc = 0
-            for line in f:
-                lc += 1
-
-                # find group
-                if line[0] == 'g':
-                    header = False
-                    vertexCount = copy.deepcopy(vertexIterator)
-                    objData[groupId] = ''.join(groupData)
-                    groupId = line.split()[1]
-                    groupData = []
-                else:
-                    if header:
-                        pass
-                    else:
-                        if line[0:2] == 'v ':
-                            groupData.append(line)
-                            vertexIterator += 1
-                        elif line[0] == 'f':
-                            fl = []
-                            face = line[2:].rstrip().split(' ')
-                            for fp in face:
-                                p = fp.split('//')
-                                ps0 = int(p[0]) - vertexCount
-                                ps1 = int(p[1]) - vertexCount
-                                ps = str(ps0) + '//' + str(ps1)
-                                fl.append(ps)
-
-                            fs = 'f ' + ' '.join(fl) + '\n'
-                            groupData.append(fs)
-            return objData
-        else:
-            print('Creating intermediate OBJ failed')
-            return None
+            return vertString + faceString
