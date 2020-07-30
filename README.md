@@ -5,7 +5,6 @@ Python converter from IFC SPF to JSON
 
 ## Requirements
 - ifcopenshell (using packagemanager or in folder ./ifcopenshell)
-- IfcConvert placed in ./ifcopenshell
 
 ## Usage
 ```
