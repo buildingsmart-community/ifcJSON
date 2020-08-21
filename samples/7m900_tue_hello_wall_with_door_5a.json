@@ -1,7 +1,7 @@
 {
   "fileSchema": "IFC.JSON-5a",
   "originatingSystem": "IFC2JSON_python",
-  "timeStamp": "2020-07-30T14:50:37",
+  "timeStamp": "2020-08-21T15:04:44",
   "data": [
     {
       "type": "Project",
@@ -96,7 +96,7 @@
       },
       "isDecomposedBy": [
         {
-          "type": "IfcSite",
+          "type": "Site",
           "ref": "f55eaf97-145e-4431-b2f3-69f9634f244b"
         }
       ]
@@ -117,12 +117,12 @@
       ],
       "isDecomposedBy": [
         {
-          "type": "IfcBuilding",
+          "type": "Building",
           "ref": "3ca7e585-4e3e-4969-a86f-f049f4fbde52"
         }
       ],
       "decomposes": {
-        "type": "IfcProject",
+        "type": "Project",
         "ref": "22e66ddf-794d-40bb-8aa5-3dda450d8255"
       }
     },
@@ -134,12 +134,12 @@
       "compositionType": "ELEMENT",
       "isDecomposedBy": [
         {
-          "type": "IfcBuildingStorey",
+          "type": "BuildingStorey",
           "ref": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff"
         }
       ],
       "decomposes": {
-        "type": "IfcSite",
+        "type": "Site",
         "ref": "f55eaf97-145e-4431-b2f3-69f9634f244b"
       }
     },
@@ -150,16 +150,16 @@
       "description": "Description of Default Building Storey",
       "compositionType": "ELEMENT",
       "decomposes": {
-        "type": "IfcBuilding",
+        "type": "Building",
         "ref": "3ca7e585-4e3e-4969-a86f-f049f4fbde52"
       },
       "containsElements": [
         {
-          "type": "IfcWallStandardCase",
+          "type": "WallStandardCase",
           "ref": "f92c2898-fd68-44ef-9178-3348e340017b"
         },
         {
-          "type": "IfcDoor",
+          "type": "Door",
           "ref": "157c866c-9c08-4348-a0ed-4d57cd66c9e2"
         }
       ]
@@ -188,18 +188,57 @@
         "directionSense": "POSITIVE",
         "offsetFromReferenceLine": -0.15
       },
+      "ThermalTransmittance": 0.24,
+      "IsExternal": true,
+      "isDefinedBy": [
+        {
+          "type": "RelDefinesByProperties",
+          "globalId": "d2ecfe17-45be-4b36-959d-1be3ec8193bd",
+          "relatedObjects": [
+            {
+              "type": "WallStandardCase",
+              "ref": "f92c2898-fd68-44ef-9178-3348e340017b"
+            }
+          ],
+          "relatingPropertyDefinition": {
+            "type": "PropertySet",
+            "globalId": "486f7679-1a8a-4deb-8798-5a7e0c8c7d51",
+            "name": "Pset_WallCommon",
+            "hasProperties": [
+              {
+                "type": "PropertySingleValue",
+                "name": "ThermalTransmittance",
+                "description": "ThermalTransmittance",
+                "nominalValue": {
+                  "type": "Real",
+                  "value": 0.24
+                }
+              },
+              {
+                "type": "PropertySingleValue",
+                "name": "IsExternal",
+                "description": "IsExternal",
+                "nominalValue": {
+                  "type": "Boolean",
+                  "value": true
+                }
+              }
+            ]
+          }
+        }
+      ],
       "hasOpenings": {
-        "type": "IfcOpeningElement",
+        "type": "OpeningElement",
         "ref": "9598e1c0-b1a9-4505-93a3-f3193af39e1d"
       },
       "containedInStructure": {
-        "type": "IfcBuildingStorey",
+        "type": "BuildingStorey",
         "ref": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff"
       },
       "representations": [
         {
           "type": "shapeRepresentation",
-          "ref": "5508faaa-42ea-4096-bcca-f3490363d9af"
+          "ref": "c354a9f3-eb1e-4852-ad2b-ae3be623f523"
         }
       ]
     },
@@ -209,17 +248,17 @@
       "name": "Opening Element xyz",
       "description": "Description of Opening",
       "voidsElements": {
-        "type": "IfcWallStandardCase",
+        "type": "WallStandardCase",
         "ref": "f92c2898-fd68-44ef-9178-3348e340017b"
       },
       "hasFillings": {
-        "type": "IfcDoor",
+        "type": "Door",
         "ref": "157c866c-9c08-4348-a0ed-4d57cd66c9e2"
       },
       "representations": [
         {
           "type": "shapeRepresentation",
-          "ref": "3e13adc0-aa57-4e2f-8535-35d1dc6915ba"
+          "ref": "3f2210b7-352d-4036-9784-4578036ff4e0"
         }
       ]
     },
@@ -231,23 +270,23 @@
       "overallHeight": 1.4,
       "overallWidth": 0.7,
       "fillsVoids": {
-        "type": "IfcOpeningElement",
+        "type": "OpeningElement",
         "ref": "9598e1c0-b1a9-4505-93a3-f3193af39e1d"
       },
       "containedInStructure": {
-        "type": "IfcBuildingStorey",
+        "type": "BuildingStorey",
         "ref": "0c207ba4-d0b8-4fff-bcd0-c1d8c7f7b5ff"
       },
       "representations": [
         {
           "type": "shapeRepresentation",
-          "ref": "6493f59e-066d-44ce-b5f5-25460a2612d7"
+          "ref": "5a3651c9-b472-4e63-b008-4b93302cbb08"
         }
       ]
     },
     {
       "type": "shapeRepresentation",
-      "globalId": "5508faaa-42ea-4096-bcca-f3490363d9af",
+      "globalId": "c354a9f3-eb1e-4852-ad2b-ae3be623f523",
       "representationIdentifier": "Body",
       "representationType": "OBJ",
       "items": [
@@ -256,7 +295,7 @@
     },
     {
       "type": "shapeRepresentation",
-      "globalId": "3e13adc0-aa57-4e2f-8535-35d1dc6915ba",
+      "globalId": "3f2210b7-352d-4036-9784-4578036ff4e0",
       "representationIdentifier": "Body",
       "representationType": "OBJ",
       "items": [
@@ -265,7 +304,7 @@
     },
     {
       "type": "shapeRepresentation",
-      "globalId": "6493f59e-066d-44ce-b5f5-25460a2612d7",
+      "globalId": "5a3651c9-b472-4e63-b008-4b93302cbb08",
       "representationIdentifier": "Body",
       "representationType": "OBJ",
       "items": [

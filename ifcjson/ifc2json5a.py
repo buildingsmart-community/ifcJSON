@@ -48,30 +48,30 @@ class IFC2JSON5a(common.IFC2JSON):
     # Attributes for which the intermediate relationship object is removed
     SIMPLIFICATIONS = {
         # IfcRelAggregates
-        'IsDecomposedBy':       'relatedObjects',
-        'Decomposes':           'relatingObject',
+        'IsDecomposedBy':       ['relatedObjects'],
+        'Decomposes':           ['relatingObject'],
         # IfcRelContainedInSpatialStructure
-        'ContainsElements':     'relatedElements',
-        'ContainedInStructure': 'relatingStructure',
+        'ContainsElements':     ['relatedElements'],
+        'ContainedInStructure': ['relatingStructure'],
         # IfcRelDefinesByProperties
-        'IsDefinedBy':          'relatingPropertyDefinition',
+        'IsDefinedBy':          ['relatingPropertyDefinition', 'relatingType'],
         # IfcRelAssociatesMaterial
-        'HasAssociations':      'relatingMaterial',
+        'HasAssociations':      ['relatingMaterial'],
         # IfcRelFillsElement
-        'HasFillings':          'relatedBuildingElement',
-        'FillsVoids':           'relatingOpeningElement',
+        'HasFillings':          ['relatedBuildingElement'],
+        'FillsVoids':           ['relatingOpeningElement'],
         # IfcRelVoidsElement
-        'HasOpenings':          'relatedOpeningElement',
-        'VoidsElements':        'relatingBuildingElement',
+        'HasOpenings':          ['relatedOpeningElement'],
+        'VoidsElements':        ['relatingBuildingElement'],
         # IfcRelDefinesByType
-        'ObjectTypeOf':         'relatedObjects',
-        'IsTypedBy':            'relatingType',
+        'ObjectTypeOf':         ['relatedObjects'],
+        'IsTypedBy':            ['relatingType'],
         # IfcRelConnectsPathElements (!) This skips all IfcRelConnectsPathElements properties
-        'ConnectedTo':          'relatedElement',
-        'ConnectedFrom':        'relatingElement',
+        'ConnectedTo':          ['relatedElement'],
+        'ConnectedFrom':        ['relatingElement'],
         # IfcRelSpaceBoundary (!) This skips all spaceboundary properties like for example geometry
-        'BoundedBy':            'relatedBuildingElement',
-        'ProvidesBoundaries':   'relatingSpace'
+        'BoundedBy':            ['relatedBuildingElement'],
+        'ProvidesBoundaries':   ['relatingSpace']
     }
 
     settings = ifcopenshell.geom.settings()
@@ -190,19 +190,25 @@ class IFC2JSON5a(common.IFC2JSON):
             # Flatten object hierarchy through removing intermediate relationship objects
             if attr in self.SIMPLIFICATIONS:
                 for relObject in entityAttributes[attr]:
-                    if self.SIMPLIFICATIONS[attr] in relObject:
-                        entityAttributes[attr] = relObject[self.SIMPLIFICATIONS[attr]]
+                    for attrName in self.SIMPLIFICATIONS[attr]:
 
-            # Further simplify properties through removing intermediate PropertySets
-            if attr == 'IsDefinedBy':
-                if 'hasProperties' in entityAttributes[attr]:
-                    for property in entityAttributes[attr]['hasProperties']:
-                        try:
-                            fullObject[property['name']
-                                       ] = property['nominalValue']['wrappedValue']
-                        except:
-                            pass
-                continue
+                        # In case of propertysets, further simplification through removing intermediate PropertySets
+                        if attr == 'IsDefinedBy':
+                            if relObject['type'] == 'RelDefinesByProperties':
+                                if relObject['relatingPropertyDefinition']:
+                                    relatingPropertyDefinition = relObject['relatingPropertyDefinition']
+                                    if 'hasProperties' in relatingPropertyDefinition:
+                                        for property in relatingPropertyDefinition['hasProperties']:
+                                            try:
+                                                fullObject[property['name']
+                                                        ] = property['nominalValue']['value']
+                                            except Exception as e:
+                                                print(str(e))
+                                continue
+                            else:
+                                print(relObject['type'])
+                        if attrName in relObject:
+                            entityAttributes[attr] = relObject[attrName]
 
             attrKey = self.toLowerCamelcase(attr)
 
@@ -220,6 +226,25 @@ class IFC2JSON5a(common.IFC2JSON):
                 fullObject[attrKey] = jsonValue
         return fullObject
 
+    def createReferenceObject(self, entityAttributes, compact=False):
+        """Returns object reference
+
+        Parameters:
+        entityAttributes (dict): Dictionary of IFC object data
+        compact (boolean): verbose or non verbose IFC.JSON-5a output
+
+        Returns:
+        dict: object containing reference to another object
+
+        """
+        ref = {}
+        if not compact:
+
+            # Entity names must be stripped of Ifc prefix
+            ref['type'] = entityAttributes['type'][3:]
+        ref['ref'] = entityAttributes['GlobalId']
+        return ref
+
     def toObj(self, product):
         """Convert IfcProduct to OBJ mesh
 
@@ -231,16 +256,21 @@ class IFC2JSON5a(common.IFC2JSON):
         """
 
         if product.Representation:
-            shape = ifcopenshell.geom.create_shape(self.settings, product)
+            try:
+                shape = ifcopenshell.geom.create_shape(self.settings, product)
 
-            verts = shape.geometry.verts
-            vertsList = [' '.join(map(str, verts[x:x+3]))
-                         for x in range(0, len(verts), 3)]
-            vertString = 'v ' + '\nv '.join(vertsList) + '\n'
+                verts = shape.geometry.verts
+                vertsList = [' '.join(map(str, verts[x:x+3]))
+                             for x in range(0, len(verts), 3)]
+                vertString = 'v ' + '\nv '.join(vertsList) + '\n'
 
-            faces = shape.geometry.faces
-            facesList = [' '.join(map(str, faces[x:x+3]))
-                         for x in range(0, len(faces), 3)]
-            faceString = 'f ' + '\nf '.join(map(str, facesList)) + '\n'
+                faces = shape.geometry.faces
+                facesList = [' '.join(map(str, faces[x:x+3]))
+                             for x in range(0, len(faces), 3)]
+                faceString = 'f ' + '\nf '.join(map(str, facesList)) + '\n'
 
-            return vertString + faceString
+                return vertString + faceString
+            except Exception as e:
+                print(str(e) + ': Unable to generate OBJ data for ' +
+                      str(product))
+                return None

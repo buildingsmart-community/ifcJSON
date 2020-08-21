@@ -143,20 +143,3 @@ class IFC2JSON:
         else:
             jsonValue = value
         return jsonValue
-
-    def createReferenceObject(self, entityAttributes, compact=False):
-        """Returns object reference
-
-        Parameters:
-        entityAttributes (dict): Dictionary of IFC object data
-        compact (boolean): verbose or non verbose IFC.JSON-4 output
-
-        Returns:
-        dict: object containing reference to another object
-
-        """
-        ref = {}
-        if not compact:
-            ref['type'] = entityAttributes['type']
-        ref['ref'] = entityAttributes['GlobalId']
-        return ref
