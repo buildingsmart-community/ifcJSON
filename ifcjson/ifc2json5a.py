@@ -79,20 +79,22 @@ class IFC2JSON5a(common.IFC2JSON):
     settings.set(settings.USE_WORLD_COORDS, True)
     settings.set(settings.EXCLUDE_SOLIDS_AND_SURFACES, False)
 
-    def __init__(self, ifcModel, compact=False):
+    def __init__(self, ifcModel,
+                 COMPACT=False,
+                 EMPTY_PROPERTIES=False):
         """IFC SPF to IFC.JSON-5a writer
 
         parameters:
         ifcModel: IFC filePath or ifcopenshell model instance
-        compact (boolean): if True then pretty print is turned off and references are created without informative "type" property
+        COMPACT (boolean): if True then pretty print is turned off and references are created without informative "type" property
 
         """
         if isinstance(ifcModel, ifcopenshell.file):
             self.ifcModel = ifcModel
         else:
             self.ifcModel = ifcopenshell.open(ifcModel)
-        self.compact = compact
-        self.objectDefinitions = {}
+        self.COMPACT = COMPACT
+        self.EMPTY_PROPERTIES = EMPTY_PROPERTIES
 
         # Dictionary referencing all objects with a GlobalId that are already created
         self.rootObjects = {}
@@ -114,12 +116,10 @@ class IFC2JSON5a(common.IFC2JSON):
         jsonObjects = []
 
         for entity in self.ifcModel.by_type('IfcObjectDefinition'):
-            self.objectDefinitions[entity.id()] = guid.split(
+            self.rootObjects[entity.id()] = guid.split(
                 guid.expand(entity.GlobalId))[1:-1]
 
-        self.rootobjects = dict(self.objectDefinitions)
-
-        for key in self.rootobjects:
+        for key in self.rootObjects:
             entity = self.ifcModel.by_id(key)
             entityAttributes = entity.__dict__
             entityType = entityAttributes['type']
@@ -128,7 +128,7 @@ class IFC2JSON5a(common.IFC2JSON):
                     inverseAttribute = getattr(entity, attr)
                     entityAttributes[attr] = self.getAttributeValue(
                         inverseAttribute)
-            entityAttributes["GlobalId"] = self.rootobjects[entity.id()]
+            entityAttributes["GlobalId"] = self.rootObjects[entity.id()]
 
             # Convert representations to OBJ
             if 'Representation' in entityAttributes:
@@ -137,7 +137,7 @@ class IFC2JSON5a(common.IFC2JSON):
                 if obj:
                     id = guid.split(guid.expand(guid.new()))[1:-1]
                     ref = {}
-                    if not self.compact:
+                    if not self.COMPACT:
                         ref['type'] = "shapeRepresentation"
                     ref['ref'] = id
                     entityAttributes['representations'] = [ref]
@@ -201,7 +201,7 @@ class IFC2JSON5a(common.IFC2JSON):
                                         for property in relatingPropertyDefinition['hasProperties']:
                                             try:
                                                 fullObject[property['name']
-                                                        ] = property['nominalValue']['value']
+                                                           ] = property['nominalValue']['value']
                                             except Exception as e:
                                                 print(str(e))
                                 continue
@@ -217,7 +217,7 @@ class IFC2JSON5a(common.IFC2JSON):
                 attrKey = 'value'
 
             jsonValue = self.getAttributeValue(entityAttributes[attr])
-            if jsonValue:
+            if jsonValue is not None:
 
                 # Entity names must be stripped of Ifc prefix
                 if attr == 'type':
@@ -226,19 +226,19 @@ class IFC2JSON5a(common.IFC2JSON):
                 fullObject[attrKey] = jsonValue
         return fullObject
 
-    def createReferenceObject(self, entityAttributes, compact=False):
+    def createReferenceObject(self, entityAttributes, COMPACT=False):
         """Returns object reference
 
         Parameters:
         entityAttributes (dict): Dictionary of IFC object data
-        compact (boolean): verbose or non verbose IFC.JSON-5a output
+        COMPACT (boolean): verbose or non verbose IFC.JSON-5a output
 
         Returns:
         dict: object containing reference to another object
 
         """
         ref = {}
-        if not compact:
+        if not COMPACT:
 
             # Entity names must be stripped of Ifc prefix
             ref['type'] = entityAttributes['type'][3:]

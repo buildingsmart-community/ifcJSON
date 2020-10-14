@@ -29,6 +29,7 @@ import os
 import argparse
 import json
 import ifcjson
+
 t1_start = perf_counter()
 
 if __name__ == '__main__':
@@ -38,20 +39,35 @@ if __name__ == '__main__':
     parser.add_argument('-o', type=str, help='output json file path')
     parser.add_argument(
         '-v', type=str, help='IFC.JSON version, options: "4"(default), "5a"')
-    parser.add_argument('-c', '--compact', action='store_true', help='Pretty print is turned off and references are created without informative "type" property')
+    parser.add_argument('-c', '--compact', action='store_true',
+                        help='Pretty print is turned off and references are created without informative "type" property')
+    parser.add_argument('-n', '--inverse', action='store_true',
+                        help='Inverse relationships will be explicitly added to entities for version 4, default is False')
+    parser.add_argument('-e', '--empty_properties', action='store_true',
+                        help='Include empty properties, default is False')
+    parser.add_argument('-w', '--no_ownerhistory', action='store_true',
+                        help='Remove IfcOwnerHistory for version 4, default is False. WARNING: THIS BREAKS THE IFC SCHEMA!')
+    parser.add_argument('-g', '--geometry', type=str,
+                        help='Set geometry output type: "none", "tessellate", "unchanged"(default) WARNING: SETTING TO NONE MIGHT BREAK THE IFC SCHEMA!')
     # parser.add_argument('NO_GEOMETRY', action='store_true')
     args = parser.parse_args()
     if args.i:
         ifcFilePath = args.i
-    else:
-        ifcFilePath = './samples/7m900_tue_hello_wall_with_door.ifc'
     if args.compact:
         indent = None
-        compact = True
+        COMPACT = True
     else:
         indent = 2
-        compact = False
-
+        COMPACT = False
+    if args.geometry:
+        if args.geometry == "none":
+            GEOMETRY = False
+        elif args.geometry == "tessellate":
+            GEOMETRY = "tessellate"
+        else:
+            GEOMETRY = True
+    else:
+        GEOMETRY = True
 
     if os.path.isfile(ifcFilePath):
         if args.o:
@@ -59,11 +75,20 @@ if __name__ == '__main__':
         else:
             jsonFilePath = os.path.splitext(ifcFilePath)[0] + '.json'
         if not args.v or args.v == "4":
-            jsonData = ifcjson.IFC2JSON4(ifcFilePath,compact).spf2Json()
+            jsonData = ifcjson.IFC2JSON4(ifcFilePath,
+                                         COMPACT,
+                                         INCLUDE_INVERSE=args.inverse,
+                                         EMPTY_PROPERTIES=args.empty_properties,
+                                         NO_OWNERHISTORY=args.no_ownerhistory,
+                                         GEOMETRY=GEOMETRY
+                                         ).spf2Json()
             with open(jsonFilePath, 'w') as outfile:
                 json.dump(jsonData, outfile, indent=indent)
         elif args.v == "5a":
-            jsonData = ifcjson.IFC2JSON5a(ifcFilePath,compact).spf2Json()
+            jsonData = ifcjson.IFC2JSON5a(ifcFilePath,
+                                          COMPACT,
+                                          EMPTY_PROPERTIES=args.empty_properties
+                                          ).spf2Json()
             with open(jsonFilePath, 'w') as outfile:
                 json.dump(jsonData, outfile, indent=indent)
         else:

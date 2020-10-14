@@ -71,7 +71,9 @@ class IFC2JSON:
         return string[0].lower() + string[1:]
 
     def getDimensionsForSiUnit(self, entity):
-        dimensions = {}
+        dimensions = {
+            'type': 'IfcDimensionalExponents'
+        }
         if entity.Name in self.DIMENSIONALEXPONENTS:
             dimExps = self.DIMENSIONALEXPONENTS[entity.Name]
             if dimExps[0] != 0:
@@ -109,23 +111,20 @@ class IFC2JSON:
             entityAttributes = entity.__dict__
 
             # Remove empty properties
-            if entity.is_a() == 'IfcPropertySingleValue':
-                try:
-                    value = entity.NominalValue.wrappedValue
-                    if not value:
+            if entity.is_a('IfcProperty'):
+                if not self.EMPTY_PROPERTIES:
+                    if self.empty_property(entity):
                         return None
-                except:
-                    return None
 
             # Add unit dimensions https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmeasureresource/lexical/ifcdimensionsforsiunit.htm
-            if entity.is_a() == 'IfcSIUnit':
+            if entity.is_a('IfcSIUnit'):
                 entityAttributes['dimensions'] = self.getDimensionsForSiUnit(
                     entity)
 
             # All objects with a GlobalId must be referenced, all others nested
-            if entity.id() in self.rootobjects:
-                entityAttributes["GlobalId"] = self.rootobjects[entity.id()]
-                return self.createReferenceObject(entityAttributes, self.compact)
+            if entity.id() in self.rootObjects:
+                entityAttributes["GlobalId"] = self.rootObjects[entity.id()]
+                return self.createReferenceObject(entityAttributes, self.COMPACT)
             else:
                 if 'GlobalId' in entityAttributes:
                     entityAttributes["GlobalId"] = guid.split(
@@ -133,13 +132,34 @@ class IFC2JSON:
 
             return self.createFullObject(entityAttributes)
         elif isinstance(value, tuple):
-            jsonValue = None
-            subEnts = []
-            for subEntity in value:
-                attrValue = self.getAttributeValue(subEntity)
-                if attrValue:
-                    subEnts.append(attrValue)
-            jsonValue = subEnts
+            jsonValue = tuple(x for x in map(
+                self.getAttributeValue, value) if x is not None)
         else:
             jsonValue = value
         return jsonValue
+
+    def empty_property(self, entity):
+
+        # IfcPropertySingleValue
+        if hasattr(entity, 'NominalValue'):
+            if not entity.NominalValue:
+                return True
+            elif entity.NominalValue:
+                value = entity.NominalValue.wrappedValue
+                if (not value and value is not False) or (value == ''):
+                    return True
+
+        # IfcPropertyEnumeratedValue
+        elif hasattr(entity, 'EnumerationValues'):
+            if not entity.EnumerationValues:
+                return True
+
+        # IfcPropertyBoundedValue
+        elif hasattr(entity, 'UpperBoundValue'):
+            if not entity.UpperBoundValue and not entity.LowerBoundValue:
+                return True
+
+        # IfcPropertyTableValue
+        elif hasattr(entity, 'DefiningValues'):
+            if not entity.DefiningValues and not entity.DefinedValues:
+                return True
