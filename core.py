@@ -12,13 +12,23 @@ XMITYPE = "xmi:type"
 PKGNAME = "ifc-ecore"
 PKGPREFIX = "https://ifc-ecore.org/1.0"
 
+### Lookup Tables ###
+
 class ElementPair(object):
+    """Composes the source DOM element and target EClass for an Entity."""
     def __init__(self, id, source, target=None):
         self.id = id
         self.source = source
         self.target = target
 
 class AddressableIndex(object):
+    """
+    A lookup table for ElementPairs.
+
+    Several linking operations require forward references, so we leverage
+    a dedicated lookup table that can set ElementPairs source and targets
+    independently.
+    """
     def __init__(self):
         self._ids = {}
     def getbyid(self, id):
@@ -45,6 +55,7 @@ def istyped(el):
     return XMITYPE in el.attrs
 
 def iseclass(el):
+    """Identify Ifc ENTITYs, working around weirdness of current UML build"""
     return isnamed(el) and el.attrs.get(XMITYPE) == "uml:Class" \
          and (not el.attrs.get("name").endswith("Enum")) \
              and el.attrs.get("name").startswith("Ifc") \
@@ -66,14 +77,22 @@ def isedatatype(el):
 def isepackage(el):
     return isaddressable(el) and el.attrs.get(XMITYPE) == "uml:Package"
 
+### DOM Parsing ###
 
 def getxmidom(filepath):
+    """Given an XMI file, return the equivalent BS4 DOM""" 
     with open(filepath, "r") as f:
         return BeautifulSoup("".join(line.strip() for line in f.read().split("\n")), 'lxml')
         
            
    
 def buildindex(dom):
+    """
+    Builds lookup table from DOM.
+
+    All included elements must be `isaddressable`; otherwise,
+    we have no way to look them up.
+    """
     idx = AddressableIndex()
     for el in dom.find_all(isaddressable):
         idx.addsource(el.attrs[XMIID], el)
@@ -81,6 +100,7 @@ def buildindex(dom):
 
 
 def makepackage(dom, idx):
+    """Top-level constructor for ECore translation."""
     pkg = EPackage(PKGNAME, nsURI=PKGPREFIX, nsPrefix=PKGNAME)
     for clstag in dom.find_all(iseclass):
         makeeclass(clstag, idx, pkg)
@@ -88,6 +108,7 @@ def makepackage(dom, idx):
 
 
 def makeeclass(clstag, idx, pkg):
+    """Builds a single EClass from an IFC-UML description."""
     clsid = clstag.attrs[XMIID]
 
     cls = EClass(**makeclassproperties(clstag, idx, pkg))
@@ -101,11 +122,11 @@ def makeeclass(clstag, idx, pkg):
 
 def makeclassproperties(clstag, idx, pkg):
     props = {"name":clstag.attrs["name"], "superclass":None}
-    # handle superclass lookup
     props["superclass"] = makegeneric(clstag, idx, pkg, None, "generalization", "general")
     return props
 
 def makeeattribute(proptag, idx, pkg, cls):
+    """The EAttribute equivalent of `makeeclass`"""
     attr = EAttribute(**makeattributeproperties(proptag, idx, pkg, cls))
     idx.addtarget(proptag.attrs[XMIID], attr)
     cls.eStructuralFeatures.append(attr)
@@ -123,7 +144,7 @@ def makeattributeproperties(proptag, idx, pkg, cls):
         props["upper"] = upper.attrs["value"]
         props["upper"] = -1 if props["upper"] == "*" else int(props["upper"])
 
-    props["eType"] = makeetype(proptag, idx, pkg, cls)
+    props["eType"] = makegeneric(proptag, idx, pkg, cls, "type", "xmi:idref")
     props["name"] = proptag["name"]
     props["required"] = True if props["lower"] > 0 else False
     return props
@@ -140,17 +161,14 @@ def makereferenceproperties(proptag, idx, pkg, cls):
     props["eType"] = makegeneric(proptag, idx, pkg, cls, "type", "xmi:idref")
     props["name"] = proptag["name"]
     return props
-
-def makeetype(proptag, idx, pkg, cls):
-    proptype = proptag.find("type")
-    if proptype:
-        typeid = proptype.attrs["xmi:idref"]
-        if not idx.gettarget(typeid):
-            makeeclass(idx.getsource(typeid), idx, pkg) # process forward ref
-            assert(idx.gettarget(typeid) != None)
-        return idx.gettarget(typeid)
         
 def makegeneric(proptag, idx, pkg, cls, tagname, attrname):
+    """
+    A helper utility to build classes identified by forward references.
+
+    NB. The `cls` attribute is unused in this definition, but is
+    kept to maintain uniformity of the function signature.
+    """
     proptype = proptag.find(tagname)
     if proptype:
         typeid = proptype.attrs[attrname]
@@ -160,6 +178,11 @@ def makegeneric(proptag, idx, pkg, cls, tagname, attrname):
         return idx.gettarget(typeid)
 
 def save(pkg, targetfolder, name=PKGNAME):
+    """
+    Serialize an EPackage.
+
+    For now, produce both XMI and EMFJSON formats on each call.
+    """
     xmipath = str((targetfolder / (name +'.xmi')).resolve())
     jsonpath = str((targetfolder / (name +'.json')).resolve())
     xmi = XMIResource(URI(xmipath))
