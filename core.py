@@ -18,6 +18,14 @@ XMITYPE = "xmi:type"
 PKGNAME = "ifc-ecore"
 PKGPREFIX = "https://ifc-ecore.org/1.0"
 
+### DOM Parsing ###
+
+def getxmidom(filepath):
+    """Given an XMI file, return the equivalent BS4 DOM""" 
+    with open(filepath, "r") as f:
+        return BeautifulSoup("".join(line.strip() for line in f.read().split("\n")), 'lxml')
+
+
 ### Lookup Tables ###
 
 class ElementPair(object):
@@ -47,6 +55,19 @@ class AddressableIndex(object):
         return self._ids[id].source
     def gettarget(self, id):
         return self._ids[id].target
+
+
+def buildindex(dom):
+    """
+    Builds lookup table from DOM.
+
+    All included elements must be `isaddressable`; otherwise,
+    we have no way to look them up.
+    """
+    idx = AddressableIndex()
+    for el in dom.find_all(isaddressable):
+        idx.addsource(el.attrs[XMIID], el)
+    return idx
 
 
 ### Predicates ###    
@@ -83,27 +104,8 @@ def isedatatype(el):
 def isepackage(el):
     return isaddressable(el) and el.attrs.get(XMITYPE) == "uml:Package"
 
-### DOM Parsing ###
 
-def getxmidom(filepath):
-    """Given an XMI file, return the equivalent BS4 DOM""" 
-    with open(filepath, "r") as f:
-        return BeautifulSoup("".join(line.strip() for line in f.read().split("\n")), 'lxml')
-        
-           
-   
-def buildindex(dom):
-    """
-    Builds lookup table from DOM.
-
-    All included elements must be `isaddressable`; otherwise,
-    we have no way to look them up.
-    """
-    idx = AddressableIndex()
-    for el in dom.find_all(isaddressable):
-        idx.addsource(el.attrs[XMIID], el)
-    return idx
-
+### ECore Constructors ###
 
 def makepackage(dom, idx):
     """Top-level constructor for ECore translation."""
@@ -182,6 +184,9 @@ def makegeneric(proptag, idx, pkg, cls, tagname, attrname):
             makeeclass(idx.getsource(typeid), idx, pkg) # process forward ref
             assert(idx.gettarget(typeid) != None)
         return idx.gettarget(typeid)
+
+
+### Serialization ####
 
 def save(pkg, targetfolder, name=PKGNAME):
     """
