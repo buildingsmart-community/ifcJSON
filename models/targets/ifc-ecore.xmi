@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ecore:EPackage xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" nsURI="https://ifc-ecore.org/1.0" nsPrefix="ifc-ecore" name="ifc-ecore" xmi:version="2.0">
+<ecore:EPackage xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" nsPrefix="ifc-ecore" name="ifc-ecore" nsURI="https://ifc-ecore.org/1.0" xmi:version="2.0">
   <eClassifiers xsi:type="ecore:EClass" name="IfcActorRole">
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="Role" required="true">
       <eType href="ifc-ecore.json#//IfcRoleEnum" xsi:type="ecore:EClass"/>
@@ -66,13 +66,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="GivenName">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="MiddleNames" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="MiddleNames" required="true">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="PrefixTitles" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="PrefixTitles" required="true">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="SuffixTitles" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="SuffixTitles" required="true">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -82,7 +82,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="InternalLocation">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="AddressLines" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="AddressLines" required="true">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="PostalBox">
@@ -103,22 +103,22 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcTelecomAddress">
     <eSuperTypes href="ifc-ecore.json#//IfcAddress" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="TelephoneNumbers" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="TelephoneNumbers" required="true">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="FacsimileNumbers" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="FacsimileNumbers" required="true">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="PagerNumber">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="ElectronicMailAddresses" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="ElectronicMailAddresses" required="true">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="WWWHomePageURL">
       <eType href="ifc-ecore.json#//IfcURIReference" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="MessagingIDs" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="MessagingIDs" required="true">
       <eType href="ifc-ecore.json#//IfcURIReference" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -163,7 +163,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcResourceApprovalRelationship">
     <eSuperTypes href="ifc-ecore.json#//IfcResourceLevelRelationship" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="RelatedResourceObjects" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="RelatedResourceObjects" required="true">
       <eType href="ifc-ecore.json#//IfcResourceObjectSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -569,7 +569,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="InstanceName">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="ListPositions" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="ListPositions" required="true">
       <eType href="ifc-ecore.json#//IfcInteger" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -579,7 +579,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcResourceConstraintRelationship">
     <eSuperTypes href="ifc-ecore.json#//IfcResourceLevelRelationship" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="RelatedResourceObjects" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="RelatedResourceObjects" required="true">
       <eType href="ifc-ecore.json#//IfcResourceObjectSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -711,7 +711,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcRelAssociates">
     <eSuperTypes href="ifc-ecore.json#//IfcRelationship" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="RelatedObjects" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="RelatedObjects" required="true">
       <eType href="ifc-ecore.json#//IfcDefinitionSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -833,7 +833,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="TimeStamp" required="true">
       <eType href="ifc-ecore.json#//IfcDateTime" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="ListValues" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="ListValues" required="true">
       <eType href="ifc-ecore.json#//IfcValue" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -853,13 +853,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="RecurrenceType" required="true">
       <eType href="ifc-ecore.json#//IfcRecurrenceTypeEnum" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="DayComponent" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="DayComponent" required="true">
       <eType href="ifc-ecore.json#//IfcDayInMonthNumber" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="WeekdayComponent" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="WeekdayComponent" required="true">
       <eType href="ifc-ecore.json#//IfcDayInWeekNumber" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="MonthComponent" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="MonthComponent" required="true">
       <eType href="ifc-ecore.json#//IfcMonthInYearNumber" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Position">
@@ -1048,7 +1048,7 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcTimeSeriesValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="ListValues" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="ListValues" required="true">
       <eType href="ifc-ecore.json#//IfcValue" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -1381,7 +1381,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Location">
       <eType href="ifc-ecore.json#//IfcURIReference" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="ReferenceTokens" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="ReferenceTokens" required="true">
       <eType href="ifc-ecore.json#//IfcIdentifier" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -1438,7 +1438,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="DocumentOwner">
       <eType href="ifc-ecore.json#//IfcActorSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Editors" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Editors" required="true">
       <eType href="ifc-ecore.json#//IfcActorSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="CreationTime">
@@ -1491,7 +1491,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcExternalReferenceRelationship">
     <eSuperTypes href="ifc-ecore.json#//IfcResourceLevelRelationship" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="RelatedResourceObjects" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="RelatedResourceObjects" required="true">
       <eType href="ifc-ecore.json#//IfcResourceObjectSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -1737,7 +1737,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="IfcAxis2Placement"/>
   <eClassifiers xsi:type="ecore:EClass" name="IfcObjectPlacement"/>
   <eClassifiers xsi:type="ecore:EClass" name="IfcVirtualGridIntersection">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="3" lowerBound="2" name="OffsetDistances" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="3" name="OffsetDistances" required="true">
       <eType href="ifc-ecore.json#//IfcLengthMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -1845,19 +1845,19 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcCartesianPointList2D">
     <eSuperTypes href="ifc-ecore.json#//IfcCartesianPointList" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="CoordList" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="CoordList" required="true">
       <eType href="ifc-ecore.json#//IfcLengthMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="TagList" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="TagList" required="true">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcCartesianPointList3D">
     <eSuperTypes href="ifc-ecore.json#//IfcCartesianPointList" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="CoordList" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="CoordList" required="true">
       <eType href="ifc-ecore.json#//IfcLengthMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="TagList" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="TagList" required="true">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -1913,7 +1913,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcGeometricSet">
     <eSuperTypes href="ifc-ecore.json#//IfcGeometricRepresentationItem" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Elements" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Elements" required="true">
       <eType href="ifc-ecore.json#//IfcGeometricSetSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="Dim" required="true">
@@ -1926,7 +1926,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcGeometricSet">
     <eSuperTypes href="ifc-ecore.json#//IfcGeometricRepresentationItem" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Elements" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Elements" required="true">
       <eType href="ifc-ecore.json#//IfcGeometricSetSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="Dim" required="true">
@@ -1947,7 +1947,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcIndexedPolygonalFace">
     <eSuperTypes href="ifc-ecore.json#//IfcTessellatedItem" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="3" name="CoordIndex" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="3" upperBound="-1" name="CoordIndex" required="true">
       <eType href="ifc-ecore.json#//IfcPositiveInteger" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -1956,7 +1956,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcIndexedPolygonalFaceWithVoids">
     <eSuperTypes href="ifc-ecore.json#//IfcIndexedPolygonalFace" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="InnerCoordIndices" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="InnerCoordIndices" required="true">
       <eType href="ifc-ecore.json#//IfcPositiveInteger" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -1978,7 +1978,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Closed">
       <eType href="ifc-ecore.json#//IfcBoolean" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="PnIndex" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="PnIndex" required="true">
       <eType href="ifc-ecore.json#//IfcPositiveInteger" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -2042,7 +2042,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcShellBasedSurfaceModel">
     <eSuperTypes href="ifc-ecore.json#//IfcGeometricRepresentationItem" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="SbsmBoundary" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="SbsmBoundary" required="true">
       <eType href="ifc-ecore.json#//IfcShell" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="Dim" required="true">
@@ -2104,16 +2104,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcTriangulatedFaceSet">
     <eSuperTypes href="ifc-ecore.json#//IfcTessellatedFaceSet" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Normals" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Normals" required="true">
       <eType href="ifc-ecore.json#//IfcParameterValue" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Closed">
       <eType href="ifc-ecore.json#//IfcBoolean" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="CoordIndex" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="CoordIndex" required="true">
       <eType href="ifc-ecore.json#//IfcPositiveInteger" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="PnIndex" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="PnIndex" required="true">
       <eType href="ifc-ecore.json#//IfcPositiveInteger" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="NumberOfTriangles" required="true">
@@ -2122,7 +2122,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcTriangulatedIrregularNetwork">
     <eSuperTypes href="ifc-ecore.json#//IfcTriangulatedFaceSet" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Flags" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Flags" required="true">
       <eType href="ifc-ecore.json#//IfcInteger" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -2204,10 +2204,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="IfcBSplineCurveForm"/>
   <eClassifiers xsi:type="ecore:EClass" name="IfcBSplineCurveWithKnots">
     <eSuperTypes href="ifc-ecore.json#//IfcBSplineCurve" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="2" name="KnotMultiplicities" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="-1" name="KnotMultiplicities" required="true">
       <eType href="ifc-ecore.json#//IfcInteger" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="2" name="Knots" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="-1" name="Knots" required="true">
       <eType href="ifc-ecore.json#//IfcParameterValue" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="KnotSpec" required="true">
@@ -2250,16 +2250,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="IfcBSplineSurfaceForm"/>
   <eClassifiers xsi:type="ecore:EClass" name="IfcBSplineSurfaceWithKnots">
     <eSuperTypes href="ifc-ecore.json#//IfcBSplineSurface" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="2" name="UMultiplicities" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="-1" name="UMultiplicities" required="true">
       <eType href="ifc-ecore.json#//IfcInteger" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="2" name="VMultiplicities" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="-1" name="VMultiplicities" required="true">
       <eType href="ifc-ecore.json#//IfcInteger" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="2" name="UKnots" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="-1" name="UKnots" required="true">
       <eType href="ifc-ecore.json#//IfcParameterValue" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="2" name="VKnots" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="-1" name="VKnots" required="true">
       <eType href="ifc-ecore.json#//IfcParameterValue" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="KnotSpec" required="true">
@@ -2279,7 +2279,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcCartesianPoint">
     <eSuperTypes href="ifc-ecore.json#//IfcPoint" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="3" lowerBound="1" name="Coordinates" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="3" name="Coordinates" required="true">
       <eType href="ifc-ecore.json#//IfcLengthMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="Dim" required="true">
@@ -2438,7 +2438,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcDirection">
     <eSuperTypes href="ifc-ecore.json#//IfcGeometricRepresentationItem" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="3" lowerBound="2" name="DirectionRatios" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="3" name="DirectionRatios" required="true">
       <eType href="ifc-ecore.json#//IfcReal" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="Dim" required="true">
@@ -2483,7 +2483,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="IfcGetBasisSurface"/>
   <eClassifiers xsi:type="ecore:EClass" name="IfcIndexedPolyCurve">
     <eSuperTypes href="ifc-ecore.json#//IfcBoundedCurve" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Segments" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Segments" required="true">
       <eType href="ifc-ecore.json#//IfcSegmentIndexSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="SelfIntersect">
@@ -2591,14 +2591,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="IfcPreferredSurfaceCurveRepresentation"/>
   <eClassifiers xsi:type="ecore:EClass" name="IfcRationalBSplineCurveWithKnots">
     <eSuperTypes href="ifc-ecore.json#//IfcBSplineCurveWithKnots" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="2" name="WeightsData" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="-1" name="WeightsData" required="true">
       <eType href="ifc-ecore.json#//IfcReal" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="Weights" required="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcRationalBSplineSurfaceWithKnots">
     <eSuperTypes href="ifc-ecore.json#//IfcBSplineSurfaceWithKnots" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="2" name="WeightsData" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="-1" name="WeightsData" required="true">
       <eType href="ifc-ecore.json#//IfcReal" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="Weights" required="true"/>
@@ -2714,10 +2714,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="IfcTransitionCurveType"/>
   <eClassifiers xsi:type="ecore:EClass" name="IfcTrimmedCurve">
     <eSuperTypes href="ifc-ecore.json#//IfcBoundedCurve" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="2" lowerBound="1" name="Trim1" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="2" name="Trim1" required="true">
       <eType href="ifc-ecore.json#//IfcTrimmingSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="2" lowerBound="1" name="Trim2" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="2" name="Trim2" required="true">
       <eType href="ifc-ecore.json#//IfcTrimmingSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="SenseAgreement" required="true">
@@ -3301,7 +3301,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="IfcResourceSelect"/>
   <eClassifiers xsi:type="ecore:EClass" name="IfcRelAssociates">
     <eSuperTypes href="ifc-ecore.json#//IfcRelationship" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="RelatedObjects" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="RelatedObjects" required="true">
       <eType href="ifc-ecore.json#//IfcDefinitionSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -3334,7 +3334,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcRelDeclares">
     <eSuperTypes href="ifc-ecore.json#//IfcRelationship" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="RelatedDefinitions" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="RelatedDefinitions" required="true">
       <eType href="ifc-ecore.json#//IfcDefinitionSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -3460,7 +3460,7 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcMaterialClassificationRelationship">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="MaterialClassifications" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="MaterialClassifications" required="true">
       <eType href="ifc-ecore.json#//IfcClassificationSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -3545,7 +3545,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="OffsetDirection" required="true">
       <eType href="ifc-ecore.json#//IfcLayerSetDirectionEnum" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="2" lowerBound="1" name="OffsetValues" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="2" name="OffsetValues" required="true">
       <eType href="ifc-ecore.json#//IfcLengthMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -3594,7 +3594,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcMaterialProfileWithOffsets">
     <eSuperTypes href="ifc-ecore.json#//IfcMaterialProfile" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="2" lowerBound="1" name="OffsetValues" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="2" name="OffsetValues" required="true">
       <eType href="ifc-ecore.json#//IfcLengthMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -3717,7 +3717,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="IfcSIUnitName"/>
   <eClassifiers xsi:type="ecore:EClass" name="IfcSIUnitName"/>
   <eClassifiers xsi:type="ecore:EClass" name="IfcUnitAssignment">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Units" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Units" required="true">
       <eType href="ifc-ecore.json#//IfcUnit" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -3792,7 +3792,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Mode">
       <eType href="ifc-ecore.json#//IfcIdentifier" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Parameter" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Parameter" required="true">
       <eType href="ifc-ecore.json#//IfcIdentifier" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -3829,7 +3829,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcColourRgbList">
     <eSuperTypes href="ifc-ecore.json#//IfcPresentationItem" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="ColourList" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="ColourList" required="true">
       <eType href="ifc-ecore.json#//IfcNormalisedRatioMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -3920,7 +3920,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcFillAreaStyle">
     <eSuperTypes href="ifc-ecore.json#//IfcPresentationStyle" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="FillStyles" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="FillStyles" required="true">
       <eType href="ifc-ecore.json#//IfcFillStyleSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ModelorDraughting">
@@ -3955,7 +3955,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Opacity">
       <eType href="ifc-ecore.json#//IfcNormalisedRatioMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="ColourIndex" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="ColourIndex" required="true">
       <eType href="ifc-ecore.json#//IfcPositiveInteger" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -3967,7 +3967,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcIndexedTriangleTextureMap">
     <eSuperTypes href="ifc-ecore.json#//IfcIndexedTextureMap" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="TexCoordIndex" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="TexCoordIndex" required="true">
       <eType href="ifc-ecore.json#//IfcPositiveInteger" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -3983,7 +3983,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="ColourComponents" required="true">
       <eType href="ifc-ecore.json#//IfcInteger" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Pixel" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Pixel" required="true">
       <eType href="ifc-ecore.json#//IfcBinary" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -4008,14 +4008,14 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcPresentationStyleAssignment">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Styles" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Styles" required="true">
       <eType href="ifc-ecore.json#//IfcPresentationStyleSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcPresentationStyleSelect"/>
   <eClassifiers xsi:type="ecore:EClass" name="IfcStyledItem">
     <eSuperTypes href="ifc-ecore.json#//IfcRepresentationItem" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Styles" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Styles" required="true">
       <eType href="ifc-ecore.json#//IfcStyleAssignmentSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name">
@@ -4029,7 +4029,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="Side" required="true">
       <eType href="ifc-ecore.json#//IfcSurfaceSide" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="5" lowerBound="1" name="Styles" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="5" name="Styles" required="true">
       <eType href="ifc-ecore.json#//IfcSurfaceStyleElementSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -4099,7 +4099,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Mode">
       <eType href="ifc-ecore.json#//IfcIdentifier" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Parameter" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Parameter" required="true">
       <eType href="ifc-ecore.json#//IfcIdentifier" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -4115,7 +4115,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="IfcTextFontSelect"/>
   <eClassifiers xsi:type="ecore:EClass" name="IfcTextStyleFontModel">
     <eSuperTypes href="ifc-ecore.json#//IfcPreDefinedTextFont" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="FontFamily" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="FontFamily" required="true">
       <eType href="ifc-ecore.json#//IfcTextFontName" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="FontStyle">
@@ -4193,7 +4193,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="Mode" required="true">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Parameter" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Parameter" required="true">
       <eType href="ifc-ecore.json#//IfcReal" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -4202,13 +4202,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcTextureVertex">
     <eSuperTypes href="ifc-ecore.json#//IfcPresentationItem" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="2" lowerBound="2" name="Coordinates" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="2" name="Coordinates" required="true">
       <eType href="ifc-ecore.json#//IfcParameterValue" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcTextureVertexList">
     <eSuperTypes href="ifc-ecore.json#//IfcPresentationItem" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="TexCoordsList" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="TexCoordsList" required="true">
       <eType href="ifc-ecore.json#//IfcParameterValue" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -4270,10 +4270,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="MainPlaneAngle" required="true">
       <eType href="ifc-ecore.json#//IfcPlaneAngleMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="SecondaryPlaneAngle" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="SecondaryPlaneAngle" required="true">
       <eType href="ifc-ecore.json#//IfcPlaneAngleMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="LuminousIntensity" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="LuminousIntensity" required="true">
       <eType href="ifc-ecore.json#//IfcLuminousIntensityDistributionMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -4364,7 +4364,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description">
       <eType href="ifc-ecore.json#//IfcText" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="AssignedItems" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="AssignedItems" required="true">
       <eType href="ifc-ecore.json#//IfcLayeredItem" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Identifier">
@@ -5369,7 +5369,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcPropertyEnumeratedValue">
     <eSuperTypes href="ifc-ecore.json#//IfcSimpleProperty" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="EnumerationValues" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="EnumerationValues" required="true">
       <eType href="ifc-ecore.json#//IfcValue" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -5378,7 +5378,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="Name" required="true">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="EnumerationValues" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="EnumerationValues" required="true">
       <eType href="ifc-ecore.json#//IfcValue" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Unit">
@@ -5387,7 +5387,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcPropertyListValue">
     <eSuperTypes href="ifc-ecore.json#//IfcSimpleProperty" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="ListValues" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="ListValues" required="true">
       <eType href="ifc-ecore.json#//IfcValue" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Unit">
@@ -5415,10 +5415,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcPropertyTableValue">
     <eSuperTypes href="ifc-ecore.json#//IfcSimpleProperty" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="DefiningValues" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="DefiningValues" required="true">
       <eType href="ifc-ecore.json#//IfcValue" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="DefinedValues" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="DefinedValues" required="true">
       <eType href="ifc-ecore.json#//IfcValue" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Expression">
@@ -6571,7 +6571,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="IfcActionSourceTypeEnum"/>
   <eClassifiers xsi:type="ecore:EClass" name="IfcStructuralLoadCase">
     <eSuperTypes href="ifc-ecore.json#//IfcStructuralLoadGroup" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="3" lowerBound="3" name="SelfWeightCoefficients" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="3" upperBound="3" name="SelfWeightCoefficients" required="true">
       <eType href="ifc-ecore.json#//IfcRatioMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -6726,7 +6726,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BendingShapeCode">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="BendingParameters" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="BendingParameters" required="true">
       <eType href="ifc-ecore.json#//IfcBendingParameterSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -6805,7 +6805,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="BendingShapeCode">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="BendingParameters" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="BendingParameters" required="true">
       <eType href="ifc-ecore.json#//IfcBendingParameterSelect" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -7012,7 +7012,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcStructuralLoadConfiguration">
     <eSuperTypes href="ifc-ecore.json#//IfcStructuralLoad" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Locations" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Locations" required="true">
       <eType href="ifc-ecore.json#//IfcLengthMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -7147,10 +7147,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcSurfaceReinforcementArea">
     <eSuperTypes href="ifc-ecore.json#//IfcStructuralLoadOrResult" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="3" lowerBound="2" name="SurfaceReinforcement1" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="3" name="SurfaceReinforcement1" required="true">
       <eType href="ifc-ecore.json#//IfcLengthMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="3" lowerBound="2" name="SurfaceReinforcement2" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="3" name="SurfaceReinforcement2" required="true">
       <eType href="ifc-ecore.json#//IfcLengthMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ShearReinforcement">
@@ -7313,7 +7313,7 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcTableRow">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="RowCells" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="RowCells" required="true">
       <eType href="ifc-ecore.json#//IfcValue" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="IsHeading">
@@ -8114,10 +8114,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="Directrix" required="true">
       <eType href="ifc-ecore.json#//IfcCurve" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="2" name="CrossSectionPositions" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="-1" name="CrossSectionPositions" required="true">
       <eType href="ifc-ecore.json#//IfcDistanceExpression" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="2" name="CrossSections" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="-1" name="CrossSections" required="true">
       <eType href="ifc-ecore.json#//IfcProfileDef" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="FixedAxisVertical" required="true">
@@ -8132,16 +8132,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfcOpenCrossProfileDef">
     <eSuperTypes href="ifc-ecore.json#//IfcProfileDef" xsi:type="ecore:EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Widths" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Widths" required="true">
       <eType href="ifc-ecore.json#//IfcNonNegativeLengthMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" name="HorizontalWidths" required="true">
       <eType href="ifc-ecore.json#//IfcBoolean" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="1" name="Slopes" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" upperBound="-1" name="Slopes" required="true">
       <eType href="ifc-ecore.json#//IfcPlaneAngleMeasure" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" upperBound="-1" lowerBound="2" name="Tags" required="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="2" upperBound="-1" name="Tags" required="true">
       <eType href="ifc-ecore.json#//IfcLabel" xsi:type="ecore:EClass"/>
     </eStructuralFeatures>
   </eClassifiers>

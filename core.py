@@ -1,3 +1,9 @@
+"""
+(Partially) serializes the IFC-UML data model to Ecore in XMI and EMFJSON
+
+:next => fanout.py
+"""
+
 from bs4 import BeautifulSoup
 from pyecore.resources.xmi import XMIResource
 from pyecore.resources.json import JsonResource
@@ -186,7 +192,7 @@ def save(pkg, targetfolder, name=PKGNAME):
     xmipath = str((targetfolder / (name +'.xmi')).resolve())
     jsonpath = str((targetfolder / (name +'.json')).resolve())
     xmi = XMIResource(URI(xmipath))
-    json = JsonResource(URI(jsonpath))
+    json = JsonResource(URI(jsonpath), indent=4)
     xmi.append(pkg)
     json.append(pkg)
     xmi.save()

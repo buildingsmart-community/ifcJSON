@@ -1,0 +1,33 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcGeometricRepresentationItem"
+        }
+    ],
+    "name": "IfcGeometricSet",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcGeometricSetSelect"
+            },
+            "upperBound": -1,
+            "lowerBound": 1,
+            "name": "Elements",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcDimensionCount"
+            },
+            "lowerBound": 1,
+            "name": "Dim",
+            "required": true
+        }
+    ]
+}

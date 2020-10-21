@@ -1,0 +1,31 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcPresentationItem"
+        }
+    ],
+    "name": "IfcIndexedColourMap",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcNormalisedRatioMeasure"
+            },
+            "name": "Opacity"
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcPositiveInteger"
+            },
+            "upperBound": -1,
+            "lowerBound": 1,
+            "name": "ColourIndex",
+            "required": true
+        }
+    ]
+}

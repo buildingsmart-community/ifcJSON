@@ -1,0 +1,17 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcPresentationStyleSelect"
+            },
+            "upperBound": -1,
+            "lowerBound": 1,
+            "name": "Styles",
+            "required": true
+        }
+    ],
+    "name": "IfcPresentationStyleAssignment"
+}

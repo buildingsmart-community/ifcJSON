@@ -1,0 +1,23 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcIndexedPolygonalFace"
+        }
+    ],
+    "name": "IfcIndexedPolygonalFaceWithVoids",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcPositiveInteger"
+            },
+            "upperBound": -1,
+            "lowerBound": 1,
+            "name": "InnerCoordIndices",
+            "required": true
+        }
+    ]
+}
