@@ -1,0 +1,38 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcConstraint"
+        }
+    ],
+    "name": "IfcObjective",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcLogicalOperatorEnum"
+            },
+            "name": "LogicalAggregator"
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcObjectiveEnum"
+            },
+            "lowerBound": 1,
+            "name": "ObjectiveQualifier",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcLabel"
+            },
+            "name": "UserDefinedQualifier"
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcPreDefinedProperties"
+        }
+    ],
+    "name": "IfcReinforcementBarProperties",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcAreaMeasure"
+            },
+            "lowerBound": 1,
+            "name": "TotalCrossSectionArea",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcLabel"
+            },
+            "lowerBound": 1,
+            "name": "SteelGrade",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcReinforcingBarSurfaceEnum"
+            },
+            "name": "BarSurface"
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcLengthMeasure"
+            },
+            "name": "EffectiveDepth"
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcPositiveLengthMeasure"
+            },
+            "name": "NominalBarDiameter"
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcCountMeasure"
+            },
+            "name": "BarCount"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcSchedulingTime"
+        }
+    ],
+    "name": "IfcEventTime",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcDateTime"
+            },
+            "name": "ActualDate"
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcDateTime"
+            },
+            "name": "EarlyDate"
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcDateTime"
+            },
+            "name": "LateDate"
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcDateTime"
+            },
+            "name": "ScheduleDate"
+        }
+    ]
+}

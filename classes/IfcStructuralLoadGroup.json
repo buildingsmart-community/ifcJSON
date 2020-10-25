@@ -1,0 +1,48 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcGroup"
+        }
+    ],
+    "name": "IfcStructuralLoadGroup",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcActionTypeEnum"
+            },
+            "lowerBound": 1,
+            "name": "ActionType",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcActionSourceTypeEnum"
+            },
+            "lowerBound": 1,
+            "name": "ActionSource",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcRatioMeasure"
+            },
+            "name": "Coefficient"
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcLabel"
+            },
+            "name": "Purpose"
+        }
+    ]
+}

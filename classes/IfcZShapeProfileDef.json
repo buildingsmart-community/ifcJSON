@@ -1,0 +1,68 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcParameterizedProfileDef"
+        }
+    ],
+    "name": "IfcZShapeProfileDef",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcPositiveLengthMeasure"
+            },
+            "lowerBound": 1,
+            "name": "Depth",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcPositiveLengthMeasure"
+            },
+            "lowerBound": 1,
+            "name": "FlangeWidth",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcPositiveLengthMeasure"
+            },
+            "lowerBound": 1,
+            "name": "WebThickness",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcPositiveLengthMeasure"
+            },
+            "lowerBound": 1,
+            "name": "FlangeThickness",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcNonNegativeLengthMeasure"
+            },
+            "name": "FilletRadius"
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcNonNegativeLengthMeasure"
+            },
+            "name": "EdgeRadius"
+        }
+    ]
+}

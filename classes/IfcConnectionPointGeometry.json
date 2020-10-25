@@ -1,0 +1,30 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcConnectionGeometry"
+        }
+    ],
+    "name": "IfcConnectionPointGeometry",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcPointOrVertexPoint"
+            },
+            "lowerBound": 1,
+            "name": "PointOnRelatingElement",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcPointOrVertexPoint"
+            },
+            "name": "PointOnRelatedElement"
+        }
+    ]
+}

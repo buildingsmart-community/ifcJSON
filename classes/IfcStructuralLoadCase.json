@@ -1,0 +1,23 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcStructuralLoadGroup"
+        }
+    ],
+    "name": "IfcStructuralLoadCase",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcRatioMeasure"
+            },
+            "upperBound": 3,
+            "lowerBound": 3,
+            "name": "SelfWeightCoefficients",
+            "required": true
+        }
+    ]
+}

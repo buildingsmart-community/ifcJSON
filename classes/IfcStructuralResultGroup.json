@@ -1,0 +1,32 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcGroup"
+        }
+    ],
+    "name": "IfcStructuralResultGroup",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcAnalysisTheoryTypeEnum"
+            },
+            "lowerBound": 1,
+            "name": "TheoryType",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcBoolean"
+            },
+            "lowerBound": 1,
+            "name": "IsLinear",
+            "required": true
+        }
+    ]
+}
