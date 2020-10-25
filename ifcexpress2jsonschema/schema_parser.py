@@ -22,17 +22,13 @@ import re
 
 # schemaName = schemaName + "_2"
 
-expressSchema = open("./IFC4x2.exp", "r")
-expressSchemaResult = open("./IFC4x2-status.exp", "w")
+expressSchema = open("./ifcexpress2jsonschema/IFC4x2.exp", "r")
+expressSchemaResult = open("./ifcexpress2jsonschema/IFC4x2-status.exp", "w")
 print(expressSchema)
 
 schemaName = "IFC4x2"
-schemaNameType = schemaName + "-types"
-schemaNameEntities = schemaName + "-entities"
 
-jsonSchemaFile = open(schemaName + ".json", "w")
-jsonSchemaFileTypes = open(schemaNameType + ".json", "w")
-jsonSchemaFileEntities = open(schemaNameEntities + ".json", "w")
+jsonSchemaFile = open("./schemas/" + schemaName + "-from-express.json", "w")
 
 jsonSchema = {
     "$schema": "http://json-schema.org/draft-07/schema#",
@@ -50,23 +46,11 @@ jsonSchema = {
             },
         }
     },
+    "definitions": {
+    },
     "required": [
         "file_schema", "data"
     ]
-}
-jsonSchemaTypes = {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "ifcJSON4 Schema",
-    "description": "This is the subschema for IFC.JSON4 containing all IFC TYPES",
-    "definitions": {
-    }
-}
-jsonSchemaEntities = {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "ifcJSON4 Schema",
-    "description": "This is the subschema for IFC.JSON4 containing all IFC ENTITIES",
-    "definitions": {
-    }
 }
 ifcObject = {}
 protoType = {}
@@ -97,7 +81,7 @@ for line in expressSchema:
         ifcObject['type'] = 'object'
         ifcObject['properties'] = {}
         ifcObject['allOf'] = [
-            {'$ref': 'entities#/definitions/' + objectName}]
+            {'$ref': '#/definitions/' + objectName}]
 
         # Prevent use of custom properties
         # ifcObject['additionalProperties'] = False
@@ -247,12 +231,12 @@ for line in expressSchema:
                         # property names must be camelcase
                         layer = layer[0].lower() + layer[1:]
                         # if layer.startswith('Ifc'):
-                        #     propertyChild['items'] = { '$ref': 'types#/definitions/' + layer }
+                        #     propertyChild['items'] = { '$ref': '#/definitions/' + layer }
                         # else:
                         #     print(layer)
                         if layer in types:
                             propertyChild['items'] = {
-                                '$ref': 'types#/definitions/' + layer}
+                                '$ref': '#/definitions/' + layer}
                         else:
                             propertyChild['items'] = {
                                 '$ref': '#/definitions/' + layer}
@@ -269,7 +253,7 @@ for line in expressSchema:
                         "enum": [True, False, "UNKNOWN"]}
                 elif propertyValue in types:
                     objectProperties[propertyKey] = {
-                        '$ref': 'types#/definitions/' + propertyValue}
+                        '$ref': '#/definitions/' + propertyValue}
                 else:
                     objectProperties[propertyKey] = {
                         '$ref': '#/definitions/' + propertyValue}
@@ -289,9 +273,7 @@ for line in expressSchema:
             ifcObject['required'] = ["type"]
 
         jsonSchema['properties']['data']['items']['anyOf'].append(ifcObject)
-        # jsonSchemaEntities['definitions'][objectName] = ifcObject
-        jsonSchemaEntities['definitions'][objectName] = protoType
-        # jsonSchema['properties']['data']['items']['anyOf'].append({"$ref": "entities#/definitions/" + objectName})
+        jsonSchema['definitions'][objectName] = protoType
 
         # Reset object properties
         inverse = False
@@ -305,7 +287,7 @@ for line in expressSchema:
         protoType = {}
     elif line == 'END_TYPE;\n':
         expressSchemaResult.write('--' + line)
-        jsonSchemaTypes['definitions'][objectName] = ifcObject
+        jsonSchema['definitions'][objectName] = ifcObject
 
         # collect all types for checking later on
         types.append(objectName)
@@ -324,10 +306,7 @@ for line in expressSchema:
         expressSchemaResult.write(line)
 
 indent = 2
-json.dump(jsonSchema, jsonSchemaFile, indent=2)
-json.dump(jsonSchemaTypes, jsonSchemaFileTypes, indent=indent)
-json.dump(jsonSchemaEntities, jsonSchemaFileEntities, indent=indent)
+json.dump(jsonSchema, jsonSchemaFile, indent=indent)
 jsonSchemaFile.close()
-jsonSchemaFileEntities.close()
 expressSchemaResult.close()
 expressSchema.close()
