@@ -13489,7 +13489,11 @@
           "type": "array",
           "minItems": 2,
           "items": {
-            "$ref": "#/definitions/ifcCartesianPoint"
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "$ref": "#/definitions/ifcCartesianPoint"
+            }
           }
         },
         "surfaceForm": {
@@ -14298,10 +14302,14 @@
       "properties": {
         "coordList": {
           "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
+          "minItems": 1,
           "items": {
-            "$ref": "#/definitions/ifcLengthMeasure"
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "$ref": "#/definitions/ifcLengthMeasure"
+            }
           }
         },
         "tagList": {
@@ -14326,10 +14334,14 @@
       "properties": {
         "coordList": {
           "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
+          "minItems": 1,
           "items": {
-            "$ref": "#/definitions/ifcLengthMeasure"
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "$ref": "#/definitions/ifcLengthMeasure"
+            }
           }
         },
         "tagList": {
@@ -14709,10 +14721,14 @@
       "properties": {
         "colourList": {
           "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
+          "minItems": 1,
           "items": {
-            "$ref": "#/definitions/ifcNormalisedRatioMeasure"
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "$ref": "#/definitions/ifcNormalisedRatioMeasure"
+            }
           }
         }
       },
@@ -18443,9 +18459,13 @@
       "properties": {
         "innerCoordIndices": {
           "type": "array",
-          "minItems": 3,
+          "minItems": 1,
           "items": {
-            "$ref": "#/definitions/ifcPositiveInteger"
+            "type": "array",
+            "minItems": 3,
+            "items": {
+              "$ref": "#/definitions/ifcPositiveInteger"
+            }
           }
         }
       },
@@ -18483,10 +18503,14 @@
       "properties": {
         "texCoordIndex": {
           "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
+          "minItems": 1,
           "items": {
-            "$ref": "#/definitions/ifcPositiveInteger"
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "$ref": "#/definitions/ifcPositiveInteger"
+            }
           }
         }
       },
@@ -19387,11 +19411,7 @@
         "offsetDirection": {
           "$ref": "#/definitions/ifcLayerSetDirectionEnum"
         },
-        "offsetValues": {
-          "items": {
-            "$ref": "#/definitions/ifcLengthMeasure"
-          }
-        }
+        "offsetValues": {}
       },
       "allOf": [
         {
@@ -19522,11 +19542,7 @@
     "ifcMaterialProfileWithOffsets": {
       "type": "object",
       "properties": {
-        "offsetValues": {
-          "items": {
-            "$ref": "#/definitions/ifcLengthMeasure"
-          }
-        }
+        "offsetValues": {}
       },
       "allOf": [
         {
@@ -21777,7 +21793,11 @@
           "type": "array",
           "minItems": 2,
           "items": {
-            "$ref": "#/definitions/ifcReal"
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "$ref": "#/definitions/ifcReal"
+            }
           }
         }
       },
@@ -24593,9 +24613,13 @@
         "locations": {
           "type": "array",
           "minItems": 1,
-          "maxItems": 2,
           "items": {
-            "$ref": "#/definitions/ifcLengthMeasure"
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2,
+            "items": {
+              "$ref": "#/definitions/ifcLengthMeasure"
+            }
           }
         }
       },
@@ -26197,10 +26221,14 @@
       "properties": {
         "texCoordsList": {
           "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
+          "minItems": 1,
           "items": {
-            "$ref": "#/definitions/ifcParameterValue"
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "$ref": "#/definitions/ifcParameterValue"
+            }
           }
         }
       },
@@ -26438,10 +26466,14 @@
       "properties": {
         "normals": {
           "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
+          "minItems": 1,
           "items": {
-            "$ref": "#/definitions/ifcParameterValue"
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "$ref": "#/definitions/ifcParameterValue"
+            }
           }
         },
         "closed": {
@@ -26449,10 +26481,14 @@
         },
         "coordIndex": {
           "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
+          "minItems": 1,
           "items": {
-            "$ref": "#/definitions/ifcPositiveInteger"
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "$ref": "#/definitions/ifcPositiveInteger"
+            }
           }
         },
         "pnIndex": {

@@ -15,6 +15,21 @@ import os
 import json
 import re
 
+class JsonSchemaArray():
+    def __init__(self, express_string):
+        self.schema = {}
+        self.schema["type"] = "array"
+        express_string = express_string.replace('LIST ', '')
+        express_string = express_string.replace('SET ', '')
+        item = express_string.replace('[', '').replace(']', '').split(':')
+        if item[0] != '?':
+            self.schema['minItems'] = int(item[0])
+        if item[1] != '?':
+            self.schema['maxItems'] = int(item[1])
+
+    def set_items(self, items):
+        self.schema['items'] = items
+
 # expressSchemaPath = "../"
 # schemaName = "IFC4x2"
 # expressSchema = open(os.path.join(expressSchemaPath, schemaName + ".exp"), "r")
@@ -216,30 +231,19 @@ for line in expressSchema:
 
                     # extract LISTS and SETS
                     if layer.startswith('LIST') or layer.startswith('SET'):
-                        print(line)
-                        propertyChild["type"] = "array"
-                        layer = layer.replace('LIST ', '')
-                        layer = layer.replace('SET ', '')
-                        item = layer.replace(
-                            '[', '').replace(']', '').split(':')
-                        if item[0] != '?':
-                            propertyChild['minItems'] = int(item[0])
-                        if item[1] != '?':
-                            propertyChild['maxItems'] = int(item[1])
-                    else:
+                        schema_array = JsonSchemaArray(layer).schema
 
+                        # (!) TODO This hack overwrites 'items' multiple times
                         # property names must be camelcase
-                        layer = layer[0].lower() + layer[1:]
-                        # if layer.startswith('Ifc'):
-                        #     propertyChild['items'] = { '$ref': '#/definitions/' + layer }
-                        # else:
-                        #     print(layer)
-                        if layer in types:
-                            propertyChild['items'] = {
-                                '$ref': '#/definitions/' + layer}
+                        layer_name = layers[-1][0].lower() + layers[-1][1:]
+                        schema_array['items'] = {
+                            '$ref': '#/definitions/' + layer_name}
+                        
+                        if propertyChild:
+                            propertyChild['items'] = schema_array
                         else:
-                            propertyChild['items'] = {
-                                '$ref': '#/definitions/' + layer}
+                            propertyChild = schema_array
+
                 objectProperties[propertyKey] = propertyChild
             else:
 
