@@ -31,6 +31,8 @@ class IFC2JSON:
     """Base class for all IFC SPF to IFC.JSON writers
     """
 
+    VERSION = '0.0.1'
+
     DIMENSIONALEXPONENTS = {
         'METRE': (1, 0, 0, 0, 0, 0, 0),
         'SQUARE_METRE': (2, 0, 0, 0, 0, 0, 0),

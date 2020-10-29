@@ -35,6 +35,7 @@ from ifcopenshell.entity_instance import entity_instance
 
 
 class IFC2JSON5a(common.IFC2JSON):
+    SCHEMA_VERSION = '0.0.1'
 
     # Attributes that are not part of IFC.JSON5a
     INVALIDATTRIBUTES = {
@@ -159,8 +160,11 @@ class IFC2JSON5a(common.IFC2JSON):
         jsonObjects = jsonObjects + list(self.representations.values())
 
         return {
-            'fileSchema': 'IFC.JSON-5a',
-            'originatingSystem': 'IFC2JSON_python',
+            'type': 'IFC.JSON-5a',
+            'version': self.SCHEMA_VERSION,
+            'schemaIdentifier': self.ifcModel.wrapped_data.schema,
+            'originatingSystem': 'IFC2JSON_python Version ' + self.VERSION,
+            'preprocessorVersion': 'IfcOpenShell ' + ifcopenshell.version,
             'timeStamp': datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
             'data': jsonObjects
         }

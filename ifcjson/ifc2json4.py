@@ -35,6 +35,7 @@ from ifcopenshell.entity_instance import entity_instance
 
 
 class IFC2JSON4(common.IFC2JSON):
+    SCHEMA_VERSION = '0.0.1'
 
     settings = ifcopenshell.geom.settings()
     settings.set(settings.USE_WORLD_COORDS, False)
@@ -59,6 +60,12 @@ class IFC2JSON4(common.IFC2JSON):
             self.ifcModel = ifcModel
         else:
             self.ifcModel = ifcopenshell.open(ifcModel)
+        # input(dir(self.ifcModel.wrapped_data.header))
+        # input(self.ifcModel.wrapped_data.header)
+        # print(dir(self.ifcModel.wrapped_data.header.file_description))
+        # if self.ifcModel.wrapped_data.header.file_description.this:
+        #     print(self.ifcModel.wrapped_data.header.file_description[0])
+        # input()
         self.COMPACT = COMPACT
         self.INCLUDE_INVERSE = INCLUDE_INVERSE
         self.EMPTY_PROPERTIES = EMPTY_PROPERTIES
@@ -128,8 +135,11 @@ class IFC2JSON4(common.IFC2JSON):
             jsonObjects.append(self.createFullObject(entityAttributes))
 
         return {
-            'fileSchema': 'IFC.JSON-4',
-            'originatingSystem': 'IFC2JSON_python',
+            'type': 'IFC.JSON',
+            'version': self.SCHEMA_VERSION,
+            'schemaIdentifier': self.ifcModel.wrapped_data.schema,
+            'originatingSystem': 'IFC2JSON_python Version ' + self.VERSION,
+            'preprocessorVersion': 'IfcOpenShell ' + ifcopenshell.version,
             'timeStamp': datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
             'data': jsonObjects
         }
