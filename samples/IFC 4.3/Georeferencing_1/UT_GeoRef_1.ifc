@@ -1,0 +1,63 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION (('ViewDefinition [NotDefinedYet]'), '2;1');
+FILE_NAME ('IR-Road-WP5_Scenario_GeoRef_1.ifc', '2019-06-12T19:53:36', (''), (''), 'IfcEngine 609', 'ProVI and SublimeText', '');
+FILE_SCHEMA (('IFC4X3_RC1'));
+ENDSEC;
+DATA;
+
+/* ------- General definitions ----------------------------------------------------------------- */
+#1 = IFCDIMENSIONALEXPONENTS(0, 0, 0, 0, 0, 0, 0);
+/* ------- Global X direction ------------------------------------------------------------------ */
+#2 = IFCDIRECTION((1., 0., 0.));
+/* ------- Global Y direction ------------------------------------------------------------------ */
+#3 = IFCDIRECTION((0., 1., 0.));
+/* ------- Global Z direction ------------------------------------------------------------------ */
+#4 = IFCDIRECTION((0., 0., 1.));
+/* ------- Global origin ----------------------------------------------------------------------- */
+#5 = IFCCARTESIANPOINT((0., 0., 0.));
+/* ------- IfcOwnerHistory contain information about the person and organization --------------- */
+/* ------- that produced this file ------------------------------------------------------------- */
+#6 = IFCOWNERHISTORY(#11, #15, $, .ADDED., $, $, $, 1548096817);
+#7 = IFCACTORROLE(.CIVILENGINEER., $, $);
+#8 = IFCPOSTALADDRESS(.OFFICE., $, $, $, ('Arcisstra\X2\00DF\X0\e 21'), $, 'M\X2\00FC\X0\nchen', 'Bayern', '80333', 'Deutschland');
+#9 = IFCPERSON($, 'Jaud', '\X2\0160\X0\tefan', $, $, $, (#7), (#8));
+#10 = IFCORGANIZATION($, 'TUM', $, (#7), (#8));
+#11 = IFCPERSONANDORGANIZATION(#9, #10, (#7));
+#12 = IFCACTORROLE(.USERDEFINED., 'Softwareentwickler', $);
+#13 = IFCPOSTALADDRESS(.OFFICE., 'Main office', $, 'MUC/IT', ('Garmischer Stra\X2\00DF\X0\e 19-21'), $, 'M\X2\00FC\X0\nchen', 'Bayern', '81373', 'Germany');
+#14 = IFCORGANIZATION($, 'ProVI GmbH', 'www.provi-cad.de', (#12), (#13));
+#15 = IFCAPPLICATION(#14, '6.0', 'Programmsystem f\X2\00FC\X0\r Verkehrs- und Infrastrukturplanung', 'ProVI');
+
+/* ------- IfcProject is the top most element in the project structure ------------------------- */
+#16 = IFCPROJECT('2DAvEupIz0HQr73cMaawtY', #6, 'GeoRef_1', 'Test adapted from ProVI', $, $, $, (#28), #17);
+/* ------- IfcUnitAssignment defines the global units for measures and values ------------------ */
+/* ------- when the units are not otherwise defined -------------------------------------------- */
+#17 = IFCUNITASSIGNMENT((#18, #19, #20, #24, #25, #26, #27));
+#18 = IFCSIUNIT(*, .LENGTHUNIT., $, .METRE.);
+#19 = IFCSIUNIT(*, .AREAUNIT., $, .SQUARE_METRE.);
+#20 = IFCSIUNIT(*, .VOLUMEUNIT., $, .CUBIC_METRE.);
+#21 = IFCDIMENSIONALEXPONENTS(0, 0, 0, 0, 0, 0, 0);
+#22 = IFCSIUNIT(*, .PLANEANGLEUNIT., $, .RADIAN.);
+#23 = IFCMEASUREWITHUNIT(IFCPLANEANGLEMEASURE(1.5707963267949E-2), #22);
+#24 = IFCCONVERSIONBASEDUNIT(#21, .PLANEANGLEUNIT., 'GRADIAN', #23);
+#25 = IFCSIUNIT(*, .MASSUNIT., .KILO., .GRAM.);
+#26 = IFCSIUNIT(*, .TIMEUNIT., $, .SECOND.);
+#27 = IFCMONETARYUNIT('EUR');
+/* ------- IfcGeometricRepresentationContext is the global context of the data ----------------- */
+#28 = IFCGEOMETRICREPRESENTATIONCONTEXT($, 'Model', 3, 1.E-6, #29, #3);
+#29 = IFCAXIS2PLACEMENT3D(#5, #4, #2);
+/* ------- ProjectedCRS provides information about the underlying geodetic --------------------- */
+/* ------- coordinate reference system --------------------------------------------------------- */
+#30 = IFCPROJECTEDCRS('EPSG:5834', 'DB_REF / 3-degree Gauss-Kruger zone 4 (E-N) + DHHN92 height', 'EPSG:5684', 'EPSG:5783', 'Gauss-Kruger', '4', #18);
+/* ------- MapConversion provides information about the global-to-local transformation --------- */
+#31 = IFCMAPCONVERSION(#28, #30, 4468005., 5334600., 515., 1., 0., 1.);
+
+/* ------- IfcSite is the top most element in the spatial structure ---------------------------- */
+#32 = IFCSITE('27H$neCQf1NwtmczxBInPR', #6, $, $, $, #33, $, $, .ELEMENT., $, $, $, $, $);
+#33 = IFCLOCALPLACEMENT($, #34);
+#34 = IFCAXIS2PLACEMENT3D(#5, #4, #2);
+#35 = IFCRELAGGREGATES('3Hu7f6BmT14B_XS9yS78Jr', #6, $, $, #16, (#32));
+
+ENDSEC;
+END-ISO-10303-21;

@@ -1,0 +1,350 @@
+{
+  "type": "IFC.JSON",
+  "version": "0.0.1",
+  "schemaIdentifier": "IFC4X3_RC1",
+  "originatingSystem": "IFC2JSON_python Version 0.0.1",
+  "preprocessorVersion": "IfcOpenShell 0.6.0b0",
+  "timeStamp": "2020-10-30T00:19:14",
+  "data": [
+    {
+      "type": "IfcProject",
+      "globalId": "8d2b93b8-cd2f-4045-ad47-0e65a493ade2",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "3f20c929-264c-4716-a8f6-e1676ca4de59"
+      },
+      "name": "GeoRef_1",
+      "description": "Test adapted from ProVI",
+      "representationContexts": [
+        {
+          "type": "IfcGeometricRepresentationContext",
+          "ref": "6ea0d71d-4930-4a44-8de0-328c71235745"
+        }
+      ],
+      "unitsInContext": {
+        "type": "IfcUnitAssignment",
+        "units": [
+          {
+            "type": "IfcSIUnit",
+            "unitType": "LENGTHUNIT",
+            "name": "METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "AREAUNIT",
+            "name": "SQUARE_METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "VOLUMEUNIT",
+            "name": "CUBIC_METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 3
+            }
+          },
+          {
+            "type": "IfcConversionBasedUnit",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "lengthExponent": 0,
+              "massExponent": 0,
+              "timeExponent": 0,
+              "electricCurrentExponent": 0,
+              "thermodynamicTemperatureExponent": 0,
+              "amountOfSubstanceExponent": 0,
+              "luminousIntensityExponent": 0
+            },
+            "unitType": "PLANEANGLEUNIT",
+            "name": "GRADIAN",
+            "conversionFactor": {
+              "type": "IfcMeasureWithUnit",
+              "valueComponent": {
+                "type": "IfcPlaneAngleMeasure",
+                "value": 0.015707963267949
+              },
+              "unitComponent": {
+                "type": "IfcSIUnit",
+                "unitType": "PLANEANGLEUNIT",
+                "name": "RADIAN",
+                "dimensions": {
+                  "type": "IfcDimensionalExponents"
+                }
+              }
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "MASSUNIT",
+            "prefix": "KILO",
+            "name": "GRAM",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "MassExponent": 1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "TIMEUNIT",
+            "name": "SECOND",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "TimeExponent": 1
+            }
+          },
+          {
+            "type": "IfcMonetaryUnit",
+            "currency": "EUR"
+          }
+        ]
+      },
+      "isDecomposedBy": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "d1e07a46-2f07-4110-bfa1-709f1c1c84f5"
+        }
+      ]
+    },
+    {
+      "type": "IfcSite",
+      "globalId": "8747fc68-31aa-415f-adf0-9bdecb4b165b",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "3f20c929-264c-4716-a8f6-e1676ca4de59"
+      },
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "axis": {
+            "type": "IfcDirection",
+            "directionRatios": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "refDirection": {
+            "type": "IfcDirection",
+            "directionRatios": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "compositionType": "ELEMENT",
+      "decomposes": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "d1e07a46-2f07-4110-bfa1-709f1c1c84f5"
+        }
+      ]
+    },
+    {
+      "type": "IfcOwnerHistory",
+      "owningUser": {
+        "type": "IfcPersonAndOrganization",
+        "thePerson": {
+          "type": "IfcPerson",
+          "familyName": "Jaud",
+          "givenName": "\u0160tefan",
+          "roles": [
+            {
+              "type": "IfcActorRole",
+              "role": "CIVILENGINEER"
+            }
+          ],
+          "addresses": [
+            {
+              "type": "IfcPostalAddress",
+              "purpose": "OFFICE",
+              "addressLines": [
+                "Arcisstra\u00dfe 21"
+              ],
+              "town": "M\u00fcnchen",
+              "region": "Bayern",
+              "postalCode": "80333",
+              "country": "Deutschland"
+            }
+          ]
+        },
+        "theOrganization": {
+          "type": "IfcOrganization",
+          "name": "TUM",
+          "roles": [
+            {
+              "type": "IfcActorRole",
+              "role": "CIVILENGINEER"
+            }
+          ],
+          "addresses": [
+            {
+              "type": "IfcPostalAddress",
+              "purpose": "OFFICE",
+              "addressLines": [
+                "Arcisstra\u00dfe 21"
+              ],
+              "town": "M\u00fcnchen",
+              "region": "Bayern",
+              "postalCode": "80333",
+              "country": "Deutschland"
+            }
+          ]
+        },
+        "roles": [
+          {
+            "type": "IfcActorRole",
+            "role": "CIVILENGINEER"
+          }
+        ]
+      },
+      "owningApplication": {
+        "type": "IfcApplication",
+        "applicationDeveloper": {
+          "type": "IfcOrganization",
+          "name": "ProVI GmbH",
+          "description": "www.provi-cad.de",
+          "roles": [
+            {
+              "type": "IfcActorRole",
+              "role": "USERDEFINED",
+              "userDefinedRole": "Softwareentwickler"
+            }
+          ],
+          "addresses": [
+            {
+              "type": "IfcPostalAddress",
+              "purpose": "OFFICE",
+              "description": "Main office",
+              "internalLocation": "MUC/IT",
+              "addressLines": [
+                "Garmischer Stra\u00dfe 19-21"
+              ],
+              "town": "M\u00fcnchen",
+              "region": "Bayern",
+              "postalCode": "81373",
+              "country": "Germany"
+            }
+          ]
+        },
+        "version": "6.0",
+        "applicationFullName": "Programmsystem f\u00fcr Verkehrs- und Infrastrukturplanung",
+        "applicationIdentifier": "ProVI"
+      },
+      "changeAction": "ADDED",
+      "creationDate": 1548096817,
+      "globalId": "3f20c929-264c-4716-a8f6-e1676ca4de59"
+    },
+    {
+      "type": "IfcGeometricRepresentationContext",
+      "contextType": "Model",
+      "coordinateSpaceDimension": 3,
+      "precision": 1e-06,
+      "worldCoordinateSystem": {
+        "type": "IfcAxis2Placement3D",
+        "location": {
+          "type": "IfcCartesianPoint",
+          "coordinates": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "axis": {
+          "type": "IfcDirection",
+          "directionRatios": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "refDirection": {
+          "type": "IfcDirection",
+          "directionRatios": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trueNorth": {
+        "type": "IfcDirection",
+        "directionRatios": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "hasCoordinateOperation": [
+        {
+          "type": "IfcMapConversion",
+          "sourceCRS": {
+            "type": "IfcGeometricRepresentationContext",
+            "ref": "6ea0d71d-4930-4a44-8de0-328c71235745"
+          },
+          "targetCRS": {
+            "type": "IfcProjectedCRS",
+            "name": "EPSG:5834",
+            "description": "DB_REF / 3-degree Gauss-Kruger zone 4 (E-N) + DHHN92 height",
+            "geodeticDatum": "EPSG:5684",
+            "verticalDatum": "EPSG:5783",
+            "mapProjection": "Gauss-Kruger",
+            "mapZone": "4",
+            "mapUnit": {
+              "type": "IfcSIUnit",
+              "unitType": "LENGTHUNIT",
+              "name": "METRE",
+              "dimensions": {
+                "type": "IfcDimensionalExponents",
+                "LengthExponent": 1
+              }
+            }
+          },
+          "eastings": 4468005.0,
+          "northings": 5334600.0,
+          "orthogonalHeight": 515.0,
+          "xAxisAbscissa": 1.0,
+          "xAxisOrdinate": 0.0,
+          "scale": 1.0
+        }
+      ],
+      "globalId": "6ea0d71d-4930-4a44-8de0-328c71235745"
+    },
+    {
+      "type": "IfcRelAggregates",
+      "globalId": "d1e07a46-2f07-4110-bfa1-709f1c1c84f5",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "3f20c929-264c-4716-a8f6-e1676ca4de59"
+      },
+      "relatingObject": {
+        "type": "IfcProject",
+        "ref": "8d2b93b8-cd2f-4045-ad47-0e65a493ade2"
+      },
+      "relatedObjects": [
+        {
+          "type": "IfcSite",
+          "ref": "8747fc68-31aa-415f-adf0-9bdecb4b165b"
+        }
+      ]
+    }
+  ]
+}

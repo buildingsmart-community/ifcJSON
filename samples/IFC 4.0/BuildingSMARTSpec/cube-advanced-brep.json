@@ -1,0 +1,2085 @@
+{
+  "type": "IFC.JSON",
+  "version": "0.0.1",
+  "schemaIdentifier": "IFC4",
+  "originatingSystem": "IFC2JSON_python Version 0.0.1",
+  "preprocessorVersion": "IfcOpenShell 0.6.0b0",
+  "timeStamp": "2020-10-30T00:18:57",
+  "data": [
+    {
+      "type": "IfcProject",
+      "globalId": "b27498a2-95cd-4b7a-aaf7-a3b98a9a5bde",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "26ef3557-1652-4371-b09a-5c09fbbc4a14"
+      },
+      "name": "Grasshopper Project",
+      "longName": "Grasshopper Project",
+      "representationContexts": [
+        {
+          "type": "IfcGeometricRepresentationContext",
+          "ref": "6e9e4413-9903-46bf-af3e-a27b2ef2a29c"
+        }
+      ],
+      "unitsInContext": {
+        "type": "IfcUnitAssignment",
+        "units": [
+          {
+            "type": "IfcSIUnit",
+            "unitType": "LENGTHUNIT",
+            "name": "METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "AREAUNIT",
+            "name": "SQUARE_METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "VOLUMEUNIT",
+            "name": "CUBIC_METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 3
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "PLANEANGLEUNIT",
+            "name": "RADIAN",
+            "dimensions": {
+              "type": "IfcDimensionalExponents"
+            }
+          }
+        ]
+      },
+      "isDecomposedBy": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "8c0568ec-574e-4208-8330-e82da31da658"
+        }
+      ]
+    },
+    {
+      "type": "IfcBuilding",
+      "globalId": "f4f72f0c-67c0-4cde-97c2-0c76efa09ff7",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "26ef3557-1652-4371-b09a-5c09fbbc4a14"
+      },
+      "name": "Grasshopper Building",
+      "description": "GH Building",
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "axis": {
+            "type": "IfcDirection",
+            "directionRatios": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "refDirection": {
+            "type": "IfcDirection",
+            "directionRatios": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "compositionType": "ELEMENT",
+      "decomposes": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "8c0568ec-574e-4208-8330-e82da31da658"
+        }
+      ],
+      "containsElements": [
+        {
+          "type": "IfcRelContainedInSpatialStructure",
+          "ref": "15baecb3-6625-477c-a5d6-56b8cdb6ebb4"
+        }
+      ]
+    },
+    {
+      "type": "IfcBuildingElementProxy",
+      "globalId": "6b58b9d8-ba0b-4782-b302-bb9aa3cc410f",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "26ef3557-1652-4371-b09a-5c09fbbc4a14"
+      },
+      "name": "BuildingElementProxy",
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "axis": {
+            "type": "IfcDirection",
+            "directionRatios": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "refDirection": {
+            "type": "IfcDirection",
+            "directionRatios": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "representation": {
+        "type": "IfcProductDefinitionShape",
+        "representations": [
+          {
+            "type": "IfcShapeRepresentation",
+            "ref": "feee21cc-2cd2-49b2-b20d-789e7635be74"
+          }
+        ]
+      },
+      "predefinedType": "NOTDEFINED",
+      "containedInStructure": [
+        {
+          "type": "IfcRelContainedInSpatialStructure",
+          "ref": "15baecb3-6625-477c-a5d6-56b8cdb6ebb4"
+        }
+      ]
+    },
+    {
+      "type": "IfcShapeRepresentation",
+      "contextOfItems": {
+        "type": "IfcGeometricRepresentationContext",
+        "ref": "6e9e4413-9903-46bf-af3e-a27b2ef2a29c"
+      },
+      "representationIdentifier": "Body",
+      "representationType": "AdvancedBrep",
+      "items": [
+        {
+          "type": "IfcAdvancedBrep",
+          "outer": {
+            "type": "IfcClosedShell",
+            "cfsFaces": [
+              {
+                "type": "IfcAdvancedFace",
+                "bounds": [
+                  {
+                    "type": "IfcFaceOuterBound",
+                    "bound": {
+                      "type": "IfcEdgeLoop",
+                      "edgeList": [
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.5,
+                                  -0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.5,
+                                  0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.5,
+                                    -0.5
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.5,
+                                    0.5
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.5,
+                                  0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.5,
+                                  0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.5,
+                                    0.5
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.5,
+                                    0.5
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.5,
+                                  0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.5,
+                                  -0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.5,
+                                    0.5
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.5,
+                                    -0.5
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.5,
+                                  -0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.5,
+                                  -0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.5,
+                                    -0.5
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.5,
+                                    -0.5
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        }
+                      ]
+                    },
+                    "orientation": true
+                  }
+                ],
+                "faceSurface": {
+                  "type": "IfcPlane",
+                  "position": {
+                    "type": "IfcAxis2Placement3D",
+                    "location": {
+                      "type": "IfcCartesianPoint",
+                      "coordinates": [
+                        -0.5,
+                        -0.5,
+                        0.0
+                      ]
+                    },
+                    "axis": {
+                      "type": "IfcDirection",
+                      "directionRatios": [
+                        0.0,
+                        0.0,
+                        -1.0
+                      ]
+                    },
+                    "refDirection": {
+                      "type": "IfcDirection",
+                      "directionRatios": [
+                        1.0,
+                        0.0,
+                        0.0
+                      ]
+                    }
+                  }
+                },
+                "sameSense": true
+              },
+              {
+                "type": "IfcAdvancedFace",
+                "bounds": [
+                  {
+                    "type": "IfcFaceOuterBound",
+                    "bound": {
+                      "type": "IfcEdgeLoop",
+                      "edgeList": [
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.683012701892219,
+                                  -0.183012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.183012701892219,
+                                  -0.683012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.683012701892219,
+                                    -0.183012701892219,
+                                    1.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.183012701892219,
+                                    -0.683012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.183012701892219,
+                                  -0.683012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.683012701892219,
+                                  0.183012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.183012701892219,
+                                    -0.683012701892219,
+                                    1.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.683012701892219,
+                                    0.183012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.683012701892219,
+                                  0.183012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.183012701892219,
+                                  0.683012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.683012701892219,
+                                    0.183012701892219,
+                                    1.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.183012701892219,
+                                    0.683012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.183012701892219,
+                                  0.683012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.683012701892219,
+                                  -0.183012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.183012701892219,
+                                    0.683012701892219,
+                                    1.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.683012701892219,
+                                    -0.183012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        }
+                      ]
+                    },
+                    "orientation": true
+                  }
+                ],
+                "faceSurface": {
+                  "type": "IfcPlane",
+                  "position": {
+                    "type": "IfcAxis2Placement3D",
+                    "location": {
+                      "type": "IfcCartesianPoint",
+                      "coordinates": [
+                        -0.683012701892219,
+                        -0.183012701892219,
+                        1.0
+                      ]
+                    },
+                    "axis": {
+                      "type": "IfcDirection",
+                      "directionRatios": [
+                        0.0,
+                        0.0,
+                        1.0
+                      ]
+                    },
+                    "refDirection": {
+                      "type": "IfcDirection",
+                      "directionRatios": [
+                        -0.5,
+                        -0.8660254,
+                        0.0
+                      ]
+                    }
+                  }
+                },
+                "sameSense": true
+              },
+              {
+                "type": "IfcAdvancedFace",
+                "bounds": [
+                  {
+                    "type": "IfcFaceOuterBound",
+                    "bound": {
+                      "type": "IfcEdgeLoop",
+                      "edgeList": [
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.5,
+                                  0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.683012701892219,
+                                  -0.183012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.5,
+                                    0.5,
+                                    0.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.683012701892219,
+                                    -0.183012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.683012701892219,
+                                  -0.183012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.183012701892219,
+                                  -0.683012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.683012701892219,
+                                    -0.183012701892219,
+                                    1.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.183012701892219,
+                                    -0.683012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.5,
+                                  -0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.183012701892219,
+                                  -0.683012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.5,
+                                    -0.5,
+                                    0.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.183012701892219,
+                                    -0.683012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": false
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.5,
+                                  -0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.5,
+                                  0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.5,
+                                    -0.5
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.5,
+                                    0.5
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        }
+                      ]
+                    },
+                    "orientation": true
+                  }
+                ],
+                "faceSurface": {
+                  "type": "IfcBSplineSurfaceWithKnots",
+                  "uDegree": 3,
+                  "vDegree": 1,
+                  "controlPointsList": [
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.5,
+                          0.5,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.5,
+                          -0.5,
+                          0.0
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.561004233964073,
+                          0.27232909936926,
+                          0.333333333333333
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.27232909936926,
+                          -0.561004233964073,
+                          0.333333333333333
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.622008467928146,
+                          0.0446581987385206,
+                          0.666666666666667
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.0446581987385206,
+                          -0.622008467928146,
+                          0.666666666666667
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.683012701892219,
+                          -0.183012701892219,
+                          1.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.183012701892219,
+                          -0.683012701892219,
+                          1.0
+                        ]
+                      }
+                    ]
+                  ],
+                  "surfaceForm": "UNSPECIFIED",
+                  "uClosed": false,
+                  "vClosed": false,
+                  "selfIntersect": false,
+                  "uMultiplicities": [
+                    4,
+                    4
+                  ],
+                  "vMultiplicities": [
+                    2,
+                    2
+                  ],
+                  "uKnots": [
+                    0.0,
+                    1224.74487139159
+                  ],
+                  "vKnots": [
+                    3.0,
+                    4.0
+                  ],
+                  "knotSpec": "UNSPECIFIED"
+                },
+                "sameSense": false
+              },
+              {
+                "type": "IfcAdvancedFace",
+                "bounds": [
+                  {
+                    "type": "IfcFaceOuterBound",
+                    "bound": {
+                      "type": "IfcEdgeLoop",
+                      "edgeList": [
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.5,
+                                  -0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.5,
+                                  -0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.5,
+                                    -0.5
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.5,
+                                    -0.5
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.5,
+                                  -0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.183012701892219,
+                                  -0.683012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.5,
+                                    -0.5,
+                                    0.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.183012701892219,
+                                    -0.683012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.183012701892219,
+                                  -0.683012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.683012701892219,
+                                  0.183012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.183012701892219,
+                                    -0.683012701892219,
+                                    1.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.683012701892219,
+                                    0.183012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.5,
+                                  -0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.683012701892219,
+                                  0.183012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.5,
+                                    -0.5,
+                                    0.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.683012701892219,
+                                    0.183012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": false
+                        }
+                      ]
+                    },
+                    "orientation": true
+                  }
+                ],
+                "faceSurface": {
+                  "type": "IfcBSplineSurfaceWithKnots",
+                  "uDegree": 3,
+                  "vDegree": 1,
+                  "controlPointsList": [
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.5,
+                          -0.5,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.5,
+                          -0.5,
+                          0.0
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.27232909936926,
+                          -0.561004233964073,
+                          0.333333333333333
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.561004233964073,
+                          -0.27232909936926,
+                          0.333333333333333
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.0446581987385206,
+                          -0.622008467928146,
+                          0.666666666666667
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.622008467928146,
+                          -0.0446581987385206,
+                          0.666666666666667
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.183012701892219,
+                          -0.683012701892219,
+                          1.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.683012701892219,
+                          0.183012701892219,
+                          1.0
+                        ]
+                      }
+                    ]
+                  ],
+                  "surfaceForm": "UNSPECIFIED",
+                  "uClosed": false,
+                  "vClosed": false,
+                  "selfIntersect": false,
+                  "uMultiplicities": [
+                    4,
+                    4
+                  ],
+                  "vMultiplicities": [
+                    2,
+                    2
+                  ],
+                  "uKnots": [
+                    0.0,
+                    1224.74487139159
+                  ],
+                  "vKnots": [
+                    0.0,
+                    1.0
+                  ],
+                  "knotSpec": "UNSPECIFIED"
+                },
+                "sameSense": false
+              },
+              {
+                "type": "IfcAdvancedFace",
+                "bounds": [
+                  {
+                    "type": "IfcFaceOuterBound",
+                    "bound": {
+                      "type": "IfcEdgeLoop",
+                      "edgeList": [
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.5,
+                                  0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.5,
+                                  -0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.5,
+                                    0.5
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.5,
+                                    -0.5
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.5,
+                                  -0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.683012701892219,
+                                  0.183012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.5,
+                                    -0.5,
+                                    0.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.683012701892219,
+                                    0.183012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.683012701892219,
+                                  0.183012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.183012701892219,
+                                  0.683012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.683012701892219,
+                                    0.183012701892219,
+                                    1.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.183012701892219,
+                                    0.683012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.5,
+                                  0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.183012701892219,
+                                  0.683012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.5,
+                                    0.5,
+                                    0.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.183012701892219,
+                                    0.683012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": false
+                        }
+                      ]
+                    },
+                    "orientation": true
+                  }
+                ],
+                "faceSurface": {
+                  "type": "IfcBSplineSurfaceWithKnots",
+                  "uDegree": 3,
+                  "vDegree": 1,
+                  "controlPointsList": [
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.5,
+                          -0.5,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.5,
+                          0.5,
+                          0.0
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.561004233964073,
+                          -0.27232909936926,
+                          0.333333333333333
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.27232909936926,
+                          0.561004233964073,
+                          0.333333333333333
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.622008467928146,
+                          -0.0446581987385206,
+                          0.666666666666667
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0446581987385206,
+                          0.622008467928146,
+                          0.666666666666667
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.683012701892219,
+                          0.183012701892219,
+                          1.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.183012701892219,
+                          0.683012701892219,
+                          1.0
+                        ]
+                      }
+                    ]
+                  ],
+                  "surfaceForm": "UNSPECIFIED",
+                  "uClosed": false,
+                  "vClosed": false,
+                  "selfIntersect": false,
+                  "uMultiplicities": [
+                    4,
+                    4
+                  ],
+                  "vMultiplicities": [
+                    2,
+                    2
+                  ],
+                  "uKnots": [
+                    0.0,
+                    1224.74487139159
+                  ],
+                  "vKnots": [
+                    1.0,
+                    2.0
+                  ],
+                  "knotSpec": "UNSPECIFIED"
+                },
+                "sameSense": false
+              },
+              {
+                "type": "IfcAdvancedFace",
+                "bounds": [
+                  {
+                    "type": "IfcFaceOuterBound",
+                    "bound": {
+                      "type": "IfcEdgeLoop",
+                      "edgeList": [
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.5,
+                                  0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.5,
+                                  0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.5,
+                                    0.5
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.5,
+                                    0.5
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.5,
+                                  0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.183012701892219,
+                                  0.683012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.5,
+                                    0.5,
+                                    0.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.183012701892219,
+                                    0.683012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.183012701892219,
+                                  0.683012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.683012701892219,
+                                  -0.183012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.183012701892219,
+                                    0.683012701892219,
+                                    1.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.683012701892219,
+                                    -0.183012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.5,
+                                  0.5,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  -0.683012701892219,
+                                  -0.183012701892219,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.5,
+                                    0.5,
+                                    0.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -0.683012701892219,
+                                    -0.183012701892219,
+                                    1.0
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": false
+                        }
+                      ]
+                    },
+                    "orientation": true
+                  }
+                ],
+                "faceSurface": {
+                  "type": "IfcBSplineSurfaceWithKnots",
+                  "uDegree": 3,
+                  "vDegree": 1,
+                  "controlPointsList": [
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.5,
+                          0.5,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.5,
+                          0.5,
+                          0.0
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.27232909936926,
+                          0.561004233964073,
+                          0.333333333333333
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.561004233964073,
+                          0.27232909936926,
+                          0.333333333333333
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0446581987385206,
+                          0.622008467928146,
+                          0.666666666666667
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.622008467928146,
+                          0.0446581987385206,
+                          0.666666666666667
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.183012701892219,
+                          0.683012701892219,
+                          1.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -0.683012701892219,
+                          -0.183012701892219,
+                          1.0
+                        ]
+                      }
+                    ]
+                  ],
+                  "surfaceForm": "UNSPECIFIED",
+                  "uClosed": false,
+                  "vClosed": false,
+                  "selfIntersect": false,
+                  "uMultiplicities": [
+                    4,
+                    4
+                  ],
+                  "vMultiplicities": [
+                    2,
+                    2
+                  ],
+                  "uKnots": [
+                    0.0,
+                    1224.74487139159
+                  ],
+                  "vKnots": [
+                    2.0,
+                    3.0
+                  ],
+                  "knotSpec": "UNSPECIFIED"
+                },
+                "sameSense": false
+              }
+            ]
+          }
+        }
+      ],
+      "ofProductRepresentation": [
+        {
+          "type": "IfcProductDefinitionShape",
+          "representations": [
+            {
+              "type": "IfcShapeRepresentation",
+              "ref": "feee21cc-2cd2-49b2-b20d-789e7635be74"
+            }
+          ]
+        }
+      ],
+      "globalId": "feee21cc-2cd2-49b2-b20d-789e7635be74"
+    },
+    {
+      "type": "IfcOwnerHistory",
+      "owningUser": {
+        "type": "IfcPersonAndOrganization",
+        "thePerson": {
+          "type": "IfcPerson",
+          "familyName": "Jon"
+        },
+        "theOrganization": {
+          "type": "IfcOrganization",
+          "name": "UNKNOWN"
+        }
+      },
+      "owningApplication": {
+        "type": "IfcApplication",
+        "applicationDeveloper": {
+          "type": "IfcOrganization",
+          "name": "Geometry Gym Pty Ltd"
+        },
+        "version": "0.5.35.0",
+        "applicationFullName": "ssiRhinoIFC - Geometry Gym Plug-in for Rhino3d",
+        "applicationIdentifier": "ssiRhinoIFC"
+      },
+      "changeAction": "ADDED",
+      "lastModifiedDate": 1338465163,
+      "creationDate": 1338465163,
+      "globalId": "26ef3557-1652-4371-b09a-5c09fbbc4a14"
+    },
+    {
+      "type": "IfcGeometricRepresentationContext",
+      "contextIdentifier": "Body",
+      "contextType": "Model",
+      "coordinateSpaceDimension": 3,
+      "precision": 1e-05,
+      "worldCoordinateSystem": {
+        "type": "IfcAxis2Placement3D",
+        "location": {
+          "type": "IfcCartesianPoint",
+          "coordinates": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "axis": {
+          "type": "IfcDirection",
+          "directionRatios": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "refDirection": {
+          "type": "IfcDirection",
+          "directionRatios": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trueNorth": {
+        "type": "IfcDirection",
+        "directionRatios": [
+          0.0,
+          1.0
+        ]
+      },
+      "representationsInContext": [
+        {
+          "type": "IfcShapeRepresentation",
+          "ref": "feee21cc-2cd2-49b2-b20d-789e7635be74"
+        }
+      ],
+      "globalId": "6e9e4413-9903-46bf-af3e-a27b2ef2a29c"
+    },
+    {
+      "type": "IfcRelContainedInSpatialStructure",
+      "globalId": "15baecb3-6625-477c-a5d6-56b8cdb6ebb4",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "26ef3557-1652-4371-b09a-5c09fbbc4a14"
+      },
+      "name": "Building",
+      "description": "Building Container for Elements",
+      "relatedElements": [
+        {
+          "type": "IfcBuildingElementProxy",
+          "ref": "6b58b9d8-ba0b-4782-b302-bb9aa3cc410f"
+        }
+      ],
+      "relatingStructure": {
+        "type": "IfcBuilding",
+        "ref": "f4f72f0c-67c0-4cde-97c2-0c76efa09ff7"
+      }
+    },
+    {
+      "type": "IfcRelAggregates",
+      "globalId": "8c0568ec-574e-4208-8330-e82da31da658",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "26ef3557-1652-4371-b09a-5c09fbbc4a14"
+      },
+      "name": "Project Container",
+      "description": "Project Container for Buildings",
+      "relatingObject": {
+        "type": "IfcProject",
+        "ref": "b27498a2-95cd-4b7a-aaf7-a3b98a9a5bde"
+      },
+      "relatedObjects": [
+        {
+          "type": "IfcBuilding",
+          "ref": "f4f72f0c-67c0-4cde-97c2-0c76efa09ff7"
+        }
+      ]
+    }
+  ]
+}
