@@ -8,18 +8,21 @@ IFC.JSON aims primarily at addressing the following problems with IFC:
 1. Many developers have never seen/used EXPRESS or STP instance files before, which increases the effort required to extract data required from them. 
 2. IFC instance populations are typically exchanged as files, which is at odds with linked, distributed, and rapidly changing data seen on most design and construction projects and products.
 
-Multiple strategies can be followed, leading to different kinds of JSON. This repository aims to specify an *prudent* JSON specification for IFC, following these criteria:
-- Backwards compatibility
+IFC.JSON seeks the best balance between a best practice JSON representation AND compatibility with the IFC source schema.
+
+Main focus:
+- Backward compatibility
 - Round-trip
 - Parallel to EXPRESS schema
 
-This means that the following criteria are NOT followed:
+To a lesser degree (Due to adhering to the IFC schema):
 - Human-readability
 - Integration with code
 - Clear referencing structure
 - Direct usability
 
-A more disruptive IFC.JSON version (2.0) is investigated in https://github.com/IFCJSON-Team/IFC.JSON-5Alpha.
+The initial standard will be developed based on IFC4 and more specifically IFC4.3.
+IFC5 developments will be closely followed, especially for expected improvements in human-readability.
 
 ## Getting started
 The repository is organised in three sections:
