@@ -1,0 +1,18 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcCartesianTransformationOperator"
+        }
+    ],
+    "name": "IfcCartesianTransformationOperator3D",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "lowerBound": 1,
+            "name": "U",
+            "required": true
+        }
+    ]
+}

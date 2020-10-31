@@ -1,0 +1,28 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcSweptAreaSolid"
+        }
+    ],
+    "name": "IfcRevolvedAreaSolid",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcPlaneAngleMeasure"
+            },
+            "lowerBound": 1,
+            "name": "Angle",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "lowerBound": 1,
+            "name": "AxisLine",
+            "required": true
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcCompositeCurveSegment"
+        }
+    ],
+    "name": "IfcReparametrisedCompositeCurveSegment",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcParameterValue"
+            },
+            "lowerBound": 1,
+            "name": "ParamLength",
+            "required": true
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcLightSource"
+        }
+    ],
+    "name": "IfcLightSourceGoniometric",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcThermodynamicTemperatureMeasure"
+            },
+            "lowerBound": 1,
+            "name": "ColourTemperature",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcLuminousFluxMeasure"
+            },
+            "lowerBound": 1,
+            "name": "LuminousFlux",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcLightEmissionSourceEnum"
+            },
+            "lowerBound": 1,
+            "name": "LightEmissionSource",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcLightDistributionDataSourceSelect"
+            },
+            "lowerBound": 1,
+            "name": "LightDistributionDataSource",
+            "required": true
+        }
+    ]
+}

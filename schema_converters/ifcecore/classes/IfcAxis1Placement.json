@@ -1,0 +1,18 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcPlacement"
+        }
+    ],
+    "name": "IfcAxis1Placement",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "lowerBound": 1,
+            "name": "Z",
+            "required": true
+        }
+    ]
+}

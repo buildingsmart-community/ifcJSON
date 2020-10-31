@@ -1,0 +1,17 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcLengthMeasure"
+            },
+            "upperBound": 3,
+            "lowerBound": 2,
+            "name": "OffsetDistances",
+            "required": true
+        }
+    ],
+    "name": "IfcVirtualGridIntersection"
+}

@@ -1,0 +1,30 @@
+{
+    "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+    "eSuperTypes": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+            "$ref": "#//IfcConnectionGeometry"
+        }
+    ],
+    "name": "IfcConnectionCurveGeometry",
+    "eStructuralFeatures": [
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcCurveOrEdgeCurve"
+            },
+            "lowerBound": 1,
+            "name": "CurveOnRelatingElement",
+            "required": true
+        },
+        {
+            "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EAttribute",
+            "eType": {
+                "eClass": "http://www.eclipse.org/emf/2002/Ecore#//EClass",
+                "$ref": "#//IfcCurveOrEdgeCurve"
+            },
+            "name": "CurveOnRelatedElement"
+        }
+    ]
+}
