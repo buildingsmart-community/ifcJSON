@@ -1,0 +1,2329 @@
+{
+  "type": "IFC.JSON",
+  "version": "0.0.1",
+  "schemaIdentifier": "IFC4",
+  "originatingSystem": "IFC2JSON_python Version 0.0.1",
+  "preprocessorVersion": "IfcOpenShell 0.6.0b0",
+  "timeStamp": "2020-10-30T00:18:54",
+  "data": [
+    {
+      "type": "IfcBuilding",
+      "globalId": "8d91ee6c-850e-434a-a40d-8c071ad7f532",
+      "name": "IfcBuilding",
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "compositionType": "ELEMENT",
+      "buildingAddress": {
+        "type": "IfcPostalAddress",
+        "region": "Unknown"
+      },
+      "decomposes": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "bfbf0a13-cad8-4c99-b548-4d0c0c90fe3e"
+        }
+      ],
+      "containsElements": [
+        {
+          "type": "IfcRelContainedInSpatialStructure",
+          "ref": "ab29227f-6983-42a0-8188-1cac703bb40a"
+        }
+      ]
+    },
+    {
+      "type": "IfcProject",
+      "globalId": "8fafd27b-0810-4652-92a7-3c69456667b8",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "e1045915-1d8e-412e-9616-9933634ca56e"
+      },
+      "name": "IfcProject",
+      "longName": "IfcProject",
+      "representationContexts": [
+        {
+          "type": "IfcGeometricRepresentationContext",
+          "ref": "ff261331-e6f5-4e77-b68e-5f376e36533f"
+        }
+      ],
+      "unitsInContext": {
+        "type": "IfcUnitAssignment",
+        "units": [
+          {
+            "type": "IfcSIUnit",
+            "unitType": "LENGTHUNIT",
+            "prefix": "MILLI",
+            "name": "METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "PLANEANGLEUNIT",
+            "name": "RADIAN",
+            "dimensions": {
+              "type": "IfcDimensionalExponents"
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "TIMEUNIT",
+            "name": "SECOND",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "TimeExponent": 1
+            }
+          }
+        ]
+      },
+      "isDecomposedBy": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "bfbf0a13-cad8-4c99-b548-4d0c0c90fe3e"
+        }
+      ]
+    },
+    {
+      "type": "IfcSanitaryTerminalType",
+      "globalId": "180d5ad0-373b-4d00-aac1-f88348fb62d8",
+      "name": "IFCSANITARYTERMINALTYPE",
+      "representationMaps": [
+        {
+          "type": "IfcRepresentationMap",
+          "mappingOrigin": {
+            "type": "IfcAxis2Placement3D",
+            "location": {
+              "type": "IfcCartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "mappedRepresentation": {
+            "type": "IfcShapeRepresentation",
+            "ref": "17eb922e-a0f1-47aa-bb62-abceccb29222"
+          }
+        }
+      ],
+      "predefinedType": "WASHHANDBASIN",
+      "hasAssociations": [
+        {
+          "type": "IfcRelAssociatesMaterial",
+          "ref": "c6174160-427b-4c7a-b567-f0d06b9943b4"
+        }
+      ],
+      "types": [
+        {
+          "type": "IfcRelDefinesByType",
+          "ref": "a99ef4e0-1c52-4aaf-bd87-c1b0679f20fb"
+        }
+      ]
+    },
+    {
+      "type": "IfcSanitaryTerminal",
+      "globalId": "6fb07512-6bd4-4999-970a-68d093200626",
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "placementRelTo": {
+          "type": "IfcLocalPlacement",
+          "relativePlacement": {
+            "type": "IfcAxis2Placement3D",
+            "location": {
+              "type": "IfcCartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "representation": {
+        "type": "IfcProductDefinitionShape",
+        "representations": [
+          {
+            "type": "IfcShapeRepresentation",
+            "ref": "420afeb6-3f93-41b6-8c65-a7dff4f39f1b"
+          }
+        ]
+      },
+      "predefinedType": "NOTDEFINED",
+      "isTypedBy": [
+        {
+          "type": "IfcRelDefinesByType",
+          "ref": "a99ef4e0-1c52-4aaf-bd87-c1b0679f20fb"
+        }
+      ],
+      "containedInStructure": [
+        {
+          "type": "IfcRelContainedInSpatialStructure",
+          "ref": "ab29227f-6983-42a0-8188-1cac703bb40a"
+        }
+      ]
+    },
+    {
+      "type": "IfcShapeRepresentation",
+      "contextOfItems": {
+        "type": "IfcGeometricRepresentationSubContext",
+        "ref": "d48d3023-5746-4f75-ab2f-d9f7e2289e49"
+      },
+      "representationIdentifier": "Body",
+      "representationType": "AdvancedBrep",
+      "items": [
+        {
+          "type": "IfcAdvancedBrep",
+          "outer": {
+            "type": "IfcClosedShell",
+            "cfsFaces": [
+              {
+                "type": "IfcAdvancedFace",
+                "bounds": [
+                  {
+                    "type": "IfcFaceOuterBound",
+                    "bound": {
+                      "type": "IfcEdgeLoop",
+                      "edgeList": [
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  253.099263998677,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  247.792422124388,
+                                  -83.9999999999991
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    253.099263998677,
+                                    0.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    247.792422124388,
+                                    -83.9999999999991
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  247.792422124388,
+                                  -83.9999999999991
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  247.792422124388,
+                                  -83.9999999999991
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcBSplineCurveWithKnots",
+                              "degree": 3,
+                              "controlPointsList": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    239.758213537139,
+                                    192.193559404919,
+                                    -83.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    275.591853484122,
+                                    -83.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -239.75821353295,
+                                    192.193559404918,
+                                    -83.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    -108.13323051355,
+                                    -83.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    239.758213537139,
+                                    192.193559404919,
+                                    -83.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    275.591853484122,
+                                    -83.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -239.75821353295,
+                                    192.193559404918,
+                                    -83.9999999999991
+                                  ]
+                                }
+                              ],
+                              "curveForm": "UNSPECIFIED",
+                              "closedCurve": true,
+                              "selfIntersect": true,
+                              "knotMultiplicities": [
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1
+                              ],
+                              "knots": [
+                                -7.0,
+                                -6.0,
+                                -5.0,
+                                -4.0,
+                                -3.0,
+                                -2.0,
+                                -1.0,
+                                0.0,
+                                1.0,
+                                2.0,
+                                3.0
+                              ],
+                              "knotSpec": "UNSPECIFIED"
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  253.099263998677,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  247.792422124388,
+                                  -83.9999999999991
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    253.099263998677,
+                                    0.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    247.792422124388,
+                                    -83.9999999999991
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": false
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  253.099263998677,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  253.099263998677,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcBSplineCurveWithKnots",
+                              "degree": 3,
+                              "controlPointsList": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -437.751000004175,
+                                    168.150654933496
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    295.573568531267
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    437.751000006541,
+                                    168.150654933498
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    -290.713822148428
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -437.751000004175,
+                                    168.150654933496
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    295.573568531267
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    437.751000006541,
+                                    168.150654933498
+                                  ]
+                                }
+                              ],
+                              "curveForm": "UNSPECIFIED",
+                              "closedCurve": true,
+                              "selfIntersect": true,
+                              "knotMultiplicities": [
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1
+                              ],
+                              "knots": [
+                                -7.0,
+                                -6.0,
+                                -5.0,
+                                -4.0,
+                                -3.0,
+                                -2.0,
+                                -1.0,
+                                0.0,
+                                1.0,
+                                2.0,
+                                3.0
+                              ],
+                              "knotSpec": "UNSPECIFIED"
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        }
+                      ]
+                    },
+                    "orientation": true
+                  }
+                ],
+                "faceSurface": {
+                  "type": "IfcBSplineSurfaceWithKnots",
+                  "uDegree": 3,
+                  "vDegree": 3,
+                  "controlPointsList": [
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          437.751000006541,
+                          168.150654933498,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          295.573568531267,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -437.751000004175,
+                          168.150654933496,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          -290.713822148428,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          437.751000006541,
+                          168.150654933498,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          295.573568531267,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -437.751000004175,
+                          168.150654933496,
+                          0.0
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          371.75340451674,
+                          176.164956423972,
+                          -27.9999999999997
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          288.912996848885,
+                          -27.9999999999997
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -371.753404513767,
+                          176.16495642397,
+                          -27.9999999999997
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          -229.853624936802,
+                          -27.9999999999997
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          371.75340451674,
+                          176.164956423972,
+                          -27.9999999999997
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          288.912996848885,
+                          -27.9999999999997
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -371.753404513767,
+                          176.16495642397,
+                          -27.9999999999997
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          305.75580902694,
+                          184.179257914445,
+                          -55.9999999999994
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          282.252425166504,
+                          -55.9999999999994
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -305.755809023358,
+                          184.179257914444,
+                          -55.9999999999994
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          -168.993427725176,
+                          -55.9999999999994
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          305.75580902694,
+                          184.179257914445,
+                          -55.9999999999994
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          282.252425166504,
+                          -55.9999999999994
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -305.755809023358,
+                          184.179257914444,
+                          -55.9999999999994
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          239.758213537139,
+                          192.193559404919,
+                          -83.9999999999991
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          275.591853484122,
+                          -83.9999999999991
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -239.75821353295,
+                          192.193559404918,
+                          -83.9999999999991
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          -108.13323051355,
+                          -83.9999999999991
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          239.758213537139,
+                          192.193559404919,
+                          -83.9999999999991
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          275.591853484122,
+                          -83.9999999999991
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -239.75821353295,
+                          192.193559404918,
+                          -83.9999999999991
+                        ]
+                      }
+                    ]
+                  ],
+                  "surfaceForm": "UNSPECIFIED",
+                  "uClosed": false,
+                  "vClosed": true,
+                  "selfIntersect": false,
+                  "uMultiplicities": [
+                    4,
+                    4
+                  ],
+                  "vMultiplicities": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "uKnots": [
+                    0.0,
+                    14.7110308353668
+                  ],
+                  "vKnots": [
+                    -7.0,
+                    -6.0,
+                    -5.0,
+                    -4.0,
+                    -3.0,
+                    -2.0,
+                    -1.0,
+                    0.0,
+                    1.0,
+                    2.0,
+                    3.0
+                  ],
+                  "knotSpec": "UNSPECIFIED"
+                },
+                "sameSense": false
+              },
+              {
+                "type": "IfcAdvancedFace",
+                "bounds": [
+                  {
+                    "type": "IfcFaceOuterBound",
+                    "bound": {
+                      "type": "IfcEdgeLoop",
+                      "edgeList": [
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  268.843232748677,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  247.792422124388,
+                                  -93.9999999999991
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    268.843232748677,
+                                    0.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    247.792422124388,
+                                    -93.9999999999991
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  247.792422124388,
+                                  -93.9999999999991
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  247.792422124388,
+                                  -93.9999999999991
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcBSplineCurveWithKnots",
+                              "degree": 3,
+                              "controlPointsList": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -239.758213535044,
+                                    192.193559378247,
+                                    -93.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    275.591853497458,
+                                    -93.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    239.758213535045,
+                                    192.193559378248,
+                                    -93.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    -108.133230500215,
+                                    -93.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -239.758213535044,
+                                    192.193559378247,
+                                    -93.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    275.591853497458,
+                                    -93.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    239.758213535045,
+                                    192.193559378248,
+                                    -93.9999999999991
+                                  ]
+                                }
+                              ],
+                              "curveForm": "UNSPECIFIED",
+                              "closedCurve": true,
+                              "selfIntersect": true,
+                              "knotMultiplicities": [
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1
+                              ],
+                              "knots": [
+                                -7.0,
+                                -6.0,
+                                -5.0,
+                                -4.0,
+                                -3.0,
+                                -2.0,
+                                -1.0,
+                                0.0,
+                                1.0,
+                                2.0,
+                                3.0
+                              ],
+                              "knotSpec": "UNSPECIFIED"
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  268.843232748677,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  247.792422124388,
+                                  -93.9999999999991
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcPolyline",
+                              "points": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    268.843232748677,
+                                    0.0
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    247.792422124388,
+                                    -93.9999999999991
+                                  ]
+                                }
+                              ]
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": false
+                        },
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  268.843232748677,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  268.843232748677,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcBSplineCurveWithKnots",
+                              "degree": 3,
+                              "controlPointsList": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    457.685108750143,
+                                    177.051077752302
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    314.739310246865
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -457.685108750141,
+                                    177.051077752299
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    -318.77998625438
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    457.685108750143,
+                                    177.051077752302
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    314.739310246865
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -457.685108750141,
+                                    177.051077752299
+                                  ]
+                                }
+                              ],
+                              "curveForm": "UNSPECIFIED",
+                              "closedCurve": true,
+                              "selfIntersect": true,
+                              "knotMultiplicities": [
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1
+                              ],
+                              "knots": [
+                                -7.0,
+                                -6.0,
+                                -5.0,
+                                -4.0,
+                                -3.0,
+                                -2.0,
+                                -1.0,
+                                0.0,
+                                1.0,
+                                2.0,
+                                3.0
+                              ],
+                              "knotSpec": "UNSPECIFIED"
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        }
+                      ]
+                    },
+                    "orientation": true
+                  }
+                ],
+                "faceSurface": {
+                  "type": "IfcBSplineSurfaceWithKnots",
+                  "uDegree": 3,
+                  "vDegree": 3,
+                  "controlPointsList": [
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -457.685108750141,
+                          177.051077752299,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          314.739310246865,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          457.685108750143,
+                          177.051077752302,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          -318.77998625438,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -457.685108750141,
+                          177.051077752299,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          314.739310246865,
+                          0.0
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          457.685108750143,
+                          177.051077752302,
+                          0.0
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -385.042810345109,
+                          182.098571627615,
+                          -31.333333333333
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          301.690157997063,
+                          -31.333333333333
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          385.04281034511,
+                          182.098571627617,
+                          -31.333333333333
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          -248.564401002992,
+                          -31.333333333333
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -385.042810345109,
+                          182.098571627615,
+                          -31.333333333333
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          301.690157997063,
+                          -31.333333333333
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          385.04281034511,
+                          182.098571627617,
+                          -31.333333333333
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -312.400511940076,
+                          187.146065502931,
+                          -62.666666666666
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          288.64100574726,
+                          -62.666666666666
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          312.400511940078,
+                          187.146065502933,
+                          -62.666666666666
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          -178.348815751603,
+                          -62.6666666666661
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -312.400511940076,
+                          187.146065502931,
+                          -62.666666666666
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          288.64100574726,
+                          -62.666666666666
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          312.400511940078,
+                          187.146065502933,
+                          -62.666666666666
+                        ]
+                      }
+                    ],
+                    [
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -239.758213535044,
+                          192.193559378247,
+                          -93.9999999999991
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          275.591853497458,
+                          -93.9999999999991
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          239.758213535045,
+                          192.193559378248,
+                          -93.9999999999991
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          -108.133230500215,
+                          -93.9999999999991
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          -239.758213535044,
+                          192.193559378247,
+                          -93.9999999999991
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          0.0,
+                          275.591853497458,
+                          -93.9999999999991
+                        ]
+                      },
+                      {
+                        "type": "IfcCartesianPoint",
+                        "coordinates": [
+                          239.758213535045,
+                          192.193559378248,
+                          -93.9999999999991
+                        ]
+                      }
+                    ]
+                  ],
+                  "surfaceForm": "UNSPECIFIED",
+                  "uClosed": false,
+                  "vClosed": true,
+                  "selfIntersect": false,
+                  "uMultiplicities": [
+                    4,
+                    4
+                  ],
+                  "vMultiplicities": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "uKnots": [
+                    0.0,
+                    15.4213505620632
+                  ],
+                  "vKnots": [
+                    -3.0,
+                    -2.0,
+                    -1.0,
+                    0.0,
+                    1.0,
+                    2.0,
+                    3.0,
+                    4.0,
+                    5.0,
+                    6.0,
+                    7.0
+                  ],
+                  "knotSpec": "UNSPECIFIED"
+                },
+                "sameSense": false
+              },
+              {
+                "type": "IfcAdvancedFace",
+                "bounds": [
+                  {
+                    "type": "IfcFaceOuterBound",
+                    "bound": {
+                      "type": "IfcEdgeLoop",
+                      "edgeList": [
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  247.792422124388,
+                                  -83.9999999999991
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  247.792422124388,
+                                  -83.9999999999991
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcBSplineCurveWithKnots",
+                              "degree": 3,
+                              "controlPointsList": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    239.758213537139,
+                                    192.193559404919,
+                                    -83.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    275.591853484122,
+                                    -83.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -239.75821353295,
+                                    192.193559404918,
+                                    -83.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    -108.13323051355,
+                                    -83.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    239.758213537139,
+                                    192.193559404919,
+                                    -83.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    275.591853484122,
+                                    -83.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -239.75821353295,
+                                    192.193559404918,
+                                    -83.9999999999991
+                                  ]
+                                }
+                              ],
+                              "curveForm": "UNSPECIFIED",
+                              "closedCurve": true,
+                              "selfIntersect": true,
+                              "knotMultiplicities": [
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1
+                              ],
+                              "knots": [
+                                -7.0,
+                                -6.0,
+                                -5.0,
+                                -4.0,
+                                -3.0,
+                                -2.0,
+                                -1.0,
+                                0.0,
+                                1.0,
+                                2.0,
+                                3.0
+                              ],
+                              "knotSpec": "UNSPECIFIED"
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": false
+                        }
+                      ]
+                    },
+                    "orientation": true
+                  }
+                ],
+                "faceSurface": {
+                  "type": "IfcPlane",
+                  "position": {
+                    "type": "IfcAxis2Placement3D",
+                    "location": {
+                      "type": "IfcCartesianPoint",
+                      "coordinates": [
+                        0.0,
+                        247.792422124388,
+                        -83.9999999999991
+                      ]
+                    }
+                  }
+                },
+                "sameSense": true
+              },
+              {
+                "type": "IfcAdvancedFace",
+                "bounds": [
+                  {
+                    "type": "IfcFaceOuterBound",
+                    "bound": {
+                      "type": "IfcEdgeLoop",
+                      "edgeList": [
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  247.792422124388,
+                                  -93.9999999999991
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  247.792422124388,
+                                  -93.9999999999991
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcBSplineCurveWithKnots",
+                              "degree": 3,
+                              "controlPointsList": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -239.758213535044,
+                                    192.193559378247,
+                                    -93.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    275.591853497458,
+                                    -93.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    239.758213535045,
+                                    192.193559378248,
+                                    -93.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    -108.133230500215,
+                                    -93.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -239.758213535044,
+                                    192.193559378247,
+                                    -93.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    275.591853497458,
+                                    -93.9999999999991
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    239.758213535045,
+                                    192.193559378248,
+                                    -93.9999999999991
+                                  ]
+                                }
+                              ],
+                              "curveForm": "UNSPECIFIED",
+                              "closedCurve": true,
+                              "selfIntersect": true,
+                              "knotMultiplicities": [
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1
+                              ],
+                              "knots": [
+                                -7.0,
+                                -6.0,
+                                -5.0,
+                                -4.0,
+                                -3.0,
+                                -2.0,
+                                -1.0,
+                                0.0,
+                                1.0,
+                                2.0,
+                                3.0
+                              ],
+                              "knotSpec": "UNSPECIFIED"
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": true
+                        }
+                      ]
+                    },
+                    "orientation": true
+                  }
+                ],
+                "faceSurface": {
+                  "type": "IfcPlane",
+                  "position": {
+                    "type": "IfcAxis2Placement3D",
+                    "location": {
+                      "type": "IfcCartesianPoint",
+                      "coordinates": [
+                        0.0,
+                        247.792422124388,
+                        -93.9999999999991
+                      ]
+                    }
+                  }
+                },
+                "sameSense": false
+              },
+              {
+                "type": "IfcAdvancedFace",
+                "bounds": [
+                  {
+                    "type": "IfcFaceOuterBound",
+                    "bound": {
+                      "type": "IfcEdgeLoop",
+                      "edgeList": [
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  268.843232748677,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  268.843232748677,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcBSplineCurveWithKnots",
+                              "degree": 3,
+                              "controlPointsList": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    457.685108750143,
+                                    177.051077752302
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    314.739310246865
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -457.685108750141,
+                                    177.051077752299
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    -318.77998625438
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    457.685108750143,
+                                    177.051077752302
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    314.739310246865
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -457.685108750141,
+                                    177.051077752299
+                                  ]
+                                }
+                              ],
+                              "curveForm": "UNSPECIFIED",
+                              "closedCurve": true,
+                              "selfIntersect": true,
+                              "knotMultiplicities": [
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1
+                              ],
+                              "knots": [
+                                -7.0,
+                                -6.0,
+                                -5.0,
+                                -4.0,
+                                -3.0,
+                                -2.0,
+                                -1.0,
+                                0.0,
+                                1.0,
+                                2.0,
+                                3.0
+                              ],
+                              "knotSpec": "UNSPECIFIED"
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": false
+                        }
+                      ]
+                    },
+                    "orientation": true
+                  },
+                  {
+                    "type": "IfcFaceBound",
+                    "bound": {
+                      "type": "IfcEdgeLoop",
+                      "edgeList": [
+                        {
+                          "type": "IfcOrientedEdge",
+                          "edgeElement": {
+                            "type": "IfcEdgeCurve",
+                            "edgeStart": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  253.099263998677,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeEnd": {
+                              "type": "IfcVertexPoint",
+                              "vertexGeometry": {
+                                "type": "IfcCartesianPoint",
+                                "coordinates": [
+                                  0.0,
+                                  253.099263998677,
+                                  0.0
+                                ]
+                              }
+                            },
+                            "edgeGeometry": {
+                              "type": "IfcBSplineCurveWithKnots",
+                              "degree": 3,
+                              "controlPointsList": [
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -437.751000004175,
+                                    168.150654933496
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    295.573568531267
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    437.751000006541,
+                                    168.150654933498
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    -290.713822148428
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    -437.751000004175,
+                                    168.150654933496
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    0.0,
+                                    295.573568531267
+                                  ]
+                                },
+                                {
+                                  "type": "IfcCartesianPoint",
+                                  "coordinates": [
+                                    437.751000006541,
+                                    168.150654933498
+                                  ]
+                                }
+                              ],
+                              "curveForm": "UNSPECIFIED",
+                              "closedCurve": true,
+                              "selfIntersect": true,
+                              "knotMultiplicities": [
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1
+                              ],
+                              "knots": [
+                                -7.0,
+                                -6.0,
+                                -5.0,
+                                -4.0,
+                                -3.0,
+                                -2.0,
+                                -1.0,
+                                0.0,
+                                1.0,
+                                2.0,
+                                3.0
+                              ],
+                              "knotSpec": "UNSPECIFIED"
+                            },
+                            "sameSense": true
+                          },
+                          "orientation": false
+                        }
+                      ]
+                    },
+                    "orientation": true
+                  }
+                ],
+                "faceSurface": {
+                  "type": "IfcPlane",
+                  "position": {
+                    "type": "IfcAxis2Placement3D",
+                    "location": {
+                      "type": "IfcCartesianPoint",
+                      "coordinates": [
+                        0.0,
+                        253.099263998677,
+                        0.0
+                      ]
+                    }
+                  }
+                },
+                "sameSense": true
+              }
+            ]
+          }
+        }
+      ],
+      "representationMap": [
+        {
+          "type": "IfcRepresentationMap",
+          "mappingOrigin": {
+            "type": "IfcAxis2Placement3D",
+            "location": {
+              "type": "IfcCartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "mappedRepresentation": {
+            "type": "IfcShapeRepresentation",
+            "ref": "17eb922e-a0f1-47aa-bb62-abceccb29222"
+          }
+        }
+      ],
+      "globalId": "17eb922e-a0f1-47aa-bb62-abceccb29222"
+    },
+    {
+      "type": "IfcShapeRepresentation",
+      "contextOfItems": {
+        "type": "IfcGeometricRepresentationSubContext",
+        "ref": "d48d3023-5746-4f75-ab2f-d9f7e2289e49"
+      },
+      "representationIdentifier": "Body",
+      "representationType": "MappedRepresentation",
+      "items": [
+        {
+          "type": "IfcMappedItem",
+          "mappingSource": {
+            "type": "IfcRepresentationMap",
+            "mappingOrigin": {
+              "type": "IfcAxis2Placement3D",
+              "location": {
+                "type": "IfcCartesianPoint",
+                "coordinates": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "mappedRepresentation": {
+              "type": "IfcShapeRepresentation",
+              "ref": "17eb922e-a0f1-47aa-bb62-abceccb29222"
+            }
+          },
+          "mappingTarget": {
+            "type": "IfcCartesianTransformationOperator3D",
+            "axis1": {
+              "type": "IfcDirection",
+              "directionRatios": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "axis2": {
+              "type": "IfcDirection",
+              "directionRatios": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            "localOrigin": {
+              "type": "IfcCartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "scale": 1.0,
+            "axis3": {
+              "type": "IfcDirection",
+              "directionRatios": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          }
+        }
+      ],
+      "ofProductRepresentation": [
+        {
+          "type": "IfcProductDefinitionShape",
+          "representations": [
+            {
+              "type": "IfcShapeRepresentation",
+              "ref": "420afeb6-3f93-41b6-8c65-a7dff4f39f1b"
+            }
+          ]
+        }
+      ],
+      "globalId": "420afeb6-3f93-41b6-8c65-a7dff4f39f1b"
+    },
+    {
+      "type": "IfcOwnerHistory",
+      "owningUser": {
+        "type": "IfcPersonAndOrganization",
+        "thePerson": {
+          "type": "IfcPerson",
+          "identification": "Jon",
+          "familyName": "Jon"
+        },
+        "theOrganization": {
+          "type": "IfcOrganization",
+          "name": "Geometry Gym Pty Ltd"
+        }
+      },
+      "owningApplication": {
+        "type": "IfcApplication",
+        "applicationDeveloper": {
+          "type": "IfcOrganization",
+          "name": "Geometry Gym Pty Ltd"
+        },
+        "version": "1.0.0.0",
+        "applicationFullName": "ggRhinoIFC - Geometry Gym Plug-in for Rhino3d",
+        "applicationIdentifier": "ggRhinoIFC"
+      },
+      "changeAction": "ADDED",
+      "lastModifiedDate": 1418084874,
+      "creationDate": 1418084874,
+      "globalId": "e1045915-1d8e-412e-9616-9933634ca56e"
+    },
+    {
+      "type": "IfcGeometricRepresentationContext",
+      "contextType": "Model",
+      "coordinateSpaceDimension": 3,
+      "precision": 0.0001,
+      "worldCoordinateSystem": {
+        "type": "IfcAxis2Placement3D",
+        "location": {
+          "type": "IfcCartesianPoint",
+          "coordinates": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trueNorth": {
+        "type": "IfcDirection",
+        "directionRatios": [
+          0.0,
+          1.0
+        ]
+      },
+      "hasSubContexts": [
+        {
+          "type": "IfcGeometricRepresentationSubContext",
+          "ref": "75d2d583-4309-44f2-b750-d8c6fdc63f09"
+        },
+        {
+          "type": "IfcGeometricRepresentationSubContext",
+          "ref": "d48d3023-5746-4f75-ab2f-d9f7e2289e49"
+        }
+      ],
+      "globalId": "d216e4fa-c829-497b-9603-20cefd575558"
+    },
+    {
+      "type": "IfcGeometricRepresentationSubContext",
+      "contextIdentifier": "Axis",
+      "contextType": "Model",
+      "parentContext": {
+        "type": "IfcGeometricRepresentationContext",
+        "ref": "d216e4fa-c829-497b-9603-20cefd575558"
+      },
+      "targetView": "MODEL_VIEW",
+      "globalId": "75d2d583-4309-44f2-b750-d8c6fdc63f09"
+    },
+    {
+      "type": "IfcGeometricRepresentationSubContext",
+      "contextIdentifier": "Body",
+      "contextType": "Model",
+      "parentContext": {
+        "type": "IfcGeometricRepresentationContext",
+        "ref": "d216e4fa-c829-497b-9603-20cefd575558"
+      },
+      "targetView": "MODEL_VIEW",
+      "representationsInContext": [
+        {
+          "type": "IfcShapeRepresentation",
+          "ref": "17eb922e-a0f1-47aa-bb62-abceccb29222"
+        },
+        {
+          "type": "IfcShapeRepresentation",
+          "ref": "420afeb6-3f93-41b6-8c65-a7dff4f39f1b"
+        }
+      ],
+      "globalId": "d48d3023-5746-4f75-ab2f-d9f7e2289e49"
+    },
+    {
+      "type": "IfcGeometricRepresentationContext",
+      "contextType": "Model",
+      "coordinateSpaceDimension": 3,
+      "precision": 0.0001,
+      "worldCoordinateSystem": {
+        "type": "IfcAxis2Placement3D",
+        "location": {
+          "type": "IfcCartesianPoint",
+          "coordinates": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trueNorth": {
+        "type": "IfcDirection",
+        "directionRatios": [
+          0.0,
+          1.0
+        ]
+      },
+      "globalId": "ff261331-e6f5-4e77-b68e-5f376e36533f"
+    },
+    {
+      "type": "IfcRelContainedInSpatialStructure",
+      "globalId": "ab29227f-6983-42a0-8188-1cac703bb40a",
+      "name": "Building",
+      "description": "Building Container for Elements",
+      "relatedElements": [
+        {
+          "type": "IfcSanitaryTerminal",
+          "ref": "6fb07512-6bd4-4999-970a-68d093200626"
+        }
+      ],
+      "relatingStructure": {
+        "type": "IfcBuilding",
+        "ref": "8d91ee6c-850e-434a-a40d-8c071ad7f532"
+      }
+    },
+    {
+      "type": "IfcRelAggregates",
+      "globalId": "bfbf0a13-cad8-4c99-b548-4d0c0c90fe3e",
+      "name": "Project Container",
+      "description": "Project Container for Buildings",
+      "relatingObject": {
+        "type": "IfcProject",
+        "ref": "8fafd27b-0810-4652-92a7-3c69456667b8"
+      },
+      "relatedObjects": [
+        {
+          "type": "IfcBuilding",
+          "ref": "8d91ee6c-850e-434a-a40d-8c071ad7f532"
+        }
+      ]
+    },
+    {
+      "type": "IfcRelAssociatesMaterial",
+      "globalId": "c6174160-427b-4c7a-b567-f0d06b9943b4",
+      "name": "MatAssoc",
+      "description": "Material Associates",
+      "relatedObjects": [
+        {
+          "type": "IfcSanitaryTerminalType",
+          "ref": "180d5ad0-373b-4d00-aac1-f88348fb62d8"
+        }
+      ],
+      "relatingMaterial": {
+        "type": "IfcMaterial",
+        "name": "Ceramic"
+      }
+    },
+    {
+      "type": "IfcRelDefinesByType",
+      "globalId": "a99ef4e0-1c52-4aaf-bd87-c1b0679f20fb",
+      "relatedObjects": [
+        {
+          "type": "IfcSanitaryTerminal",
+          "ref": "6fb07512-6bd4-4999-970a-68d093200626"
+        }
+      ],
+      "relatingType": {
+        "type": "IfcSanitaryTerminalType",
+        "ref": "180d5ad0-373b-4d00-aac1-f88348fb62d8"
+      }
+    }
+  ]
+}

@@ -1,0 +1,432 @@
+{
+  "type": "IFC.JSON",
+  "version": "0.0.1",
+  "schemaIdentifier": "IFC4",
+  "originatingSystem": "IFC2JSON_python Version 0.0.1",
+  "preprocessorVersion": "IfcOpenShell 0.6.0b0",
+  "timeStamp": "2020-10-30T00:18:59",
+  "data": [
+    {
+      "type": "IfcBuilding",
+      "globalId": "0a9a4822-8482-40f2-87cb-9196cca735ec",
+      "name": "IfcBuilding",
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "compositionType": "ELEMENT",
+      "buildingAddress": {
+        "type": "IfcPostalAddress",
+        "region": "Unknown"
+      },
+      "decomposes": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "23458d32-50df-4a10-bbe8-26f99d98ce07"
+        }
+      ],
+      "containsElements": [
+        {
+          "type": "IfcRelContainedInSpatialStructure",
+          "ref": "467f9b51-eaae-4376-b99b-d983afae565b"
+        }
+      ]
+    },
+    {
+      "type": "IfcProject",
+      "globalId": "bc85e92d-dc93-4337-a5b4-7c1822432a56",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "e24ee179-a406-4361-a26b-a00561ce3fe2"
+      },
+      "name": "IfcProject",
+      "longName": "IfcProject",
+      "representationContexts": [
+        {
+          "type": "IfcGeometricRepresentationContext",
+          "ref": "390fab03-6ca7-437c-bfad-820fe264e699"
+        }
+      ],
+      "unitsInContext": {
+        "type": "IfcUnitAssignment",
+        "units": [
+          {
+            "type": "IfcSIUnit",
+            "unitType": "LENGTHUNIT",
+            "prefix": "MILLI",
+            "name": "METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "PLANEANGLEUNIT",
+            "name": "RADIAN",
+            "dimensions": {
+              "type": "IfcDimensionalExponents"
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "TIMEUNIT",
+            "name": "SECOND",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "TimeExponent": 1
+            }
+          }
+        ]
+      },
+      "isDecomposedBy": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "23458d32-50df-4a10-bbe8-26f99d98ce07"
+        }
+      ]
+    },
+    {
+      "type": "IfcBuildingElementProxy",
+      "globalId": "df6de19d-27e0-4895-95fd-ef942ef4d4ad",
+      "name": "BuildingElementProxy",
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "placementRelTo": {
+          "type": "IfcLocalPlacement",
+          "relativePlacement": {
+            "type": "IfcAxis2Placement3D",
+            "location": {
+              "type": "IfcCartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "representation": {
+        "type": "IfcProductDefinitionShape",
+        "representations": [
+          {
+            "type": "IfcShapeRepresentation",
+            "ref": "2e50caa0-25c2-4e03-ba1e-7e38012254dd"
+          }
+        ]
+      },
+      "predefinedType": "NOTDEFINED",
+      "containedInStructure": [
+        {
+          "type": "IfcRelContainedInSpatialStructure",
+          "ref": "467f9b51-eaae-4376-b99b-d983afae565b"
+        }
+      ]
+    },
+    {
+      "type": "IfcShapeRepresentation",
+      "contextOfItems": {
+        "type": "IfcGeometricRepresentationSubContext",
+        "ref": "bab35c6d-7d6a-47de-9db0-e5c13e584ccc"
+      },
+      "representationIdentifier": "Body",
+      "representationType": "Tessellation",
+      "items": [
+        {
+          "type": "IfcTriangulatedFaceSet",
+          "coordinates": {
+            "type": "IfcCartesianPointList3D",
+            "coordList": [
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                1000.0,
+                0.0,
+                0.0
+              ],
+              [
+                1000.0,
+                1000.0,
+                0.0
+              ],
+              [
+                0.0,
+                1000.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                2000.0
+              ],
+              [
+                1000.0,
+                0.0,
+                2000.0
+              ],
+              [
+                1000.0,
+                1.0,
+                2000.0
+              ],
+              [
+                0.0,
+                1000.0,
+                2000.0
+              ]
+            ]
+          },
+          "closed": true,
+          "coordIndex": [
+            [
+              1,
+              6,
+              5
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              6,
+              2,
+              7
+            ],
+            [
+              7,
+              2,
+              3
+            ],
+            [
+              7,
+              8,
+              6
+            ],
+            [
+              6,
+              8,
+              5
+            ],
+            [
+              5,
+              8,
+              1
+            ],
+            [
+              1,
+              8,
+              4
+            ],
+            [
+              4,
+              2,
+              1
+            ],
+            [
+              2,
+              4,
+              3
+            ],
+            [
+              4,
+              8,
+              7
+            ],
+            [
+              7,
+              3,
+              4
+            ]
+          ]
+        }
+      ],
+      "ofProductRepresentation": [
+        {
+          "type": "IfcProductDefinitionShape",
+          "representations": [
+            {
+              "type": "IfcShapeRepresentation",
+              "ref": "2e50caa0-25c2-4e03-ba1e-7e38012254dd"
+            }
+          ]
+        }
+      ],
+      "globalId": "2e50caa0-25c2-4e03-ba1e-7e38012254dd"
+    },
+    {
+      "type": "IfcOwnerHistory",
+      "owningUser": {
+        "type": "IfcPersonAndOrganization",
+        "thePerson": {
+          "type": "IfcPerson",
+          "identification": "Jon",
+          "familyName": "Jon"
+        },
+        "theOrganization": {
+          "type": "IfcOrganization",
+          "name": "Geometry Gym Pty Ltd"
+        }
+      },
+      "owningApplication": {
+        "type": "IfcApplication",
+        "applicationDeveloper": {
+          "type": "IfcOrganization",
+          "name": "Geometry Gym Pty Ltd"
+        },
+        "version": "1.0.0.0",
+        "applicationFullName": "ggRhinoIFC - Geometry Gym Plug-in for Rhino3d",
+        "applicationIdentifier": "ggRhinoIFC"
+      },
+      "changeAction": "ADDED",
+      "lastModifiedDate": 1418084874,
+      "creationDate": 1418084874,
+      "globalId": "e24ee179-a406-4361-a26b-a00561ce3fe2"
+    },
+    {
+      "type": "IfcGeometricRepresentationContext",
+      "contextType": "Model",
+      "coordinateSpaceDimension": 3,
+      "precision": 0.0001,
+      "worldCoordinateSystem": {
+        "type": "IfcAxis2Placement3D",
+        "location": {
+          "type": "IfcCartesianPoint",
+          "coordinates": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trueNorth": {
+        "type": "IfcDirection",
+        "directionRatios": [
+          0.0,
+          1.0
+        ]
+      },
+      "hasSubContexts": [
+        {
+          "type": "IfcGeometricRepresentationSubContext",
+          "ref": "b2452ff7-9926-4df0-be58-e875347376d9"
+        },
+        {
+          "type": "IfcGeometricRepresentationSubContext",
+          "ref": "bab35c6d-7d6a-47de-9db0-e5c13e584ccc"
+        }
+      ],
+      "globalId": "583a3e98-29e7-49b2-9ab1-2173cb69dfbf"
+    },
+    {
+      "type": "IfcGeometricRepresentationSubContext",
+      "contextIdentifier": "Axis",
+      "contextType": "Model",
+      "parentContext": {
+        "type": "IfcGeometricRepresentationContext",
+        "ref": "583a3e98-29e7-49b2-9ab1-2173cb69dfbf"
+      },
+      "targetView": "MODEL_VIEW",
+      "globalId": "b2452ff7-9926-4df0-be58-e875347376d9"
+    },
+    {
+      "type": "IfcGeometricRepresentationSubContext",
+      "contextIdentifier": "Body",
+      "contextType": "Model",
+      "parentContext": {
+        "type": "IfcGeometricRepresentationContext",
+        "ref": "583a3e98-29e7-49b2-9ab1-2173cb69dfbf"
+      },
+      "targetView": "MODEL_VIEW",
+      "representationsInContext": [
+        {
+          "type": "IfcShapeRepresentation",
+          "ref": "2e50caa0-25c2-4e03-ba1e-7e38012254dd"
+        }
+      ],
+      "globalId": "bab35c6d-7d6a-47de-9db0-e5c13e584ccc"
+    },
+    {
+      "type": "IfcGeometricRepresentationContext",
+      "contextType": "Model",
+      "coordinateSpaceDimension": 3,
+      "precision": 0.0001,
+      "worldCoordinateSystem": {
+        "type": "IfcAxis2Placement3D",
+        "location": {
+          "type": "IfcCartesianPoint",
+          "coordinates": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trueNorth": {
+        "type": "IfcDirection",
+        "directionRatios": [
+          0.0,
+          1.0
+        ]
+      },
+      "globalId": "390fab03-6ca7-437c-bfad-820fe264e699"
+    },
+    {
+      "type": "IfcRelContainedInSpatialStructure",
+      "globalId": "467f9b51-eaae-4376-b99b-d983afae565b",
+      "name": "Building",
+      "description": "Building Container for Elements",
+      "relatedElements": [
+        {
+          "type": "IfcBuildingElementProxy",
+          "ref": "df6de19d-27e0-4895-95fd-ef942ef4d4ad"
+        }
+      ],
+      "relatingStructure": {
+        "type": "IfcBuilding",
+        "ref": "0a9a4822-8482-40f2-87cb-9196cca735ec"
+      }
+    },
+    {
+      "type": "IfcRelAggregates",
+      "globalId": "23458d32-50df-4a10-bbe8-26f99d98ce07",
+      "name": "Project Container",
+      "description": "Project Container for Buildings",
+      "relatingObject": {
+        "type": "IfcProject",
+        "ref": "bc85e92d-dc93-4337-a5b4-7c1822432a56"
+      },
+      "relatedObjects": [
+        {
+          "type": "IfcBuilding",
+          "ref": "0a9a4822-8482-40f2-87cb-9196cca735ec"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4005 @@
+{
+  "type": "IFC.JSON",
+  "version": "0.0.1",
+  "schemaIdentifier": "IFC4",
+  "originatingSystem": "IFC2JSON_python Version 0.0.1",
+  "preprocessorVersion": "IfcOpenShell 0.6.0b0",
+  "timeStamp": "2020-10-30T00:19:04",
+  "data": [
+    {
+      "type": "IfcBuildingStorey",
+      "globalId": "35c0735e-d164-eb61-e9b6-17923704ffd5",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "Floor 3",
+      "description": "Administrative and employee lounge",
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "placementRelTo": {
+          "type": "IfcLocalPlacement",
+          "placementRelTo": {
+            "type": "IfcLocalPlacement",
+            "relativePlacement": {
+              "type": "IfcAxis2Placement3D",
+              "location": {
+                "type": "IfcCartesianPoint",
+                "coordinates": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "axis": {
+                "type": "IfcDirection",
+                "directionRatios": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              "refDirection": {
+                "type": "IfcDirection",
+                "directionRatios": [
+                  1.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          },
+          "relativePlacement": {
+            "type": "IfcAxis2Placement3D",
+            "location": {
+              "type": "IfcCartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "axis": {
+              "type": "IfcDirection",
+              "directionRatios": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "refDirection": {
+              "type": "IfcDirection",
+              "directionRatios": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              9.144
+            ]
+          },
+          "axis": {
+            "type": "IfcDirection",
+            "directionRatios": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "refDirection": {
+            "type": "IfcDirection",
+            "directionRatios": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "longName": "Floor 3",
+      "compositionType": "ELEMENT",
+      "elevation": 9.144,
+      "decomposes": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "57a649bb-4dea-ef05-cfae-90331a85f6f7"
+        }
+      ],
+      "isDefinedBy": [
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "844bf3c7-548a-a973-a9ca-40de69b9f3b8"
+        },
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "5404de6d-a796-7dec-3ace-17a163454034"
+        },
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "2fd54004-9230-3919-8a7a-dbc76167d8f4"
+        },
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "6994df3b-1323-da51-4926-33e949ede6f4"
+        }
+      ],
+      "containsElements": [
+        {
+          "type": "IfcRelContainedInSpatialStructure",
+          "ref": "a44ec00c-83ee-a675-3deb-650f0c396b94"
+        }
+      ]
+    },
+    {
+      "type": "IfcBuilding",
+      "globalId": "fe4ae4d2-c4e0-43ad-b1a1-eb211f518aab",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "Bldg 1",
+      "description": "3 Story Building",
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "placementRelTo": {
+          "type": "IfcLocalPlacement",
+          "relativePlacement": {
+            "type": "IfcAxis2Placement3D",
+            "location": {
+              "type": "IfcCartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "axis": {
+              "type": "IfcDirection",
+              "directionRatios": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "refDirection": {
+              "type": "IfcDirection",
+              "directionRatios": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "axis": {
+            "type": "IfcDirection",
+            "directionRatios": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "refDirection": {
+            "type": "IfcDirection",
+            "directionRatios": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "longName": "Bldg 1",
+      "compositionType": "ELEMENT",
+      "elevationOfRefHeight": 0.0,
+      "elevationOfTerrain": 0.0,
+      "buildingAddress": {
+        "type": "IfcPostalAddress",
+        "addressLines": [
+          "203 Rickenhouse Drive"
+        ],
+        "town": "Madison",
+        "postalCode": "35789",
+        "country": "US"
+      },
+      "isDecomposedBy": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "57a649bb-4dea-ef05-cfae-90331a85f6f7"
+        }
+      ],
+      "decomposes": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "0ccfee8d-618d-4393-0681-1928354337bc"
+        }
+      ],
+      "isDefinedBy": [
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "bd630aa2-7b26-b0af-3276-8d69cc8cf1f6"
+        },
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "ee03910e-9e43-b964-d217-7356cf2c259d"
+        },
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "f84aa9ab-f44c-48c4-d30c-5aad012cbd2f"
+        },
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "4c3308fe-0683-8dce-9598-182dc1b6e8ed"
+        }
+      ]
+    },
+    {
+      "type": "IfcBuildingElementProxy",
+      "globalId": "799f3531-265b-23ff-2134-80271196e05a",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "Element type: 24",
+      "description": "824*bspline surface!Default",
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "placementRelTo": {
+          "type": "IfcLocalPlacement",
+          "placementRelTo": {
+            "type": "IfcLocalPlacement",
+            "placementRelTo": {
+              "type": "IfcLocalPlacement",
+              "relativePlacement": {
+                "type": "IfcAxis2Placement3D",
+                "location": {
+                  "type": "IfcCartesianPoint",
+                  "coordinates": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                "axis": {
+                  "type": "IfcDirection",
+                  "directionRatios": [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                },
+                "refDirection": {
+                  "type": "IfcDirection",
+                  "directionRatios": [
+                    1.0,
+                    0.0,
+                    0.0
+                  ]
+                }
+              }
+            },
+            "relativePlacement": {
+              "type": "IfcAxis2Placement3D",
+              "location": {
+                "type": "IfcCartesianPoint",
+                "coordinates": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "axis": {
+                "type": "IfcDirection",
+                "directionRatios": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              "refDirection": {
+                "type": "IfcDirection",
+                "directionRatios": [
+                  1.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          },
+          "relativePlacement": {
+            "type": "IfcAxis2Placement3D",
+            "location": {
+              "type": "IfcCartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                9.144
+              ]
+            },
+            "axis": {
+              "type": "IfcDirection",
+              "directionRatios": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "refDirection": {
+              "type": "IfcDirection",
+              "directionRatios": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              14.1421,
+              14.1421,
+              37.2623
+            ]
+          },
+          "axis": {
+            "type": "IfcDirection",
+            "directionRatios": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "refDirection": {
+            "type": "IfcDirection",
+            "directionRatios": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "representation": {
+        "type": "IfcProductDefinitionShape",
+        "representations": [
+          {
+            "type": "IfcShapeRepresentation",
+            "ref": "7693fdba-5d02-41df-b8d0-972d0f4f4c45"
+          },
+          {
+            "type": "IfcShapeRepresentation",
+            "ref": "211e8b6a-4b77-472f-80dc-0570098b4ea4"
+          }
+        ]
+      },
+      "tag": "824*bspline surface!Default",
+      "predefinedType": "NOTDEFINED",
+      "containedInStructure": [
+        {
+          "type": "IfcRelContainedInSpatialStructure",
+          "ref": "a44ec00c-83ee-a675-3deb-650f0c396b94"
+        }
+      ]
+    },
+    {
+      "type": "IfcSite",
+      "globalId": "001beb01-7c13-40dc-a50e-afeff9bed6b7",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "Site 1",
+      "description": "Site 1",
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "axis": {
+            "type": "IfcDirection",
+            "directionRatios": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "refDirection": {
+            "type": "IfcDirection",
+            "directionRatios": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "longName": "Site 1",
+      "compositionType": "ELEMENT",
+      "refElevation": 0.0,
+      "siteAddress": {
+        "type": "IfcPostalAddress",
+        "internalLocation": "Site 1"
+      },
+      "isDecomposedBy": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "0ccfee8d-618d-4393-0681-1928354337bc"
+        }
+      ],
+      "decomposes": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "6e2c329a-e694-33b8-fc3e-1f84576e7c99"
+        }
+      ],
+      "isDefinedBy": [
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "e5b56830-e7e3-3319-567b-c24331650ea0"
+        }
+      ]
+    },
+    {
+      "type": "IfcPropertySet",
+      "globalId": "b599589c-614d-4f00-2879-ff43f738f128",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "Project",
+      "hasProperties": [
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "ProjectName",
+          "nominalValue": {
+            "type": "IfcText",
+            "value": "BuildingTemplate_US"
+          }
+        }
+      ],
+      "definesOccurrence": [
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "5b5413a8-e917-766d-8d59-99772f2d2146"
+        }
+      ]
+    },
+    {
+      "type": "IfcPropertySet",
+      "globalId": "9adbadaa-cb1e-8919-4756-07f7b27aebcf",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "Site",
+      "hasProperties": [
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "SiteName",
+          "nominalValue": {
+            "type": "IfcText",
+            "value": "Site 1"
+          }
+        }
+      ],
+      "definesOccurrence": [
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "e5b56830-e7e3-3319-567b-c24331650ea0"
+        }
+      ]
+    },
+    {
+      "type": "IfcPropertySet",
+      "globalId": "8cdc1d7b-f155-b60f-9a8b-fad2c902b5b5",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "Pset_BuildingCommon",
+      "hasProperties": [
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "YearOfConstruction",
+          "nominalValue": {
+            "type": "IfcLabel",
+            "value": "2006"
+          }
+        }
+      ],
+      "definesOccurrence": [
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "bd630aa2-7b26-b0af-3276-8d69cc8cf1f6"
+        }
+      ]
+    },
+    {
+      "type": "IfcPropertySet",
+      "globalId": "d8c1455d-38f1-e5a8-c7c0-fc14351e4b63",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "ArchBuilding",
+      "hasProperties": [
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "BuildingName",
+          "nominalValue": {
+            "type": "IfcText",
+            "value": "Bldg 1"
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "YearConstructed",
+          "nominalValue": {
+            "type": "IfcText",
+            "value": "2006"
+          }
+        }
+      ],
+      "definesOccurrence": [
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "ee03910e-9e43-b964-d217-7356cf2c259d"
+        }
+      ]
+    },
+    {
+      "type": "IfcPropertySet",
+      "globalId": "51b579b4-c479-2e25-1e55-75422d23a067",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "ObjectIdentity",
+      "hasProperties": [
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "Description",
+          "nominalValue": {
+            "type": "IfcText",
+            "value": "3 Story Building"
+          }
+        }
+      ],
+      "definesOccurrence": [
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "f84aa9ab-f44c-48c4-d30c-5aad012cbd2f"
+        }
+      ]
+    },
+    {
+      "type": "IfcPropertySet",
+      "globalId": "c018ef7c-e94c-dba5-2a2c-d8493bbcc067",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "ObjectPostalAddress",
+      "hasProperties": [
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "Address1",
+          "nominalValue": {
+            "type": "IfcText",
+            "value": "203 Rickenhouse Drive"
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "City",
+          "nominalValue": {
+            "type": "IfcText",
+            "value": "Madison"
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "PostalCode",
+          "nominalValue": {
+            "type": "IfcText",
+            "value": "35789"
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "Country",
+          "nominalValue": {
+            "type": "IfcText",
+            "value": "US"
+          }
+        }
+      ],
+      "definesOccurrence": [
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "4c3308fe-0683-8dce-9598-182dc1b6e8ed"
+        }
+      ]
+    },
+    {
+      "type": "IfcPropertySet",
+      "globalId": "c807852a-a084-030f-4852-951d4812b2c4",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "Pset_BuildingStoreyCommon",
+      "hasProperties": [
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "GrossAreaPlanned",
+          "nominalValue": {
+            "type": "IfcAreaMeasure",
+            "value": 22296729.6
+          },
+          "unit": {
+            "type": "IfcSIUnit",
+            "unitType": "AREAUNIT",
+            "name": "SQUARE_METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2
+            }
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "GrossPlannedArea",
+          "nominalValue": {
+            "type": "IfcAreaMeasure",
+            "value": 22296729.6
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "NetAreaPlanned",
+          "nominalValue": {
+            "type": "IfcAreaMeasure",
+            "value": 22296729.6
+          },
+          "unit": {
+            "type": "IfcSIUnit",
+            "unitType": "AREAUNIT",
+            "name": "SQUARE_METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2
+            }
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "NetPlannedArea",
+          "nominalValue": {
+            "type": "IfcAreaMeasure",
+            "value": 22296729.6
+          }
+        }
+      ],
+      "definesOccurrence": [
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "844bf3c7-548a-a973-a9ca-40de69b9f3b8"
+        }
+      ]
+    },
+    {
+      "type": "IfcPropertySet",
+      "globalId": "108f07da-60ac-131b-d598-b86b43e2fa17",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "ArchFloor",
+      "hasProperties": [
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "FloorName",
+          "nominalValue": {
+            "type": "IfcText",
+            "value": "Floor 3"
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "FinishedFloorElevation",
+          "nominalValue": {
+            "type": "IfcReal",
+            "value": 9.144
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "Description",
+          "nominalValue": {
+            "type": "IfcText",
+            "value": "Administrative and employee lounge"
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "ApproxLength",
+          "nominalValue": {
+            "type": "IfcLengthMeasure",
+            "value": 6096.0
+          },
+          "unit": {
+            "type": "IfcSIUnit",
+            "unitType": "LENGTHUNIT",
+            "name": "METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 1
+            }
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "ApproxWidth",
+          "nominalValue": {
+            "type": "IfcLengthMeasure",
+            "value": 3657.6
+          },
+          "unit": {
+            "type": "IfcSIUnit",
+            "unitType": "LENGTHUNIT",
+            "name": "METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 1
+            }
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "TypicalFloor",
+          "nominalValue": {
+            "type": "IfcBoolean",
+            "value": false
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "ACSRotation",
+          "nominalValue": {
+            "type": "IfcText",
+            "value": "0.00000000"
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "Annotation",
+          "nominalValue": {
+            "type": "IfcBoolean",
+            "value": true
+          }
+        }
+      ],
+      "definesOccurrence": [
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "5404de6d-a796-7dec-3ace-17a163454034"
+        }
+      ]
+    },
+    {
+      "type": "IfcPropertySet",
+      "globalId": "0a0ccfb9-69e5-db6a-3a4a-1a9174dcbbce",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "Floor",
+      "hasProperties": [
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "GrossArea",
+          "nominalValue": {
+            "type": "IfcAreaMeasure",
+            "value": 22296729.6
+          },
+          "unit": {
+            "type": "IfcSIUnit",
+            "unitType": "AREAUNIT",
+            "name": "SQUARE_METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2
+            }
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "NetArea",
+          "nominalValue": {
+            "type": "IfcAreaMeasure",
+            "value": 22296729.6
+          },
+          "unit": {
+            "type": "IfcSIUnit",
+            "unitType": "AREAUNIT",
+            "name": "SQUARE_METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2
+            }
+          }
+        },
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "OccupancyType",
+          "nominalValue": {
+            "type": "IfcText",
+            "value": "Commercial"
+          }
+        }
+      ],
+      "definesOccurrence": [
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "2fd54004-9230-3919-8a7a-dbc76167d8f4"
+        }
+      ]
+    },
+    {
+      "type": "IfcPropertySet",
+      "globalId": "2cf720e8-dd0e-0cce-eb5b-63c9ee9a395d",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "StructuralFloorCommon",
+      "hasProperties": [
+        {
+          "type": "IfcPropertySingleValue",
+          "name": "issplicefloor",
+          "nominalValue": {
+            "type": "IfcBoolean",
+            "value": false
+          }
+        }
+      ],
+      "definesOccurrence": [
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "6994df3b-1323-da51-4926-33e949ede6f4"
+        }
+      ]
+    },
+    {
+      "type": "IfcProject",
+      "globalId": "53c0b79d-ad90-498c-8e8e-34823b43a30f",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "BuildingTemplate_US",
+      "description": "BuildingTemplate_US",
+      "longName": "BuildingTemplate_US",
+      "representationContexts": [
+        {
+          "type": "IfcGeometricRepresentationContext",
+          "ref": "3266a60a-93e7-403a-b4e0-841fc99b1bdb"
+        }
+      ],
+      "unitsInContext": {
+        "type": "IfcUnitAssignment",
+        "units": [
+          {
+            "type": "IfcSIUnit",
+            "unitType": "LENGTHUNIT",
+            "name": "METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "AREAUNIT",
+            "name": "SQUARE_METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "VOLUMEUNIT",
+            "name": "CUBIC_METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 3
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "ABSORBEDDOSEUNIT",
+            "name": "GRAY",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2,
+              "TimeExponent": -2
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "AMOUNTOFSUBSTANCEUNIT",
+            "name": "MOLE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "AmountOfSubstanceExponent": 1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "DOSEEQUIVALENTUNIT",
+            "name": "SIEVERT",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2,
+              "TimeExponent": -2
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "ELECTRICCAPACITANCEUNIT",
+            "name": "FARAD",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": -2,
+              "MassExponent": -1,
+              "TimeExponent": 4,
+              "ElectricCurrentExponent": 2
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "ELECTRICCHARGEUNIT",
+            "name": "COULOMB",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "TimeExponent": 1,
+              "ElectricCurrentExponent": 1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "ELECTRICCONDUCTANCEUNIT",
+            "name": "SIEMENS",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": -2,
+              "MassExponent": -1,
+              "TimeExponent": 3,
+              "ElectricCurrentExponent": 2
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "ELECTRICCURRENTUNIT",
+            "name": "AMPERE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "ElectricCurrentExponent": 1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "ELECTRICRESISTANCEUNIT",
+            "name": "OHM",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2,
+              "MassExponent": 1,
+              "TimeExponent": -3,
+              "ElectricCurrentExponent": -2
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "ELECTRICVOLTAGEUNIT",
+            "name": "VOLT",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2,
+              "MassExponent": 1,
+              "TimeExponent": -3,
+              "ElectricCurrentExponent": -1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "ENERGYUNIT",
+            "name": "JOULE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2,
+              "MassExponent": 1,
+              "TimeExponent": -2
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "FORCEUNIT",
+            "name": "NEWTON",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 1,
+              "MassExponent": 1,
+              "TimeExponent": -2
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "FREQUENCYUNIT",
+            "name": "HERTZ",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "TimeExponent": -1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "ILLUMINANCEUNIT",
+            "name": "LUX",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": -2,
+              "LuminousIntensityExponent": 1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "INDUCTANCEUNIT",
+            "name": "HENRY",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2,
+              "MassExponent": 1,
+              "TimeExponent": -2,
+              "ElectricCurrentExponent": -2
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "LUMINOUSFLUXUNIT",
+            "name": "LUMEN",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LuminousIntensityExponent": 1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "LUMINOUSINTENSITYUNIT",
+            "name": "CANDELA",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LuminousIntensityExponent": 1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "MAGNETICFLUXDENSITYUNIT",
+            "name": "TESLA",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "MassExponent": 1,
+              "TimeExponent": -2,
+              "ElectricCurrentExponent": -1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "MAGNETICFLUXUNIT",
+            "name": "WEBER",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2,
+              "MassExponent": 1,
+              "TimeExponent": -2,
+              "ElectricCurrentExponent": -1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "MASSUNIT",
+            "name": "GRAM",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "MassExponent": 1
+            }
+          },
+          {
+            "type": "IfcConversionBasedUnit",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "lengthExponent": 0,
+              "massExponent": 0,
+              "timeExponent": 0,
+              "electricCurrentExponent": 0,
+              "thermodynamicTemperatureExponent": 0,
+              "amountOfSubstanceExponent": 0,
+              "luminousIntensityExponent": 0
+            },
+            "unitType": "PLANEANGLEUNIT",
+            "name": "degree",
+            "conversionFactor": {
+              "type": "IfcMeasureWithUnit",
+              "valueComponent": {
+                "type": "IfcReal",
+                "value": 0.0174532925199433
+              },
+              "unitComponent": {
+                "type": "IfcSIUnit",
+                "unitType": "PLANEANGLEUNIT",
+                "name": "RADIAN",
+                "dimensions": {
+                  "type": "IfcDimensionalExponents"
+                }
+              }
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "POWERUNIT",
+            "name": "WATT",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 2,
+              "MassExponent": 1,
+              "TimeExponent": -3
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "PRESSUREUNIT",
+            "name": "PASCAL",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": -1,
+              "MassExponent": 1,
+              "TimeExponent": -2
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "RADIOACTIVITYUNIT",
+            "name": "BECQUEREL",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "TimeExponent": -1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "SOLIDANGLEUNIT",
+            "name": "STERADIAN",
+            "dimensions": {
+              "type": "IfcDimensionalExponents"
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "THERMODYNAMICTEMPERATUREUNIT",
+            "name": "KELVIN",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "ThermodynamicTemperatureExponent": 1
+            }
+          },
+          {
+            "type": "IfcSIUnit",
+            "unitType": "TIMEUNIT",
+            "name": "SECOND",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "TimeExponent": 1
+            }
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "TIMEUNIT",
+                  "name": "SECOND",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "TimeExponent": 1
+                  }
+                },
+                "exponent": -2
+              }
+            ],
+            "unitType": "ACCELERATIONUNIT",
+            "userDefinedType": "(METRE)/(SECOND^2)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcConversionBasedUnit",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "lengthExponent": 0,
+                    "massExponent": 0,
+                    "timeExponent": 0,
+                    "electricCurrentExponent": 0,
+                    "thermodynamicTemperatureExponent": 0,
+                    "amountOfSubstanceExponent": 0,
+                    "luminousIntensityExponent": 0
+                  },
+                  "unitType": "PLANEANGLEUNIT",
+                  "name": "degree",
+                  "conversionFactor": {
+                    "type": "IfcMeasureWithUnit",
+                    "valueComponent": {
+                      "type": "IfcReal",
+                      "value": 0.0174532925199433
+                    },
+                    "unitComponent": {
+                      "type": "IfcSIUnit",
+                      "unitType": "PLANEANGLEUNIT",
+                      "name": "RADIAN",
+                      "dimensions": {
+                        "type": "IfcDimensionalExponents"
+                      }
+                    }
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "TIMEUNIT",
+                  "name": "SECOND",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "TimeExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "ANGULARVELOCITYUNIT",
+            "userDefinedType": "(DEGREE)/(SECOND)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcConversionBasedUnit",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "lengthExponent": 0,
+                    "massExponent": 0,
+                    "timeExponent": 0,
+                    "electricCurrentExponent": 0,
+                    "thermodynamicTemperatureExponent": 0,
+                    "amountOfSubstanceExponent": 0,
+                    "luminousIntensityExponent": 0
+                  },
+                  "unitType": "PLANEANGLEUNIT",
+                  "name": "degree",
+                  "conversionFactor": {
+                    "type": "IfcMeasureWithUnit",
+                    "valueComponent": {
+                      "type": "IfcReal",
+                      "value": 0.0174532925199433
+                    },
+                    "unitComponent": {
+                      "type": "IfcSIUnit",
+                      "unitType": "PLANEANGLEUNIT",
+                      "name": "RADIAN",
+                      "dimensions": {
+                        "type": "IfcDimensionalExponents"
+                      }
+                    }
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "CURVATUREUNIT",
+            "userDefinedType": "(DEGREE)/(METRE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "PRESSUREUNIT",
+                  "name": "PASCAL",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": -1,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "TIMEUNIT",
+                  "name": "SECOND",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "TimeExponent": 1
+                  }
+                },
+                "exponent": 1
+              }
+            ],
+            "unitType": "DYNAMICVISCOSITYUNIT",
+            "userDefinedType": "(PASCAL)(SECOND)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "POWERUNIT",
+                  "name": "WATT",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 2,
+                    "MassExponent": 1,
+                    "TimeExponent": -3
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": -2
+              }
+            ],
+            "unitType": "HEATFLUXDENSITYUNIT",
+            "userDefinedType": "(WATT)/(METRE^2)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "ENERGYUNIT",
+                  "name": "JOULE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 2,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "MASSUNIT",
+                  "name": "GRAM",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "MassExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "HEATINGVALUEUNIT",
+            "userDefinedType": "(JOULE)/(GRAM)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "TIMEUNIT",
+                  "name": "SECOND",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "TimeExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "INTEGERCOUNTRATEUNIT",
+            "userDefinedType": "1/(SECOND)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "MASSUNIT",
+                  "name": "GRAM",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "MassExponent": 1
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "VOLUMEUNIT",
+                  "name": "CUBIC_METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 3
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "IONCONCENTRATIONUNIT",
+            "userDefinedType": "(GRAM)/(CUBIC_METRE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "VOLUMEUNIT",
+                  "name": "CUBIC_METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 3
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "MASSUNIT",
+                  "name": "GRAM",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "MassExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "ISOTHERMALMOISTURECAPACITYUNIT",
+            "userDefinedType": "(CUBIC_METRE)/(GRAM)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "AREAUNIT",
+                  "name": "SQUARE_METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "TIMEUNIT",
+                  "name": "SECOND",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "TimeExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "KINEMATICVISCOSITYUNIT",
+            "userDefinedType": "(SQUARE_METRE)/(SECOND)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "FORCEUNIT",
+                  "name": "NEWTON",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "LINEARFORCEUNIT",
+            "userDefinedType": "(NEWTON)/(METRE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "FORCEUNIT",
+                  "name": "NEWTON",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "LINEARMOMENTUNIT",
+            "userDefinedType": "(NEWTON)/(METRE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "FORCEUNIT",
+                  "name": "NEWTON",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "LINEARSTIFFNESSUNIT",
+            "userDefinedType": "(NEWTON)/(METRE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "TIMEUNIT",
+                  "name": "SECOND",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "TimeExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "LINEARVELOCITYUNIT",
+            "userDefinedType": "(METRE)/(SECOND)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LUMINOUSINTENSITYUNIT",
+                  "name": "CANDELA",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LuminousIntensityExponent": 1
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LUMINOUSFLUXUNIT",
+                  "name": "LUMEN",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LuminousIntensityExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "LUMINOUSINTENSITYDISTRIBUTIONUNIT",
+            "userDefinedType": "(CANDELA)/(LUMEN)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "MASSUNIT",
+                  "name": "GRAM",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "MassExponent": 1
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "VOLUMEUNIT",
+                  "name": "CUBIC_METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 3
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "MASSDENSITYUNIT",
+            "userDefinedType": "(GRAM)/(CUBIC_METRE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "MASSUNIT",
+                  "name": "GRAM",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "MassExponent": 1
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "TIMEUNIT",
+                  "name": "SECOND",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "TimeExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "MASSFLOWRATEUNIT",
+            "userDefinedType": "(GRAM)/(SECOND)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "MASSUNIT",
+                  "name": "GRAM",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "MassExponent": 1
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "MASSPERLENGTHUNIT",
+            "userDefinedType": "(GRAM)/(METRE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "FORCEUNIT",
+                  "name": "NEWTON",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "AREAUNIT",
+                  "name": "SQUARE_METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 2
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "MODULUSOFELASTICITYUNIT",
+            "userDefinedType": "(NEWTON)/(SQUARE_METRE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "FORCEUNIT",
+                  "name": "NEWTON",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": -2
+              }
+            ],
+            "unitType": "MODULUSOFLINEARSUBGRADEREACTIONUNIT",
+            "userDefinedType": "(NEWTON)/(METRE^2)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "FORCEUNIT",
+                  "name": "NEWTON",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": 1
+              }
+            ],
+            "unitType": "MODULUSOFROTATIONALSUBGRADEREACTIONUNIT",
+            "userDefinedType": "(NEWTON)(METRE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "FORCEUNIT",
+                  "name": "NEWTON",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "VOLUMEUNIT",
+                  "name": "CUBIC_METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 3
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "MODULUSOFSUBGRADEREACTIONUNIT",
+            "userDefinedType": "(NEWTON)/(CUBIC_METRE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "VOLUMEUNIT",
+                  "name": "CUBIC_METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 3
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "TIMEUNIT",
+                  "name": "SECOND",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "TimeExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "MOISTUREDIFFUSIVITYUNIT",
+            "userDefinedType": "(CUBIC_METRE)/(SECOND)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "MASSUNIT",
+                  "name": "GRAM",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "MassExponent": 1
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "AMOUNTOFSUBSTANCEUNIT",
+                  "name": "MOLE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "AmountOfSubstanceExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "MOLECULARWEIGHTUNIT",
+            "userDefinedType": "(GRAM)/(MOLE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "FORCEUNIT",
+                  "name": "NEWTON",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": -2
+              }
+            ],
+            "unitType": "PLANARFORCEUNIT",
+            "userDefinedType": "(NEWTON)/(METRE^2)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "TIMEUNIT",
+                  "name": "SECOND",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "TimeExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "ROTATIONALFREQUENCYUNIT",
+            "userDefinedType": "1/(SECOND)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "MASSUNIT",
+                  "name": "GRAM",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "MassExponent": 1
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": 2
+              }
+            ],
+            "unitType": "ROTATIONALMASSUNIT",
+            "userDefinedType": "(GRAM)(METRE^2)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "FORCEUNIT",
+                  "name": "NEWTON",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcConversionBasedUnit",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "lengthExponent": 0,
+                    "massExponent": 0,
+                    "timeExponent": 0,
+                    "electricCurrentExponent": 0,
+                    "thermodynamicTemperatureExponent": 0,
+                    "amountOfSubstanceExponent": 0,
+                    "luminousIntensityExponent": 0
+                  },
+                  "unitType": "PLANEANGLEUNIT",
+                  "name": "degree",
+                  "conversionFactor": {
+                    "type": "IfcMeasureWithUnit",
+                    "valueComponent": {
+                      "type": "IfcReal",
+                      "value": 0.0174532925199433
+                    },
+                    "unitComponent": {
+                      "type": "IfcSIUnit",
+                      "unitType": "PLANEANGLEUNIT",
+                      "name": "RADIAN",
+                      "dimensions": {
+                        "type": "IfcDimensionalExponents"
+                      }
+                    }
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "ROTATIONALSTIFFNESSUNIT",
+            "userDefinedType": "(NEWTON)(METRE)/(DEGREE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": 5
+              }
+            ],
+            "unitType": "SECTIONAREAINTEGRALUNIT",
+            "userDefinedType": "(METRE^5)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": 3
+              }
+            ],
+            "unitType": "SECTIONMODULUSUNIT",
+            "userDefinedType": "(METRE^3)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "FORCEUNIT",
+                  "name": "NEWTON",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "AREAUNIT",
+                  "name": "SQUARE_METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 2
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "SHEARMODULUSUNIT",
+            "userDefinedType": "(NEWTON)/(SQUARE_METRE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "ENERGYUNIT",
+                  "name": "JOULE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 2,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "TIMEUNIT",
+                  "name": "SECOND",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "TimeExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "SOUNDPOWERUNIT",
+            "userDefinedType": "(JOULE)/(SECOND)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "FORCEUNIT",
+                  "name": "NEWTON",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "MASSUNIT",
+                  "name": "GRAM",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "MassExponent": 1
+                  }
+                },
+                "exponent": -1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "THERMODYNAMICTEMPERATUREUNIT",
+                  "name": "KELVIN",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "ThermodynamicTemperatureExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "SPECIFICHEATCAPACITYUNIT",
+            "userDefinedType": "(NEWTON)/(GRAM)(KELVIN)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "THERMODYNAMICTEMPERATUREUNIT",
+                  "name": "KELVIN",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "ThermodynamicTemperatureExponent": 1
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "TEMPERATUREGRADIENTUNIT",
+            "userDefinedType": "(KELVIN)/(METRE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "POWERUNIT",
+                  "name": "WATT",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 2,
+                    "MassExponent": 1,
+                    "TimeExponent": -3
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "AREAUNIT",
+                  "name": "SQUARE_METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 2
+                  }
+                },
+                "exponent": -1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "THERMODYNAMICTEMPERATUREUNIT",
+                  "name": "KELVIN",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "ThermodynamicTemperatureExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "THERMALADMITTANCEUNIT",
+            "userDefinedType": "(WATT)/(SQUARE_METRE)(KELVIN)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "POWERUNIT",
+                  "name": "WATT",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 2,
+                    "MassExponent": 1,
+                    "TimeExponent": -3
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": -1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "THERMODYNAMICTEMPERATUREUNIT",
+                  "name": "KELVIN",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "ThermodynamicTemperatureExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "THERMALCONDUCTANCEUNIT",
+            "userDefinedType": "(WATT)/(METRE)(KELVIN)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "THERMODYNAMICTEMPERATUREUNIT",
+                  "name": "KELVIN",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "ThermodynamicTemperatureExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "THERMALEXPANSIONCOEFFICIENTUNIT",
+            "userDefinedType": "1/(KELVIN)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "AREAUNIT",
+                  "name": "SQUARE_METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "POWERUNIT",
+                  "name": "WATT",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 2,
+                    "MassExponent": 1,
+                    "TimeExponent": -3
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "THERMALRESISTANCEUNIT",
+            "userDefinedType": "(SQUARE_METRE)/(WATT)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "POWERUNIT",
+                  "name": "WATT",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 2,
+                    "MassExponent": 1,
+                    "TimeExponent": -3
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "AREAUNIT",
+                  "name": "SQUARE_METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 2
+                  }
+                },
+                "exponent": -1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "THERMODYNAMICTEMPERATUREUNIT",
+                  "name": "KELVIN",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "ThermodynamicTemperatureExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "THERMALTRANSMITTANCEUNIT",
+            "userDefinedType": "(WATT)/(SQUARE_METRE)(KELVIN)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "FORCEUNIT",
+                  "name": "NEWTON",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": 1
+              }
+            ],
+            "unitType": "TORQUEUNIT",
+            "userDefinedType": "(NEWTON)(METRE)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "MASSUNIT",
+                  "name": "GRAM",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "MassExponent": 1
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "TIMEUNIT",
+                  "name": "SECOND",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "TimeExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "VAPORPERMEABILITYUNIT",
+            "userDefinedType": "(GRAM)/(SECOND)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "VOLUMEUNIT",
+                  "name": "CUBIC_METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 3
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "TIMEUNIT",
+                  "name": "SECOND",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "TimeExponent": 1
+                  }
+                },
+                "exponent": -1
+              }
+            ],
+            "unitType": "VOLUMETRICFLOWRATEUNIT",
+            "userDefinedType": "(CUBIC_METRE)/(SECOND)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": 6
+              }
+            ],
+            "unitType": "WARPINGCONSTANTUNIT",
+            "userDefinedType": "(METRE^6)"
+          },
+          {
+            "type": "IfcDerivedUnit",
+            "elements": [
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "FORCEUNIT",
+                  "name": "NEWTON",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1,
+                    "MassExponent": 1,
+                    "TimeExponent": -2
+                  }
+                },
+                "exponent": 1
+              },
+              {
+                "type": "IfcDerivedUnitElement",
+                "unit": {
+                  "type": "IfcSIUnit",
+                  "unitType": "LENGTHUNIT",
+                  "name": "METRE",
+                  "dimensions": {
+                    "type": "IfcDimensionalExponents",
+                    "LengthExponent": 1
+                  }
+                },
+                "exponent": 2
+              }
+            ],
+            "unitType": "WARPINGMOMENTUNIT",
+            "userDefinedType": "(NEWTON)(METRE^2)"
+          },
+          {
+            "type": "IfcMonetaryUnit",
+            "currency": "USD"
+          }
+        ]
+      },
+      "isDecomposedBy": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "6e2c329a-e694-33b8-fc3e-1f84576e7c99"
+        }
+      ],
+      "isDefinedBy": [
+        {
+          "type": "IfcRelDefinesByProperties",
+          "ref": "5b5413a8-e917-766d-8d59-99772f2d2146"
+        }
+      ]
+    },
+    {
+      "type": "IfcShapeRepresentation",
+      "contextOfItems": {
+        "type": "IfcGeometricRepresentationSubContext",
+        "ref": "696011c3-6625-4e3f-87aa-10e6089362d7"
+      },
+      "representationIdentifier": "Body",
+      "representationType": "Tessellation",
+      "items": [
+        {
+          "type": "IfcPolygonalFaceSet",
+          "coordinates": {
+            "type": "IfcCartesianPointList3D",
+            "coordList": [
+              [
+                12.000035623731,
+                3.56237310153773e-05,
+                3.59370000000005
+              ],
+              [
+                3.56237309519202e-05,
+                3.56237309460807e-05,
+                3.5937
+              ],
+              [
+                3.56237309528582e-05,
+                2.93863608466212,
+                2.78092077222723
+              ],
+              [
+                12.000035623731,
+                2.93863608466219,
+                2.78092077222725
+              ],
+              [
+                3.5623730955108e-05,
+                5.6865220653193,
+                2.23194191344762
+              ],
+              [
+                12.000035623731,
+                5.68652206531939,
+                2.23194191344764
+              ],
+              [
+                3.56237309550618e-05,
+                7.72846921797043,
+                2.15068135964469
+              ],
+              [
+                12.000035623731,
+                7.72846921797052,
+                2.15068135964472
+              ],
+              [
+                3.56237309570197e-05,
+                9.18212469647124,
+                2.44726788666241
+              ],
+              [
+                12.000035623731,
+                9.18212469647134,
+                2.44726788666245
+              ],
+              [
+                3.56237309634072e-05,
+                10.3017975988992,
+                3.09416705793496
+              ],
+              [
+                12.000035623731,
+                10.3017975988993,
+                3.09416705793501
+              ],
+              [
+                3.56237309668594e-05,
+                11.1303238271614,
+                4.11637057440334
+              ],
+              [
+                12.000035623731,
+                11.1303238271615,
+                4.11637057440339
+              ],
+              [
+                12.000035623731,
+                11.9331946287012,
+                9.52918161280188
+              ],
+              [
+                3.56237309882999e-05,
+                11.9331946287011,
+                9.52918161280184
+              ],
+              [
+                3.56237309917675e-05,
+                11.4520530196514,
+                11.3993978793655
+              ],
+              [
+                12.000035623731,
+                11.4520530196515,
+                11.3993978793655
+              ],
+              [
+                3.56237309947772e-05,
+                10.7378800730514,
+                12.6472749123606
+              ],
+              [
+                12.000035623731,
+                10.7378800730515,
+                12.6472749123606
+              ],
+              [
+                3.56237309908097e-05,
+                9.7745337415019,
+                13.4646099914071
+              ],
+              [
+                12.000035623731,
+                9.77453374150197,
+                13.4646099914071
+              ],
+              [
+                3.56237309832677e-05,
+                8.52450838507296,
+                13.9270525982087
+              ],
+              [
+                12.000035623731,
+                8.52450838507304,
+                13.9270525982087
+              ],
+              [
+                3.56237309819346e-05,
+                8.36440669327847,
+                13.9580465984157
+              ],
+              [
+                12.000035623731,
+                8.36440669327854,
+                13.9580465984157
+              ],
+              [
+                3.56237309728154e-05,
+                6.53290934780139,
+                14.0377251867336
+              ],
+              [
+                12.000035623731,
+                6.53290934780147,
+                14.0377251867336
+              ],
+              [
+                3.56237309608598e-05,
+                3.66034093007487,
+                13.580601472828
+              ],
+              [
+                12.000035623731,
+                3.66034093007493,
+                13.580601472828
+              ],
+              [
+                3.56237309521336e-05,
+                3.5623730946827e-05,
+                12.5937
+              ],
+              [
+                12.000035623731,
+                3.56237310159367e-05,
+                12.5937000000001
+              ],
+              [
+                4.57758631818715,
+                12.0208519794837,
+                7.61086559606823
+              ],
+              [
+                3.56237309832068e-05,
+                12.0209350792972,
+                7.61085478261137
+              ],
+              [
+                3.10115036289269,
+                11.7958146892504,
+                5.90528285739555
+              ],
+              [
+                3.33272179725709,
+                11.7263674667051,
+                5.62829511736462
+              ],
+              [
+                3.56237309744756e-05,
+                11.7277828274938,
+                5.62767267726536
+              ],
+              [
+                8.68193533412983,
+                11.727398899119,
+                5.62782402641685
+              ],
+              [
+                12.000035623731,
+                11.7277828274939,
+                5.62767267726542
+              ],
+              [
+                8.09928297830169,
+                12.0069887052451,
+                7.3670060028364
+              ],
+              [
+                7.41463954287985,
+                12.0205869166489,
+                7.61090970932408
+              ],
+              [
+                12.000035623731,
+                12.0209350792973,
+                7.61085478261142
+              ],
+              [
+                8.9359411035137,
+                11.8129547552475,
+                5.98242148675326
+              ],
+              [
+                9.00003562373093,
+                11.8750527629544,
+                6.29508376926321
+              ],
+              [
+                8.90915316355799,
+                11.9341467012463,
+                6.66501705277272
+              ],
+              [
+                8.6201476217649,
+                11.977770710071,
+                7.02575217881544
+              ],
+              [
+                8.22866860658416,
+                11.63071074409,
+                5.29043595645168
+              ],
+              [
+                8.66905657456281,
+                11.7230609925301,
+                5.60984500394887
+              ],
+              [
+                3.40334111827362,
+                11.7051890527262,
+                5.54382577776506
+              ],
+              [
+                7.4714795426918,
+                11.5281761302004,
+                4.9870358706731
+              ],
+              [
+                3.93859910704579,
+                11.6033645468155,
+                5.20494953468713
+              ],
+              [
+                6.52486398216909,
+                11.4636549409597,
+                4.81709865582256
+              ],
+              [
+                4.71408665860433,
+                11.5103032908724,
+                4.93851479207616
+              ],
+              [
+                5.53712448362505,
+                11.4616557720407,
+                4.81205487000696
+              ],
+              [
+                3.32714164376353,
+                11.9725954872721,
+                6.97646411192229
+              ],
+              [
+                3.06336898921802,
+                11.9256950306372,
+                6.60584179458511
+              ],
+              [
+                3.75907361121469,
+                12.0016057516348,
+                7.29278043174156
+              ],
+              [
+                4.51755081725975,
+                12.0204384085141,
+                7.6000680829465
+              ],
+              [
+                3.00241152115253,
+                11.863977578236,
+                6.23481576890388
+              ],
+              [
+                7.33019614319314,
+                12.0222641096828,
+                7.64099260664906
+              ],
+              [
+                6.50744970447466,
+                12.0271234855317,
+                7.77476345225691
+              ],
+              [
+                5.48472293484532,
+                12.0271010381953,
+                7.77401605488445
+              ]
+            ]
+          },
+          "closed": false,
+          "faces": [
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                1,
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                4,
+                3,
+                5,
+                6
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                6,
+                5,
+                7,
+                8
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                8,
+                7,
+                9,
+                10
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                10,
+                9,
+                11,
+                12
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                12,
+                11,
+                13,
+                14
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                15,
+                16,
+                17,
+                18
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                18,
+                17,
+                19,
+                20
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                20,
+                19,
+                21,
+                22
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                22,
+                21,
+                23,
+                24
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                24,
+                23,
+                25,
+                26
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                26,
+                25,
+                27,
+                28
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                28,
+                27,
+                29,
+                30
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                30,
+                29,
+                31,
+                32
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                33,
+                34,
+                16
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                35,
+                36,
+                37
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                38,
+                39,
+                14
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                40,
+                41,
+                42
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                43,
+                44,
+                39
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                39,
+                38,
+                43
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                44,
+                45,
+                42
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                42,
+                39,
+                44
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                42,
+                45,
+                46
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                42,
+                46,
+                40
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                47,
+                48,
+                14
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                36,
+                49,
+                13
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                13,
+                37,
+                36
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                50,
+                47,
+                14
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                13,
+                49,
+                51
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                52,
+                50,
+                14
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                13,
+                51,
+                53
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                54,
+                52,
+                14
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                13,
+                53,
+                54
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                14,
+                13,
+                54
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                14,
+                48,
+                38
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                55,
+                56,
+                34
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                57,
+                55,
+                34
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                58,
+                57,
+                34
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                34,
+                33,
+                58
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                59,
+                37,
+                34
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                34,
+                56,
+                59
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                37,
+                59,
+                35
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                41,
+                60,
+                15
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                15,
+                42,
+                41
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                61,
+                62,
+                16
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                15,
+                60,
+                61
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                16,
+                15,
+                61
+              ]
+            },
+            {
+              "type": "IfcIndexedPolygonalFace",
+              "coordIndex": [
+                16,
+                62,
+                33
+              ]
+            }
+          ]
+        }
+      ],
+      "layerAssignments": [
+        {
+          "type": "IfcPresentationLayerAssignment",
+          "name": "Default",
+          "assignedItems": [
+            {
+              "type": "IfcShapeRepresentation",
+              "ref": "7693fdba-5d02-41df-b8d0-972d0f4f4c45"
+            }
+          ]
+        }
+      ],
+      "ofProductRepresentation": [
+        {
+          "type": "IfcProductDefinitionShape",
+          "representations": [
+            {
+              "type": "IfcShapeRepresentation",
+              "ref": "7693fdba-5d02-41df-b8d0-972d0f4f4c45"
+            },
+            {
+              "type": "IfcShapeRepresentation",
+              "ref": "211e8b6a-4b77-472f-80dc-0570098b4ea4"
+            }
+          ]
+        }
+      ],
+      "globalId": "7693fdba-5d02-41df-b8d0-972d0f4f4c45"
+    },
+    {
+      "type": "IfcShapeRepresentation",
+      "contextOfItems": {
+        "type": "IfcGeometricRepresentationSubContext",
+        "ref": "d29d31c8-f6a9-4b79-af62-01537f2c2174"
+      },
+      "representationIdentifier": "Box",
+      "representationType": "BoundingBox",
+      "items": [
+        {
+          "type": "IfcBoundingBox",
+          "corner": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              3.5623730952e-05,
+              3.5623730946e-05,
+              2.15068135964
+            ]
+          },
+          "xDim": 12.0,
+          "yDim": 12.0270878618007,
+          "zDim": 11.887043827089
+        }
+      ],
+      "ofProductRepresentation": [
+        {
+          "type": "IfcProductDefinitionShape",
+          "representations": [
+            {
+              "type": "IfcShapeRepresentation",
+              "ref": "7693fdba-5d02-41df-b8d0-972d0f4f4c45"
+            },
+            {
+              "type": "IfcShapeRepresentation",
+              "ref": "211e8b6a-4b77-472f-80dc-0570098b4ea4"
+            }
+          ]
+        }
+      ],
+      "globalId": "211e8b6a-4b77-472f-80dc-0570098b4ea4"
+    },
+    {
+      "type": "IfcOwnerHistory",
+      "owningUser": {
+        "type": "IfcPersonAndOrganization",
+        "thePerson": {
+          "type": "IfcPerson",
+          "familyName": "Last Name",
+          "givenName": "First Name",
+          "roles": [
+            {
+              "type": "IfcActorRole",
+              "role": "SUPPLIER"
+            }
+          ],
+          "addresses": [
+            {
+              "type": "IfcTelecomAddress",
+              "telephoneNumbers": [
+                "Phone"
+              ],
+              "electronicMailAddresses": [
+                "E-Mail"
+              ]
+            }
+          ]
+        },
+        "theOrganization": {
+          "type": "IfcOrganization",
+          "name": "Organization Name",
+          "addresses": [
+            {
+              "type": "IfcPostalAddress",
+              "addressLines": [
+                "Address 1",
+                "Address 2"
+              ],
+              "town": "City/Town",
+              "region": "State/Region",
+              "postalCode": "Postal Code",
+              "country": "Country"
+            }
+          ]
+        }
+      },
+      "owningApplication": {
+        "type": "IfcApplication",
+        "applicationDeveloper": {
+          "type": "IfcOrganization",
+          "name": "Bentley Systems Inc."
+        },
+        "version": "10.00.00.99",
+        "applicationFullName": "OpenBuildings Designer",
+        "applicationIdentifier": "ABD"
+      },
+      "lastModifiedDate": 0,
+      "creationDate": 1583849896,
+      "globalId": "b776b2ee-be4e-4346-9f44-24c570367726"
+    },
+    {
+      "type": "IfcGeometricRepresentationSubContext",
+      "contextIdentifier": "Body",
+      "contextType": "Model",
+      "parentContext": {
+        "type": "IfcGeometricRepresentationContext",
+        "ref": "3266a60a-93e7-403a-b4e0-841fc99b1bdb"
+      },
+      "targetScale": 1.0,
+      "targetView": "MODEL_VIEW",
+      "representationsInContext": [
+        {
+          "type": "IfcShapeRepresentation",
+          "ref": "7693fdba-5d02-41df-b8d0-972d0f4f4c45"
+        }
+      ],
+      "globalId": "696011c3-6625-4e3f-87aa-10e6089362d7"
+    },
+    {
+      "type": "IfcGeometricRepresentationSubContext",
+      "contextIdentifier": "Box",
+      "contextType": "Model",
+      "parentContext": {
+        "type": "IfcGeometricRepresentationContext",
+        "ref": "3266a60a-93e7-403a-b4e0-841fc99b1bdb"
+      },
+      "targetScale": 1.0,
+      "targetView": "SKETCH_VIEW",
+      "representationsInContext": [
+        {
+          "type": "IfcShapeRepresentation",
+          "ref": "211e8b6a-4b77-472f-80dc-0570098b4ea4"
+        }
+      ],
+      "globalId": "d29d31c8-f6a9-4b79-af62-01537f2c2174"
+    },
+    {
+      "type": "IfcGeometricRepresentationContext",
+      "contextType": "Model",
+      "coordinateSpaceDimension": 3,
+      "precision": 1e-06,
+      "worldCoordinateSystem": {
+        "type": "IfcAxis2Placement3D",
+        "location": {
+          "type": "IfcCartesianPoint",
+          "coordinates": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "axis": {
+          "type": "IfcDirection",
+          "directionRatios": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "refDirection": {
+          "type": "IfcDirection",
+          "directionRatios": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "trueNorth": {
+        "type": "IfcDirection",
+        "directionRatios": [
+          0.0,
+          1.0
+        ]
+      },
+      "hasSubContexts": [
+        {
+          "type": "IfcGeometricRepresentationSubContext",
+          "ref": "696011c3-6625-4e3f-87aa-10e6089362d7"
+        },
+        {
+          "type": "IfcGeometricRepresentationSubContext",
+          "ref": "d29d31c8-f6a9-4b79-af62-01537f2c2174"
+        }
+      ],
+      "globalId": "3266a60a-93e7-403a-b4e0-841fc99b1bdb"
+    },
+    {
+      "type": "IfcRelContainedInSpatialStructure",
+      "globalId": "a44ec00c-83ee-a675-3deb-650f0c396b94",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "relatedElements": [
+        {
+          "type": "IfcBuildingElementProxy",
+          "ref": "799f3531-265b-23ff-2134-80271196e05a"
+        }
+      ],
+      "relatingStructure": {
+        "type": "IfcBuildingStorey",
+        "ref": "35c0735e-d164-eb61-e9b6-17923704ffd5"
+      }
+    },
+    {
+      "type": "IfcRelAggregates",
+      "globalId": "6e2c329a-e694-33b8-fc3e-1f84576e7c99",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "relatingObject": {
+        "type": "IfcProject",
+        "ref": "53c0b79d-ad90-498c-8e8e-34823b43a30f"
+      },
+      "relatedObjects": [
+        {
+          "type": "IfcSite",
+          "ref": "001beb01-7c13-40dc-a50e-afeff9bed6b7"
+        }
+      ]
+    },
+    {
+      "type": "IfcRelAggregates",
+      "globalId": "0ccfee8d-618d-4393-0681-1928354337bc",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "relatingObject": {
+        "type": "IfcSite",
+        "ref": "001beb01-7c13-40dc-a50e-afeff9bed6b7"
+      },
+      "relatedObjects": [
+        {
+          "type": "IfcBuilding",
+          "ref": "fe4ae4d2-c4e0-43ad-b1a1-eb211f518aab"
+        }
+      ]
+    },
+    {
+      "type": "IfcRelAggregates",
+      "globalId": "57a649bb-4dea-ef05-cfae-90331a85f6f7",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "relatingObject": {
+        "type": "IfcBuilding",
+        "ref": "fe4ae4d2-c4e0-43ad-b1a1-eb211f518aab"
+      },
+      "relatedObjects": [
+        {
+          "type": "IfcBuildingStorey",
+          "ref": "35c0735e-d164-eb61-e9b6-17923704ffd5"
+        }
+      ]
+    },
+    {
+      "type": "IfcRelDefinesByProperties",
+      "globalId": "5b5413a8-e917-766d-8d59-99772f2d2146",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "Project",
+      "relatedObjects": [
+        {
+          "type": "IfcProject",
+          "ref": "53c0b79d-ad90-498c-8e8e-34823b43a30f"
+        }
+      ],
+      "relatingPropertyDefinition": {
+        "type": "IfcPropertySet",
+        "ref": "b599589c-614d-4f00-2879-ff43f738f128"
+      }
+    },
+    {
+      "type": "IfcRelDefinesByProperties",
+      "globalId": "e5b56830-e7e3-3319-567b-c24331650ea0",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "Site",
+      "relatedObjects": [
+        {
+          "type": "IfcSite",
+          "ref": "001beb01-7c13-40dc-a50e-afeff9bed6b7"
+        }
+      ],
+      "relatingPropertyDefinition": {
+        "type": "IfcPropertySet",
+        "ref": "9adbadaa-cb1e-8919-4756-07f7b27aebcf"
+      }
+    },
+    {
+      "type": "IfcRelDefinesByProperties",
+      "globalId": "bd630aa2-7b26-b0af-3276-8d69cc8cf1f6",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "Pset_BuildingCommon",
+      "relatedObjects": [
+        {
+          "type": "IfcBuilding",
+          "ref": "fe4ae4d2-c4e0-43ad-b1a1-eb211f518aab"
+        }
+      ],
+      "relatingPropertyDefinition": {
+        "type": "IfcPropertySet",
+        "ref": "8cdc1d7b-f155-b60f-9a8b-fad2c902b5b5"
+      }
+    },
+    {
+      "type": "IfcRelDefinesByProperties",
+      "globalId": "ee03910e-9e43-b964-d217-7356cf2c259d",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "ArchBuilding",
+      "relatedObjects": [
+        {
+          "type": "IfcBuilding",
+          "ref": "fe4ae4d2-c4e0-43ad-b1a1-eb211f518aab"
+        }
+      ],
+      "relatingPropertyDefinition": {
+        "type": "IfcPropertySet",
+        "ref": "d8c1455d-38f1-e5a8-c7c0-fc14351e4b63"
+      }
+    },
+    {
+      "type": "IfcRelDefinesByProperties",
+      "globalId": "f84aa9ab-f44c-48c4-d30c-5aad012cbd2f",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "ObjectIdentity",
+      "relatedObjects": [
+        {
+          "type": "IfcBuilding",
+          "ref": "fe4ae4d2-c4e0-43ad-b1a1-eb211f518aab"
+        }
+      ],
+      "relatingPropertyDefinition": {
+        "type": "IfcPropertySet",
+        "ref": "51b579b4-c479-2e25-1e55-75422d23a067"
+      }
+    },
+    {
+      "type": "IfcRelDefinesByProperties",
+      "globalId": "4c3308fe-0683-8dce-9598-182dc1b6e8ed",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "ObjectPostalAddress",
+      "relatedObjects": [
+        {
+          "type": "IfcBuilding",
+          "ref": "fe4ae4d2-c4e0-43ad-b1a1-eb211f518aab"
+        }
+      ],
+      "relatingPropertyDefinition": {
+        "type": "IfcPropertySet",
+        "ref": "c018ef7c-e94c-dba5-2a2c-d8493bbcc067"
+      }
+    },
+    {
+      "type": "IfcRelDefinesByProperties",
+      "globalId": "844bf3c7-548a-a973-a9ca-40de69b9f3b8",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "Pset_BuildingStoreyCommon",
+      "relatedObjects": [
+        {
+          "type": "IfcBuildingStorey",
+          "ref": "35c0735e-d164-eb61-e9b6-17923704ffd5"
+        }
+      ],
+      "relatingPropertyDefinition": {
+        "type": "IfcPropertySet",
+        "ref": "c807852a-a084-030f-4852-951d4812b2c4"
+      }
+    },
+    {
+      "type": "IfcRelDefinesByProperties",
+      "globalId": "5404de6d-a796-7dec-3ace-17a163454034",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "ArchFloor",
+      "relatedObjects": [
+        {
+          "type": "IfcBuildingStorey",
+          "ref": "35c0735e-d164-eb61-e9b6-17923704ffd5"
+        }
+      ],
+      "relatingPropertyDefinition": {
+        "type": "IfcPropertySet",
+        "ref": "108f07da-60ac-131b-d598-b86b43e2fa17"
+      }
+    },
+    {
+      "type": "IfcRelDefinesByProperties",
+      "globalId": "2fd54004-9230-3919-8a7a-dbc76167d8f4",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "Floor",
+      "relatedObjects": [
+        {
+          "type": "IfcBuildingStorey",
+          "ref": "35c0735e-d164-eb61-e9b6-17923704ffd5"
+        }
+      ],
+      "relatingPropertyDefinition": {
+        "type": "IfcPropertySet",
+        "ref": "0a0ccfb9-69e5-db6a-3a4a-1a9174dcbbce"
+      }
+    },
+    {
+      "type": "IfcRelDefinesByProperties",
+      "globalId": "6994df3b-1323-da51-4926-33e949ede6f4",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "b776b2ee-be4e-4346-9f44-24c570367726"
+      },
+      "name": "StructuralFloorCommon",
+      "relatedObjects": [
+        {
+          "type": "IfcBuildingStorey",
+          "ref": "35c0735e-d164-eb61-e9b6-17923704ffd5"
+        }
+      ],
+      "relatingPropertyDefinition": {
+        "type": "IfcPropertySet",
+        "ref": "2cf720e8-dd0e-0cce-eb5b-63c9ee9a395d"
+      }
+    }
+  ]
+}

@@ -1,0 +1,565 @@
+{
+  "type": "IFC.JSON",
+  "version": "0.0.1",
+  "schemaIdentifier": "IFC4",
+  "originatingSystem": "IFC2JSON_python Version 0.0.1",
+  "preprocessorVersion": "IfcOpenShell 0.6.0b0",
+  "timeStamp": "2020-10-30T00:18:59",
+  "data": [
+    {
+      "type": "IfcProject",
+      "globalId": "3b7266e8-127d-4e31-a10d-59cd1eb671a7",
+      "ownerHistory": {
+        "type": "IfcOwnerHistory",
+        "ref": "88042a1b-d856-4bd2-93d9-a1c4893eb0d9"
+      },
+      "name": "proxy with surface model",
+      "representationContexts": [
+        {
+          "type": "IfcGeometricRepresentationContext",
+          "ref": "6df99218-e052-45dc-9134-4ec8b8929a05"
+        }
+      ],
+      "unitsInContext": {
+        "type": "IfcUnitAssignment",
+        "units": [
+          {
+            "type": "IfcSIUnit",
+            "unitType": "LENGTHUNIT",
+            "prefix": "MILLI",
+            "name": "METRE",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "LengthExponent": 1
+            }
+          },
+          {
+            "type": "IfcConversionBasedUnit",
+            "dimensions": {
+              "type": "IfcDimensionalExponents",
+              "lengthExponent": 0,
+              "massExponent": 0,
+              "timeExponent": 0,
+              "electricCurrentExponent": 0,
+              "thermodynamicTemperatureExponent": 0,
+              "amountOfSubstanceExponent": 0,
+              "luminousIntensityExponent": 0
+            },
+            "unitType": "PLANEANGLEUNIT",
+            "name": "degree",
+            "conversionFactor": {
+              "type": "IfcMeasureWithUnit",
+              "valueComponent": {
+                "type": "IfcPlaneAngleMeasure",
+                "value": 0.017453293
+              },
+              "unitComponent": {
+                "type": "IfcSIUnit",
+                "unitType": "PLANEANGLEUNIT",
+                "name": "RADIAN",
+                "dimensions": {
+                  "type": "IfcDimensionalExponents"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "isDecomposedBy": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "a22f491f-f885-4116-8813-24d281d90c1d"
+        }
+      ]
+    },
+    {
+      "type": "IfcBuilding",
+      "globalId": "8f323372-d7b4-4d74-85d2-001ba786c219",
+      "name": "Test Building",
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "compositionType": "ELEMENT",
+      "decomposes": [
+        {
+          "type": "IfcRelAggregates",
+          "ref": "a22f491f-f885-4116-8813-24d281d90c1d"
+        }
+      ],
+      "containsElements": [
+        {
+          "type": "IfcRelContainedInSpatialStructure",
+          "ref": "9dc7b8ee-7617-4022-8378-5b8ade78f5fc"
+        }
+      ]
+    },
+    {
+      "type": "IfcBuildingElementProxy",
+      "globalId": "6e779871-965f-4c83-a22f-9969c19db132",
+      "name": "P-1",
+      "description": "sample proxy",
+      "objectPlacement": {
+        "type": "IfcLocalPlacement",
+        "placementRelTo": {
+          "type": "IfcLocalPlacement",
+          "relativePlacement": {
+            "type": "IfcAxis2Placement3D",
+            "location": {
+              "type": "IfcCartesianPoint",
+              "coordinates": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "relativePlacement": {
+          "type": "IfcAxis2Placement3D",
+          "location": {
+            "type": "IfcCartesianPoint",
+            "coordinates": [
+              1000.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "representation": {
+        "type": "IfcProductDefinitionShape",
+        "representations": [
+          {
+            "type": "IfcShapeRepresentation",
+            "ref": "96589dc1-45f4-4c36-9e10-6f8af436bca2"
+          }
+        ]
+      },
+      "containedInStructure": [
+        {
+          "type": "IfcRelContainedInSpatialStructure",
+          "ref": "9dc7b8ee-7617-4022-8378-5b8ade78f5fc"
+        }
+      ]
+    },
+    {
+      "type": "IfcShapeRepresentation",
+      "contextOfItems": {
+        "type": "IfcGeometricRepresentationSubContext",
+        "ref": "719681d6-e3eb-4936-bd7b-013466756d58"
+      },
+      "representationIdentifier": "Body",
+      "representationType": "SurfaceModel",
+      "items": [
+        {
+          "type": "IfcFaceBasedSurfaceModel",
+          "fbsmFaces": [
+            {
+              "type": "IfcConnectedFaceSet",
+              "cfsFaces": [
+                {
+                  "type": "IfcFace",
+                  "bounds": [
+                    {
+                      "type": "IfcFaceOuterBound",
+                      "bound": {
+                        "type": "IfcPolyLoop",
+                        "polygon": [
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              -500.0,
+                              -500.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              500.0,
+                              -500.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              500.0,
+                              -500.0,
+                              2000.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              -500.0,
+                              -500.0,
+                              2000.0
+                            ]
+                          }
+                        ]
+                      },
+                      "orientation": true
+                    }
+                  ]
+                },
+                {
+                  "type": "IfcFace",
+                  "bounds": [
+                    {
+                      "type": "IfcFaceOuterBound",
+                      "bound": {
+                        "type": "IfcPolyLoop",
+                        "polygon": [
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              500.0,
+                              -500.0,
+                              2000.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              500.0,
+                              -500.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              500.0,
+                              500.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              500.0,
+                              500.0,
+                              2000.0
+                            ]
+                          }
+                        ]
+                      },
+                      "orientation": true
+                    }
+                  ]
+                },
+                {
+                  "type": "IfcFace",
+                  "bounds": [
+                    {
+                      "type": "IfcFaceOuterBound",
+                      "bound": {
+                        "type": "IfcPolyLoop",
+                        "polygon": [
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              500.0,
+                              500.0,
+                              2000.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              500.0,
+                              500.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              -500.0,
+                              500.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              -500.0,
+                              500.0,
+                              2000.0
+                            ]
+                          }
+                        ]
+                      },
+                      "orientation": true
+                    }
+                  ]
+                },
+                {
+                  "type": "IfcFace",
+                  "bounds": [
+                    {
+                      "type": "IfcFaceOuterBound",
+                      "bound": {
+                        "type": "IfcPolyLoop",
+                        "polygon": [
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              -500.0,
+                              500.0,
+                              2000.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              -500.0,
+                              500.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              -500.0,
+                              -500.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              -500.0,
+                              -500.0,
+                              2000.0
+                            ]
+                          }
+                        ]
+                      },
+                      "orientation": true
+                    }
+                  ]
+                },
+                {
+                  "type": "IfcFace",
+                  "bounds": [
+                    {
+                      "type": "IfcFaceOuterBound",
+                      "bound": {
+                        "type": "IfcPolyLoop",
+                        "polygon": [
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              -500.0,
+                              -500.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              -500.0,
+                              500.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              500.0,
+                              500.0,
+                              0.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              500.0,
+                              -500.0,
+                              0.0
+                            ]
+                          }
+                        ]
+                      },
+                      "orientation": true
+                    }
+                  ]
+                },
+                {
+                  "type": "IfcFace",
+                  "bounds": [
+                    {
+                      "type": "IfcFaceOuterBound",
+                      "bound": {
+                        "type": "IfcPolyLoop",
+                        "polygon": [
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              500.0,
+                              -500.0,
+                              2000.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              500.0,
+                              500.0,
+                              2000.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              -500.0,
+                              500.0,
+                              2000.0
+                            ]
+                          },
+                          {
+                            "type": "IfcCartesianPoint",
+                            "coordinates": [
+                              -500.0,
+                              -500.0,
+                              2000.0
+                            ]
+                          }
+                        ]
+                      },
+                      "orientation": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ofProductRepresentation": [
+        {
+          "type": "IfcProductDefinitionShape",
+          "representations": [
+            {
+              "type": "IfcShapeRepresentation",
+              "ref": "96589dc1-45f4-4c36-9e10-6f8af436bca2"
+            }
+          ]
+        }
+      ],
+      "globalId": "96589dc1-45f4-4c36-9e10-6f8af436bca2"
+    },
+    {
+      "type": "IfcOwnerHistory",
+      "owningUser": {
+        "type": "IfcPersonAndOrganization",
+        "thePerson": {
+          "type": "IfcPerson",
+          "familyName": "Liebich",
+          "givenName": "Thomas"
+        },
+        "theOrganization": {
+          "type": "IfcOrganization",
+          "name": "buildingSMART International"
+        }
+      },
+      "owningApplication": {
+        "type": "IfcApplication",
+        "applicationDeveloper": {
+          "type": "IfcOrganization",
+          "name": "buildingSMART International"
+        },
+        "version": "1.0",
+        "applicationFullName": "IFC text editor",
+        "applicationIdentifier": "ifcTE"
+      },
+      "changeAction": "ADDED",
+      "lastModifiedDate": 1320688800,
+      "creationDate": 1320688800,
+      "globalId": "88042a1b-d856-4bd2-93d9-a1c4893eb0d9"
+    },
+    {
+      "type": "IfcGeometricRepresentationContext",
+      "contextType": "Model",
+      "coordinateSpaceDimension": 3,
+      "precision": 1e-05,
+      "worldCoordinateSystem": {
+        "type": "IfcAxis2Placement3D",
+        "location": {
+          "type": "IfcCartesianPoint",
+          "coordinates": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "hasSubContexts": [
+        {
+          "type": "IfcGeometricRepresentationSubContext",
+          "ref": "719681d6-e3eb-4936-bd7b-013466756d58"
+        }
+      ],
+      "globalId": "6df99218-e052-45dc-9134-4ec8b8929a05"
+    },
+    {
+      "type": "IfcGeometricRepresentationSubContext",
+      "contextIdentifier": "Body",
+      "contextType": "Model",
+      "parentContext": {
+        "type": "IfcGeometricRepresentationContext",
+        "ref": "6df99218-e052-45dc-9134-4ec8b8929a05"
+      },
+      "targetView": "MODEL_VIEW",
+      "representationsInContext": [
+        {
+          "type": "IfcShapeRepresentation",
+          "ref": "96589dc1-45f4-4c36-9e10-6f8af436bca2"
+        }
+      ],
+      "globalId": "719681d6-e3eb-4936-bd7b-013466756d58"
+    },
+    {
+      "type": "IfcRelAggregates",
+      "globalId": "a22f491f-f885-4116-8813-24d281d90c1d",
+      "relatingObject": {
+        "type": "IfcProject",
+        "ref": "3b7266e8-127d-4e31-a10d-59cd1eb671a7"
+      },
+      "relatedObjects": [
+        {
+          "type": "IfcBuilding",
+          "ref": "8f323372-d7b4-4d74-85d2-001ba786c219"
+        }
+      ]
+    },
+    {
+      "type": "IfcRelContainedInSpatialStructure",
+      "globalId": "9dc7b8ee-7617-4022-8378-5b8ade78f5fc",
+      "name": "Physical model",
+      "relatedElements": [
+        {
+          "type": "IfcBuildingElementProxy",
+          "ref": "6e779871-965f-4c83-a22f-9969c19db132"
+        }
+      ],
+      "relatingStructure": {
+        "type": "IfcBuilding",
+        "ref": "8f323372-d7b4-4d74-85d2-001ba786c219"
+      }
+    }
+  ]
+}
