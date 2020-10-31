@@ -4,7 +4,7 @@ import json
 import ifcopenshell
 
 # traverse root directory, and list directories as dirs and files as files
-for root, dirs, files in os.walk("./samples/"):
+for root, dirs, files in os.walk("../Samples/"):
     path = root.split(os.sep)
     for file in files:
         inFilePath = os.path.join(root, file)
