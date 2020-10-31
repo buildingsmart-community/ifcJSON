@@ -1,19 +1,14 @@
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+"""
+Converts IFC EXPRESS schema into JSON-Schema
+source file: "../reference_schemas/IFC4x2.exp"
+target file: "../../Schema/IFC4x2-from-express.json"
+status file(processed lines are prepended with --): "./IFC4x2-status.exp"
+"""
 
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-import os
 import json
+import os
 import re
+
 
 class JsonSchemaArray():
     def __init__(self, express_string):
@@ -30,20 +25,13 @@ class JsonSchemaArray():
     def set_items(self, items):
         self.schema['items'] = items
 
-# expressSchemaPath = "../"
-# schemaName = "IFC4x2"
-# expressSchema = open(os.path.join(expressSchemaPath, schemaName + ".exp"), "r")
-# expressSchemaResult = open(os.path.join(expressSchemaPath, schemaName + ".exp"), "w")
 
-# schemaName = schemaName + "_2"
-
-expressSchema = open("./ifcexpress2jsonschema/IFC4x2.exp", "r")
-expressSchemaResult = open("./ifcexpress2jsonschema/IFC4x2-status.exp", "w")
-print(expressSchema)
+expressSchema = open("../reference_schemas/IFC4x2.exp", "r")
+expressSchemaResult = open("./IFC4x2-status.exp", "w")
 
 schemaName = "IFC4x2"
 
-jsonSchemaFile = open("./schemas/" + schemaName + "-from-express.json", "w")
+jsonSchemaFile = open("../../Schema/" + schemaName + "-from-express.json", "w")
 
 jsonSchema = {
     "$schema": "http://json-schema.org/draft-07/schema#",
@@ -238,7 +226,7 @@ for line in expressSchema:
                         layer_name = layers[-1][0].lower() + layers[-1][1:]
                         schema_array['items'] = {
                             '$ref': '#/definitions/' + layer_name}
-                        
+
                         if propertyChild:
                             propertyChild['items'] = schema_array
                         else:
