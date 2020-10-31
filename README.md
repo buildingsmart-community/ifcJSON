@@ -25,10 +25,12 @@ The initial standard will be developed based on IFC4 and more specifically IFC4.
 IFC5 developments will be closely followed, especially for expected improvements in human-readability.
 
 ## Getting started
-The repository is organised in three sections:
-- Documentation: your starting point to find out what this IFC.JSON is about
-- Samples: IFC.JSON data examples
-- Schemas: IFC.JSON schemas
+The repository is organised in different sections:
+- [Documentation](Documentation): your starting point to find out what this IFC.JSON is about
+- [Samples](Samples): IFC.JSON data examples
+- [Schema](Schema): IFC.JSON schemas
+- [File converters](file_converters): Python tools for reading and converting between IFC.JSON and IFC SPF
+- [Schema converters](schema_converters): Python tools for converting IFC schemas into JSON-Schema
 
 ## More information
 Contributions are welcome in all possible ways. Your first starting point is creating GitHub issues. Feel free to get in touch with the people in the IFC.JSON-team.
