@@ -35,12 +35,12 @@ jsonSchemaFile = open("../../Schema/" + schemaName + "-from-express.json", "w")
 
 jsonSchema = {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "ifcJSON4 Schema",
+    "title": "ifcJSON Schema",
     "description": "This is the schema for representing IFC4 data in JSON",
     "type": "object",
     "properties": {
         "file_schema": {
-            "const": "IFC.JSON4"
+            "const": "ifcJSON"
         },
         "data": {
             "type": "array",

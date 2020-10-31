@@ -1,24 +1,24 @@
 {
-  "type": "IFC.JSON",
+  "type": "ifcJSON",
   "version": "0.0.1",
   "schemaIdentifier": "IFC4",
   "originatingSystem": "IFC2JSON_python Version 0.0.1",
   "preprocessorVersion": "IfcOpenShell 0.6.0b0",
-  "timeStamp": "2020-10-30T00:19:00",
+  "timeStamp": "2020-10-31T23:51:20",
   "data": [
     {
       "type": "IfcProject",
       "globalId": "88afcce1-78be-4ba2-9982-01c488ba92bf",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "name": "Default Project",
       "description": "Description of Default Project",
       "representationContexts": [
         {
           "type": "IfcGeometricRepresentationContext",
-          "ref": "64d51711-33ef-4f7c-b725-4bf31670add0"
+          "ref": "8a7909e2-ccec-4243-acf9-02606586d62a"
         }
       ],
       "unitsInContext": {
@@ -146,7 +146,7 @@
       "globalId": "66eaf36c-fab5-4ee5-9d8c-bcaa2f2d7c7d",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "name": "Default Site",
       "description": "Description of Default Site",
@@ -194,7 +194,7 @@
       "globalId": "0ad0aae1-7fbe-4cf0-9c00-621071ee204a",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "name": "Default Building",
       "description": "Description of Default Building",
@@ -257,7 +257,7 @@
       "globalId": "905ea711-4c5b-492d-b7ad-d1dfc7dce23a",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "name": "Default Building Storey",
       "description": "Description of Default Building Storey",
@@ -323,7 +323,7 @@
       "globalId": "e38a0149-dbbb-48be-8b04-1c5bc73ab55e",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "name": "Wall for Test Example",
       "description": "Description of Wall",
@@ -388,11 +388,11 @@
         "representations": [
           {
             "type": "IfcShapeRepresentation",
-            "ref": "eb4b365a-9f1d-4afc-a28f-063853f89778"
+            "ref": "97d64796-e174-4b66-880b-dcaf00a4c7a5"
           },
           {
             "type": "IfcShapeRepresentation",
-            "ref": "c210b8bb-28b3-481a-b055-e4c796d74d73"
+            "ref": "92fe86df-5167-47aa-ba2c-26f46ac147f1"
           }
         ]
       },
@@ -426,7 +426,7 @@
       "globalId": "f15b4455-f234-4aa2-a836-162f3bac1d7c",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "name": "Pset_WallCommon",
       "hasProperties": [
@@ -497,7 +497,7 @@
       "globalId": "a54ecdb6-1883-46af-9554-7c8601ef0d13",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "name": "Opening Element for Test Example",
       "description": "Description of Opening",
@@ -576,7 +576,7 @@
         "representations": [
           {
             "type": "IfcShapeRepresentation",
-            "ref": "dd6f62ad-b0f3-4ac3-ae98-c341f8e1d1dd"
+            "ref": "65974b90-e0b1-47da-aef9-89fae174c257"
           }
         ]
       },
@@ -599,7 +599,7 @@
       "globalId": "3728435c-4671-40be-8198-e498b8012261",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "name": "Window for Test Example",
       "description": "Description of Window",
@@ -692,7 +692,7 @@
         "representations": [
           {
             "type": "IfcShapeRepresentation",
-            "ref": "6de7b9bc-16bc-4977-9293-e75abec5cb03"
+            "ref": "5952a5d1-3950-46c3-9c68-90bb9e6e697f"
           }
         ]
       },
@@ -736,7 +736,7 @@
       "globalId": "19d84443-840c-4aee-9d2e-457a3054e1a9",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "name": "Window for Test Example",
       "description": "Description of Window Type",
@@ -760,7 +760,7 @@
       "globalId": "5ce37e59-9284-4838-bdfb-d70402bbe52b",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "declares": [
         {
@@ -778,7 +778,7 @@
       "globalId": "6f8c4f59-db71-4566-b3e6-790189e05b56",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "name": "Pset_WindowCommon",
       "hasProperties": [
@@ -839,7 +839,7 @@
       "type": "IfcShapeRepresentation",
       "contextOfItems": {
         "type": "IfcGeometricRepresentationContext",
-        "ref": "64d51711-33ef-4f7c-b725-4bf31670add0"
+        "ref": "8a7909e2-ccec-4243-acf9-02606586d62a"
       },
       "representationIdentifier": "Axis",
       "representationType": "Curve2D",
@@ -870,22 +870,22 @@
           "representations": [
             {
               "type": "IfcShapeRepresentation",
-              "ref": "eb4b365a-9f1d-4afc-a28f-063853f89778"
+              "ref": "97d64796-e174-4b66-880b-dcaf00a4c7a5"
             },
             {
               "type": "IfcShapeRepresentation",
-              "ref": "c210b8bb-28b3-481a-b055-e4c796d74d73"
+              "ref": "92fe86df-5167-47aa-ba2c-26f46ac147f1"
             }
           ]
         }
       ],
-      "globalId": "eb4b365a-9f1d-4afc-a28f-063853f89778"
+      "globalId": "97d64796-e174-4b66-880b-dcaf00a4c7a5"
     },
     {
       "type": "IfcShapeRepresentation",
       "contextOfItems": {
         "type": "IfcGeometricRepresentationContext",
-        "ref": "64d51711-33ef-4f7c-b725-4bf31670add0"
+        "ref": "8a7909e2-ccec-4243-acf9-02606586d62a"
       },
       "representationIdentifier": "Body",
       "representationType": "SweptSolid",
@@ -964,22 +964,22 @@
           "representations": [
             {
               "type": "IfcShapeRepresentation",
-              "ref": "eb4b365a-9f1d-4afc-a28f-063853f89778"
+              "ref": "97d64796-e174-4b66-880b-dcaf00a4c7a5"
             },
             {
               "type": "IfcShapeRepresentation",
-              "ref": "c210b8bb-28b3-481a-b055-e4c796d74d73"
+              "ref": "92fe86df-5167-47aa-ba2c-26f46ac147f1"
             }
           ]
         }
       ],
-      "globalId": "c210b8bb-28b3-481a-b055-e4c796d74d73"
+      "globalId": "92fe86df-5167-47aa-ba2c-26f46ac147f1"
     },
     {
       "type": "IfcShapeRepresentation",
       "contextOfItems": {
         "type": "IfcGeometricRepresentationContext",
-        "ref": "64d51711-33ef-4f7c-b725-4bf31670add0"
+        "ref": "8a7909e2-ccec-4243-acf9-02606586d62a"
       },
       "representationIdentifier": "Body",
       "representationType": "SweptSolid",
@@ -1058,18 +1058,18 @@
           "representations": [
             {
               "type": "IfcShapeRepresentation",
-              "ref": "dd6f62ad-b0f3-4ac3-ae98-c341f8e1d1dd"
+              "ref": "65974b90-e0b1-47da-aef9-89fae174c257"
             }
           ]
         }
       ],
-      "globalId": "dd6f62ad-b0f3-4ac3-ae98-c341f8e1d1dd"
+      "globalId": "65974b90-e0b1-47da-aef9-89fae174c257"
     },
     {
       "type": "IfcShapeRepresentation",
       "contextOfItems": {
         "type": "IfcGeometricRepresentationContext",
-        "ref": "64d51711-33ef-4f7c-b725-4bf31670add0"
+        "ref": "8a7909e2-ccec-4243-acf9-02606586d62a"
       },
       "representationIdentifier": "Body",
       "representationType": "SweptSolid",
@@ -1148,12 +1148,12 @@
           "representations": [
             {
               "type": "IfcShapeRepresentation",
-              "ref": "6de7b9bc-16bc-4977-9293-e75abec5cb03"
+              "ref": "5952a5d1-3950-46c3-9c68-90bb9e6e697f"
             }
           ]
         }
       ],
-      "globalId": "6de7b9bc-16bc-4977-9293-e75abec5cb03"
+      "globalId": "5952a5d1-3950-46c3-9c68-90bb9e6e697f"
     },
     {
       "type": "IfcOwnerHistory",
@@ -1183,7 +1183,7 @@
       },
       "changeAction": "NOTDEFINED",
       "creationDate": 1323724715,
-      "globalId": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+      "globalId": "47163075-0737-4ff0-9283-6c2b3bbadaac"
     },
     {
       "type": "IfcGeometricRepresentationContext",
@@ -1211,29 +1211,29 @@
       "representationsInContext": [
         {
           "type": "IfcShapeRepresentation",
-          "ref": "eb4b365a-9f1d-4afc-a28f-063853f89778"
+          "ref": "97d64796-e174-4b66-880b-dcaf00a4c7a5"
         },
         {
           "type": "IfcShapeRepresentation",
-          "ref": "c210b8bb-28b3-481a-b055-e4c796d74d73"
+          "ref": "92fe86df-5167-47aa-ba2c-26f46ac147f1"
         },
         {
           "type": "IfcShapeRepresentation",
-          "ref": "dd6f62ad-b0f3-4ac3-ae98-c341f8e1d1dd"
+          "ref": "65974b90-e0b1-47da-aef9-89fae174c257"
         },
         {
           "type": "IfcShapeRepresentation",
-          "ref": "6de7b9bc-16bc-4977-9293-e75abec5cb03"
+          "ref": "5952a5d1-3950-46c3-9c68-90bb9e6e697f"
         }
       ],
-      "globalId": "64d51711-33ef-4f7c-b725-4bf31670add0"
+      "globalId": "8a7909e2-ccec-4243-acf9-02606586d62a"
     },
     {
       "type": "IfcRelAggregates",
       "globalId": "55c03d28-3e76-4fc3-931a-c3f6b7d6e63e",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "name": "BuildingContainer",
       "description": "BuildingContainer for BuildigStories",
@@ -1253,7 +1253,7 @@
       "globalId": "46f56d4d-c3e6-42a7-913a-23e4e8eae73c",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "name": "SiteContainer",
       "description": "SiteContainer For Buildings",
@@ -1273,7 +1273,7 @@
       "globalId": "d29e6537-efc7-4f71-936d-2a4a8d438634",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "name": "ProjectContainer",
       "description": "ProjectContainer for Sites",
@@ -1293,7 +1293,7 @@
       "globalId": "3af95fed-7542-48e4-8e98-f543d0b5de32",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "name": "Default Building",
       "description": "Contents of Building Storey",
@@ -1317,7 +1317,7 @@
       "globalId": "894cb11f-73c4-4eaf-b1ea-c80eff7fb8c2",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "relatedObjects": [
         {
@@ -1335,7 +1335,7 @@
       "globalId": "cd682fb5-b2bf-4bc0-8c55-3c9228e2b976",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "relatedObjects": [
         {
@@ -1368,7 +1368,7 @@
       "globalId": "71e9f88c-fdf7-4da3-8726-23d958908278",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "relatingBuildingElement": {
         "type": "IfcWallStandardCase",
@@ -1384,7 +1384,7 @@
       "globalId": "b8c283e5-47a5-4640-a794-7648b2c321f8",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "relatedObjects": [
         {
@@ -1420,7 +1420,7 @@
       "globalId": "c38e0436-e132-4c4b-a0a5-ce6023b8036f",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "relatedObjects": [
         {
@@ -1438,7 +1438,7 @@
       "globalId": "5937792d-2b44-4d1b-b9c3-6ac80dfd2060",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "relatingContext": {
         "type": "IfcProjectLibrary",
@@ -1456,7 +1456,7 @@
       "globalId": "fd903586-285d-44e9-a0d5-e39188c7f0c1",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "relatingContext": {
         "type": "IfcProjectLibrary",
@@ -1474,7 +1474,7 @@
       "globalId": "227ecc9d-fc09-4df5-93fb-a704bf725090",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "relatingOpeningElement": {
         "type": "IfcOpeningElement",
@@ -1490,7 +1490,7 @@
       "globalId": "479b9d30-e29b-4d68-9591-e384cc4f5357",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "2f8ef17b-73d9-4bca-86c4-d6326994bb79"
+        "ref": "47163075-0737-4ff0-9283-6c2b3bbadaac"
       },
       "relatedObjects": [
         {

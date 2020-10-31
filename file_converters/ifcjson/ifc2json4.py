@@ -1,5 +1,5 @@
 # IFCJSON_python - ifc2json4.py
-# Convert IFC SPF file to IFC.JSON-4
+# Convert IFC SPF file to ifcJSON-4
 # https://github.com/IFCJSON-Team
 
 # MIT License
@@ -47,7 +47,7 @@ class IFC2JSON4(common.IFC2JSON):
                  EMPTY_PROPERTIES=False,
                  NO_OWNERHISTORY=False,
                  GEOMETRY=True):
-        """IFC SPF to IFC.JSON-4 writer
+        """IFC SPF to ifcJSON-4 writer
 
         parameters:
         ifcModel: IFC filePath or ifcopenshell model instance
@@ -56,21 +56,25 @@ class IFC2JSON4(common.IFC2JSON):
 
         """
 
+        self.COMPACT = COMPACT
+        self.INCLUDE_INVERSE = INCLUDE_INVERSE
+        self.EMPTY_PROPERTIES = EMPTY_PROPERTIES
+
         if isinstance(ifcModel, ifcopenshell.file):
             self.ifcModel = ifcModel
         else:
             self.ifcModel = ifcopenshell.open(ifcModel)
+
+        # Dictionary referencing all objects with a GlobalId that are already created
+        self.rootObjects = {}
+
         # input(dir(self.ifcModel.wrapped_data.header))
         # input(self.ifcModel.wrapped_data.header)
         # print(dir(self.ifcModel.wrapped_data.header.file_description))
         # if self.ifcModel.wrapped_data.header.file_description.this:
         #     print(self.ifcModel.wrapped_data.header.file_description[0])
         # input()
-        self.COMPACT = COMPACT
-        self.INCLUDE_INVERSE = INCLUDE_INVERSE
-        self.EMPTY_PROPERTIES = EMPTY_PROPERTIES
-        self.rootObjects = {}
-
+        
         if NO_OWNERHISTORY:
             self.remove_ownerhistory()
 
@@ -87,7 +91,7 @@ class IFC2JSON4(common.IFC2JSON):
         # (?) Check every IFC object to see if it is used multiple times
 
         Returns:
-        dict: IFC.JSON-4 model structure
+        dict: ifcJSON-4 model structure
 
         """
 
@@ -135,8 +139,9 @@ class IFC2JSON4(common.IFC2JSON):
             jsonObjects.append(self.createFullObject(entityAttributes))
 
         return {
-            'type': 'IFC.JSON',
+            'type': 'ifcJSON',
             'version': self.SCHEMA_VERSION,
+            # 'schemaIdentifiers': self.ifcModel.wrapped_data.header.file_schema.schema_identifiers,
             'schemaIdentifier': self.ifcModel.wrapped_data.schema,
             'originatingSystem': 'IFC2JSON_python Version ' + self.VERSION,
             'preprocessorVersion': 'IfcOpenShell ' + ifcopenshell.version,
@@ -145,13 +150,13 @@ class IFC2JSON4(common.IFC2JSON):
         }
 
     def createFullObject(self, entityAttributes):
-        """Returns complete IFC.JSON-4 object
+        """Returns complete ifcJSON-4 object
 
         Parameters:
         entityAttributes (dict): Dictionary of IFC object data
 
         Returns:
-        dict: containing complete IFC.JSON-4 object
+        dict: containing complete ifcJSON-4 object
 
         """
         fullObject = {}
@@ -178,7 +183,7 @@ class IFC2JSON4(common.IFC2JSON):
 
         Parameters:
         entityAttributes (dict): Dictionary of IFC object data
-        COMPACT (boolean): verbose or non verbose IFC.JSON-4 output
+        COMPACT (boolean): verbose or non verbose ifcJSON-4 output
 
         Returns:
         dict: object containing reference to another object

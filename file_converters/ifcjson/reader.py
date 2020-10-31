@@ -2,7 +2,7 @@ import ifcjson.mesh as mesh
 
 class IFCJSON:
     def __init__(self, json):
-        """IFC.JSON data reader
+        """ifcJSON data reader
 
         parameters:
         ifcJSON data
@@ -46,9 +46,9 @@ class IFCJSON:
 
     def parseHeader(self, json):
         
-        # If no fileSchema available, assume it's IFC.JSON-4
+        # If no fileSchema available, assume it's ifcJSON-4
         # if 'fileSchema' in json:
-        #     if json['fileSchema'] == 'IFC.JSON-4':
+        #     if json['fileSchema'] == 'ifcJSON-4':
         #         self.schemaIdentifier = 'IFC2X3' # IFC4
         #     else:
         #         raise ValueError('FileSchema "{}" not supported.'.format(json['fileSchema']))

@@ -34,9 +34,8 @@ class JSON2IFC(IFCJSON):
             # When ifcJson data is a complete filestructure including header
             if type(ifcJson) is dict:
                 self.parseHeader(ifcJson)
-                if 'fileSchema' in ifcJson:
-                    if ifcJson['fileSchema'] == 'IFC.JSON-4':
-                        self.schemaIdentifier = 'IFC4' # 'IFC2X3'
+                if 'type' in ifcJson:
+                    if ifcJson['type'] == 'ifcJSON':
                         
                         self.timestamp = None
                         

@@ -1,5 +1,5 @@
-# IFC.JSON Specification
-This is the overall specification for IFC.JSON.
+# ifcJSON Specification
+This is the overall specification for ifcJSON.
 
 ## Table of Contents
   * [1. Overview](#1-overview)
@@ -49,7 +49,7 @@ The following criteria are followed:
 2.	Round-trip
 3.	Parallel to EXPRESS schema
 
-The following criteria are considered to be of less importance, so they are excluded. This IFC.JSON version first and foremost tries to include all that is present in the original IFC EXPRESS schema.
+The following criteria are considered to be of less importance, so they are excluded. This ifcJSON version first and foremost tries to include all that is present in the original IFC EXPRESS schema.
 
 The following criteria are therefore NOT followed:
 1.	Human-readability
@@ -111,7 +111,7 @@ Objects can be referenced in JSON by using the globalId attribute. In the exampl
 ~~~
 
 ### 2.6 Tree Structure
-Generally, the IFC.JSON structure is flexible. Objects may be nested inline, or referenced using references to the globalId. It is recommended to use a tree structure (forward downward relationships) as much as possible, in order to improve human readability. All objects in IFC are maintained, included the objectified relationships (many-to-many and one-to-many and ternary and n-ary).
+Generally, the ifcJSON structure is flexible. Objects may be nested inline, or referenced using references to the globalId. It is recommended to use a tree structure (forward downward relationships) as much as possible, in order to improve human readability. All objects in IFC are maintained, included the objectified relationships (many-to-many and one-to-many and ternary and n-ary).
 
 Example:
 
@@ -167,7 +167,7 @@ This is not valid:
 ~~~
 
 ### 2.8 PredefinedTypes and ObjectTypes and Types
-There are multiple ways to define the object type of an object in the IFC EXPRESS schema. In IFC.JSON, the same structure is followed as in the original IFC schema and you can include type information in the `type`, `predefinedType` and `objectType` attributes. As indicated in the IFC.JSON schema, the `type` and `objectType` attributes refer to a string. The `type` attribute is hereby reserved for the IFC type name. The `predefinedType` attribute is only available for a number of objects, and the allowed values for this attributes are listed in the IFC.JSON schema (identical to EXPRESS schema). These predefinedType values do not need to be enclosed by dots (in other words: NOT `".GATE."`, but just `"GATE"`).
+There are multiple ways to define the object type of an object in the IFC EXPRESS schema. In ifcJSON, the same structure is followed as in the original IFC schema and you can include type information in the `type`, `predefinedType` and `objectType` attributes. As indicated in the ifcJSON schema, the `type` and `objectType` attributes refer to a string. The `type` attribute is hereby reserved for the IFC type name. The `predefinedType` attribute is only available for a number of objects, and the allowed values for this attributes are listed in the ifcJSON schema (identical to EXPRESS schema). These predefinedType values do not need to be enclosed by dots (in other words: NOT `".GATE."`, but just `"GATE"`).
 
 This is valid:
 ~~~
@@ -244,7 +244,7 @@ Example:
 ~~~
 
 ### 2.10 Attributes, Properties and Property Sets
-In IFC.JSON, attributes, properties and property sets are included identical to how they are included in the IFC EXPRESS schema.
+In ifcJSON, attributes, properties and property sets are included identical to how they are included in the IFC EXPRESS schema.
 
 Example:
 
@@ -283,7 +283,7 @@ Example:
 ~~~
 
 ## 3. ifcJSON Schema
-Like the XSD schema specification and OWL ontology for IFC, also the IFC.JSON schema can be automatically converted from the EXPRESS (ISO 10303 part 1) representation of the IFC schema. Roundtripping conversion from IFC-SPF files to JSON is also possible. Both schema and data conversion are not (yet) available. Yet, an ifcJSON schema is available in this repository and allows to validate which IFC.JSON is valid.
+Like the XSD schema specification and OWL ontology for IFC, also the ifcJSON schema can be automatically converted from the EXPRESS (ISO 10303 part 1) representation of the IFC schema. Roundtripping conversion from IFC-SPF files to JSON is also possible. Both schema and data conversion are not (yet) available. Yet, an ifcJSON schema is available in this repository and allows to validate which ifcJSON is valid.
 
 ifcJSON schema defines a structure for what ifcJSON data is required and therefore its schema defines the validation and interaction control of ifcJSON data.
 
@@ -309,7 +309,7 @@ Corresponding ifcJSON Schema snippet:
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://example.com/product.schema.json",
   "title": "Wall",
-  "description": "IFC.JSON for Wall",
+  "description": "ifcJSON for Wall",
   "type": "object",
   "properties": {
   "type": "ifcWall",
@@ -377,4 +377,4 @@ Corresponding ifcJSON Schema snippet:
 ~~~
 
 ## 4. More information
-Contributions are welcome in all possible ways. Your first starting point is creating GitHub issues. Feel free to get in touch with the people in the IFC.JSON-team.
+Contributions are welcome in all possible ways. Your first starting point is creating GitHub issues. Feel free to get in touch with the people in the ifcJSON-team.

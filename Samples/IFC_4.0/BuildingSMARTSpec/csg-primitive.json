@@ -1,23 +1,23 @@
 {
-  "type": "IFC.JSON",
+  "type": "ifcJSON",
   "version": "0.0.1",
   "schemaIdentifier": "IFC4",
   "originatingSystem": "IFC2JSON_python Version 0.0.1",
   "preprocessorVersion": "IfcOpenShell 0.6.0b0",
-  "timeStamp": "2020-10-30T00:18:57",
+  "timeStamp": "2020-10-31T23:51:19",
   "data": [
     {
       "type": "IfcProject",
       "globalId": "3b7266e8-127d-4e31-a10d-59cd1eb671a7",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "09e9652f-a980-49c3-97f8-b730545a738e"
+        "ref": "798b54a2-1372-4f8d-9084-a557c97634b4"
       },
       "name": "proxy with CSG",
       "representationContexts": [
         {
           "type": "IfcGeometricRepresentationContext",
-          "ref": "68b19ef0-c7d9-4315-b3ed-ae8e97531136"
+          "ref": "365a05da-5ecd-47ad-a487-7b170b65f49e"
         }
       ],
       "unitsInContext": {
@@ -142,7 +142,7 @@
         "representations": [
           {
             "type": "IfcShapeRepresentation",
-            "ref": "8262558c-5845-4c88-996c-f7def794c352"
+            "ref": "5fcecb3c-540b-457f-892e-d8f98c0fbf7c"
           }
         ]
       },
@@ -157,7 +157,7 @@
       "type": "IfcShapeRepresentation",
       "contextOfItems": {
         "type": "IfcGeometricRepresentationSubContext",
-        "ref": "06786751-c009-4a79-ba84-d766dda2ca0a"
+        "ref": "ea16f341-d87f-4d72-bc7a-3674276c7584"
       },
       "representationIdentifier": "Body",
       "representationType": "CSG",
@@ -189,12 +189,12 @@
           "representations": [
             {
               "type": "IfcShapeRepresentation",
-              "ref": "8262558c-5845-4c88-996c-f7def794c352"
+              "ref": "5fcecb3c-540b-457f-892e-d8f98c0fbf7c"
             }
           ]
         }
       ],
-      "globalId": "8262558c-5845-4c88-996c-f7def794c352"
+      "globalId": "5fcecb3c-540b-457f-892e-d8f98c0fbf7c"
     },
     {
       "type": "IfcOwnerHistory",
@@ -223,7 +223,7 @@
       "changeAction": "ADDED",
       "lastModifiedDate": 1320688800,
       "creationDate": 1320688800,
-      "globalId": "09e9652f-a980-49c3-97f8-b730545a738e"
+      "globalId": "798b54a2-1372-4f8d-9084-a557c97634b4"
     },
     {
       "type": "IfcGeometricRepresentationContext",
@@ -244,10 +244,10 @@
       "hasSubContexts": [
         {
           "type": "IfcGeometricRepresentationSubContext",
-          "ref": "06786751-c009-4a79-ba84-d766dda2ca0a"
+          "ref": "ea16f341-d87f-4d72-bc7a-3674276c7584"
         }
       ],
-      "globalId": "68b19ef0-c7d9-4315-b3ed-ae8e97531136"
+      "globalId": "365a05da-5ecd-47ad-a487-7b170b65f49e"
     },
     {
       "type": "IfcGeometricRepresentationSubContext",
@@ -255,16 +255,16 @@
       "contextType": "Model",
       "parentContext": {
         "type": "IfcGeometricRepresentationContext",
-        "ref": "68b19ef0-c7d9-4315-b3ed-ae8e97531136"
+        "ref": "365a05da-5ecd-47ad-a487-7b170b65f49e"
       },
       "targetView": "MODEL_VIEW",
       "representationsInContext": [
         {
           "type": "IfcShapeRepresentation",
-          "ref": "8262558c-5845-4c88-996c-f7def794c352"
+          "ref": "5fcecb3c-540b-457f-892e-d8f98c0fbf7c"
         }
       ],
-      "globalId": "06786751-c009-4a79-ba84-d766dda2ca0a"
+      "globalId": "ea16f341-d87f-4d72-bc7a-3674276c7584"
     },
     {
       "type": "IfcRelAggregates",

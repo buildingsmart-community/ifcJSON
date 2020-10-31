@@ -1,5 +1,5 @@
 # IFCJSON_python - ifc2json.py
-# Convert IFC.JSON to SPF
+# Convert ifcJSON to SPF
 # https://github.com/IFCJSON-Team
 
 # MIT License
@@ -34,7 +34,7 @@ start_time = perf_counter()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='Convert IFC.JSON to SPF')
+        description='Convert ifcJSON to SPF')
     parser.add_argument('-i', type=str, help='input json file path')
     parser.add_argument('-o', type=str, help='output ifc file path')
     args = parser.parse_args()

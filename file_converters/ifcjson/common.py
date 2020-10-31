@@ -28,7 +28,7 @@ import ifcopenshell.guid as guid
 
 
 class IFC2JSON:
-    """Base class for all IFC SPF to IFC.JSON writers
+    """Base class for all IFC SPF to ifcJSON writers
     """
 
     VERSION = '0.0.1'
@@ -97,13 +97,13 @@ class IFC2JSON:
 
     def getAttributeValue(self, value):
         """Recursive method that walks through all nested objects of an attribute
-        and returns a IFC.JSON-4 model structure
+        and returns a ifcJSON-4 model structure
 
         Parameters:
         value
 
         Returns:
-        attribute data converted to IFC.JSON-4 model structure
+        attribute data converted to ifcJSON-4 model structure
 
         """
         if value == None or value == '':

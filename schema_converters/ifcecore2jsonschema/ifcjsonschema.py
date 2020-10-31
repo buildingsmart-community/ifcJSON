@@ -8,7 +8,7 @@ class IfcJsonSchemaEcore(JsonSchema):
 
     def __init__(self,
                  epackage,
-                 ifcschemaversion='IFC.JSON-4.3',
+                 ifcschemaversion='ifcJSON-4.3',
                  jsonschemaversion='http://json-schema.org/draft-07/schema#'):
         super().__init__(jsonschemaversion)
         self.epackage = epackage

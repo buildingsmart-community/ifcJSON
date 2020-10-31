@@ -1,17 +1,17 @@
 {
-  "type": "IFC.JSON",
+  "type": "ifcJSON",
   "version": "0.0.1",
   "schemaIdentifier": "IFC4",
   "originatingSystem": "IFC2JSON_python Version 0.0.1",
   "preprocessorVersion": "IfcOpenShell 0.6.0b0",
-  "timeStamp": "2020-10-30T00:18:55",
+  "timeStamp": "2020-10-31T23:51:18",
   "data": [
     {
       "type": "IfcBuilding",
       "globalId": "f8e62fc5-3fbd-4ccb-9141-d564f0da5308",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "88198767-bbef-4b6f-b690-db254aac491a"
+        "ref": "68126041-472c-411d-9311-b31ef0316aff"
       },
       "name": "Grasshopper Building",
       "description": "GH Building",
@@ -65,14 +65,14 @@
       "globalId": "3d3abbb1-5f3a-4a05-af6d-bde757590997",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "88198767-bbef-4b6f-b690-db254aac491a"
+        "ref": "68126041-472c-411d-9311-b31ef0316aff"
       },
       "name": "Grasshopper Project",
       "longName": "Grasshopper Project",
       "representationContexts": [
         {
           "type": "IfcGeometricRepresentationContext",
-          "ref": "5c2398ce-485e-426c-a779-a080f692eab4"
+          "ref": "600bc5f2-b70c-4425-9e57-4b1ffc057905"
         }
       ],
       "unitsInContext": {
@@ -127,7 +127,7 @@
       "globalId": "8cf0af3b-ac08-493d-ba19-558a84e81d1c",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "88198767-bbef-4b6f-b690-db254aac491a"
+        "ref": "68126041-472c-411d-9311-b31ef0316aff"
       },
       "name": "IPE600",
       "predefinedType": "BEAM",
@@ -149,7 +149,7 @@
       "globalId": "f90411c4-f72d-46e8-9da8-9bac65e22b81",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "88198767-bbef-4b6f-b690-db254aac491a"
+        "ref": "68126041-472c-411d-9311-b31ef0316aff"
       },
       "objectPlacement": {
         "type": "IfcLocalPlacement",
@@ -186,11 +186,11 @@
         "representations": [
           {
             "type": "IfcShapeRepresentation",
-            "ref": "91c24b5b-cd99-4956-b164-5bcc2c29efd5"
+            "ref": "137a0ebb-1321-49d4-a97d-e41ccd75eb45"
           },
           {
             "type": "IfcShapeRepresentation",
-            "ref": "64be78f1-18f0-4984-bdec-ff7bc013a55d"
+            "ref": "677d8eaa-e2c1-4d0b-8c62-828e874be149"
           }
         ]
       },
@@ -217,7 +217,7 @@
       "type": "IfcShapeRepresentation",
       "contextOfItems": {
         "type": "IfcGeometricRepresentationSubContext",
-        "ref": "04c7f5d3-76b4-488a-af4a-338446c81c22"
+        "ref": "78222023-e607-4543-8d70-b801d29c3f2b"
       },
       "representationIdentifier": "Axis",
       "representationType": "Curve3D",
@@ -250,22 +250,22 @@
           "representations": [
             {
               "type": "IfcShapeRepresentation",
-              "ref": "91c24b5b-cd99-4956-b164-5bcc2c29efd5"
+              "ref": "137a0ebb-1321-49d4-a97d-e41ccd75eb45"
             },
             {
               "type": "IfcShapeRepresentation",
-              "ref": "64be78f1-18f0-4984-bdec-ff7bc013a55d"
+              "ref": "677d8eaa-e2c1-4d0b-8c62-828e874be149"
             }
           ]
         }
       ],
-      "globalId": "91c24b5b-cd99-4956-b164-5bcc2c29efd5"
+      "globalId": "137a0ebb-1321-49d4-a97d-e41ccd75eb45"
     },
     {
       "type": "IfcShapeRepresentation",
       "contextOfItems": {
         "type": "IfcGeometricRepresentationSubContext",
-        "ref": "bdaa39a1-392c-4775-bf8a-87dbd01dec1b"
+        "ref": "8a3e445d-25d9-4d02-b47f-b1ed9f70ea59"
       },
       "representationIdentifier": "Body",
       "representationType": "SweptSolid",
@@ -309,16 +309,16 @@
           "representations": [
             {
               "type": "IfcShapeRepresentation",
-              "ref": "91c24b5b-cd99-4956-b164-5bcc2c29efd5"
+              "ref": "137a0ebb-1321-49d4-a97d-e41ccd75eb45"
             },
             {
               "type": "IfcShapeRepresentation",
-              "ref": "64be78f1-18f0-4984-bdec-ff7bc013a55d"
+              "ref": "677d8eaa-e2c1-4d0b-8c62-828e874be149"
             }
           ]
         }
       ],
-      "globalId": "64be78f1-18f0-4984-bdec-ff7bc013a55d"
+      "globalId": "677d8eaa-e2c1-4d0b-8c62-828e874be149"
     },
     {
       "type": "IfcOwnerHistory",
@@ -347,7 +347,7 @@
       "changeAction": "ADDED",
       "lastModifiedDate": 1402094752,
       "creationDate": 1402094752,
-      "globalId": "88198767-bbef-4b6f-b690-db254aac491a"
+      "globalId": "68126041-472c-411d-9311-b31ef0316aff"
     },
     {
       "type": "IfcGeometricRepresentationContext",
@@ -391,14 +391,14 @@
       "hasSubContexts": [
         {
           "type": "IfcGeometricRepresentationSubContext",
-          "ref": "04c7f5d3-76b4-488a-af4a-338446c81c22"
+          "ref": "78222023-e607-4543-8d70-b801d29c3f2b"
         },
         {
           "type": "IfcGeometricRepresentationSubContext",
-          "ref": "bdaa39a1-392c-4775-bf8a-87dbd01dec1b"
+          "ref": "8a3e445d-25d9-4d02-b47f-b1ed9f70ea59"
         }
       ],
-      "globalId": "5c2398ce-485e-426c-a779-a080f692eab4"
+      "globalId": "600bc5f2-b70c-4425-9e57-4b1ffc057905"
     },
     {
       "type": "IfcGeometricRepresentationSubContext",
@@ -406,16 +406,16 @@
       "contextType": "Model",
       "parentContext": {
         "type": "IfcGeometricRepresentationContext",
-        "ref": "5c2398ce-485e-426c-a779-a080f692eab4"
+        "ref": "600bc5f2-b70c-4425-9e57-4b1ffc057905"
       },
       "targetView": "MODEL_VIEW",
       "representationsInContext": [
         {
           "type": "IfcShapeRepresentation",
-          "ref": "91c24b5b-cd99-4956-b164-5bcc2c29efd5"
+          "ref": "137a0ebb-1321-49d4-a97d-e41ccd75eb45"
         }
       ],
-      "globalId": "04c7f5d3-76b4-488a-af4a-338446c81c22"
+      "globalId": "78222023-e607-4543-8d70-b801d29c3f2b"
     },
     {
       "type": "IfcGeometricRepresentationSubContext",
@@ -423,23 +423,23 @@
       "contextType": "Model",
       "parentContext": {
         "type": "IfcGeometricRepresentationContext",
-        "ref": "5c2398ce-485e-426c-a779-a080f692eab4"
+        "ref": "600bc5f2-b70c-4425-9e57-4b1ffc057905"
       },
       "targetView": "MODEL_VIEW",
       "representationsInContext": [
         {
           "type": "IfcShapeRepresentation",
-          "ref": "64be78f1-18f0-4984-bdec-ff7bc013a55d"
+          "ref": "677d8eaa-e2c1-4d0b-8c62-828e874be149"
         }
       ],
-      "globalId": "bdaa39a1-392c-4775-bf8a-87dbd01dec1b"
+      "globalId": "8a3e445d-25d9-4d02-b47f-b1ed9f70ea59"
     },
     {
       "type": "IfcRelContainedInSpatialStructure",
       "globalId": "85da3c75-e250-42d1-9151-f8529953c039",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "88198767-bbef-4b6f-b690-db254aac491a"
+        "ref": "68126041-472c-411d-9311-b31ef0316aff"
       },
       "name": "Building",
       "description": "Building Container for Elements",
@@ -459,7 +459,7 @@
       "globalId": "8c324abe-a4ee-4e97-8487-932be8e06166",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "88198767-bbef-4b6f-b690-db254aac491a"
+        "ref": "68126041-472c-411d-9311-b31ef0316aff"
       },
       "name": "Project Container",
       "description": "Project Container for Buildings",
@@ -479,7 +479,7 @@
       "globalId": "d93de3be-d641-4069-9506-c8f54e288638",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "88198767-bbef-4b6f-b690-db254aac491a"
+        "ref": "68126041-472c-411d-9311-b31ef0316aff"
       },
       "name": "MatAssoc",
       "description": "Material Associates",
@@ -530,7 +530,7 @@
       "globalId": "240e1410-3463-4db7-b1fa-fde240b50996",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "88198767-bbef-4b6f-b690-db254aac491a"
+        "ref": "68126041-472c-411d-9311-b31ef0316aff"
       },
       "name": "IPE600",
       "relatedObjects": [
@@ -549,7 +549,7 @@
       "globalId": "0985cf6f-d5f9-4b91-94f5-7b46f483e10d",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "88198767-bbef-4b6f-b690-db254aac491a"
+        "ref": "68126041-472c-411d-9311-b31ef0316aff"
       },
       "name": "MatAssoc",
       "description": "Material Associates",

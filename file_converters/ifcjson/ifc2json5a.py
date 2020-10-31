@@ -1,5 +1,5 @@
 # IFCJSON_python - ifc2json5a.py
-# Convert IFC SPF file to IFC.JSON-5a
+# Convert IFC SPF file to ifcJSON-5a
 # https://github.com/IFCJSON-Team
 
 # MIT License
@@ -37,7 +37,7 @@ from ifcopenshell.entity_instance import entity_instance
 class IFC2JSON5a(common.IFC2JSON):
     SCHEMA_VERSION = '0.0.1'
 
-    # Attributes that are not part of IFC.JSON5a
+    # Attributes that are not part of ifcJSON5a
     INVALIDATTRIBUTES = {
         'OwnerHistory',
         'RepresentationContexts',
@@ -83,19 +83,21 @@ class IFC2JSON5a(common.IFC2JSON):
     def __init__(self, ifcModel,
                  COMPACT=False,
                  EMPTY_PROPERTIES=False):
-        """IFC SPF to IFC.JSON-5a writer
+        """IFC SPF to ifcJSON-5a writer
 
         parameters:
         ifcModel: IFC filePath or ifcopenshell model instance
         COMPACT (boolean): if True then pretty print is turned off and references are created without informative "type" property
 
         """
+
+        self.COMPACT = COMPACT
+        self.EMPTY_PROPERTIES = EMPTY_PROPERTIES
+
         if isinstance(ifcModel, ifcopenshell.file):
             self.ifcModel = ifcModel
         else:
             self.ifcModel = ifcopenshell.open(ifcModel)
-        self.COMPACT = COMPACT
-        self.EMPTY_PROPERTIES = EMPTY_PROPERTIES
 
         # Dictionary referencing all objects with a GlobalId that are already created
         self.rootObjects = {}
@@ -110,7 +112,7 @@ class IFC2JSON5a(common.IFC2JSON):
         (?) Check every IFC object to see if it is used multiple times
 
         Returns:
-        dict: IFC.JSON-5a model structure
+        dict: ifcJSON-5a model structure
 
         """
 
@@ -160,7 +162,7 @@ class IFC2JSON5a(common.IFC2JSON):
         jsonObjects = jsonObjects + list(self.representations.values())
 
         return {
-            'type': 'IFC.JSON-5a',
+            'type': 'ifcJSON-5a',
             'version': self.SCHEMA_VERSION,
             'schemaIdentifier': self.ifcModel.wrapped_data.schema,
             'originatingSystem': 'IFC2JSON_python Version ' + self.VERSION,
@@ -170,13 +172,13 @@ class IFC2JSON5a(common.IFC2JSON):
         }
 
     def createFullObject(self, entityAttributes):
-        """Returns complete IFC.JSON-5a object
+        """Returns complete ifcJSON-5a object
 
         Parameters:
         entityAttributes (dict): Dictionary of IFC object data
 
         Returns:
-        dict: containing complete IFC.JSON-5a object
+        dict: containing complete ifcJSON-5a object
 
         """
         fullObject = {}
@@ -187,7 +189,7 @@ class IFC2JSON5a(common.IFC2JSON):
             if attr == 'id':
                 continue
 
-            # Skip all IFC entities that are not part of IFC.JSON5a
+            # Skip all IFC entities that are not part of ifcJSON5a
             if attr in self.INVALIDATTRIBUTES:
                 continue
 
@@ -235,7 +237,7 @@ class IFC2JSON5a(common.IFC2JSON):
 
         Parameters:
         entityAttributes (dict): Dictionary of IFC object data
-        COMPACT (boolean): verbose or non verbose IFC.JSON-5a output
+        COMPACT (boolean): verbose or non verbose ifcJSON-5a output
 
         Returns:
         dict: object containing reference to another object

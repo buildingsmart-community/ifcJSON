@@ -1,2 +1,2 @@
-# IFC.JSON Schema
-This folder contains the IFC.JSON schema
+# ifcJSON Schema
+This folder contains the ifcJSON schema

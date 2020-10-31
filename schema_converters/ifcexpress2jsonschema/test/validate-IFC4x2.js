@@ -18,8 +18,8 @@ const ifcJsonFile = './7m900_tue_hello_wall_with_door_4.json'
 fs.readFile(schemaPath, "utf8", function (err, data) {
     if (err) throw err;
     var valid = jsonlint.parse(data);
-    if (valid) console.log('Schema ifcjson4 Valid!');
-    else console.log('Schema ifcjson4 Invalid');
+    if (valid) console.log('Schema ifcJSON Valid!');
+    else console.log('Schema ifcJSON Invalid');
 });
 fs.readFile(schemaPathTypes, "utf8", function (err, data) {
     if (err) throw err;
@@ -36,11 +36,11 @@ fs.readFile(schemaPathEntities, "utf8", function (err, data) {
 fs.readFile(ifcJsonFile, "utf8", function (err, data) {
     if (err) throw err;
     var ifcJson = JSON.parse(data);
-    validateIfcJson4(ifcJson);
+    validateifcJSON(ifcJson);
 });
 
 
-function validateIfcJson4(data) {
+function validateifcJSON(data) {
     var valid = ajv.validate('IFC4x2', data);
     if (valid) console.log('IFC JSON file Valid!');
     else console.log('IFC JSON file Invalid: ' + ajv.errorsText(ajv.validate.errors));

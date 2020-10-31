@@ -1,5 +1,5 @@
 # IFC-JSON-Schema
-Python schema parsers for IFC.JSON
+Python schema parsers for ifcJSON
 
 
 # TODO

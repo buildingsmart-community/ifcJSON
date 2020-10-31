@@ -1,24 +1,24 @@
 {
-  "type": "IFC.JSON",
+  "type": "ifcJSON",
   "version": "0.0.1",
   "schemaIdentifier": "IFC4X3_RC1",
   "originatingSystem": "IFC2JSON_python Version 0.0.1",
   "preprocessorVersion": "IfcOpenShell 0.6.0b0",
-  "timeStamp": "2020-10-30T00:19:14",
+  "timeStamp": "2020-10-31T23:51:24",
   "data": [
     {
       "type": "IfcProject",
       "globalId": "8d2b93b8-cd2f-4045-ad47-0e65a493ade2",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "3f20c929-264c-4716-a8f6-e1676ca4de59"
+        "ref": "48332ade-bfb6-4976-a216-876b4f1c67d0"
       },
       "name": "GeoRef_1",
       "description": "Test adapted from ProVI",
       "representationContexts": [
         {
           "type": "IfcGeometricRepresentationContext",
-          "ref": "6ea0d71d-4930-4a44-8de0-328c71235745"
+          "ref": "04e59cb1-1516-4def-9265-e53f897ae431"
         }
       ],
       "unitsInContext": {
@@ -118,7 +118,7 @@
       "globalId": "8747fc68-31aa-415f-adf0-9bdecb4b165b",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "3f20c929-264c-4716-a8f6-e1676ca4de59"
+        "ref": "48332ade-bfb6-4976-a216-876b4f1c67d0"
       },
       "objectPlacement": {
         "type": "IfcLocalPlacement",
@@ -251,7 +251,7 @@
       },
       "changeAction": "ADDED",
       "creationDate": 1548096817,
-      "globalId": "3f20c929-264c-4716-a8f6-e1676ca4de59"
+      "globalId": "48332ade-bfb6-4976-a216-876b4f1c67d0"
     },
     {
       "type": "IfcGeometricRepresentationContext",
@@ -298,7 +298,7 @@
           "type": "IfcMapConversion",
           "sourceCRS": {
             "type": "IfcGeometricRepresentationContext",
-            "ref": "6ea0d71d-4930-4a44-8de0-328c71235745"
+            "ref": "04e59cb1-1516-4def-9265-e53f897ae431"
           },
           "targetCRS": {
             "type": "IfcProjectedCRS",
@@ -326,14 +326,14 @@
           "scale": 1.0
         }
       ],
-      "globalId": "6ea0d71d-4930-4a44-8de0-328c71235745"
+      "globalId": "04e59cb1-1516-4def-9265-e53f897ae431"
     },
     {
       "type": "IfcRelAggregates",
       "globalId": "d1e07a46-2f07-4110-bfa1-709f1c1c84f5",
       "ownerHistory": {
         "type": "IfcOwnerHistory",
-        "ref": "3f20c929-264c-4716-a8f6-e1676ca4de59"
+        "ref": "48332ade-bfb6-4976-a216-876b4f1c67d0"
       },
       "relatingObject": {
         "type": "IfcProject",
