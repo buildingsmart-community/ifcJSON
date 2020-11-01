@@ -43,7 +43,7 @@ class IFC2JSON4(common.IFC2JSON):
     def __init__(self,
                  ifcModel,
                  COMPACT=False,
-                 INCLUDE_INVERSE=False,
+                 NO_INVERSE=False,
                  EMPTY_PROPERTIES=False,
                  NO_OWNERHISTORY=False,
                  GEOMETRY=True):
@@ -52,12 +52,12 @@ class IFC2JSON4(common.IFC2JSON):
         parameters:
         ifcModel: IFC filePath or ifcopenshell model instance
         COMPACT (boolean): if True then pretty print is turned off and references are created without informative "type" property
-        INCLUDE_INVERSE (boolean): if True then inverse relationships will be explicitly added to entities
+        NO_INVERSE (boolean): if True then inverse relationships will be explicitly added to entities
 
         """
 
         self.COMPACT = COMPACT
-        self.INCLUDE_INVERSE = INCLUDE_INVERSE
+        self.NO_INVERSE = NO_INVERSE
         self.EMPTY_PROPERTIES = EMPTY_PROPERTIES
 
         if isinstance(ifcModel, ifcopenshell.file):
@@ -126,7 +126,7 @@ class IFC2JSON4(common.IFC2JSON):
             entityAttributes = entity.__dict__
             entityType = entityAttributes['type']
             if not entityType == 'IfcOwnerHistory':
-                if not self.INCLUDE_INVERSE:
+                if not self.NO_INVERSE:
                     for attr in entity.wrapped_data.get_inverse_attribute_names():
                         inverseAttribute = getattr(entity, attr)
                         attrValue = self.getAttributeValue(inverseAttribute)

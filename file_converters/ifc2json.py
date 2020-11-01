@@ -41,8 +41,8 @@ if __name__ == '__main__':
         '-v', type=str, help='ifcJSON version, options: "4"(default), "5a"')
     parser.add_argument('-c', '--compact', action='store_true',
                         help='Pretty print is turned off and references are created without informative "type" property')
-    parser.add_argument('-n', '--inverse', action='store_true',
-                        help='Inverse relationships will be explicitly added to entities for version 4, default is False')
+    parser.add_argument('-n', '--no_inverse', action='store_true',
+                        help='Inverse relationships will be explicitly added to entities for version 4, default is True')
     parser.add_argument('-e', '--empty_properties', action='store_true',
                         help='Include empty properties, default is False')
     parser.add_argument('-w', '--no_ownerhistory', action='store_true',
@@ -77,7 +77,7 @@ if __name__ == '__main__':
         if not args.v or args.v == "4":
             jsonData = ifcjson.IFC2JSON4(ifcFilePath,
                                          COMPACT,
-                                         INCLUDE_INVERSE=args.inverse,
+                                         NO_INVERSE=args.inverse,
                                          EMPTY_PROPERTIES=args.empty_properties,
                                          NO_OWNERHISTORY=args.no_ownerhistory,
                                          GEOMETRY=GEOMETRY
