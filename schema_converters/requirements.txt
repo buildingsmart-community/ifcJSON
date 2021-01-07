@@ -1,5 +1,5 @@
 beautifulsoup4==4.9.3
-lxml==4.6.1
+lxml==4.6.2
 ordered-set==4.0.2
 pyecore==0.11.7
 RestrictedPython==5.1
