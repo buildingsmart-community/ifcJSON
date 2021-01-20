@@ -80,7 +80,9 @@ class IFC2JSON4(common.IFC2JSON):
 
         # adjust GEOMETRY type
         if GEOMETRY == 'tessellate':
+            self.settings.set(self.settings.USE_WORLD_COORDS, True)
             self.tessellate()
+            self.remove_localplacements()
         elif GEOMETRY == False:
             self.remove_geometry()
 
@@ -237,6 +239,14 @@ class IFC2JSON4(common.IFC2JSON):
     def remove_geometry(self):
         removeTypes = ['IfcLocalPlacement', 'IfcRepresentationMap', 'IfcGeometricRepresentationContext', 'IfcGeometricRepresentationSubContext', 'IfcProductDefinitionShape',
                        'IfcMaterialDefinitionRepresentation', 'IfcShapeRepresentation', 'IfcRepresentationItem', 'IfcStyledRepresentation', 'IfcPresentationLayerAssignment', 'IfcTopologyRepresentation']
+        for ifcType in removeTypes:
+            # print(ifcType)
+            # (lambda x: self.ifcModel.remove(x), self.ifcModel.by_type(ifcType))
+            for entity in self.ifcModel.by_type(ifcType):
+                self.ifcModel.remove(entity)
+
+    def remove_localplacements(self):
+        removeTypes = ['IfcLocalPlacement']
         for ifcType in removeTypes:
             # print(ifcType)
             # (lambda x: self.ifcModel.remove(x), self.ifcModel.by_type(ifcType))

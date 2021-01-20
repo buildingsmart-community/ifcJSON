@@ -77,7 +77,7 @@ if __name__ == '__main__':
         if not args.v or args.v == "4":
             jsonData = ifcjson.IFC2JSON4(ifcFilePath,
                                          COMPACT,
-                                         NO_INVERSE=args.inverse,
+                                         NO_INVERSE=args.no_inverse,
                                          EMPTY_PROPERTIES=args.empty_properties,
                                          NO_OWNERHISTORY=args.no_ownerhistory,
                                          GEOMETRY=GEOMETRY
@@ -87,7 +87,8 @@ if __name__ == '__main__':
         elif args.v == "5a":
             jsonData = ifcjson.IFC2JSON5a(ifcFilePath,
                                           COMPACT,
-                                          EMPTY_PROPERTIES=args.empty_properties
+                                          EMPTY_PROPERTIES=args.empty_properties,
+                                          GEOMETRY=GEOMETRY
                                           ).spf2Json()
             with open(jsonFilePath, 'w') as outfile:
                 json.dump(jsonData, outfile, indent=indent)
