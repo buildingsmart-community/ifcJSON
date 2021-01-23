@@ -43,6 +43,8 @@ class JSON2IFC(IFCJSON):
                             self.collect_objects(ifcJson['data'])
                         else:
                             print('Not a valid ifcJson file')
+                    else:
+                        print('Not a valid ifcJson file')
 
                 else:
                     print('Not a valid ifcJson file')
