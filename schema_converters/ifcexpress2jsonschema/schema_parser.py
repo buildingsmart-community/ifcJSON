@@ -26,12 +26,34 @@ class JsonSchemaArray():
         self.schema['items'] = items
 
 
-expressSchema = open("../reference_schemas/IFC4x2.exp", "r")
+def definition_reference(name):
+    return {
+        "oneOf": [
+            {
+                "$ref": "#/definitions/" + name
+            },
+            {
+                "type": "object",
+                "properties": {
+                    "ref": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                },
+                "required": [
+                    "ref"
+                ]
+            }
+        ]
+    }
+
+
+expressSchema = open("./reference_schemas/IFC4x2.exp", "r")
 expressSchemaResult = open("./IFC4x2-status.exp", "w")
 
 schemaName = "IFC4x2"
 
-jsonSchemaFile = open("../../Schema/" + schemaName + "-from-express.json", "w")
+jsonSchemaFile = open("./../Schema/" + schemaName + "-from-express.json", "w")
 
 jsonSchema = {
     "$schema": "http://json-schema.org/draft-07/schema#",
@@ -39,7 +61,7 @@ jsonSchema = {
     "description": "This is the schema for representing IFC4 data in JSON",
     "type": "object",
     "properties": {
-        "file_schema": {
+        "type": {
             "const": "ifcJSON"
         },
         "data": {
@@ -52,7 +74,7 @@ jsonSchema = {
     "definitions": {
     },
     "required": [
-        "file_schema", "data"
+        "type", "data"
     ]
 }
 ifcObject = {}
@@ -75,16 +97,15 @@ for line in expressSchema:
         expressSchemaResult.write('--' + line)
         objectName = line.split(" ")[1].rstrip().replace(';', '')
 
-        # object names must be camelcase
-        objectName = objectName[0].lower() + objectName[1:]
+        # # object names must be camelcase
+        # objectName = objectName[0].lower() + objectName[1:]
 
         if objectName == "=":
             print(line)
         # ifcObject['$id'] = '#' + objectName
         ifcObject['type'] = 'object'
         ifcObject['properties'] = {}
-        ifcObject['allOf'] = [
-            {'$ref': '#/definitions/' + objectName}]
+        ifcObject['allOf'] = [definition_reference(objectName)]
 
         # Prevent use of custom properties
         # ifcObject['additionalProperties'] = False
@@ -102,10 +123,10 @@ for line in expressSchema:
         lineParts = line.split(" ")
         objectName = lineParts[1]
 
-        # object names must be camelcase
-        objectName = objectName[0].lower() + objectName[1:]
+        # # object names must be camelcase
+        # objectName = objectName[0].lower() + objectName[1:]
 
-        if objectName == "ifcGloballyUniqueId":
+        if objectName == "IfcGloballyUniqueId":
             ifcObject['type'] = 'string'
             ifcObject['format'] = 'uuid'
 
@@ -162,7 +183,9 @@ for line in expressSchema:
                             ifcObject['minLength'] = int(stringLength)
                 # elif superType == "LOGICAL":
                 # elif superType == "ENUMERATION":
+                #     ifcObject['enum'] = []
                 # elif superType == "SELECT":
+                #     ifcObject['oneOf'] = []
             else:
                 ifcObject['type'] = 'string'
         ifcTypeSection = True
@@ -178,10 +201,10 @@ for line in expressSchema:
         # https://github.com/json-schema-org/json-schema-spec/issues/348
         parentObjectName = re.split(r'\(|\)', line)[1]
 
-        # object names must be camelcase
-        parentObjectName = parentObjectName[0].lower() + parentObjectName[1:]
+        # # object names must be camelcase
+        # parentObjectName = parentObjectName[0].lower() + parentObjectName[1:]
 
-        protoType['allOf'] = [{'$ref': '#/definitions/' + parentObjectName}]
+        protoType['allOf'] = [definition_reference(parentObjectName)]
     elif line == ' INVERSE\n':
         expressSchemaResult.write(line)
         inverse = True
@@ -223,9 +246,9 @@ for line in expressSchema:
 
                         # (!) TODO This hack overwrites 'items' multiple times
                         # property names must be camelcase
-                        layer_name = layers[-1][0].lower() + layers[-1][1:]
+                        layer_name = layers[-1]  # [0].lower() + layers[-1][1:]
                         schema_array['items'] = {
-                            '$ref': '#/definitions/' + layer_name}
+                            "$ref": "#/definitions/" + layer_name}
 
                         if propertyChild:
                             propertyChild['items'] = schema_array
@@ -236,7 +259,7 @@ for line in expressSchema:
             else:
 
                 # property names must be camelcase
-                propertyValue = propertyValue[0].lower() + propertyValue[1:]
+                # propertyValue = propertyValue[0].lower() + propertyValue[1:]
 
                 if propertyValue == 'iNTEGER':
                     objectProperties[propertyKey] = {"type": "integer"}
@@ -244,11 +267,11 @@ for line in expressSchema:
                     objectProperties[propertyKey] = {
                         "enum": [True, False, "UNKNOWN"]}
                 elif propertyValue in types:
-                    objectProperties[propertyKey] = {
-                        '$ref': '#/definitions/' + propertyValue}
+                    objectProperties[propertyKey] = definition_reference(
+                        propertyValue)
                 else:
-                    objectProperties[propertyKey] = {
-                        '$ref': '#/definitions/' + propertyValue}
+                    objectProperties[propertyKey] = definition_reference(
+                        propertyValue)
         else:
             expressSchemaResult.write(line)
     elif line == 'END_ENTITY;\n':
