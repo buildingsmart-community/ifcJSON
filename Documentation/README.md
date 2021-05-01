@@ -78,6 +78,14 @@ This is valid:
 "predefinedType": "NOTDEFINED"
 ~~~
 
+This is also valid, and preferable over empty values:
+
+~~~
+"type" : "IfcDoor",
+"globalId" : "157c866c-9c08-4348-a0ed-4d57cd66c9e2",
+"name" : "A common door"
+~~~
+
 This is encouraged:
 
 ~~~
