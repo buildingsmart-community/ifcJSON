@@ -21,6 +21,7 @@ conda activate ifcjson
 ```
 conda install -c conda-forge ifcopenshell
 ```
+5. Download all the files in the directory "file_converters" from this repository. Including the 'ifcjson' module directory
 
 ## Installation ifcopenshell from direct download
 Download a recent copy of ifcopenshell from: https://github.com/IfcOpenBot/IfcOpenShell/commits/v0.6.0
@@ -28,6 +29,7 @@ Download a recent copy of ifcopenshell from: https://github.com/IfcOpenBot/IfcOp
 Most commits with a "comment" have links to builds for most platforms and python versions, make sure you pick the 0.6 branch, not master.
 
 ## Usage
+From the folder "file_converters" run:
 ```
 python ifc2json.py -i model.ifc -o model.json --compact
 ```
