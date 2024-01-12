@@ -25,3 +25,45 @@ with open(schema_file_path, "r") as schema_file:
                         print(f"{json_file_path} is NOT valid ifcJSON!")
                         print(e)
                         print(e.message)
+
+                    # Function that returns a iterator with all the dicts from each IFC type in the data
+                    def get_all_ifc_types(data):
+                        if isinstance(data, dict):
+                            yield data
+                            for key, value in data.items():
+                                if isinstance(value, dict):
+                                    yield from get_all_ifc_types(value)
+                                elif isinstance(value, list):
+                                    for element in value:
+                                        yield from get_all_ifc_types(element)
+                        elif isinstance(data, list):
+                            for element in data:
+                                yield from get_all_ifc_types(element)
+
+                    # For each IFC type inside each IFC instance of 'instance', the parameters' names are evaluated
+                    for ifc_instance in get_all_ifc_types(instance['data']):
+                        # Get the IFC 'type'
+                        ifc_type = ifc_instance['type']
+                        
+                        # Get all the keys (or parameters) of a given IFC type in the original schema
+                        try:
+                            keys = list(schema['definitions'][ifc_type].keys())
+                        except:
+                            print(f'Error in retrieving the IFC parameters (or json keys) from "{json_file_path}"')
+
+                        # Differentiate between the IfcJSON structures to get the adequate 'properties' keys
+                        if keys == ['oneOf']:
+                            schema_parameters = schema['definitions'][ifc_type]['oneOf'][1]['properties'].keys()
+                        elif keys == ['anyOf']:
+                            schema_parameters = schema['definitions'][ifc_type]['anyOf'][1]['properties'].keys()
+                        else:
+                            schema_parameters = schema['definitions'][ifc_type]['properties'].keys()
+
+                        # Check if the parameter name of the validated file is in the ifc schema parameters
+                        for validated_parameter in ifc_instance.keys():
+                            if validated_parameter == 'ref':
+                                continue
+                            elif validated_parameter in schema_parameters:
+                                pass
+                            else:
+                                raise ValueError(f'The parameter "{validated_parameter}" in {ifc_instance}, file "{json_file_path}", does not exists in the original schema! \nCheck if any of the following can be used instead: {list(schema_parameters)}.')
