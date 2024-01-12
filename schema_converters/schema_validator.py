@@ -54,6 +54,8 @@ with open(schema_file_path, "r") as schema_file:
                         # Differentiate between the IfcJSON structures to get the adequate 'properties' keys
                         if keys == ['oneOf']:
                             schema_parameters = schema['definitions'][ifc_type]['oneOf'][1]['properties'].keys()
+                        elif keys == ['anyOf']:
+                            schema_parameters = schema['definitions'][ifc_type]['anyOf'][1]['properties'].keys()
                         else:
                             schema_parameters = schema['definitions'][ifc_type]['properties'].keys()
 
